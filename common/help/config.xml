@@ -1,0 +1,11 @@
+<widget>
+	<type>internalPage</type>
+	<parameters>
+		<url>help.html</url>
+		<secure>false</secure>
+	</parameters>
+	<attributes>
+		<displayheader>false</displayheader>
+		<css>help.css</css>
+	</attributes>
+</widget>
