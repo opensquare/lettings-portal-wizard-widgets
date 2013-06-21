@@ -1,0 +1,44 @@
+	<header>
+		<h2>Speak to us today <span>0800 123 456</span></h2>
+		<div class="widget" name="common-language-switcher"></div>
+		<div class="widget" name="cp-header-menu"></div>
+	</header>
+
+	<section id="cp-banner">
+		<h1><a href="/"></a></h1>
+		<h2>customer portal</h2>
+	</section>
+
+	<section id="cp-content">
+		<div class="widget" name="help"></div>
+		<div id="login-form">
+			<form id="login-form-enter" action="#" nextWidget="cp-policies">
+				<h2>Registered customers</h2>
+				<ul class="messages"/>
+				<label for="username">Username: <input type="text" name="username" id="username" autofocus required /></label>
+				<label for="password">Password: <input type="password" name="password" id="password" required /></label>
+				<button id="login-button" type="submit">Login</button>
+				<a href="#" onclick="$('#login-form form').toggle();return false;">Forgotten your details?</a>
+			</form>
+			<form id="login-form-register" action="#" onsubmit="return false;">
+				<h2>Not registered yet?</h2>
+				<ul class="messages"/>
+				<p>You can sign up for access if you have a current policy with us, or have purchased a product that is soon to come into force.</p>
+				<p>It's quick and simple to register, to begin type in the number of one of your policies below.</p>
+				<label for="policyno">Policy No.: <input type="policyno" name="policyno" id="policyno" required /></label>
+				<button id="login-button" type="submit">Register</button>
+			</form>
+			<form id="login-form-reset" action="#" onsubmit="login_loginReset();return false;" style="display:none;">
+				<h2>Forgotten your details?</h2>
+				<ul class="messages"/>
+				<label for="username">Email: <input type="email" name="email" id="email" autofocus required /></label>
+				<label id="login-form-reset-text">Click button to receive a reset password email</label>
+				<a href="#" onclick="$('#login-form form').toggle();return false;">Remembered your details?</a>
+				<button id="login-reset" type="submit">Send</button>
+			</form>
+		</div>
+	</section>
+
+	<footer>
+		<div class="widget" name="common-footer"></div>
+	</footer>

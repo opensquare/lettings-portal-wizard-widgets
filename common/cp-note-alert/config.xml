@@ -1,0 +1,11 @@
+<widget>
+	<type>internalPage</type>
+	<parameters>
+		<url>cp-note-alert.html</url>
+	</parameters>
+	<attributes>
+		<displayheader>false</displayheader>
+		<js>cp-note-alert.js</js>
+		<css>cp-note-alert.css</css>
+	</attributes>
+</widget>
