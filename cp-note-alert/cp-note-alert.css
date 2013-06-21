@@ -1,0 +1,57 @@
+.alertWindow {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 99999;
+    opacity:0;
+    pointer-events: none;
+}
+
+.alertWindow:target {
+    opacity:1;
+    pointer-events: auto;
+}
+
+#alertContent {
+    width: 33%;
+    height: 33%;
+    position: relative;
+    margin: 15% auto 1% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    border: 6px solid #92CE56;
+    background: #fff;
+    text-align: center;
+}
+
+#alertContent h2 {
+    color: #555;
+    text-align: left;
+}
+
+#userActions {
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+}
+
+.userAction {
+    padding: 0.2em 1em;
+    color: #FFF;
+    background-color: #92CE56;
+    border: none;
+    border-radius: 0.25em;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.snooze {
+      background-color: #E47833;
+}
+
+.dismiss {
+    background-color: #92CE56;
+}
