@@ -1,0 +1,11 @@
+<widget>
+	<type>layout</type>
+	<parameters>
+		<url>manage.html</url>
+		<secure>false</secure>
+	</parameters>
+	<attributes>
+		<displayHeader>false</displayHeader>
+		<css>manage.css</css>
+	</attributes>
+</widget>

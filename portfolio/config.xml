@@ -1,0 +1,12 @@
+<widget>
+	<type>layout</type>
+	<parameters>
+		<url>portfolio.html</url>
+		<secure>false</secure>
+	</parameters>
+	<attributes>
+		<displayHeader>false</displayHeader>
+		<css>portfolio.css</css>
+		<js>portfolio.js</js>
+	</attributes>
+</widget>

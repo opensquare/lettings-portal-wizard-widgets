@@ -1,0 +1,168 @@
+body{
+	min-width: 275px;
+	margin: 0;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	background: #F0F0F0;
+	color: #333;
+}
+a{
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
+}
+
+#backgroundText text{
+	fill: none;
+	stroke: rgba(0, 0, 0, 0.05);
+}
+
+header{
+	width: 80%;
+	margin: 1em auto;
+	padding-bottom: 1em;
+}
+header h2{
+	float: left;
+	margin: 0;
+	font-size: 1em;
+	color: #0DB4F2; /* Blue */
+}
+header h2 span{
+	color: #92CE56; /* Green */
+}
+@media screen and (max-width: 1000px) {
+	header{
+		width:98%;
+	}
+}
+#manage-content{
+	width: 80%;
+	min-height: 400px;
+	margin: -6em auto 0 auto;
+	background-color: rgba(255,255,255,0.85);
+	box-shadow: 0 0 10px rgba(0,0,0,0.2);
+	border-radius: 0.25em;
+	padding-bottom: 2em;
+}
+.summary {
+	border: solid 2px #333;
+	border-radius: 10px;
+	margin-bottom: 5%;
+	margin-left: 5%;
+	margin-top: -5%;
+	width: 90%;
+	padding: 10px
+}
+
+.summary input[type="text"] {
+	border: none;
+	background: #999;
+}
+@media screen and (max-width: 1000px) {
+	#rq-content{
+		width:98%;
+	}
+}
+@media screen and (max-width: 600px) {
+	#rq-banner{
+		height: 100px;
+	}
+}
+
+
+footer{
+	width: 80%;
+	margin: 3em auto 1em auto;
+	background-color: #777;
+	color: #FFF;
+	font-size: 0.75em;
+	border-radius: 0.25em;
+}
+footer p{
+	padding: 0 1em 1em 1em;
+	margin: 0;
+}
+footer p:first-child{
+	padding-top: 1em;
+	font-weight: bold;
+}
+@media screen and (max-width: 1000px) {
+	footer{
+		width:98%;
+	}
+}
+
+/* TABS */
+
+article.tabs
+{
+	position: relative;
+	display: block;
+	width: 100%;
+	min-height: 20em;
+	margin: 0 auto 2em;
+}
+article.tabs section
+{
+	width: 100%;
+	position: absolute;
+	height: 20em;
+	background-color: #ccc;
+	border-radius: 5px;
+	box-shadow: 0 3px 3px rgba(0,0,0,0.1);
+	z-index: 0;
+}
+article.tabs section:first-child
+{
+	z-index: 1;
+}
+article.tabs section h2
+{
+	position: absolute;
+	font-size: 1em;
+	font-weight: normal;
+	width: 150px;
+	height: 1.8em;
+	top: -1.8em;
+	left: 10px;
+	padding: 0;
+	margin: 0;
+	color: #999;
+	background-color: #ccc;
+	border-radius: 5px 5px 0 0;
+}
+article.tabs section:nth-child(2) h2
+{
+	left: 162px;
+}
+article.tabs section:nth-child(3) h2
+{
+	left: 314px;
+}
+article.tabs section h2 a
+{
+	display: block;
+	width: 100%;
+	line-height: 1.8em;
+	text-align: center;
+	text-decoration: none;
+	color: #333;
+	outline: 0 none;
+}
+article.tabs section:target,
+article.tabs section:target h2
+{
+	color: #333;
+	background-color: #ddd;
+	z-index: 2;
+}
+article.tabs section,
+article.tabs section h2
+{
+	-webkit-transition: all 500ms ease;
+	-moz-transition: all 500ms ease;
+	-ms-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
+	transition: all 500ms ease;
+}	

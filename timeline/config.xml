@@ -1,0 +1,12 @@
+<widget>
+	<type>layout</type>
+	<parameters>
+		<url>timeline.html</url>
+		<secure>false</secure>
+	</parameters>
+	<attributes>
+		<displayHeader>false</displayHeader>
+		<css>timeline.css</css>
+		<js>timeline.js</js>
+	</attributes>
+</widget>

@@ -1,0 +1,26 @@
+#lettings-banner{
+	height: 300px;
+	background: url('lettings-banner.jpg') no-repeat center;
+	background-size: cover;
+}
+#lettings-banner>h1{
+	width: 400px;
+	height: 125px;
+	margin: 0 0 0 1%;
+}
+#lettings-banner>h1>a{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	background: url('model-insurance.png') no-repeat left bottom;
+}
+#lettings-banner h2{
+	display: inline-block;
+	margin: 0;
+	padding: 0 0.5em 0 4em;
+	background: rgba(0,0,0,0.65);
+	color: rgba(255,255,255,0.9);
+	font-weight: normal;
+	font-size: 2em;
+	border-radius: 0 0.15em 0.15em 0;
+}

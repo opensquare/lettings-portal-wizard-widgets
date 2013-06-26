@@ -1,0 +1,10 @@
+<widget>
+	<type>internalPage</type>
+	<parameters>
+		<url>common-footer.html</url>
+		<secure>false</secure>
+	</parameters>
+	<attributes>
+		<displayheader>false</displayheader>
+	</attributes>
+</widget>

@@ -1,0 +1,11 @@
+<widget>
+	<type>layout</type>
+	<parameters>
+		<url>rq.html</url>
+		<secure>false</secure>
+	</parameters>
+	<attributes>
+		<displayHeader>false</displayHeader>
+		<css>rq.css</css>
+	</attributes>
+</widget>

@@ -1,0 +1,11 @@
+<widget>
+	<type>layout</type>
+	<parameters>
+		<url>demo.html</url>
+		<secure>false</secure>
+	</parameters>
+	<attributes>
+		<displayHeader>false</displayHeader>
+		<css>demo.css</css>
+	</attributes>
+</widget>
