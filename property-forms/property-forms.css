@@ -78,4 +78,7 @@ div.widget[name='property-forms'] .relatedField div:nth-child(odd) {
 }
 div.widget[name='property-forms'] .propertyActions {
   height: 40px;
-} 
+}
+div.widget[name='property-forms'] .displayValue {
+  float: right;
+}

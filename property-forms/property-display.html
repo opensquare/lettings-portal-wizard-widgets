@@ -1,8 +1,73 @@
-
 <form rhinoforms="true" class="lettings-form">
 
 	<div class="relatedField">
-		hello
+		<div class="field">
+			<label for="input_propertyType">Property Type: </label>
+			<div class="displayValue">{{propertyType}}</div>
+		</div>
+
+		<div class="field">
+			<label>Address:</label>
+			<div class="displayValue">{{address}}</div>
+		</div>
+	</div>
+
+	<div class="relatedField">
+		<div class="field">
+			<label for="input_bedrooms">Bedrooms: </label>
+			<div class="displayValue">{{bedroomCount}}</div>
+		</div>
+
+		<div class="field">
+			<label for="input_bathroom">Bathrooms: </label>
+			<div class="displayValue">{{bathroomCount}}</div>
+		</div>
+	</div>
+
+	<div class="relatedField">
+		<div class="field">
+			<label>Furnished: </label>
+			<div class="displayValue">{{furnished}}</div>
+		</div>
+
+		<div class="field">
+			<label>White Goods: </label>
+			<div class="displayValue">{{whiteGoodsProvided}}</div>
+		</div>
+	</div>
+
+	<div class="relatedField">
+		<div class="field">
+			<label>Rental (£pcm): </label>
+			<div class="displayValue">{{rentalPerMonth}}</div>
+		</div>
+
+		<div class="field">
+			<label>Deposit (£): </label>
+			<div class="displayValue">{{deposit}}</div>
+		</div>
+	</div>
+
+	<div class="relatedField">
+		<div class="field">
+			<label for="input_availableFrom">Available from: </label>
+			<div class="displayValue">{{availableFrom}}</div>
+		</div>
+
+		<div class="field">
+			<label for="input_tenancyPeriod">Tennacy Period: </label>
+			<div class="displayValue">{{tenancyPeriod}}</div>
+		</div>
+	</div>
+
+	<div class="relatedField">
+		<div class="field">
+			<label for="input_parking">Parking: </label>
+			<div class="displayValue">{{parking}}</div>
+		</div>
+	</div>
+	<div class="propertyActions">
+		<input type="button" rf.action="back" value="Edit"/>
 	</div>
 </form>
 

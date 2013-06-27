@@ -10,7 +10,7 @@
       {
         id: "view",
         url: "property-display.html",
-        actions: [ "edit"]
+        actions: [ "back"]
       }
     ]
   }
