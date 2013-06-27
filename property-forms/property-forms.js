@@ -4,7 +4,7 @@ function Widget_property_forms() {
     
     var initialData = '<property></property>';
     
-    rf.loadFlow('widgets/property-forms/property-forms-flow.js', $(this.$widgetDiv));
+    rf.loadFlow('widgets/property-forms/property-forms-flow.js', $('.rhinoforms-property-formContainer', this.$widgetDiv));
 
   } 
 }

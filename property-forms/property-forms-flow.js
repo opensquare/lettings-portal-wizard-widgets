@@ -4,12 +4,12 @@
     main: [
       {
         id: "edit",
-        url: "property-forms.html",
+        url: "property-edit.html",
         actions: [ "next" ]
       },
       {
         id: "view",
-        url: "property-forms-display.html",
+        url: "property-display.html",
         actions: [ "edit"]
       }
     ]

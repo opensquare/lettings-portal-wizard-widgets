@@ -1,0 +1,118 @@
+<form rhinoforms="true" class="lettings-form">
+
+	<div class="relatedField">
+		<div class="field">
+			<label for="input_propertyType">Property Type: </label>
+			<select id="input_propertyType" name="propertyType" rf.validation="required" rf.preselectFirstOption="true">
+				<option disabled selected/>
+				<option>Flat or Appartment</option>
+				<option>House</option>
+				<option>Bungalow</option>
+				<option>Other</option>			
+			</select>
+		</div>
+
+		<div class="field">
+			<label>Address:</label>
+			<input name="address" type="text" rf.validation="required" />
+		</div>
+	</div>
+
+	<div class="relatedField">
+		<div class="field">
+			<label for="input_bedrooms">Bedrooms: </label>
+			<select id="input_bedrooms" name="bedroomCount" rf.validation="required" rf.preselectFirstOption="true">
+				<option disabled selected/>
+				<option>Studio</option>
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>6</option>	
+				<option>7</option>
+				<option>8</option>
+				<option>9</option>	
+			</select>
+		</div>
+
+		<div class="field">
+			<label for="input_bathroom">Bathrooms: </label>
+			<select id="input_bathroom" name="bathroomCount" rf.validation="required" rf.preselectFirstOption="true">
+				<option disabled selected/>
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>6</option>	
+				<option>7</option>
+				<option>8</option>
+				<option>9</option>	
+			</select>
+		</div>
+	</div>
+
+	<div class="relatedField">
+		<div class="field">
+			<label>Furnished: </label>
+			<input id="input_yes" type="radio" name="furnished" value="Yes" rf.validation="required"/>
+			<label for="input_yes" class="forRadio">Yes</label>
+			<input id="input_no" type="radio" name="furnished" value="No"/>
+			<label for="input_no" class="forRadio">No</label>
+		</div>
+
+		<div class="field">
+			<label>White Goods: </label>
+			<input id="input_yes" type="radio" name="whiteGoodsProvided" value="Yes" rf.validation="required"/>
+			<label for="input_yes" class="forRadio">Yes</label>
+			<input id="input_no" type="radio" name="whiteGoodsProvided" value="No"/>
+			<label for="input_no" class="forRadio">No</label>
+		</div>
+	</div>
+
+	<div class="relatedField">
+		<div class="field">
+			<label>Rental (£pcm): </label>
+			<input name="rentalPerMonth" type="text" rf.validation="required" />
+		</div>
+
+		<div class="field">
+			<label>Deposit (£): </label>
+			<input name="rentalPerMonth" type="text" rf.validation="required" />
+		</div>
+	</div>
+
+	<div class="relatedField">
+		<div class="field">
+			<label for="input_availableFrom">Available from: </label>
+			<input id="input_availableFrom" type="date" name="availableFrom" rf.validation="required date({ format: 'YYYY-MM-DD' })" />
+		</div>
+
+		<div class="field">
+			<label for="input_tenancyPeriod">Tennacy Period: </label>
+			<select id="input_tenancyPeriod" name="tenancyPeriod" rf.validation="required" rf.preselectFirstOption="true">
+				<option disabled selected/>
+				<option>6 Months</option>
+				<option>12 Months</option>
+				<option>18 Months</option>
+			</select>
+		</div>
+	</div>
+
+	<div class="relatedField">
+		<div class="field">
+			<label for="input_parking">Parking: </label>
+			<select id="input_parking" name="parking" rf.validation="required" rf.preselectFirstOption="true">
+				<option disabled selected/>
+				<option>Off-road</option>
+				<option>Public</option>
+				<option>Permit</option>
+			</select>
+		</div>
+	</div>
+	<div class="propertyActions">
+		<input type="button" action="next" value="Save"/>
+	</div>
+</form>
+
