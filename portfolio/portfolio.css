@@ -2,7 +2,12 @@ div.portfolio h1{
 	font-size: 1.8em;
 	padding: 10px;
 }
-
+div.portfolio a.head{
+	color: inherit;
+}
+div.portfolio a.head:hover{
+	text-decoration: none;
+}
 div.property {
 	padding: 10px;
 	color: #333;
