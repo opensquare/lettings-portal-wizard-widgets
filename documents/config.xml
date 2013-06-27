@@ -7,5 +7,6 @@
 		<displayheader>false</displayheader>
 		<js>documents.js</js>
 		<css>documents.css</css>
+		<delayLoad>true</delayLoad>
 	</attributes>
 </widget>

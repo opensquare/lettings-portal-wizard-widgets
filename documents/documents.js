@@ -15,10 +15,6 @@ function Widget_documents() {
 
 			if(typeof searchTerm != 'undefined'){
 
-				$(".tabs > section").each(function(){
-					$(".noSelection").remove();
-				})
-
 				var getUrl = 'proxy/mailmerger/jobs/search/' + encodeURIComponent('%'+ searchTerm +'%');
 				var noDocMsg = "No documents found for this policy."
 			

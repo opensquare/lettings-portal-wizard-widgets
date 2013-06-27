@@ -13,9 +13,6 @@ function Widget_timeline() {
 		var key = $(".tabs").attr("propertyuid");
 
 		if(typeof key != 'undefined'){
-			$(".tabs > section").each(function(){
-					$(".noSelection").remove();
-				})
 
 			//Parse notes
 		$.ajax({type:"GET",url:'proxy/scribe/notes?key='+key}).done(function(notesArray){
@@ -52,7 +49,7 @@ function Widget_timeline() {
 			 	});
 			} else {
 				$(".tabs > section").each(function(){
-					$(this).prepend("<div class='noSelection'>Please select a property from your portfolio, using the icons above.");
+					$(this).prepend("<div class='noSelection'>Please select a property from your portfolio, using the icons above.</div>");
 				})
 			}
 

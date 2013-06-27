@@ -12,6 +12,9 @@ function Widget_portfolio() {
 
 			$(".tabs").attr("propertyUid", property);
 			pw.notifyChannelOfEvent("property_info");
+			$(".tabs > section").each(function(){
+					$(".noSelection").remove();
+			});
 		})
 	}
 }
