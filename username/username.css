@@ -1,0 +1,57 @@
+div.widget.username{
+	text-align: right;
+}
+div.widget.username div.user-name-wrapper,
+div.widget.username span.user-name,
+div.widget.username .user-links,
+div.widget.username a.user-link{
+	display: inline-block;
+}
+div.widget.username div.user-name-wrapper{
+	width: 60%;
+	font-size: 0.75em;
+}
+div.widget.username span.user-name{
+	max-height: 3em;
+	overflow: hidden;
+	margin-right: 1%;
+	text-align: left;
+	padding: 0.25em 0.25em 0.25em 3em;
+	background: rgba(255, 255, 255, 0.85) url('person-dark-small.png') no-repeat 4px 0;
+	border: 1px solid;
+	border-radius: 0.25em;
+	cursor: pointer;
+}
+div.widget.username .toggle-user-links{
+	float:right;
+	border-left: 1px solid rgba(0,0,0,0.2);
+}
+div.widget.username .toggle-user-links:after{
+	content: '▼';
+}
+div.widget.username .user-links{
+	display: none;
+	font-size:1.2em;
+}
+div.widget.username a.user-link{
+	padding: 0.3em;
+	padding-right:2.4em;
+	background-color: #FCFCFC;
+	text-align:left;
+	border: 1px solid;
+	border-top:none;
+	color: #000;
+}
+div.widget.username a.user-link:last-child{
+	border-bottom:none;
+}
+div.widget.username a.user-link:hover{
+	text-decoration:none;
+	background-color: #F5F5F5;
+}
+div.widget.username span.user-name,
+div.widget.username .user-links,
+div.widget.username a.user-link{
+	width:100%;
+	border-color: rgba(0,0,0,0.2);
+}

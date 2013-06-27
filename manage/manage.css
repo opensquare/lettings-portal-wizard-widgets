@@ -36,6 +36,10 @@ header h2 span{
 		width:98%;
 	}
 }
+div.username.widget{
+	float:right;
+	width:35%;
+}
 #manage-content{
 	width: 80%;
 	min-height: 50em;
