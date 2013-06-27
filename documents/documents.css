@@ -1,0 +1,19 @@
+.mm-documents .pdf {
+  display: inline-block;
+  margin: 0px 10px 15px 10px;
+  padding: 12px 50px;
+  white-space: nowrap;
+  background: url('file-pdf.png') no-repeat left;
+  color: inherit;
+}
+.mm-documents > h4 {
+	padding: 20px;
+	color: #333;	
+}
+.docContainer {
+   height: 15em; 
+   margin-bottom: 15px;
+   background: #eee;
+   padding: 10px;
+   overflow-y: scroll;
+}

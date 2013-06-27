@@ -1,0 +1,19 @@
+.documents-upload details {
+  display: inline-block;
+  margin-bottom: 2em;
+  padding: 0;
+  border: medium solid #333;
+  border-radius: 1em;
+}
+.documents-upload summary {
+  display: inline-block;
+  margin: 0;
+  padding: 0.5em;
+  color: #fff;
+  background: #333;
+  border: none;
+  border-radius: 0.5em;
+}
+.documents-upload div {
+  margin: 1em;
+}

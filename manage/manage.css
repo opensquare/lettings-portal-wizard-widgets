@@ -38,7 +38,7 @@ header h2 span{
 }
 #manage-content{
 	width: 80%;
-	min-height: 400px;
+	min-height: 50em;
 	margin: -6em auto 0 auto;
 	background-color: rgba(255,255,255,0.85);
 	box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -107,7 +107,7 @@ article.tabs section
 {
 	width: 100%;
 	position: absolute;
-	height: 20em;
+	height: 30em;
 	background-color: #ccc;
 	border-radius: 5px;
 	box-shadow: 0 3px 3px rgba(0,0,0,0.1);
@@ -139,6 +139,10 @@ article.tabs section:nth-child(2) h2
 article.tabs section:nth-child(3) h2
 {
 	left: 314px;
+}
+article.tabs section:nth-child(4) h2
+{
+	left: 466px;
 }
 article.tabs section h2 a
 {

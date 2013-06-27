@@ -1,0 +1,11 @@
+<widget>
+	<type>internalPage</type>
+	<parameters>
+		<url>documents-upload.html</url>
+	</parameters>
+	<attributes>
+		<css>documents-upload.css</css>
+		<displayheader>false</displayheader>
+		<js>documents-upload.js</js>
+	</attributes>
+</widget>
