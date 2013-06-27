@@ -1,0 +1,11 @@
+<widget>
+	<type>internalPage</type>
+	<parameters>
+		<url>property-forms.html</url>
+	</parameters>
+	<attributes>
+		<displayheader>false</displayheader>
+		<css>property-forms.css</css>
+		<js>property-forms.js</js>
+	</attributes>
+</widget>
