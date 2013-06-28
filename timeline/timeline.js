@@ -11,6 +11,7 @@ function Widget_timeline() {
 	this.onReadyExtend = function() {
 		var timeline_data = [];
 		var key = $(".tabs").attr("propertyuid");
+		var addProperty = $(".tabs").attr("addProperty");
 
 		if(typeof key != 'undefined'){
 
@@ -47,6 +48,10 @@ function Widget_timeline() {
 				}).fail(function() { 
 					console.log("PROXY GET FAILED");
 			 	});
+			} else if (addProperty == "true"){
+				$(".tabs > section").each(function(){
+					$(this).prepend("<div class='noSelection'>Please create your property.</div>");
+				})
 			} else {
 				$(".tabs > section").each(function(){
 					$(this).prepend("<div class='noSelection'>Please select a property from your portfolio, using the icons above.</div>");
