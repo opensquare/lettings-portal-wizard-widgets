@@ -56,6 +56,13 @@ div.widget[name='property-forms'] select {
   border: thin solid #0090C0;
   font-size: 1em;
 }
+div.widget[name='property-forms'] .currency:after {
+  content: '£';
+  margin-left: 10px;
+}
+div.widget[name='property-forms'] .currencyInput {
+  margin-left: -15px;
+}
 div.widget[name='property-forms'] .invalid-message {
   font-size: 0.75em;
   margin-left: 0.5em;
