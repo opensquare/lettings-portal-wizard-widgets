@@ -84,6 +84,13 @@ section.content-pane.overlay:target{
 	-o-transform:scale(1,1); /* Opera */
 	-moz-transform:scale(1,1); /* Firefox */
 }
+section.content-pane.overlay a.overlay-close{
+	float: right;
+	display: block;
+	margin: 2em;
+	color: inherit;
+	border-bottom: 1px dashed;
+}
 .summary {
 	border: solid 2px #333;
 	border-radius: 10px;
