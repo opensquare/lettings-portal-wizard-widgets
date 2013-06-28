@@ -1,0 +1,138 @@
+	<script type='text/javascript' src='widgets/landlord-forms/js/address-lookup.js' ></script>
+	<link rel="stylesheet" type="text/css" href="//services.postcodeanywhere.co.uk/css/captureplus-1.34.min.css?key=ut99-ca31-nt36-bt86" />
+	<script type="text/javascript" src="//services.postcodeanywhere.co.uk/js/captureplus-1.34.min.js?key=ut99-ca31-nt36-bt86&app=6352"></script>
+	<div id="ut99ca31nt36bt866352"></div>
+	<script>
+		function completeGender(title){
+		 titleGenderMap = new Object();
+		 var M = '#input_gender_male';
+		 var F = '#input_gender_female';
+
+		 titleGenderMap['Mr'] = M;
+		 titleGenderMap['Mrs'] = F;
+		 titleGenderMap['Miss'] = F;
+		 titleGenderMap['Ms'] = F;
+		 titleGenderMap['Sir'] = M;
+		 titleGenderMap['Lady'] = F;
+		 titleGenderMap['Lord'] = M;
+		 titleGenderMap['Dr'] = '';
+		 var genderCheckbox = titleGenderMap[title];
+
+		 $(genderCheckbox).attr('checked','checked'); 
+		 $(genderCheckbox).siblings('.invalid-message').remove();
+		}
+
+		 $("#input_title").change(function(){
+		   completeGender($("#input_title option:selected").val());
+		 });
+	</script>
+
+	<div id="customerDetails">
+
+		<div class="field">
+			<label for="input_title">Name</label>
+			<select id="input_title" name="title" rf.source="resources/titles.txt" rf.preselectFirstOption="true">
+				<option disabled selected>Title</option>
+			</select>
+			<input id="input_firstName" type="text" name="firstName" placeholder="First Name"/>
+			<input id="input_surname" type="text" name="surname" rf.validation="required" placeholder="Surname"/>
+		</div>
+
+		<div class="field">
+			<label for="input_dateOfBirth">Date of birth</label>
+
+			<select id="input_dateOfBirthDay" name="dateOfBirthDay" class="dateSel" rf.preselectFirstOption="true">
+					<option disabled selected>Day</option>
+					<option>01</option><option>02</option><option>03</option><option>04</option><option>05</option>
+					<option>06</option><option>07</option><option>08</option><option>09</option><option>10</option>
+					<option>11</option><option>12</option><option>13</option><option>14</option><option>15</option>
+					<option>16</option><option>17</option><option>18</option><option>19</option><option>20</option>
+					<option>21</option><option>22</option><option>23</option><option>24</option><option>25</option>
+					<option>26</option><option>27</option><option>28</option><option>29</option><option>30</option>
+					<option>31</option>
+			</select>
+			<select id="input_dateOfBirthMonth" name="dateOfBirthMonth" class="dateSel" rf.source="resources/months.csv" rf.preselectFirstOption="true">
+					<option disabled selected>Month</option>
+			</select>
+			<select id="input_dateOfBirthYear" name="dateOfBirthYear" class="dateSel" rf.rangeStart="moment().subtract('years', 16).format('YYYY')" rf.rangeEnd="moment().subtract('years', 99).format('YYYY')" rf.preselectFirstOption="true" value="">
+					<option disabled selected>Year</option>
+			</select>
+
+			<input type="hidden" name="age" rf.calculated="{ new Date(new Date() - moment(fields.dateOfBirthDay.value + '/' + fields.dateOfBirthMonth.value + '/' + fields.dateOfBirthYear.value, 'DD/MM/YYYY')).getFullYear() - 1970 }"/>
+			<input type="hidden" name="dob" rf.calculated="{fields.dateOfBirthYear.value + '-' + fields.dateOfBirthMonth.value + '-' + fields.dateOfBirthDay.value}"/>
+		</div>
+
+		<div class="field">
+			<label>Gender</label>
+			<input id="input_gender_male" type="radio" name="gender" value="Male" rf.validation="required"/>
+			<label for="input_gender_male" class="forRadio">Male</label>
+			<input id="input_gender_female" type="radio" name="gender" value="Female"/>
+			<label for="input_gender_female" class="forRadio">Female</label>
+		</div>
+
+		<div class="field">
+			<label for="input_occupation">Primary occupation</label>
+			<input type="hidden" name="occupationCode" />
+			<input id="input_occupation" type="text" name="occupation" rf.validation="required fromSource" rf.customType="auto-complete-select({ codeFieldName: 'occupationCode' })" rf.source="http://integration.osldev.net/resource-manager/REST/files/itb-resources-test2/lists/_itbLists-occupationSheet.xml?transformer=xslt&xslt=/itb-resources-test2/lists/occupationLookupTransformJSONmin.xsl&contentType=application%2Fjson&occupation=[value]" />
+		</div>
+
+		<div class="field">
+			<label for="input_maritalStatusCode">Marital status</label>
+			<select id="input_maritalStatusCode" name="maritalStatusCode" rf.validation="required" rf.source="resources/maritalStatus.csv" rf.preselectFirstOption="true">
+				<option disabled selected/>
+			</select>
+		</div>
+
+		<div class="field">
+			<label for="input_ukResident">UK residency</label>
+			<input id="input_ukResidentMoreThan5Years" type="checkbox" name="ukResidentMoreThan5Years"/>
+			<label class="forRadio" for="input_ukResidentMoreThan5Years">More than 5 years</label>
+			
+			<div rf.includeIf="{ fields.ukResidentMoreThan5Years.value == false }">
+				<label for="input_ukResidentSinceMonthCode">Or since</label>
+				<select id="input_ukResidentSinceMonthCode" class="dateSel" name="ukResidentSinceMonthCode" rf.includeIf="{ fields.ukResidentMoreThan5Years.value == false }" rf.source="resources/months.csv" rf.preselectFirstOption="true">
+					<option disabled selected/>
+				</select>
+				<select id="input_ukResidentSinceYear" class="dateSel" name="ukResidentSinceYear" rf.includeIf="{ fields.ukResidentMoreThan5Years.value == false }" rf.rangeStart="new Date().getFullYear()" rf.rangeEnd="new Date().getFullYear() - 5" rf.preselectFirstOption="true">
+					<option disabled selected/>
+				</select>
+			</div>
+			
+			<input type="hidden" name="ukResidentYears" rf.calculated="{ if (fields.ukResidentMoreThan5Years.value == true) { 10; } else if (fields.ukResidentSinceMonthCode.value && fields.ukResidentSinceYear.value) { new Date(new Date() - moment('01/' + fields.ukResidentSinceMonthCode.value + '/' + fields.ukResidentSinceYear.value, 'DD/MM/YYYY')).getFullYear() - 1970 } }"/>
+		</div>
+
+		<div class="field findAddress">
+		<!--input id="findAddressProxy" type="proxy" style="display:none" rf.source="http://integration.osldev.net/itb-quotes/postcodeLookup" /-->
+			<div class="labelWrapper">
+				<label for="input_address">Address</label>
+			</div>
+			<div class="tableWrapper">
+				<input class="addressLookup" id="input_address" type="text" placeholder="Start typing your address or postcode"/>
+			</div>
+		</div>
+		<div class="field addressFound" style="display:none">
+			<label>Your address</label>
+			<span id="addressLabel">
+				<span name="address.line1">{{address.line1}}</span>
+				<span name="address.line2">{{address.line2}}</span>
+				<span name="address.line3">{{address.line3}}</span>
+				<span name="address.line4">{{address.line4}}</span>
+				<span name="address.postcode">{{address.postcode}}</span>
+			</span>
+			<input type="hidden" name="address.line1"/>
+			<input type="hidden" name="address.line2"/>
+			<input type="hidden" name="address.line3"/>
+			<input type="hidden" name="address.line4"/>
+			<input type="hidden" name="address.postcode"/>
+
+			<a href="" onclick="return false" value="Change address" class="changeAddressButton">Change address</a>
+		</div>
+		
+		<div class="field">
+			<label>Do you own your own home</label>
+			<input id="input_ownHome_yes" type="radio" name="ownHome" value="yes" rf.validation="required"/>
+			<label for="input_ownHome_yes" class="forRadio">Yes</label>
+			<input id="input_ownHome_no" type="radio" name="ownHome" value="no"/>
+			<label for="input_ownHome_no" class="forRadio">No</label>
+		</div>
+	</div>

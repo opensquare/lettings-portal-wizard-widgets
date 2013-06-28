@@ -1,0 +1,12 @@
+<widget>
+	<type>layout</type>
+	<parameters>
+		<url>landlord-forms.html</url>
+		<secure>false</secure>
+	</parameters>
+	<attributes>
+		<displayheader>false</displayheader>
+		<css>landlord-forms.css</css>
+		<js>landlord-forms.js</js>
+	</attributes>
+</widget>

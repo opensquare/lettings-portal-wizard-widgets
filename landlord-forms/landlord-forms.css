@@ -1,0 +1,377 @@
+body{
+  min-width: 275px;
+  margin: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: #F0F0F0;
+  color: #333;
+}
+a{
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: underline;
+}
+
+#backgroundText text{
+  fill: none;
+  stroke: rgba(0, 0, 0, 0.05);
+}
+
+header{
+  width: 80%;
+  margin: 1em auto;
+  padding-bottom: 1em;
+}
+h1 {
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+  color: #333;
+  font-size: 230%;
+  font-weight: normal;
+}
+header h2{
+  float: left;
+  margin: 0;
+  font-size: 1em;
+  color: #0DB4F2; /* Blue */
+}
+header h2 span{
+  color: #92CE56; /* Green */
+}
+@media screen and (max-width: 1000px) {
+  header{
+    width:98%;
+  }
+}
+form {
+  padding: 0.2em 2em 0 2em;
+  clear: both;
+}
+footer{
+  width: 80%;
+  margin: 3em auto 1em auto;
+  background-color: #777;
+  color: #FFF;
+  font-size: 0.75em;
+  border-radius: 0.25em;
+}
+footer p{
+  padding: 0 1em 1em 1em;
+  margin: 0;
+}
+footer p:first-child{
+  padding-top: 1em;
+  font-weight: bold;
+}
+@media screen and (max-width: 1000px) {
+  footer{
+    width:98%;
+  }
+}
+div.widget[name='landlord-forms'] .content {
+  width: 80%;
+  min-height: 400px;
+  margin: -6em auto 0 auto;
+  background-color: rgba(255,255,255,0.85);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 0.25em;
+}
+div.widget[name='landlord-forms'] label {
+  display: inline-block;
+  font-size: 1.1em;
+  padding-right: 1em;
+}
+div.widget[name='landlord-forms'] input[type="text"] {
+  padding: 0.1em 0.25em 0 0.25em;
+  border: thin solid #0090C0;
+  font-size: 1.3em;
+  width: 35%;
+}
+div.widget[name='landlord-forms'] input[type='date'] {
+  border: thin solid #0090C0;
+  width: 35%;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1em;
+}
+div.widget[name='landlord-forms'] input[type="button"]:hover {
+  background-color: #82BE46;
+}
+div.widget[name='landlord-forms'] input[type="radio"] {
+  margin: -0.25em 0 0 0;
+  padding: 0.45em;
+  background-color: #FFF;
+  border: thin solid #0090C0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+}
+div.widget[name='landlord-forms'] input[type="radio"]:checked {
+  padding: 0.2em 0.4em 0.2em 0.4em;
+  background-color: #0090C0; 
+}
+div.widget[name='landlord-forms'] input[type="radio"]:checked:after {
+  content: '\2714';
+  color: #FFF; background-color: #0090C0; /*blue*/
+  font-size: 1.3em;   
+}
+div.widget[name='landlord-forms'] input[type="button"] {
+  margin: 1em 1em 1em 0; padding: 0.2em 1em;
+  border: none; border-radius: 0.25em;
+  color: #FFF; background-color: #92CE56;
+  font-size: 1em; 
+  cursor: pointer;
+}
+div.widget[name='landlord-forms'] input[type="button"]:hover {
+  background-color: #82BE46;
+}
+div.widget[name='landlord-forms'] option {
+  color: #333;
+}
+div.widget[name='landlord-forms'] p {
+  font-size: 1.2em;
+}
+div.widget[name='landlord-forms'] select {
+  border: thin solid #0090C0;
+  font-size: 1em;
+}
+div.widget[name='landlord-forms'] .currency:after {
+  content: '£';
+  margin-left: 10px;
+}
+div.widget[name='landlord-forms'] .currencyInput {
+  margin-left: -15px;
+}
+div.widget[name='landlord-forms'] .invalid-message {
+  font-size: 1em;
+  font-weight: bold;
+  margin-left: 0.5em;
+  padding: 0.25em;
+  color: #FFF;
+  background: #D44;
+  border-radius: 0.25em;
+}
+div.widget[name='landlord-forms'] .rf-debugbar {
+  opacity: 0.15;
+}
+div.widget[name='landlord-forms'] div.field {
+  min-height: 2.2em;
+  padding: 1em 0;
+  border-bottom: thin solid rgba(0, 0, 0, 0.1);
+}
+div.widget[name='landlord-forms'] div.field:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+div.widget[name='landlord-forms'] #customerDetails label {
+  display: inline-block;
+  padding: 0 1em 0 1em;
+  width: 30%;
+  font-size: 1.2em;
+}
+div.widget[name='landlord-forms'] input[type="text"], input[type="email"], input[type="password"] {
+  width: 19%;
+  padding: 0.1em 0.25em 0 0.25em;
+  border: thin solid #0090C0;
+  font-size: 1.3em;
+}
+div.widget[name='landlord-forms'] #input_title, div.widget[name='landlord-forms'] .titleSelect {
+  width: auto;
+}
+div.widget[name='landlord-forms'] .dateSel, div.widget[name='landlord-forms'] .dateSel select {
+  width: auto;
+}
+div.widget[name='landlord-forms'] select {
+  width: 20%;
+  margin-left: 0;
+  border: thin solid #0090C0;
+  font-size: 1.3em;
+  color: #AAA;
+}
+div.widget[name='landlord-forms'] #customerDetails label.forRadio {
+  width: auto;
+  padding-left: 0.25em;
+  font-size: 1.2em;
+}
+div.widget[name='landlord-forms'] .rf-dropdown ul {
+  display: inline-block;
+  max-height: 10em; min-width: 20%;
+  overflow: auto; overflow-x: hidden; overflow-y: auto;
+  margin: 0 0 0 34%;
+  padding: 0;
+  list-style: none;
+  background-color: #FFF;
+  border: thin solid #0090C0;
+  cursor: pointer;
+}
+div.widget[name='landlord-forms'] .rf-dropdown li {
+  padding: 0.1em 0.5em;
+}
+div.widget[name='landlord-forms'] .rf-dropdown li:hover {
+  color: #FFF; background-color: #0090C0;
+}
+div.widget[name='landlord-forms'] .rf-dropdown ul {
+  list-style: none;
+  cursor: pointer;
+}
+/*address lookup formatting*/
+div.widget[name='landlord-forms'] .findAddress div.labelWrapper {
+  vertical-align: top;
+}
+div.widget[name='landlord-forms'] .findAddress div.labelWrapper, div.widget[name='landlord-forms'] .findAddress div.tableWrapper {
+  display: inline-block;
+}
+div.widget[name='landlord-forms'] .findAddress div.labelWrapper {
+  padding: 0 1em;
+  width: 30.5%;
+}
+div.widget[name='landlord-forms'] .findAddress div.tableWrapper {
+  width: 44%;
+}
+div.widget[name='landlord-forms'] #customerDetails .findAddress label,
+div.widget[name='landlord-forms'] #paymentPage .findAddress label {
+  width: 100%;
+  padding: 0;
+}
+div.widget[name='landlord-forms'] .findAddress input {
+  width: 100%;
+}
+div.widget[name='landlord-forms'] .addressFound label,
+div.widget[name='landlord-forms'] .accountDetails label {
+  vertical-align: top;
+}
+div.widget[name='landlord-forms'] #addressLabel,
+div.widget[name='landlord-forms'] .bankDetails {
+  display: inline-block;
+}
+div.widget[name='landlord-forms'] #addressLabel span,
+div.widget[name='landlord-forms'] .bankDetails>span {
+  display: block;
+  font-size: 1.2em;
+}
+div.widget[name='landlord-forms'] .pcaCapturePlusTable td {
+  position: static !important;
+  z-index: 1;
+}
+div.widget[name='landlord-forms'] table .pcaAutoCompleteSmall>div {
+  width: 100% !important; max-height:10em;
+  overflow-x: hidden;
+  padding-right: 0.6em !important;
+  background-color: #FFF;
+  border: thin solid #0090C0;
+}
+div.widget[name='landlord-forms'] .pcaAutoCompleteSmall .item,
+div.widget[name='landlord-forms'] .pcaAutoCompleteSmall .selectedItem {
+  display: inline-block;
+  width: 100%;
+}
+div.widget[name='landlord-forms'] .pcaAutoCompleteSmall .item {
+  border-width: 0 !important;
+}
+div.widget[name='landlord-forms'] .pcaAutoCompleteSmall .item:hover,
+div.widget[name='landlord-forms'] .pcaAutoCompleteSmall .selectedItem:hover {
+  background-color: #0090C0;
+}
+div.widget[name='landlord-forms'] .pcaAutoCompleteSmall .item:hover span,
+div.widget[name='landlord-forms'] .pcaAutoCompleteSmall .selectedItem:hover span {
+  color: #FFF !important;
+}
+div.widget[name='landlord-forms'] .pcaAutoCompleteSmall .selectedItem {
+  background-color: #EEE;
+}
+div.widget[name='landlord-forms'] .pcaCapturePlusTable .recentFavouritesSmall {
+  background-color: #FFF;
+}
+div.widget[name='landlord-forms'] .pcaCapturePlusTable .recentFavouritesSmall a {
+  margin: 0;
+  color: #000;
+  font-weight: normal;
+}
+div.widget[name='landlord-forms'] .pcaCapturePlusTable .recentFavouritesSmall .pcaItemHolder:hover {
+  background-color: rgba(0,0,0,0.2);
+}
+div.widget[name='landlord-forms'] div.field a:hover {
+  color: #82BE46;
+}
+div.widget[name='landlord-forms'] div.field a {
+  margin-left: 2em;
+  color: #92CE56;
+  font-weight: bold;
+}
+div.widget[name='landlord-forms'] input[type="submit"] {
+  margin: 1em 1em 1em 0;
+  padding: 0.2em 1em;
+  border: none;
+  border-radius: 0.25em;
+  color: #FFF;
+  background-color: #92CE56;
+  font-size: 2em;
+  cursor: pointer;
+}
+div.widget[name='landlord-forms'] .navigation {
+  clear: both;
+  text-align: right;
+}
+div.widget[name='landlord-forms'] .navigation input[type="button"] {
+  margin: 1em 1em 1em 0;
+  font-size: 2em; 
+}
+div.widget[name='landlord-forms'] .navigation input[type="button"]:first-child {
+  font-size: 1.5em; 
+}
+div.widget[name='landlord-forms'] #crumbTrail li.on {
+  height: 40px;
+  margin-left: 3%;
+  padding-left: 15px;
+  background-color: #0DB4F2;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+div.widget[name='landlord-forms'] #crumbTrail li {
+  position: relative;
+  float: left;
+  min-width: 16%;
+  height: 20px;
+  margin: 1% 2% 0 0;
+  padding: 10px 12px 10px 30px;
+  list-style: none;
+  color: #FFF;
+  background: #777 no-repeat 6px center;
+  border-radius: 10em 1em 1em 10em;
+  white-space: nowrap;
+}
+div.widget[name='landlord-forms'] #crumbTrail li.on.crumbDetails:before {
+  background-image: url('person.png');
+}
+div.widget[name='landlord-forms'] #crumbTrail li.crumbDetails {
+background-image: url('person_small.png');
+}
+div.widget[name='landlord-forms'] #crumbTrail li.on.crumbRegister:before {
+  background-image: url('document_contract.png');
+}
+div.widget[name='landlord-forms'] #crumbTrail li.crumbRegister {
+background-image: url('document_contract_small.png');
+}
+div.widget[name='landlord-forms'] #crumbTrail li.on.crumbWelcome:before {
+  background-image: url('hand_handshake.png');
+}
+div.widget[name='landlord-forms'] #crumbTrail li.crumbWelcome {
+background-image: url('hand_shake_small.png');
+}
+div.widget[name='landlord-forms'] #crumbTrail li.on:before {
+  content: '';
+  float: left;
+  width: 75px;
+  height: 75px;
+  margin: -18px 0 0 -50px;
+  border-radius: 10em;
+  background: #0DB4F2 no-repeat center center;
+}
+div.widget[name='landlord-forms'] #crumbTrail li.on:after {
+  color: #0DB4F2;
+}
+div.widget[name='landlord-forms'] #crumbTrail li:after {
+  content: '♦';
+  position: absolute;
+  top: -20px;
+  right: -17px;
+  color: #777;
+  font-size: 64px;
+}
