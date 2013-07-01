@@ -1,4 +1,4 @@
-	<script type='text/javascript' src='widgets/landlord-forms/js/address-lookup.js' ></script>
+	<script type='text/javascript' src='widgets/common-forms/js/address-lookup.js'></script>
 	<link rel="stylesheet" type="text/css" href="//services.postcodeanywhere.co.uk/css/captureplus-1.34.min.css?key=ut99-ca31-nt36-bt86" />
 	<script type="text/javascript" src="//services.postcodeanywhere.co.uk/js/captureplus-1.34.min.js?key=ut99-ca31-nt36-bt86&app=6352"></script>
 	<div id="ut99ca31nt36bt866352"></div>
@@ -31,7 +31,7 @@
 
 		<div class="field">
 			<label for="input_title">Name</label>
-			<select id="input_title" name="title" rf.source="resources/titles.txt" rf.preselectFirstOption="true">
+			<select id="input_title" name="title" rf.source="../common-forms/resources/titles.txt" rf.preselectFirstOption="true">
 				<option disabled selected>Title</option>
 			</select>
 			<input id="input_firstName" type="text" name="firstName" placeholder="First Name"/>
@@ -51,7 +51,7 @@
 					<option>26</option><option>27</option><option>28</option><option>29</option><option>30</option>
 					<option>31</option>
 			</select>
-			<select id="input_dateOfBirthMonth" name="dateOfBirthMonth" class="dateSel" rf.source="resources/months.csv" rf.preselectFirstOption="true">
+			<select id="input_dateOfBirthMonth" name="dateOfBirthMonth" class="dateSel" rf.source="../common-forms/resources/months.csv" rf.preselectFirstOption="true">
 					<option disabled selected>Month</option>
 			</select>
 			<select id="input_dateOfBirthYear" name="dateOfBirthYear" class="dateSel" rf.rangeStart="moment().subtract('years', 16).format('YYYY')" rf.rangeEnd="moment().subtract('years', 99).format('YYYY')" rf.preselectFirstOption="true" value="">
@@ -90,7 +90,7 @@
 			
 			<div rf.includeIf="{ fields.ukResidentMoreThan5Years.value == false }">
 				<label for="input_ukResidentSinceMonthCode">Or since</label>
-				<select id="input_ukResidentSinceMonthCode" class="dateSel" name="ukResidentSinceMonthCode" rf.includeIf="{ fields.ukResidentMoreThan5Years.value == false }" rf.source="resources/months.csv" rf.preselectFirstOption="true">
+				<select id="input_ukResidentSinceMonthCode" class="dateSel" name="ukResidentSinceMonthCode" rf.includeIf="{ fields.ukResidentMoreThan5Years.value == false }" rf.source="../common-forms/resources/months.csv" rf.preselectFirstOption="true">
 					<option disabled selected/>
 				</select>
 				<select id="input_ukResidentSinceYear" class="dateSel" name="ukResidentSinceYear" rf.includeIf="{ fields.ukResidentMoreThan5Years.value == false }" rf.rangeStart="new Date().getFullYear()" rf.rangeEnd="new Date().getFullYear() - 5" rf.preselectFirstOption="true">

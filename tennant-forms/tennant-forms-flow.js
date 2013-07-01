@@ -3,8 +3,8 @@
   formLists: {
     main: [
       {
-        id: "landlord",
-        url: "1-landlord.html",
+        id: "tennant",
+        url: "1-tennant.html",
         actions: [ "next" ]
       },
       {

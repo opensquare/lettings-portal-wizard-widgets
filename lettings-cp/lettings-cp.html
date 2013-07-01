@@ -1,9 +1,10 @@
 	<script>
 		var url = window.location.hash;
 		var hash = url.substring(url.indexOf('#')+1);
-		console.log(hash)
+		var formSet = hash + "-forms";
 
 		$("#cp-banner").attr("class", hash);
+		$("#formSet").attr("href", formSet);
 		$("#register-button").attr("class", hash);
 	</script>
 	<header>
@@ -30,7 +31,7 @@
 				<h2>Not registered yet?</h2>
 				<ul class="messages"/>
 				<p>It's quick and simple to register, click the button below.</p>
-				<a  href="landlord-forms">
+				<a id="formSet" href="landlord-forms">
 					<button id="register-button" >Register</button>
 				</a>
 			</div>

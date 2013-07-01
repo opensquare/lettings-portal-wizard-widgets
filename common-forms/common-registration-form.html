@@ -1,0 +1,27 @@
+<div id="customerDetails">
+		<div class="field">
+			<label for="input_email">Email Address</label>
+			<input type="email" name="customer.email" rf.validation="required email" id="input_email"/>
+		</div>
+		<div class="field">
+			<label for="input_password">Password</label>
+			<input type="password" name="customer.password" id="input_password"
+				   rf.validation="required pattern({regex: '^.{8,}?$', errorMessage:'Invalid Password'}) pattern({regex: '^.*[0-9]+.*$', errorMessage:'Invalid Password'})"/>
+			<div class="hint">Password must be at least 8 characters long and contain at least 1 number</div>
+		</div>
+		<div class="field">
+			<label for="input_password_confirm">Confirm Password</label>
+			<input type="password" name="passwordConfirm" id="input_password_confirm" 
+				   rf.validationFunction="if (fields.customer_password.value !== field.value && field.value !== '') {error = {name: field.name, message: 'This password must match the one entered above'} } else { this.validate('required')}"/>
+		</div>
+
+
+		<div class="field">
+			<label for="input_mobile">Contact Number</label>
+			<input id="input_mobile" type="text" name="customer.phoneNumber" rf.validation="required pattern({regex: '^[0-9]{5,}?$', errorMessage:'Invalid Number'})"/>
+		</div>
+</div>
+<div class="navigation">
+	<input type="button" value="Back" rf.action="back"/>
+	<input type="Submit" value="Create Account" rf.action="next"/>
+</div>
