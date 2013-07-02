@@ -1,5 +1,6 @@
 {
   docBase: "/root",
+  defaultInitalData: "new-tennant-initial-data.xml",
   formLists: {
     main: [
       {

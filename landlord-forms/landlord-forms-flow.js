@@ -1,5 +1,6 @@
 {
   docBase: "/root",
+  defaultInitalData: "new-landlord-initial-data.xml",
   formLists: {
     main: [
       {
