@@ -11,8 +11,8 @@
       {
         id: "register",
         url: "registration.html",
-        actions: [
-          { "back",
+       actions: [ "back",
+          {
             name: "next",
             submission: {
               url: "{{$script-runner-url}}",
@@ -25,7 +25,6 @@
             }
           }
         ]},
-      },
       {
         id: "welcome",
         url: "../common-forms/common-welcome-page.html"
