@@ -11,7 +11,20 @@
       {
         id: "register",
         url: "registration.html",
-        actions: [ "back","next" ]
+        actions: [
+          { "back",
+            name: "next",
+            submission: {
+              url: "{{$script-runner-url}}",
+              data: {
+                script: "Lettings/script/createLandlordFromFormData.py",
+                data: "[dataDocument]"
+              },
+              method: "post",
+              resultInsertPoint: "/root/pact"
+            }
+          }
+        ]},
       },
       {
         id: "welcome",
