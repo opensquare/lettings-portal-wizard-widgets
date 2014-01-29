@@ -166,7 +166,7 @@ div.widget[name='landlord-forms'] #customerDetails label {
   width: 30%;
   font-size: 1.2em;
 }
-div.widget[name='landlord-forms'] input[type="text"], input[type="email"], input[type="password"] {
+div.widget[name='landlord-forms'] input[type="text"], input[type="email"], input[type="password"], input[type="search"] {
   width: 19%;
   padding: 0.1em 0.25em 0 0.25em;
   border: thin solid #0090C0;

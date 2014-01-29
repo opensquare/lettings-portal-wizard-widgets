@@ -46,7 +46,8 @@ function Widget_timeline() {
 
 					
 				}).fail(function() { 
-					console.log("PROXY GET FAILED");
+					$("#timeline").append("<p>Timeline showing tenancy events will display here (currently unavailable)</p>");
+					console.debug("Property Timeline unavailable");
 			 	});
 			} else if (addProperty == "true"){
 				$(".tabs > section").each(function(){

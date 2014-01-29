@@ -40,7 +40,7 @@ header h2 span{
 	width: 400px;
 	height: 125px;
 	margin: 0 0 0 1%;
-	background: url('model-insurance.png') no-repeat left bottom;
+	/*background: url('model-insurance.png') no-repeat left bottom;*/
 }
 #home-banner h2{
 	display: inline-block;

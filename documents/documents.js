@@ -18,7 +18,8 @@ function Widget_documents() {
 				var getUrl = 'proxy/mailmerger/jobs/search/' + encodeURIComponent('%'+ searchTerm +'%');
 				var noDocMsg = "No documents found for this policy."
 			
-				$.ajax(getUrl).done(function(searchResultsArray) {
+				$.ajax(getUrl)
+                    .done(function(searchResultsArray) {
 
 					$('.mm-documents').append("<h4>Simply click on a document to view it's content...</h4>");
 
@@ -37,7 +38,12 @@ function Widget_documents() {
 						}
 					}
 					
+					})
+                    .fail(function(){
+						console.debug('Documents unavailable');
+						$('.mm-documents').append("<p>Document service currently unavailable - documents relating to property would be displayed here</p>");
 				});
+
 			} 
 	};
 

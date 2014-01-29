@@ -1,11 +1,9 @@
 <widget>
 	<type>layout</type>
 	<parameters>
-		<url>register.html</url>
-		<secure>false</secure>
+		<url>tenancy.html</url>
 	</parameters>
 	<attributes>
 		<displayHeader>false</displayHeader>
-		<css>register.css</css>
 	</attributes>
 </widget>

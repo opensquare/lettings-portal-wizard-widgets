@@ -7,5 +7,7 @@
 	<attributes>
 		<displayHeader>false</displayHeader>
 		<css>manage.css</css>
+		<js>manage.js</js>
+		<data-channel>property_info</data-channel>
 	</attributes>
 </widget>

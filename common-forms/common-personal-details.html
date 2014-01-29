@@ -25,6 +25,26 @@
 		 $("#input_title").change(function(){
 		   completeGender($("#input_title option:selected").val());
 		 });
+
+		/* temporary occupation lookup */
+		function populateOccupation(){
+			var $lookup = $("#input_occupation"),
+			$occSelect = $("#occ_lookup"),
+			occList = $("<datalist></datalist>").attr("id", "occDatalist");
+			$occSelect.children("option").each(function(i, option){
+				if (option.value != ''){
+					occList.append("<option value=\"" + option.text + "\" data-code=\"" + option.value + "\">");
+				}
+			});
+			$occSelect.after(occList);
+			$lookup.change(function(){
+				var value = occList.children("option[value=\"" + $(this).val() + "\"]").data("code");
+				$("input[name=occupationCode]").val(value);
+			})
+		}
+
+		populateOccupation();
+
 	</script>
 
 	<div id="customerDetails">
@@ -73,7 +93,11 @@
 		<div class="field">
 			<label for="input_occupation">Primary occupation</label>
 			<input type="hidden" name="occupationCode" />
-			<input id="input_occupation" type="text" name="occupation" rf.validation="required fromSource" rf.customType="auto-complete-select({ codeFieldName: 'occupationCode' })" rf.source="http://integration.osldev.net/resource-manager/REST/files/itb-resources-test2/lists/_itbLists-occupationSheet.xml?transformer=xslt&xslt=/itb-resources-test2/lists/occupationLookupTransformJSONmin.xsl&contentType=application%2Fjson&occupation=[value]" />
+			<input id="input_occupation" type="search" autocomplete="off" list="occDatalist" name="occupation" rf.validation="required"  rf.valueFromSource="../common-forms/resources/occupations.csv"/>
+		</div>
+
+        <div style="display: none">
+            <select id="occ_lookup" rf.source="../common-forms/resources/occupations.csv"/>
 		</div>
 
 		<div class="field">

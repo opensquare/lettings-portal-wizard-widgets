@@ -2,6 +2,7 @@ function Widget_portfolio() {
 
 	this.onReadyExtend = function() {
 		$(".property").click(function(){
+			hideSelectText();
 			var property = $(this).attr("id");
 
 			$(".property").each(function(){
@@ -12,7 +13,7 @@ function Widget_portfolio() {
 			$(".tabs").removeAttr("addProperty");
 			$(".tabs").attr("propertyUid", property);
 
-			pw.notifyChannelOfEvent("property_info");
+			pw.notifyChannelOfEvent("property_info", {id: property});
 			$(".tabs > section").each(function(){
 					$(".noSelection").remove();
 			});
@@ -20,6 +21,7 @@ function Widget_portfolio() {
 		});
 
 		$(".addProperty").click(function(){
+			hideSelectText();
 			$(".property").each(function(){
 				$(this).removeClass('selected');
 			});
@@ -27,11 +29,15 @@ function Widget_portfolio() {
 			$(".tabs").removeAttr("propertyUid");
 			$(".tabs").attr("addProperty", "true");
 
-			pw.notifyChannelOfEvent("property_info");
+			pw.notifyChannelOfEvent("property_info", {id: false});
 			$(".tabs > section").each(function(){
 					$(".noSelection").remove();
 			});
 
 		});
+	}
+
+	function hideSelectText(){
+		$('header', this.$widgetDiv).hide();
 	}
 }

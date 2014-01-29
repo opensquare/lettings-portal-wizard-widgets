@@ -6,5 +6,7 @@
 	</parameters>
 	<attributes>
 		<displayHeader>false</displayHeader>
+		<js>property-details.js</js>
+		<css>property-details.css</css>
 	</attributes>
 </widget>
