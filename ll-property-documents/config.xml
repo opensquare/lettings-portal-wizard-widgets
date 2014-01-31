@@ -1,11 +1,10 @@
 <widget>
-	<type>internalPage</type>
+	<type>layout</type>
 	<parameters>
 		<url>documents.html</url>
 	</parameters>
 	<attributes>
-		<displayheader>false</displayheader>
+		<page.title>Documents</page.title>
 		<js>documents.js</js>
-		<css>documents.css</css>
 	</attributes>
 </widget>

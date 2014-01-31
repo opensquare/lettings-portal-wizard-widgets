@@ -7,6 +7,5 @@
 		<displayheader>false</displayheader>
 		<css>property-forms.css</css>
 		<js>property-forms.js</js>
-		<delayLoad>true</delayLoad>
 	</attributes>
 </widget>

@@ -1,0 +1,10 @@
+<widget>
+	<type>layout</type>
+	<parameters>
+		<url>promote-property.html</url>
+	</parameters>
+	<attributes>
+		<page.title>Promote Property</page.title>
+		<js>promote.js</js>
+	</attributes>
+</widget>

@@ -1,0 +1,11 @@
+<widget>
+	<type>layout</type>
+	<parameters>
+		<url>landlord.html</url>
+	</parameters>
+	<attributes>
+		<displayHeader>false</displayHeader>
+		<css>landlord.css</css>
+		<js>landlord.js</js>
+	</attributes>
+</widget>

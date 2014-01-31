@@ -10,8 +10,8 @@ function Widget_timeline() {
 
 	this.onReadyExtend = function() {
 		var timeline_data = [];
-		var key = $(".tabs").attr("propertyuid");
-		var addProperty = $(".tabs").attr("addProperty");
+		// key should be passed to widget directly
+		var key = $(".widget.ll-tenancy-activity").attr("page.args");
 
 		if(typeof key != 'undefined'){
 
@@ -49,14 +49,6 @@ function Widget_timeline() {
 					$("#timeline").append("<p>Timeline showing tenancy events will display here (currently unavailable)</p>");
 					console.debug("Property Timeline unavailable");
 			 	});
-			} else if (addProperty == "true"){
-				$(".tabs > section").each(function(){
-					$(this).prepend("<div class='noSelection'>Please create your property.</div>");
-				})
-			} else {
-				$(".tabs > section").each(function(){
-					$(this).prepend("<div class='noSelection'>Please select a property from your portfolio, using the icons above.</div>");
-				})
 			}
 
 		}

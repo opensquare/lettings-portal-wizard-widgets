@@ -1,0 +1,10 @@
+<widget>
+	<type>layout</type>
+	<parameters>
+		<url>edit-property.html</url>
+	</parameters>
+	<attributes>
+		<page.title>Edit Property</page.title>
+		<js>edit.js</js>
+	</attributes>
+</widget>

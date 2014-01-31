@@ -9,8 +9,8 @@ function Widget_documents() {
     }
 
 	this.onReadyExtend = function() {
-
-			var searchTerm =  $(".tabs").attr("propertyuid");
+			// search term should be passed to widget directly
+			var searchTerm = $(".widget.ll-property-documents").attr("page.args");
 			searchTerm = "Test"; //DEV -remove
 
 			if(typeof searchTerm != 'undefined'){

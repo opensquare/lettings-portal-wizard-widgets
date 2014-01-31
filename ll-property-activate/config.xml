@@ -1,0 +1,10 @@
+<widget>
+	<type>layout</type>
+	<parameters>
+		<url>activate-property.html</url>
+	</parameters>
+	<attributes>
+		<page.title>Activate Property</page.title>
+		<js>activate.js</js>
+	</attributes>
+</widget>

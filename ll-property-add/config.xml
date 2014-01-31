@@ -1,0 +1,9 @@
+<widget>
+	<type>layout</type>
+	<parameters>
+		<url>add-property.html</url>
+	</parameters>
+	<attributes>
+		<page.title>New Property</page.title>
+	</attributes>
+</widget>

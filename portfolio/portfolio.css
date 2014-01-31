@@ -1,29 +1,27 @@
-div.portfolio h1{
+div.widget[name='portfolio'] h1{
+	padding:0;
+	margin:0 0 1.4em;
 	font-size: 1.8em;
-	padding: 10px;
-}
 
-div.property {
-	padding: 10px;
-	color: #333;
-	font-size: 10px;
-	display: inline-block;
-	height: 65px;
-	margin-left: 100px;
-	margin-bottom: 40px;
+}
+div.widget[name='portfolio'] div.properties{
+	margin:0 auto;
+	width:90%;
+}
+div.widget[name='portfolio'] div.property,
+div.widget[name='portfolio'] div.addProperty{
+	float: left;
+	font-size: 0.625em;
+	height:6.5em;
+	margin-right:10em;
+}
+div.widget[name='portfolio'] div.property{
 	background: url('building_home2.png') no-repeat center;
 }
-div.addProperty {
-	padding: 10px;
-	color: #333;
-	font-size: 10px;
-	display: inline-block;
-	height: 65px;
-	margin-left: 100px;
-	margin-bottom: 40px;
+div.widget[name='portfolio'] div.addProperty{
 	background: url('symbol_add.png') no-repeat center;
 }
-div.selected {
+div.widget[name='portfolio'] div.selected {
 	border: solid #ccc;
 	border-radius: 5px;
 	background: #ccc url('building_home2.png') no-repeat center;

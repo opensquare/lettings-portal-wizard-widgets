@@ -1,0 +1,10 @@
+<widget>
+	<type>layout</type>
+	<parameters>
+		<url>tenancy.html</url>
+	</parameters>
+	<attributes>
+		<page.title>Tenancy</page.title>
+		<js>tenancy.js</js>
+	</attributes>
+</widget>

@@ -189,9 +189,9 @@ footer p:first-child{
 .tennant{
 	background: url('cp-banner-tennant.jpg') no-repeat center;
 }
-.landlord{
+/*.landlord{
 	background: url('cp-banner.jpg') no-repeat center;
-}
+}*/
 .register{
 	display: inline-block;
 	margin: 15px;

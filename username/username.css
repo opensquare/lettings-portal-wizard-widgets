@@ -1,21 +1,16 @@
-div.widget.username{
+/*div.widget.username{
 	text-align: right;
-}
-div.widget.username div.user-name-wrapper,
+}*/
 div.widget.username span.user-name,
-div.widget.username .user-links,
 div.widget.username a.user-link{
 	display: inline-block;
 }
 div.widget.username div.user-name-wrapper{
-	width: 60%;
+	/*width: 60%;*/
 	font-size: 0.75em;
 }
 div.widget.username span.user-name{
-	max-height: 3em;
-	overflow: hidden;
-	margin-right: 1%;
-	text-align: left;
+	width:26.6em;
 	padding: 0.25em 0.25em 0.25em 3em;
 	background: rgba(255, 255, 255, 0.85) url('person-dark-small.png') no-repeat 4px 0;
 	border: 1px solid;
@@ -34,24 +29,21 @@ div.widget.username .user-links{
 	font-size:1.2em;
 }
 div.widget.username a.user-link{
-	padding: 0.3em;
-	padding-right:2.4em;
+	padding: 0.3em 2.4em 0.3em 0.3em;
+	/*padding-right:2.4em;*/
 	background-color: #FCFCFC;
-	text-align:left;
+	/*text-align:left;*/
 	border: 1px solid;
 	border-top:none;
 	color: #000;
-}
-div.widget.username a.user-link:last-child{
-	border-bottom:none;
+	width:22.2em;
 }
 div.widget.username a.user-link:hover{
 	text-decoration:none;
 	background-color: #F5F5F5;
 }
 div.widget.username span.user-name,
-div.widget.username .user-links,
+/*div.widget.username .user-links,*/
 div.widget.username a.user-link{
-	width:100%;
 	border-color: rgba(0,0,0,0.2);
 }
