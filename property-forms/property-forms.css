@@ -88,6 +88,17 @@ div.widget[name='property-forms'] .field {
   float: left;
   padding: 5px;
 }
+div.widget[name='property-forms'] .description.field,
+div.widget[name='property-forms'] .summary.field {
+  width: 90%;
+}
+div.widget[name='property-forms'] .description label {
+  vertical-align: top;
+}
+div.widget[name='property-forms'] .description textarea {
+  width:50%;
+  height:10em;
+}
 div.widget[name='property-forms'] .relatedField div:nth-child(odd) {
   margin-right: 5%;
 }
