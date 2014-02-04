@@ -13,9 +13,6 @@ function Widget_property_details(){
 	}
 
 	this.onReadyExtend = function(){
-		if (activeProperty = 'undefined') {
-			activeProperty = this.$widgetDiv.data('propertyId');
-		}
 		$(".actions>a", this.$widgetDiv).each(function(){
 			var href = $(this).attr("href");
 			$(this).attr("href", href + '?' + activeProperty);

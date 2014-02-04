@@ -1,10 +1,10 @@
 /* Global layout styles */
 body{
-	min-width: 550px;
+	min-width: 275px;
 	margin: 0;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 100%;
-	background: #ddd;
+	background: #daeaea;
 	color: #333;
 }
 .group:after { /* applied to any element, will self clear any floated content */
@@ -50,6 +50,10 @@ div[name='landlord-portal'] #header>h2{
 	font-size: 2em;
 	border-radius: 0 0.15em 0.15em 0;
 }
+/*main content*/
+#content {
+	padding:1em;
+}
 /* tabs */
 #content-asides aside{
 	margin-left: 0.187em;
@@ -58,10 +62,10 @@ div[name='landlord-portal'] #header>h2{
 	padding: 0 1em;
 	float:left;
 	cursor: pointer;
-	color: #333;
+	color: #0db4f2;
 }
 #content aside.on {
-	background-color: #333;
+	background-color: #0db4f2;
 	color: #fff;
 	font-weight: bold;
 }
@@ -80,23 +84,17 @@ div[name='landlord-portal'] #header>h2{
 	margin-left: 0.625em;
 }
 /* content */
-
 #content-articles{
 	position: absolute;
-	left: 0;
-	right: 0;
+	left: 1em;
+	right: 1em;
 	bottom: 3em;
-	top: 6.2em;
+	top: 7.2em;
 	background-color: #fff;
-	border: medium solid #333;
+	border: medium solid #0db4f2;
 	border-radius: 5px;
 	box-shadow: 0 3px 3px rgba(0,0,0,0.1);
 	overflow: auto;
-}
-@media screen and (max-width: 1065px) {
-	#content-articles{
-		top:7.5em;
-	}
 }
 #content-articles>article{
 	position: absolute;
@@ -109,7 +107,7 @@ div[name='landlord-portal'] #header>h2{
 }
 .content-header{
 	padding: 1em;
-	background-color: #333;
+	background-color: #0db4f2;
 	color: #FFF;
 }
 .content-header h2,.content-header h3{
@@ -127,7 +125,7 @@ div[name='landlord-portal'] #header>h2{
 #content-articles article>section.content-body{
 	padding:1em;
 }
-#content-articles>article[type="internal"] details>summary h2 {
+#content-articles>article[type="internal"] summary h2 {
 	display: inline-block;
 	margin: 0.25em 0 1em 0;
 }

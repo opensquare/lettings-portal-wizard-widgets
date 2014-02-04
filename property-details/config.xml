@@ -8,5 +8,6 @@
 		<displayHeader>false</displayHeader>
 		<js>property-details.js</js>
 		<css>property-details.css</css>
+		<delayLoad>true</delayLoad>
 	</attributes>
 </widget>

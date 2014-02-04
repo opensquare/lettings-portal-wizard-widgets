@@ -6,17 +6,20 @@ div.widget[name='portfolio'] h1{
 }
 div.widget[name='portfolio'] div.properties{
 	margin:0 auto;
-	width:100%;
+	width:90%;
 }
+div.widget[name='portfolio'] div.property,
 div.widget[name='portfolio'] div.addProperty{
-	margin-left:93%;
-	width:10em;
+	float: left;
 	font-size: 0.625em;
 	height:6.5em;
-	background: url('symbol_add.png') no-repeat center;
+	margin-right:10em;
 }
 div.widget[name='portfolio'] div.property{
 	background: url('building_home2.png') no-repeat center;
+}
+div.widget[name='portfolio'] div.addProperty{
+	background: url('symbol_add.png') no-repeat center;
 }
 div.widget[name='portfolio'] div.selected {
 	border: solid #ccc;
