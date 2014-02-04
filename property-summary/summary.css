@@ -1,0 +1,35 @@
+div.widget[name='property-summary'] article {
+	padding: 1em 4em 1em 0.5em;
+}
+
+div.widget[name='property-summary'] section{
+	padding-left: 21em;
+}
+div.widget[name='property-summary'] article h2{
+	padding: 0;
+	margin:0;
+	cursor: pointer;
+}
+
+div.widget[name='property-summary'] aside{
+	float:left;
+	border: 1px solid;
+	padding: 0.5em;
+	cursor: pointer;
+}
+div.widget[name='property-summary'] aside div{
+	color:rgba(0,0,0,0.5);
+	border: 1px solid;
+	padding: 6em;
+}
+div.widget[name='property-summary'] section>div{
+	border-top:1px solid;
+	border-color:rgba(0,0,0,0.25);
+}
+div.widget[name='property-summary'] section>summary .rentalStatus{
+	float: right;
+}
+div.widget[name='property-summary'] section>summary .sub,
+div.widget[name='property-summary'] section>summary .description {
+	margin:0.5em 0;
+}

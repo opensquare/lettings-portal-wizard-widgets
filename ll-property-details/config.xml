@@ -2,11 +2,10 @@
 	<type>layout</type>
 	<parameters>
 		<url>property-details.html</url>
-		<secure>false</secure>
 	</parameters>
 	<attributes>
 		<displayHeader>false</displayHeader>
-		<js>property-details.js</js>
-		<css>property-details.css</css>
+		<js>details-layout.js</js>
+		<page.title></page.title>
 	</attributes>
 </widget>

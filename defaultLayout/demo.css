@@ -63,7 +63,7 @@ header h2 span{
 	overflow: hidden;
 	margin: 0 3em 3em 0;
 	vertical-align: top;
-	background: #0DB4F2;
+	background: #333;
 	box-shadow: 0 0 10px rgba(0,0,0,0.2);
 	border: thick solid transparent;
 	border-radius: 1em;
@@ -71,7 +71,7 @@ header h2 span{
 	cursor: pointer;
 }
 #home-content article:hover{
-	background: #92CE56;
+	background: #BBB;
 }
 #home-content article>h2{
 	display: inline-block;

@@ -1,0 +1,46 @@
+{"properties":[
+	{"property": 
+		{
+			"id": "12358453",
+			"address": "10 Hulse Road",
+			"subtitle": "3 Bedroom house",
+			"description": "House description goes here",
+			"image": "some/image.jpg",
+			"summary": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+			"status": "entered"
+		}
+	},
+	{"property": 
+		{
+			"id": "65955",
+			"address": "11 Avenue Road",
+			"subtitle": "2 Bedroom apartment",
+			"description": "A nice apartment",
+			"image": "some/image.jpg",
+			"status": "entered",
+			"summary":  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+		}
+	},
+	{"property": 
+		{
+			"id": "5634",
+			"address": "Flat 3, 15 Winn Road",
+			"subtitle": "4 Bedroom House",
+			"description": "Another Brief description",
+			"image": "some/image.jpg",
+			"status": "published",
+			"summary":  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+		}
+	},
+	{"property": 
+		{
+			"id": "5646546",
+			"address": "102 Earls Road",
+			"subtitle": "1 Bedroom Flat",
+			"description": "A small flat",
+			"image": "some/image.jpg",
+			"status": "tenancy agreed",
+			"summary":  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+		}
+	}
+]}

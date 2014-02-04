@@ -1,4 +1,4 @@
-<form rhinoforms="true" class="lettings-form">
+<form rhinoforms="true" class="lettings-form group">
 
 	<div class="relatedField">
 		<div class="field">
@@ -15,6 +15,13 @@
 		<div class="field">
 			<label>Address:</label>
 			<input name="address" type="text" rf.validation="required" />
+		</div>
+	</div>
+
+	<div class="relatedField">
+		<div class="field summary">
+			<label>Summary Description:</label>
+			<input name="description" class="summaryDescription" type="text" rf.validation="required" />
 		</div>
 	</div>
 
@@ -109,6 +116,12 @@
 				<option>Public</option>
 				<option>Permit</option>
 			</select>
+		</div>
+	</div>
+	<div class="relatedField">
+		<div class="field description">
+			<label>Description: </label>
+			<textarea name="description"></textarea>
 		</div>
 	</div>
 	<div class="propertyActions">
