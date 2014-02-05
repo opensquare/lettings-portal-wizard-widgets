@@ -1,5 +1,5 @@
 <form rhinoforms="true" class="user-profile-form">
-
+	
 	<div class="relatedField">
 		<div class="field">
 			<label for="firstName">First Name: </label>
@@ -12,7 +12,43 @@
 		</div>
 	</div>
 
-	<div class="propertyActions">
+	<div class="relatedField">
+		<div class="field">
+			<label for="homeTel">Home Telephone: </label>
+			<input name="homeTel" id="homeTel" type="text" rf.validation="required" />
+		</div>
+
+		<div class="field">
+			<label for="mobileTel">Mobile Telephone: </label>
+			<input name="mobileTel" id="mobileTel" type="text" rf.validation="required" />
+		</div>
+	</div>
+
+	<div class="relatedField">
+		<div class="field">
+			<label for="homeAddress1">Home Address 1: </label>
+			<input name="homeAddress1" type="text" rf.validation="required" />
+		</div>
+
+		<div class="field">
+			<label for="homeAddress2">Home Address 2: </label>
+			<input name="homeAddress2" type="text" rf.validation="required" />
+		</div>
+	</div>
+
+	<div class="relatedField">
+		<div class="field">
+			<label for="town">Town: </label>
+			<input name="town" type="text" rf.validation="required" />
+		</div>
+
+		<div class="field">
+			<label for="postcode">Postcode: </label>
+			<input name="postcode" type="text" rf.validation="required" />
+		</div>
+	</div>
+
+	<div class="user-profileActions">
 		<input type="button" rf.action="next" value="Save"/>
 	</div>
 

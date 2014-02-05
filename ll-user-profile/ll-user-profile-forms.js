@@ -3,6 +3,7 @@ function Widget_ll_user_profile() {
 	actual implementation should have separate widgets for separate flows */
 	this.propertyChannel = "user_profile_display";
 	this.actionChannel = "user_profile_edit";
+
 	this.initExtend = function(){
 		pw.addListenerToChannel(this, this.propertyChannel);
 		pw.addListenerToChannel(this, this.actionChannel);
@@ -27,29 +28,9 @@ function Widget_ll_user_profile() {
 	this.onReadyExtend = function() {
 	
 		this.activeFlow = 'widgets/ll-user-profile/ll-user-profile-flow.js';
-
-		//if (this.activeFlow != ''){
-			rf.loadFlow(this.activeFlow, $('.rhinoforms-user-profile-formContainer', this.$widgetDiv), this.initData);
-		//}
+		
+		rf.loadFlow(this.activeFlow, $('.rhinoforms-user-profile-formContainer', this.$widgetDiv), this.initData);
+		
 	}
 
-	this.determineFlow = function(){
-		var flowAttr = this.$widgetDiv.data("flow");
-		var tempFlow = 'widgets/property-forms/temp-flow.js';
-		switch (flowAttr) {
-			case 'new':
-			case 'edit':
-				this.activeFlow = 'widgets/property-forms/property-forms-flow.js';
-				break;
-			case 'activate':
-				this.activeFlow = tempFlow;
-				this.initData = '<root><performAction>activate your property</performAction></root>';
-				break;
-			case 'promote':
-				this.activeFlow = tempFlow;
-				this.initData = '<root><performAction>promote your property</performAction></root>';
-				break;
-    
-  }
-  } 
 }
