@@ -1,47 +1,75 @@
-	<script>
-		var url = window.location.hash;
-		var hash = url.substring(url.indexOf('#')+1);
-		var formSet = hash + "-forms";
+<script>
+	var url = window.location.hash;
+	var hash = url.substring(url.indexOf('#')+1);
+	var formSet = hash + "-forms";
 
-		$("#cp-banner").attr("class", hash);
-		$("#formSet").attr("href", formSet);
-		$("#register-button").attr("class", hash);
-	</script>
-	<header>
-		<h2>Speak to us today <span>0800 123 456</span></h2>	
-	</header>
+	$("#cp-banner").attr("class", hash);
+	$("#formSet").attr("href", formSet);
+	//$("#register-button").attr("class", hash);
+</script>
 
-	<section id="cp-banner">
-		<h1><a href="/"></a></h1>
-		<h2>property management for landlords and tennants</h2>
-	</section>
+<div class="container">
+	<div class="page-header">
+        <h1>Property Management <small>for landlords and tenants</small></h1>
+    </div>
+    <div class="row">
+    	<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading"><h4>Registered Customers</h4></div>
+				<div class="panel-body" id="login-form">
 
-	<section id="cp-content">
+					<form id="login-form-enter" action="#" nextWidget="landlord-portal">
+						<ul class="messages"/>
+						<p>
+							<label for="username">Username: </label>
+							<input type="text" name="username" id="username" autofocus required class="form-control" />
+						</p>
+						<p>
+							<label for="password">Password: </label>
+							<input type="password" name="password" id="password" required class="form-control" />
+						</p>
+						<p>
+							<button id="login-button" type="submit" class="btn btn-primary">Login</button>
+						</p>
+						<p>
+							<a href="#" onclick="$('#login-form form').toggle();return false;">Forgotten your details?</a>
+						</p>
+    				</form><!-- /#login-form-enter -->
 
-		<div id="login-form">
-			<form id="login-form-enter" action="#" nextWidget="landlord-portal">
-				<h2>Registered customers</h2>
-				<ul class="messages"/>
-				<label for="username">Username: <input type="text" name="username" id="username" autofocus required /></label>
-				<label for="password">Password: <input type="password" name="password" id="password" required /></label>
-				<button id="login-button" type="submit">Login</button>
-				<a href="#" onclick="$('#login-form form').toggle();return false;">Forgotten your details?</a>
-			</form>
-			<div class="register">
-				<h2>Not registered yet?</h2>
-				<ul class="messages"/>
-				<p>It's quick and simple to register, click the button below.</p>
-				<a id="formSet" href="landlord-forms">
-					<button id="register-button" >Register</button>
-				</a>
-			</div>
-			<form id="login-form-reset" action="#" onsubmit="login_loginReset();return false;" style="display:none;">
-				<h2>Forgotten your details?</h2>
-				<ul class="messages"/>
-				<label for="username">Email: <input type="email" name="email" id="email" autofocus required /></label>
-				<label id="login-form-reset-text">Click button to receive a reset password email</label>
-				<a href="#" onclick="$('#login-form form').toggle();return false;">Remembered your details?</a>
-				<button id="login-reset" type="submit">Send</button>
-			</form>
-		</div>
-	</section>
+    				<form id="login-form-reset" action="#" onsubmit="login_loginReset();return false;" style="display:none;">
+						<p>Forgotten your details?</p>
+						<ul class="messages"/>
+						<p>
+							<label for="email">Email: </label>
+							<input type="email" name="email" id="email" autofocus required class="form-control" />
+						</p>
+						<p>
+							<button id="login-reset" type="submit" class="btn btn-primary">Send</button>
+						</p>
+						<p>
+							<label id="login-form-reset-text">Click button to receive a reset password email</label>
+						</p>
+						<p>
+							<a href="#" onclick="$('#login-form form').toggle();return false;">Remembered your details?</a>
+						</p>
+					</form><!-- /#login-form-reset -->
+
+				</div>
+			</div><!-- /.panel -->
+		</div><!-- /.col-md-6 -->
+
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading"><h4>Not registered yet?</h4></div>
+				<div class="panel-body">
+					<ul class="messages"/>
+					<p>It's quick and simple to register, click the button below.</p>
+					<a id="formSet" href="landlord-forms">
+						<button id="register-button" class="btn btn-primary">Register</button>
+					</a>
+				</div><!-- /.panel-body -->
+			</div><!-- /.panel -->
+		</div><!-- /.col-md-6 -->
+
+    </div><!-- /.row -->
+</div><!-- /.container -->
