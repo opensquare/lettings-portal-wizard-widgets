@@ -1,3 +1,11 @@
 .widget.property-details div.existing div{
-	margin:1em;
+	/*margin:1em;*/
+}
+div.widget[name='property-details'] .actions {
+	float: left;
+	margin-left:1em;
+}
+div.widget[name='property-details'] div.widget.property-summary{
+	float:left;
+	width:85%;
 }

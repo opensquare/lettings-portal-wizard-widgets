@@ -16,9 +16,14 @@ function Widget_property_details(){
 		if (activeProperty = 'undefined') {
 			activeProperty = this.$widgetDiv.data('propertyId');
 		}
-		$(".actions>a", this.$widgetDiv).each(function(){
-			var href = $(this).attr("href");
-			$(this).attr("href", href + '?' + activeProperty);
+		$('div.widget', this.$widgetDiv).each(function(){
+			$(this).data('propid', activeProperty);
+		})
+		$(".actions>button", this.$widgetDiv).each(function(){
+			var href = $(this).attr("href") + '?' + activeProperty;
+			$(this).click(function(){
+				window.location.hash = href;
+			})
 		})
 		/*var t = this;
 		$(".actions>a", this.$widgetDiv).click(function(){

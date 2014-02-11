@@ -1,6 +1,7 @@
 /*div.widget.username{
 	text-align: right;
 }*/
+
 div.widget.username span.user-name,
 div.widget.username a.user-link{
 	display: inline-block;
@@ -8,6 +9,7 @@ div.widget.username a.user-link{
 div.widget.username div.user-name-wrapper{
 	/*width: 60%;*/
 	font-size: 0.75em;
+	float: left;
 }
 div.widget.username span.user-name{
 	width:26.6em;
@@ -46,4 +48,13 @@ div.widget.username span.user-name,
 /*div.widget.username .user-links,*/
 div.widget.username a.user-link{
 	border-color: rgba(0,0,0,0.2);
+}
+div.widget.username .logout {
+	font-size: 0.75em;
+	margin-left: 1em;
+	padding: 0.25em 0.5em;
+	border: 1px solid;
+	border-radius: 5px;
+	color: #fff;
+	background-color: #555;
 }

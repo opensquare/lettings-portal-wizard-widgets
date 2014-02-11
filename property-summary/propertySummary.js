@@ -23,8 +23,8 @@ function Widget_property_summary(){
 				var property = properties[i].property;
 				if (propertyId == property.id){
 					// populate article
-					$('aside.image div', articleTpl).text(property.image);
-					$('summary .address', articleTpl).html('<h2>' + property.address + '</h2>');
+					$('.image div', articleTpl).text(property.image);
+					$('summary .address', articleTpl).html(property.address);
 					$('summary .sub', articleTpl).text(property.subtitle);
 					$('summary .description', articleTpl).text(property.description);
 					$('summary .rentalStatus span', articleTpl).text(property.status);
@@ -40,7 +40,7 @@ function Widget_property_summary(){
 	}
 
 	this.addHandlers = function(propertySelector){
-		$('aside.image, summary .address', propertySelector).click(function(){
+		$('.image, summary .address', propertySelector).click(function(){
 			window.location.hash = 'property/details?' + propertyId;
 			pw.notifyChannelOfEvent('property_changed', {id: propertyId});
 		})

@@ -9,7 +9,7 @@ function Widget_ll_property_details(){
 
 	this.onReadyExtend = function(){
 		var args = this.$widgetDiv.attr(argsAttr);
-		if(args == 'undefined' || args == 'false'){
+		if(args == 'undefined' || args == 'false' || !args){
 			var thisPageId = this.$widgetDiv.attr(pageIdAttr);
 			pw.notifyChannelOfEvent(closeChannel, {pageId : thisPageId})
 		} else {
