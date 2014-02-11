@@ -35,7 +35,7 @@ function Widget_portfolio() {
 		.done(function(data) {
 			var properties = data.properties;
 			var propertyGroup = $('.properties', widgetDiv);
-			var propertyTpl = $('<div class="widget" name="property-summary">widget to load</div>');
+			var propertyTpl = $('<div class="widget panel panel-default" name="property-summary">widget to load</div>');
 			for (var i = 0; i < properties.length; i++) {
 				var w = propertyTpl.clone();
 				w.data("propid", properties[i].property.id);

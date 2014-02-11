@@ -1,23 +1,20 @@
-<header id="header">
-	<div class="widget" name="username"></div>
-	<h2>Property Management Portal</h2>
+<header class="main-header">
+	<div class="widget" name="ll-header"></div>
 </header>
-<section id="content">
-	<section id="content-asides" class="group">
-		<!-- Tabs go here as <asides> -->
-		<!-- Permanent New Page tab -->
-		<aside class="on" pageid="internal/portfolio" type="internal" subtype="portfolio">
-			<div class="title">Portfolio</div>
+<section class="sub-header">
+	<nav class="navbar navbar-default">
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="#">My Properties</a></li>
+			<li><a href="#">Messages</a></li>
+		</ul>
+		<aside class="navbar-right">
+			<p class="navbar-text"><span class="badge">1</span> <a href="">Notifications</a></p>
 		</aside>
+	</nav>
 	</section>
-	<section id="content-articles">
-		<!-- Pages go here as <articles> -->
-		<!-- Permanent New Page page -->
-		<article class="on" pageid="internal/portfolio" type="internal" subtype="portfolio" hash="">
-			<section class="content-header"><h2>My Portfolio</h2></section>
-			<section class="content-body">
-					<div class="widget" name="portfolio"></div>
-			</section>
+<section id="content" class="container-fluid">
+	<article>
+		<div class="pagetitle"></div>
+		<div class="widget" name="portfolio" page.title="My Portfolio"></div>
 		</article>
-	</section>
 </section>
