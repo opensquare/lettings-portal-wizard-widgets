@@ -1,4 +1,4 @@
-body{
+/* body{
 	min-width: 275px;
 	margin: 0;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -20,28 +20,28 @@ header h2{
 	float: left;
 	margin: 0;
 	font-size: 1em;
-	color: #0DB4F2; /* Blue */
+	color: #0DB4F2; 
 }
 header h2 span{
-	color: #92CE56; /* Green */
+	color: #92CE56; 
 }
 @media screen and (max-width: 1000px) {
 	header{
 		width:98%;
 	}
-}
+} */
 
-#home-banner{
+/* #home-banner{ */
 	/*background: url('banner.jpg') no-repeat center;*/ /* (c)Najots @ flickr.com */
-	background-size: cover;
-}
+	/* background-size: cover;
+} */
 /*#home-banner>h1{
 	width: 400px;
 	height: 125px;
 	margin: 0 0 0 1%;
 	background: url('model-insurance.png') no-repeat left bottom;
 }*/
-#home-banner h2{
+/* #home-banner h2{
 	display: inline-block;
 	margin: 2em 0;
 	padding: 0 0.5em 0 4em;
@@ -147,4 +147,7 @@ footer p:first-child{
 	footer{
 		width:98%;
 	}
-}
+} 
+
+*/
+
