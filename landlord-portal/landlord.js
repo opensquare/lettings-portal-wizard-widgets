@@ -7,6 +7,7 @@ function Widget_landlord_portal(){
 
 	var widget = this,
 	newWidgetPrefix = 'll-',
+	homeId = 'home',
 	homeContent,
 	currentHash;
 
@@ -31,7 +32,7 @@ function Widget_landlord_portal(){
 		if (channel == channelSetPageTitles) {
 			updatePageTitle(event.pageId, event.title);
 		} else if (channel == channelSetPageArgs) {
-			/*setPageArgs(event.pageId, event.args);*/
+			updatePageArgs(event.pageId, event.args);
 		} else if (channel == channelClosePage){
 			window.location.hash = '';
 		}
@@ -51,7 +52,7 @@ function Widget_landlord_portal(){
 			var idParts = pageId.split('/');
 			var type = idParts[0];
 			var subType = idParts[1];
-
+			if(pageId != '' && pageId !== homeId){
 				try{
 				loadContent(pageId, type, subType, pageArgs);
 				} catch(error) {
@@ -60,6 +61,11 @@ function Widget_landlord_portal(){
 					} else {
 						console.error(error.message);
 					}
+			}
+			} else if (currentHash != hashtag) {
+				loadHome(pageArgs);
+			} else {
+				updatePageArgs(homeId, pageArgs);
 			}
 		} else if (hashtag == '' && currentHash != '') {
 			loadHome();
@@ -75,7 +81,7 @@ function Widget_landlord_portal(){
 	function loadContent(pageId, type, subType, pageArgs){
 		var widgetName = newWidgetPrefix + type + '-' + subType;
 		var newContent = $(contentTemplate).attr('pageid', pageId);
-			newContent.children('.widget').attr('name', widgetName).attr('page.id', pageId)
+			newContent.children('.widget').attr('name', widgetName).attr('pageid', pageId)
 		if (pw.defined(pageArgs)) {
 			newContent.children('.widget').attr('page.args', pageArgs);
 		}
@@ -83,8 +89,10 @@ function Widget_landlord_portal(){
 
 	}
 
-	function loadHome(){
-		loadPage($('#content').html(homeContent));
+	function loadHome(pageArgs){
+		$homeContent = $(homeContent);
+		$homeContent.children('.widget').attr('page.args', pageArgs);
+		loadPage($('#content').html($homeContent));
 	}
 
 	function loadPage($content){
@@ -100,8 +108,12 @@ function Widget_landlord_portal(){
 		})
 	}
 
+	function updatePageArgs(pageId, args){
+		$('#content div.widget[pageid="' + pageId + '"').attr('page.args', args);
+	}
+
 	function setTitle($article, title) {
-		if (!title ) {
+		if (!title && title !== '' ) {
 			title = $article.children('div.widget').attr('page.title');
 			}
 		$article.find('.pagetitle').html('<h2>' + title + '</h2>');

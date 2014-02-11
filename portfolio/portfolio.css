@@ -9,11 +9,15 @@ div.widget[name='portfolio'] div.properties{
 	width:100%;
 }
 div.widget[name='portfolio'] div.addProperty{
-	margin-left:93%;
-	width:10em;
-	font-size: 0.625em;
-	height:6.5em;
-	background: url('symbol_add.png') no-repeat center;
+	padding: 2em;
+	cursor: pointer;
+	width:100%;
+	margin-bottom: 2em;
+}
+
+div.widget[name='portfolio'] div.addProperty span{
+	padding-left: 3em;
+	background: url('symbol_add.png') no-repeat left;
 }
 div.widget[name='portfolio'] div.property{
 	background: url('building_home2.png') no-repeat center;

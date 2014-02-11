@@ -1,0 +1,9 @@
+<widget>
+	<type>layout</type>
+	<parameters>
+		<url>blank.html</url>
+	</parameters>
+	<attributes>
+		<displayHeader>false</displayHeader>
+	</attributes>
+</widget>
