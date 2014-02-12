@@ -1,4 +1,62 @@
-body{
+#input_title,
+#input_firstName,
+#input_surname,
+#input_dateOfBirthDay,
+#input_dateOfBirthMonth,
+#input_dateOfBirthYear,
+#input_ukResidentSinceMonthCode,
+#input_ukResidentSinceYear,
+#input_maritalStatusCode {
+  float: left;
+  margin-right: 1%;
+}
+
+#input_title,
+#input_firstName,
+#input_surname {
+  width: 39%;
+}
+
+#input_dateOfBirthDay,
+#input_dateOfBirthMonth,
+#input_dateOfBirthYear {
+  width: 31%;
+}
+#input_title,
+#input_dateOfBirthDay,
+#input_dateOfBirthMonth,
+#input_dateOfBirthYear {
+  width: 20%;
+}
+
+#input_ukResidentSinceMonthCode,
+#input_ukResidentSinceYear,
+#input_maritalStatusCode {
+  width: 49.5%;
+}
+#input_surname,
+#input_ukResidentSinceYear {
+  margin-right: 0;
+}
+
+#input_ukResidentMoreThan5Years {
+  margin-top: 10px;
+}
+
+/* taken from bootstrap.css and re-used for RhinoForms 'invalid' class */
+.invalid {
+  border-color: #a94442;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+.invalid-message {
+  color: #a94442;
+  float: left;
+  display: block;
+}
+
+
+/* body{
   min-width: 275px;
   margin: 0;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -33,10 +91,10 @@ header h2{
   float: left;
   margin: 0;
   font-size: 1em;
-  color: #0DB4F2; /* Blue */
+  color: #0DB4F2; 
 }
 header h2 span{
-  color: #92CE56; /* Green */
+  color: #92CE56; 
 }
 @media screen and (max-width: 1000px) {
   header{
@@ -110,7 +168,7 @@ div.widget[name='landlord-forms'] input[type="radio"]:checked {
 }
 div.widget[name='landlord-forms'] input[type="radio"]:checked:after {
   content: '\2714';
-  color: #FFF; background-color: #0090C0; /*blue*/
+  color: #FFF; background-color: #0090C0; 
   font-size: 1.3em;   
 }
 div.widget[name='landlord-forms'] input[type="button"] {
@@ -211,7 +269,7 @@ div.widget[name='landlord-forms'] .rf-dropdown ul {
   list-style: none;
   cursor: pointer;
 }
-/*address lookup formatting*/
+
 div.widget[name='landlord-forms'] .findAddress div.labelWrapper {
   vertical-align: top;
 }
@@ -374,4 +432,4 @@ div.widget[name='landlord-forms'] #crumbTrail li:after {
   right: -17px;
   color: #777;
   font-size: 64px;
-}
+} */

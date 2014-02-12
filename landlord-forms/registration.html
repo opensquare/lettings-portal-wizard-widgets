@@ -1,15 +1,18 @@
- <ul id="crumbTrail">
-	  <li class="crumbDetails">Your Details</li>
-	  <li class="crumbRegister on">Registration</li>
-	  <li class="crumbWelcome">Welcome</li>
-</ul>
+<ol id="crumbTrail" class="breadcrumb">
+	<li class="crumbDetails">Your Details</li>
+	<li class="crumbRegister on active">Registration</li>
+	<li class="crumbWelcome">Welcome</li>
+</ol>
 
-<form rhinoforms="true" class="landlord-form">
-	<h1>Register</h1>
+<form rhinoforms="true" class="landlord-form form-horizontal">
+
+	<h4>Register</h4>
+
+	<hr>
 
 	<p>
-	We just need a few contact details before you can register your account. The email and
-	password you supply will enable you to access your own Customer Portal, where you can add properties to your portfolio and manage your tenancy agreements.
+		We just need a few contact details before you can register your account. The email and
+		password you supply will enable you to access your own Customer Portal, where you can add properties to your portfolio and manage your tenancy agreements.
 	</p>
 
 	<rf.include src="../common-forms/common-registration-form.html" ></rf.include>
