@@ -3,7 +3,7 @@ function Widget_landlord_portal(){
 	/* channels */
 	var channelSetPageTitles = 'landlord-portal.setPageTitles';
 	var channelSetPageArgs = 'landlord-portal.setPageArgs';
-	var channelClosePage = 'landlord-portal.closePage'
+	var channelClosePage = 'landlord-portal.closePage';
 
 	var widget = this,
 	newWidgetPrefix = 'll-',
@@ -11,7 +11,7 @@ function Widget_landlord_portal(){
 	homeContent,
 	currentHash;
 
-	var contentTemplate = '<article><div class="pagetitle"></div><div class="widget"></div></article>';
+	var contentTemplate = '<article><div class="pagetitle page-header"></div><div class="widget"></div></article>';
 
 	this.onReadyExtend = function() {
 		/*store home layout*/
@@ -30,7 +30,10 @@ function Widget_landlord_portal(){
 
 	this.handleEvent = function(channel, event) {
 		if (channel == channelSetPageTitles) {
-			updatePageTitle(event.pageId, event.title);
+			if (!event.subtitle){
+				event.subtitle = '';
+			}
+			updatePageTitle(event.pageId, event.title, event.subtitle);
 		} else if (channel == channelSetPageArgs) {
 			updatePageArgs(event.pageId, event.args);
 		} else if (channel == channelClosePage){
@@ -62,15 +65,11 @@ function Widget_landlord_portal(){
 						console.error(error.message);
 					}
 			}
-			} else if (currentHash != hashtag) {
-				loadHome(pageArgs);
 			} else {
-				updatePageArgs(homeId, pageArgs);
+				loadHome(pageArgs);
 			}
-		} else if (hashtag == '' && currentHash != '') {
+			} else {
 			loadHome();
-		} else {
-			// let pw load content
 		}
 		$('#content article').each(function(){
 			setTitle($(this));
@@ -91,7 +90,7 @@ function Widget_landlord_portal(){
 
 	function loadHome(pageArgs){
 		$homeContent = $(homeContent);
-		$homeContent.children('.widget').attr('page.args', pageArgs);
+		$homeContent.children('.widget').attr('page.args', pageArgs).removeAttr('delayload');
 		loadPage($('#content').html($homeContent));
 	}
 
@@ -102,9 +101,9 @@ function Widget_landlord_portal(){
 		})
 	}
 
-	function updatePageTitle(pageId, title) {
+	function updatePageTitle(pageId, title, subtitle) {
 		$('#content article[pageid="' + pageId + '"').each(function(){
-			setTitle($(this), title);
+			setTitle($(this), title, subtitle);
 		})
 	}
 
@@ -112,11 +111,14 @@ function Widget_landlord_portal(){
 		$('#content div.widget[pageid="' + pageId + '"').attr('page.args', args);
 	}
 
-	function setTitle($article, title) {
+	function setTitle($article, title, subtitle) {
 		if (!title && title !== '' ) {
 			title = $article.children('div.widget').attr('page.title');
 			}
-		$article.find('.pagetitle').html('<h2>' + title + '</h2>');
+		if (!subtitle) {
+			subtitle = '';
+		}
+		$article.find('.pagetitle').html('<h2>' + title + ' <small>' + subtitle + '</small></h2>');
 	}
 
 	/*function initPopups(){

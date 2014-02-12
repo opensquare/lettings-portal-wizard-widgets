@@ -1,4 +1,45 @@
 <div class="portfolio-list">
-	<div class="properties group"></div>
+	<div class="properties group">
+		<nav class="navbar navbar-default">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#property-menu-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="collapse navbar-collapse" id="property-menu-collapse-1">
+				<form class="portfolio-menu navbar-form navbar-left">
+					<div class="form-group">
+						<p class="navbar-text">filter by status:
+							<select class="form-control">
+								<option>--Select--</option>
+								<option>entered</option>
+								<option>published</option>
+								<option>tenancy agreed</option>
+								<option>status4</option>
+								<option>...</option>
+							</select>
+						</p>
+					</div>
+					<div class="form-group">
+						<p class="navbar-text">order by:
+							<select class="form-control">
+								<option>--Select--</option>
+								<option>Address</option>
+								<option>Status</option>
+								<option>...</option>
+							</select>
+						</p>
+					</div>
+				</form>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#property/add" class="action-add-property"><span class="glyphicon glyphicon-plus"></span>Add Property</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="property-list"></div>
+	</div>
 	<div class="addProperty btn btn-default"><span>Add Property</span></div>
 </div>

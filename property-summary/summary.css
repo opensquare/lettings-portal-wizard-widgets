@@ -16,14 +16,15 @@ div.widget[name='property-summary'] aside .image{
 	border: 1px solid;
 	/*padding: 0.5em;*/
 	cursor: pointer;
-	/*margin: 1em;*/
+	margin: 1em;
 }
 div.widget[name='property-summary'] aside .image div{
 	color:rgba(0,0,0,0.5);
 	border: 1px solid;
-	padding: 6em;
+	padding: 6em 1em;
 	margin: 0.5em;
 	text-align: center;
+	word-wrap:break-word;
 }
 div.widget[name='property-summary'] section>div{
 	border-top:1px solid;

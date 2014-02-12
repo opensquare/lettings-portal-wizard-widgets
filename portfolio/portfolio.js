@@ -12,19 +12,6 @@ function Widget_portfolio() {
 	this.onReadyExtend = function() {
 		args = this.$widgetDiv.attr('page.args');
 		pageId = this.$widgetDiv.attr('pageid');
-		$(".property", widget.$widgetDiv).click(function(){
-			var property = $(this).attr("id");
-
-			$(".property", widgetDiv).each(function(){
-				$(this).removeClass('selected');
-			});
-
-			$(this).addClass('selected');
-			//$(".tabs").removeAttr("addProperty");
-			//$(".tabs").attr("propertyUid", property);
-
-			pw.notifyChannelOfEvent("property_info", {id: property});
-		});
 
 		$(".addProperty").click(function(){
 			$(".property", widget.$widgetDiv).each(function(){
@@ -42,11 +29,11 @@ function Widget_portfolio() {
 		})
 		.done(function(data) {
 			var properties = data.properties;
-			var propertyGroup = $('.properties', widget.$widgetDiv);
+			var propertyGroup = $('.property-list', widget.$widgetDiv);
 			// args == new allows display of widget for new properties for demo purposes only
 			if (properties.length == 0 || args == 'new') {
 				pw.notifyChannelOfEvent(channelSetPageTitles, {'pageId' : pageId, 'title' : ''})
-				$('.properties', widget.$widgetDiv).before(emptyPortfolioTemplate);
+				$('.properties', widget.$widgetDiv).before(emptyPortfolioTemplate).hide();
 				pw.mount($('div.widget',widget.$widgetDiv));
 			} else {
 			for (var i = 0; i < properties.length; i++) {

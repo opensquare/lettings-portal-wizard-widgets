@@ -3,6 +3,8 @@ function Widget_property_summary(){
 	var propertyId;
 	var widgetDiv;
 
+	var docstoreThumbnailPath = 'docstore/property/{id}/thumbnail.jpg'
+
 	this.onReadyExtend = function() {
 		propertyId = this.$widgetDiv.data('propid');
 		widgetDiv = this.$widgetDiv;
@@ -23,11 +25,12 @@ function Widget_property_summary(){
 				var property = properties[i].property;
 				if (propertyId == property.id){
 					// populate article
+					property.image = docstoreThumbnailPath.replace('{id}', property.id);
 					$('.image div', articleTpl).text(property.image);
 					$('summary .address', articleTpl).html(property.address);
 					$('summary .sub', articleTpl).text(property.subtitle);
 					$('summary .description', articleTpl).text(property.description);
-					$('summary .rentalStatus span', articleTpl).text(property.status);
+					$('summary .rentalStatus', articleTpl).text(property.status);
 					$('section>div', articleTpl).text(property.summary);
 					widgetObject.addHandlers(articleTpl);
 				}

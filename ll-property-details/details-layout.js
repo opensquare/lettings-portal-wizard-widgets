@@ -4,7 +4,7 @@ function Widget_ll_property_details(){
 	closeChannel = 'landlord-portal.closePage',
 	propertyChangedChannel = 'property_changed',
 	argsAttr = 'page.args',
-	pageIdAttr = 'page.id',
+	pageIdAttr = 'pageid',
 	propertyId;
 
 	this.onReadyExtend = function(){
@@ -31,9 +31,9 @@ function Widget_ll_property_details(){
 			var property = properties[i].property;
 			if (propertyId == property.id){	
 				var e = {
-					'pageId' : widgetObject.$widgetDiv.attr('page.id'),
+					'pageId' : widgetObject.$widgetDiv.attr(pageIdAttr),
 					'title' : property.address,
-					'subTitle' : ''
+					'subtitle' : property.status
 				}
 				pw.notifyChannelOfEvent('landlord-portal.setPageTitles', e);
 			}

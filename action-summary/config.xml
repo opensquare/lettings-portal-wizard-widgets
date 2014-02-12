@@ -1,0 +1,10 @@
+<widget>
+	<type>internalPage</type>
+	<parameters>
+		<url>action.html</url>
+	</parameters>
+	<attributes>
+		<displayHeader>false</displayHeader>
+		<js>action.js</js>
+	</attributes>
+</widget>

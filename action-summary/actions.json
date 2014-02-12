@@ -1,0 +1,37 @@
+{
+	"property" : "34b523-dfac3c-3bca43-3b3563-ba36aa",
+	"process" : {
+		"name" : "Promote Property",
+		"status" : "incomplete",
+		"actions" : [
+			{
+				"name": "basic details",
+				"portalWidget": "someWidget",
+				"portalFlow": "someFlow",
+				"params": "anyContextInfo",
+				"complete": true
+			},
+			{
+				"name": "tenancy details",
+				"portalWidget": "someOtherWidget",
+				"portalFlow": "someOtherFlow",
+				"params": "anyOtherContextInfo",
+				"complete": false
+			},
+			{
+				"name": "upload supporting documents",
+				"portalWidget": "someOtherWidget",
+				"portalFlow": "someOtherFlow",
+				"params": "anyOtherContextInfo",
+				"complete": true
+			},
+			{
+				"name": "advanced details",
+				"portalWidget": "somethingElse",
+				"portalFlow": "someOtherFlow2",
+				"params": "anyOtherContextInfo",
+				"complete": false
+			}
+		]
+	}
+}
