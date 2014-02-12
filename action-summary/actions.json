@@ -6,7 +6,7 @@
 		"actions" : [
 			{
 				"name": "basic details",
-				"portalWidget": "someWidget",
+				"portalWidget": "edit",
 				"portalFlow": "someFlow",
 				"params": "anyContextInfo",
 				"complete": true
@@ -20,7 +20,7 @@
 			},
 			{
 				"name": "upload supporting documents",
-				"portalWidget": "someOtherWidget",
+				"portalWidget": "documents",
 				"portalFlow": "someOtherFlow",
 				"params": "anyOtherContextInfo",
 				"complete": true

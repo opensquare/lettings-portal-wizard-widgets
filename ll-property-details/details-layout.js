@@ -5,6 +5,7 @@ function Widget_ll_property_details(){
 	propertyChangedChannel = 'property_changed',
 	argsAttr = 'page.args',
 	pageIdAttr = 'pageid',
+	pageType = 'page-type',
 	propertyId;
 
 	this.onReadyExtend = function(){
@@ -53,8 +54,9 @@ function Widget_ll_property_details(){
 	}
 
 	this.setContainedWidgetParams = function(){
+		var pageTypeName = this.$widgetDiv.data(pageType);
 		$('div.widget', this.$widgetDiv).each(function(){
-			$(this).data('propertyId', propertyId);
+			$(this).data('propertyId', propertyId).data(pageType, pageTypeName);
 		})
 	}
 }

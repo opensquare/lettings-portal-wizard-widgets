@@ -80,7 +80,12 @@ function Widget_landlord_portal(){
 	function loadContent(pageId, type, subType, pageArgs){
 		var widgetName = newWidgetPrefix + type + '-' + subType;
 		var newContent = $(contentTemplate).attr('pageid', pageId);
-			newContent.children('.widget').attr('name', widgetName).attr('pageid', pageId)
+			newContent.children('.widget')
+				.attr({
+					'name': widgetName,
+					'pageid': pageId
+				})
+				.data('page-type', type)
 		if (pw.defined(pageArgs)) {
 			newContent.children('.widget').attr('page.args', pageArgs);
 		}

@@ -1,8 +1,12 @@
 function Widget_action_summary(){
 
-	var template 
+	var template ,
+		pageType = ''
+
+
 	this.onReadyExtend = function(){
 		template = $('.action-container', this.$widgetDiv);
+		pageType = this.$widgetDiv.data('page-type');
 		this.loadAction();
 	}
 
@@ -29,13 +33,14 @@ function Widget_action_summary(){
 			var action = actions[i];
 			var $actionTask = $(actionTemplate);
 			var actionLink = '';
+			var linkHref = '#' + pageType + '/' + action.portalWidget + '?' + action.params
 
 			if (action.complete){
 				completed++;
-				actionLink = '&nbsp;' + action.name + '<a class="pull-right" href="#action/' + action.portalWidget + '">change</a>'
+				actionLink = '&nbsp;' + action.name + '<a class="pull-right" href="' + linkHref + '">change</a>'
 				$actionTask.addClass('list-group-item-success');
 			} else {
-				actionLink = '&nbsp;<a class="text-danger" href="#action/' + action.portalWidget + '">' + action.name + '</a>';
+				actionLink = '&nbsp;<a class="text-danger" href="' + linkHref + '">' + action.name + '</a>';
 				$actionTask.addClass('list-group-item-danger');
 			}
 

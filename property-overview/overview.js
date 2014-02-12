@@ -12,8 +12,9 @@ function Widget_property_overview(){
 	}
 
 	this.setContainedWidgetParams = function(){
+		var pageTypeName = this.$widgetDiv.data('page-type');
 		$('div.widget', this.$widgetDiv).each(function(){
-			$(this).data('propid', propertyId);
+			$(this).data('propid', propertyId).data('page-type',pageTypeName);
 		})
 	}
 }
