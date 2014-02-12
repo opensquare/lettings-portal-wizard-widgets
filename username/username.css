@@ -1,13 +1,13 @@
 /*div.widget.username{
 	text-align: right;
 }*/
-
+/*
 div.widget.username span.user-name,
 div.widget.username a.user-link{
 	display: inline-block;
 }
 div.widget.username div.user-name-wrapper{
-	/*width: 60%;*/
+	
 	font-size: 0.75em;
 	float: left;
 }
@@ -32,9 +32,9 @@ div.widget.username .user-links{
 }
 div.widget.username a.user-link{
 	padding: 0.3em 2.4em 0.3em 0.3em;
-	/*padding-right:2.4em;*/
+	
 	background-color: #FCFCFC;
-	/*text-align:left;*/
+	
 	border: 1px solid;
 	border-top:none;
 	color: #000;
@@ -45,7 +45,7 @@ div.widget.username a.user-link:hover{
 	background-color: #F5F5F5;
 }
 div.widget.username span.user-name,
-/*div.widget.username .user-links,*/
+
 div.widget.username a.user-link{
 	border-color: rgba(0,0,0,0.2);
 }
@@ -57,4 +57,4 @@ div.widget.username .logout {
 	border-radius: 5px;
 	color: #fff;
 	background-color: #555;
-}
+}*/

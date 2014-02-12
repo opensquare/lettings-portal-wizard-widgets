@@ -1,10 +1,10 @@
 /* Global layout styles */
-body{
+/*body{
 	margin: 0;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	color: #333;
 }
-.group:after { /* applied to any element, will self clear any floated content */
+.group:after { 
 	content: ".";
 	display: block;
 	height: 0;
@@ -22,9 +22,8 @@ a:hover{
 	font-weight: normal;
 }
 
-/* widget styles */
-/* header */
 div[name='landlord-portal'] .main-header{
 	margin: 0 auto 1em 0;
 	border-bottom: 2px solid;
 }
+*/
