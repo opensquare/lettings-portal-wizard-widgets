@@ -1,4 +1,4 @@
-div.widget[name='property-forms'] label {
+/* div.widget[name='property-forms'] label {
   display: inline-block;
   font-size: 1.1em;
   padding-right: 1em;
@@ -32,7 +32,7 @@ div.widget[name='property-forms'] input[type="radio"]:checked {
 }
 div.widget[name='property-forms'] input[type="radio"]:checked:after {
   content: '\2714';
-  color: #FFF; background-color: #0090C0; /*blue*/
+  color: #FFF; background-color: #0090C0; 
     font-size: 1.3em;   
 }
 div.widget[name='property-forms'] input[type="button"] {
@@ -107,4 +107,4 @@ div.widget[name='property-forms'] .propertyActions {
 }
 div.widget[name='property-forms'] .displayValue {
   float: right;
-}
+} */
