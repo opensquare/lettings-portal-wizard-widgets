@@ -3,7 +3,8 @@ function Widget_property_summary(){
 	var propertyId;
 	var widgetDiv;
 
-	var docstoreThumbnailPath = 'docstore/property/{id}/thumbnail.jpg'
+	var docstoreThumbnailPath = 'docstore/property/{id}/thumbnail.jpg';
+	var channelPropertyInfo = 'property_info';
 
 	this.onReadyExtend = function() {
 		propertyId = this.$widgetDiv.data('propid');
@@ -32,7 +33,7 @@ function Widget_property_summary(){
 					$('summary .description', articleTpl).text(property.description);
 					$('summary .rentalStatus', articleTpl).text(property.status);
 					$('section>div', articleTpl).text(property.summary);
-					widgetObject.addHandlers(articleTpl);
+					widgetObject.addHandlers(articleTpl, property);
 				}
 				
 			};
@@ -42,10 +43,10 @@ function Widget_property_summary(){
 		});
 	}
 
-	this.addHandlers = function(propertySelector){
+	this.addHandlers = function(propertySelector, property){
 		$('.image, summary .address', propertySelector).click(function(){
 			window.location.hash = 'property/details?' + propertyId;
-			pw.notifyChannelOfEvent('property_changed', {id: propertyId});
+			pw.notifyChannelOfEvent(channelPropertyInfo, {id: property.id, address: property.address, status: property.status});
 		})
 	}
 }

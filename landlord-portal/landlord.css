@@ -21,9 +21,8 @@ a:hover{
 	font-size: small;
 	font-weight: normal;
 }
-
-div[name='landlord-portal'] .main-header{
-	margin: 0 auto 1em 0;
-	border-bottom: 2px solid;
-}
 */
+div[name='landlord-portal'] .pagetitle a{
+	font-size: 0.8em;
+}
+

@@ -3,10 +3,14 @@ function Widget_action_summary(){
 	var template ,
 		pageType = ''
 
+	this.propertyId = '';
+
+	var widgetObject = this;
 
 	this.onReadyExtend = function(){
 		template = $('.action-container', this.$widgetDiv);
 		pageType = this.$widgetDiv.data('page-type');
+		this.propertyId = this.$widgetDiv.data('propid');
 		this.loadAction();
 	}
 
@@ -25,6 +29,7 @@ function Widget_action_summary(){
 	function populateAction(data) {
 		var actionTemplate = '<li class="list-group-item"><span class="glyphicon"></span></li>';
 		$('.action-title', template).text(data.process.name)
+		$('.action-subtext', template).text(data.process.subtext)
 		var completed = 0;
 		var actions = data.process.actions;
 		var noOfActions = actions.length;
@@ -33,11 +38,11 @@ function Widget_action_summary(){
 			var action = actions[i];
 			var $actionTask = $(actionTemplate);
 			var actionLink = '';
-			var linkHref = '#' + pageType + '/' + action.portalWidget + '?' + action.params
+			var linkHref = '#' + pageType + '/' + action.portalWidget + '?' + action.params + '&p=' + widgetObject.propertyId;
 
 			if (action.complete){
 				completed++;
-				actionLink = '&nbsp;' + action.name + '<a class="pull-right" href="' + linkHref + '">change</a>'
+				actionLink = '&nbsp;<a class="text-success" href="' + linkHref + '">' + action.name + '</a>'
 				$actionTask.addClass('list-group-item-success');
 			} else {
 				actionLink = '&nbsp;<a class="text-danger" href="' + linkHref + '">' + action.name + '</a>';

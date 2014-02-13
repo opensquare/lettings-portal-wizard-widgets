@@ -32,7 +32,10 @@ function Widget_portfolio() {
 			var propertyGroup = $('.property-list', widget.$widgetDiv);
 			// args == new allows display of widget for new properties for demo purposes only
 			if (properties.length == 0 || args == 'new') {
-				pw.notifyChannelOfEvent(channelSetPageTitles, {'pageId' : pageId, 'title' : ''})
+				pw.notifyChannelOfEvent(channelSetPageTitles, {
+					'pageId' : pageId, 
+					'title' : ''
+				})
 				$('.properties', widget.$widgetDiv).before(emptyPortfolioTemplate).hide();
 				pw.mount($('div.widget',widget.$widgetDiv));
 			} else {

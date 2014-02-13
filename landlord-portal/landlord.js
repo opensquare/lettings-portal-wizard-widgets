@@ -7,15 +7,18 @@ function Widget_landlord_portal(){
 
 	var widget = this,
 	newWidgetPrefix = 'll-',
-	homeId = 'home',
-	homeContent,
 	currentHash;
+
+	nav = {
+		homeContent: '',
+		homeId: 'home',
+	}
 
 	var contentTemplate = '<article><div class="pagetitle page-header"></div><div class="widget"></div></article>';
 
 	this.onReadyExtend = function() {
 		/*store home layout*/
-		homeContent = $('#content').html();
+		nav.homeContent = $('#content').html();
 		currentHash = window.location.hash;
 		/*add listeners*/
 		pw.addListenerToChannel(this, channelSetPageTitles);
@@ -30,10 +33,7 @@ function Widget_landlord_portal(){
 
 	this.handleEvent = function(channel, event) {
 		if (channel == channelSetPageTitles) {
-			if (!event.subtitle){
-				event.subtitle = '';
-			}
-			updatePageTitle(event.pageId, event.title, event.subtitle);
+			updatePageTitle(event);
 		} else if (channel == channelSetPageArgs) {
 			updatePageArgs(event.pageId, event.args);
 		} else if (channel == channelClosePage){
@@ -55,7 +55,7 @@ function Widget_landlord_portal(){
 			var idParts = pageId.split('/');
 			var type = idParts[0];
 			var subType = idParts[1];
-			if(pageId != '' && pageId !== homeId){
+			if(pageId != '' && pageId !== nav.homeId){
 				try{
 				loadContent(pageId, type, subType, pageArgs);
 				} catch(error) {
@@ -94,7 +94,7 @@ function Widget_landlord_portal(){
 	}
 
 	function loadHome(pageArgs){
-		$homeContent = $(homeContent);
+		$homeContent = $(nav.homeContent);
 		$homeContent.children('.widget').attr('page.args', pageArgs).removeAttr('delayload');
 		loadPage($('#content').html($homeContent));
 	}
@@ -106,9 +106,9 @@ function Widget_landlord_portal(){
 		})
 	}
 
-	function updatePageTitle(pageId, title, subtitle) {
-		$('#content article[pageid="' + pageId + '"').each(function(){
-			setTitle($(this), title, subtitle);
+	function updatePageTitle(data) {
+		$('#content article[pageid="' + data.pageId + '"').each(function(){
+			setTitle($(this), data);
 		})
 	}
 
@@ -116,14 +116,19 @@ function Widget_landlord_portal(){
 		$('#content div.widget[pageid="' + pageId + '"').attr('page.args', args);
 	}
 
-	function setTitle($article, title, subtitle) {
-		if (!title && title !== '' ) {
-			title = $article.children('div.widget').attr('page.title');
+	function setTitle($article, data) {
+		if (!data) {
+			data = {}
+			data.title = $article.children('div.widget').attr('page.title');
 			}
-		if (!subtitle) {
-			subtitle = '';
+		if (!data.subtitle) {
+			data.subtitle = '';
 		}
-		$article.find('.pagetitle').html('<h2>' + title + ' <small>' + subtitle + '</small></h2>');
+		$title = $article.find('.pagetitle').addClass('clearfix').html('<h2 class="pull-left">' + data.title + ' <small>' + data.subtitle + '</small></h2>');
+		
+		if(data.link){
+			$title.append('<h2 class="pull-right"><a href="' + data.link.hash + '">' + data.link.text + '</a></h2>');
+		}
 	}
 
 	/*function initPopups(){

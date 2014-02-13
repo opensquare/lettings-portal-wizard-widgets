@@ -1,7 +1,8 @@
 {
-	"property" : "34b523-dfac3c-3bca43-3b3563-ba36aa",
+	"property" : "12358453",
 	"process" : {
 		"name" : "Promote Property",
+		"subtext" : "some text describing action s aute irure dolor in reprehenderit in voluptate velit etation ullamco laboris nisi ut aliquip ex ea commodo con",
 		"status" : "incomplete",
 		"actions" : [
 			{

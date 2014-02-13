@@ -5,12 +5,13 @@ div.widget[name='property-summary'] article {
 /*div.widget[name='property-summary'] section{
 	padding-left: 21em;
 }
-div.widget[name='property-summary'] article h2{
-	padding: 0;
-	margin:0;
+*/
+div.widget[name='property-summary'] summary h2 .address{
+	/*padding: 0;
+	margin:0;*/
 	cursor: pointer;
 }
-*/
+
 div.widget[name='property-summary'] aside .image{
 	/*float:left;*/
 	border: 1px solid;
