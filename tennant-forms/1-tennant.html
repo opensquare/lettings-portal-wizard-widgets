@@ -1,18 +1,28 @@
-<ul id="crumbTrail">
-  <li class="crumbDetails on">Your Details</li>
+<script type='text/javascript' src='widgets/common-forms/js/form-hints.js' ></script>
+
+<ol id="crumbTrail" class="breadcrumb">
+  <li class="crumbDetails on active">Your Details</li>
   <li class="crumbRegister">Registration</li>
   <li class="crumbWelcome">Welcome</li>
-</ul>
+</ol>
 
-<form rhinoforms="true" class="tennant-form">
+<form rhinoforms="true" class="tennant-form form-horizontal">
 
 	<h1>Your Details</h1>
 
+	<hr>
+
 	<rf.include src="../common-forms/common-personal-details.html" ></rf.include>
 
-	<div class="navigation">
-		<input type="button" value="Cancel" onclick="history.back();"/>
-		<input type="submit" value="Next" rf.action="next"/>
+	<hr>
+
+	<div class="field form-group">
+		<div class="col-sm-3"></div>
+	
+		<div class="col-sm-6">
+			<input type="button" value="Cancel" class="btn btn-primary" onclick="history.back();"/>
+			<input type="submit" value="Next" class="btn btn-primary" rf.action="next"/>
+		</div>
 	</div>
 
 </form>
