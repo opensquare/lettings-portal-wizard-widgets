@@ -45,14 +45,15 @@
 
 /* taken from bootstrap.css and re-used for RhinoForms 'invalid' class */
 .invalid {
-  border-color: #a94442;
+  border-color: #c7254e;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
 }
 .invalid-message {
-  color: #a94442;
-  float: left;
+  color: #c7254e;
+  float: right;
   display: block;
+  clear: both;
 }
 
 
