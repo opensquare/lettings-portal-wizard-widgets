@@ -1,0 +1,12 @@
+<widget>
+	<type>layout</type>
+	<parameters>
+		<url>messages.html</url>
+	</parameters>
+	<attributes>
+		<displayHeader>false</displayHeader>
+		<css>messages.css</css>
+		<js>messages.js</js>
+		<page.title>Messages</page.title>
+	</attributes>
+</widget>

@@ -1,0 +1,45 @@
+{"messages":[
+	{"message": 
+		{
+			"id": "1234",
+			"from": "Neil Tenant",
+			"to": "Mr Landlord",
+			"date": "01-02-14",
+			"title": "Itinerary for 110 Hulse Road",
+			"body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+		}
+	},
+	{"message": 
+		{
+			"id": "1235",
+			"from": "Neil Tenant",
+			"to": "Mr Landlord",
+			"date": "29-01-14",
+			"title": "RE: Tenancy Agreement",
+			"body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+			
+		}
+	},
+	{"message": 
+		{
+			"id": "1235",
+			"from": "Neil Tenant",
+			"to": "Mr Landlord",
+			"date": "29-01-14",
+			"title": "Tenancy Agreement",
+			"body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+			
+		}
+	},
+	{"message": 
+		{
+			"id": "1235",
+			"from": "John Smith",
+			"to": "Mr Landlord",
+			"date": "15-01-14",
+			"title": "Enquiry",
+			"body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+			
+		}
+	}
+]}
