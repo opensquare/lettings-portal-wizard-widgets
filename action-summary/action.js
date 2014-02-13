@@ -19,14 +19,21 @@ function Widget_action_summary(){
 			url: 'widgets/action-summary/actions.json',
 			dataType: 'json',
 		})
-		.done(populateAction)
+		.done(function(data){
+			for (var i = 0; i < data.length; i++) {
+				activity = data[i];
+				if (activity.property == widgetObject.propertyId){
+					populateActionList(activity);
+				}
+			};
+		})
 		.fail(function(object, status, error){
 			console.debug('error: ' + status + ' msg: ' + error);
 		});
 	}
 
 
-	function populateAction(data) {
+	function populateActionList(data) {
 		var actionTemplate = '<li class="list-group-item"><span class="glyphicon"></span></li>';
 		$('.action-title', template).text(data.process.name)
 		$('.action-subtext', template).text(data.process.subtext)
@@ -55,17 +62,25 @@ function Widget_action_summary(){
 			$('.action-list',template).append($actionTask);
 		}
 
+		if (completed != noOfActions){
+			updateProgress(template, completed, noOfActions);
+			$('.action-button', template).addClass('disabled').addClass('btn-default');
+		} else if (noOfActions > 0){
+			updateProgress(template, completed, noOfActions);
+			$('.action-button', template).addClass('btn-success')
+		} else {
+			$('.action-progress',template).remove();
+			$('.action-button', template).remove();
+		}
+	}
+
+	function updateProgress(template, completed, noOfActions){
 		var percentComplete = (completed / noOfActions) * 100;
 		$('.action-total', template).text(completed + '/' + noOfActions);
 		$('.progress-bar',template)
 		.attr('aria-valuenow', Math.ceil(percentComplete))
 		.css('width', Math.ceil(percentComplete) + '%')
 		.find('.action-percent').text(percentComplete.toString().substr(0,4));
-		
-		if(noOfActions != completed) {
-			$('.action-button', template).addClass('disabled').addClass('btn-default');
-		} else {
-			$('.action-button', template).addClass('btn-success')
-		}
 	}
+		
 }

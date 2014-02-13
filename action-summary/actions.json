@@ -1,4 +1,4 @@
-{
+[{
 	"property" : "12358453",
 	"process" : {
 		"name" : "Promote Property",
@@ -35,4 +35,83 @@
 			}
 		]
 	}
+},
+{
+	"property" : "65955",
+	"process" : {
+		"name" : "Promote Property",
+		"subtext" : "some text describing action s aute irure dolor in reprehenderit in voluptate velit etation ullamco laboris nisi ut aliquip ex ea commodo con",
+		"status" : "incomplete",
+		"actions" : [
+			{
+				"name": "basic details",
+				"portalWidget": "edit",
+				"portalFlow": "someFlow",
+				"params": "anyContextInfo",
+				"complete": true
+			},
+			{
+				"name": "tenancy details",
+				"portalWidget": "someOtherWidget",
+				"portalFlow": "someOtherFlow",
+				"params": "anyOtherContextInfo",
+				"complete": true
+			},
+			{
+				"name": "upload supporting documents",
+				"portalWidget": "documents",
+				"portalFlow": "someOtherFlow",
+				"params": "anyOtherContextInfo",
+				"complete": false
+			},
+			{
+				"name": "advanced details",
+				"portalWidget": "somethingElse",
+				"portalFlow": "someOtherFlow2",
+				"params": "anyOtherContextInfo",
+				"complete": true
 }
+		]
+	}
+},
+{
+	"property" : "5634",
+	"process" : {
+		"name" : "Published",
+		"subtext" : "Awaiting interest shown in property",
+		"status" : "incomplete",
+		"actions" : []
+	}
+},
+{
+	"property" : "5646546",
+	"process" : {
+		"name" : "Confirm tenancy",
+		"subtext" : "some text describing action s aute irure dolor in reprehenderit in voluptate velit etation ullamco laboris nisi ut aliquip ex ea commodo con",
+		"status" : "incomplete",
+		"actions" : [
+			{
+				"name": "tenancy agreement",
+				"portalWidget": "edit",
+				"portalFlow": "someFlow",
+				"params": "anyContextInfo",
+				"complete": true
+			},
+			{
+				"name": "tenant details",
+				"portalWidget": "someOtherWidget",
+				"portalFlow": "someOtherFlow",
+				"params": "anyOtherContextInfo",
+				"complete": true
+			},
+			{
+				"name": "referencing",
+				"portalWidget": "documents",
+				"portalFlow": "someOtherFlow",
+				"params": "anyOtherContextInfo",
+				"complete": true
+			}
+		]
+	}
+}
+]
