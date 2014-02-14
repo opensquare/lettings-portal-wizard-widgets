@@ -33,7 +33,7 @@ function Widget_ll_property_details(){
 			if (propertyId == property.id){	
 				var e = {
 					'pageId' : widgetObject.$widgetDiv.attr(pageIdAttr),
-					'title' : property.address,
+				'title' : property.address.addressLine1,
 				'subtitle' : property.status,
 				'link' : {
 					'text' : '&lt;&lt;&lt; My Properties',

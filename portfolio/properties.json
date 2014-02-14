@@ -1,42 +1,91 @@
-{"properties":[
-	{"property": 
 		{
+	"properties":[{
+		"property": {
 			"id": "12358453",
-			"address": "10 Hulse Road",
 			"subtitle": "3 Bedroom house",
-			"description": "House description goes here",
-			"summary": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-			"status": "entered"
-		}
-	},
-	{"property": 
-		{
-			"id": "65955",
-			"address": "11 Avenue Road",
-			"subtitle": "2 Bedroom apartment",
-			"description": "A nice apartment",
+			"summary": "House description goes here",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
 			"status": "entered",
-			"summary":  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+			"address" : {
+				"houseNumberName" : "10",
+				"addressLine1" : "10 Hulse Road",
+				"town" : "Sometown",
+				"postcode" : "GD357JY"
+			},
+			"details" : {
+				"building" : "house",
+				"bedrooms" : 3,
+				"bathrooms" : 1,
+				"parking" : "driveway",
+				"floors" : 2,
+				"heating" : "central heating"
+			}
 		}
+	}, {
+		"property": {
+			"id": "65955",
+			"address" : {
+				"houseNumberName" : "11",
+				"addressLine1" : "11 Avenue Road",
+				"town" : "Sometown",
+				"postcode" : "GD379QT"
+			},
+			"details" : {
+				"building" : "apartment",
+				"bedrooms" : 2,
+				"bathrooms" : 1,
+				"parking" : "street",
+				"floors" : 1,
+				"heating" : "central heating"
 	},
-	{"property": 
-		{
+			"subtitle": "2 Bedroom apartment",
+			"summary": "An apartment",
+			"status": "entered",
+			"description":  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+		}
+	}, {
+		"property": {
 			"id": "5634",
-			"address": "Flat 3, 15 Winn Road",
-			"subtitle": "4 Bedroom House",
-			"description": "Another Brief description",
-			"status": "published",
-			"summary":  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-		}
+			"address" : {
+				"houseNumberName" : "Flat 3",
+				"addressLine1" : "Flat 3, 15 Winn Road",
+				"town" : "Sometown",
+				"postcode" : "GD189TP"
+			},
+			"details" : {
+				"building" : "flat",
+				"bedrooms" : 1,
+				"bathrooms" : 1,
+				"parking" : "street",
+				"floors" : 1,
+				"heating" : "central heating"
 	},
-	{"property": 
-		{
-			"id": "5646546",
-			"address": "102 Earls Road",
 			"subtitle": "1 Bedroom Flat",
-			"description": "A small flat",
+			"summary": "Another Brief description",
+			"status": "published",
+			"description":  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+		}
+	}, {
+		"property": {
+			"id": "5646546",
+			"address" : {
+				"houseNumberName" : "102",
+				"addressLine1" : "102 Earls Road",
+				"town" : "Sometown",
+				"postcode" : "GD226AQ"
+			},
+			"details" : {
+				"building" : "house",
+				"bedrooms" : 4,
+				"bathrooms" : 2,
+				"parking" : "driveway/garage",
+				"floors" : 2,
+				"heating" : "central heating"
+	},
+			"subtitle": "4 Bedroom House",
+			"summary": "A house",
 			"status": "tenancy agreed",
-			"summary":  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+			"description":  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 		}
 	}
 ]}

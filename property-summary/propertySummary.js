@@ -28,11 +28,11 @@ function Widget_property_summary(){
 					// populate article
 					property.image = docstoreThumbnailPath.replace('{id}', property.id);
 					$('.image div', articleTpl).text(property.image);
-					$('summary .address', articleTpl).html(property.address);
+					$('summary .address', articleTpl).html(property.address.addressLine1);
 					$('summary .sub', articleTpl).text(property.subtitle);
-					$('summary .description', articleTpl).text(property.description);
+					$('summary .description', articleTpl).text(property.summary);
 					$('summary .rentalStatus', articleTpl).text(property.status);
-					$('section>div', articleTpl).text(property.summary);
+					$('section>div', articleTpl).text(property.description);
 					widgetObject.addHandlers(articleTpl, property);
 				}
 				
