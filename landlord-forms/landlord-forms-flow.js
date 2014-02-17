@@ -10,8 +10,8 @@
       },
       {
         id: "register",
-        url: "registration.html",
-       actions: [ "back",
+        url: "../common-forms/common-welcome-page.html",
+        actions: [ "back",
           {
             name: "next",
             submission: {

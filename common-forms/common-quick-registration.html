@@ -1,0 +1,46 @@
+<script>
+
+function queryURL() {
+    var result = {}, queryString = location.search.slice(1),
+        re = /([^&=]+)=([^&]*)/g, m;
+
+    while (m = re.exec(queryString)) {
+        result[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+    }
+
+    return result;
+}
+
+var email_address = queryURL()["email"];
+
+var input_email = document.getElementById('input_email');
+
+if (email_address != '') {
+
+	input_email.value = email_address;
+
+}
+
+</script>
+
+<div id="customerDetails">
+	<div class="field form-group">
+		<label for="input_email" class="col-sm-3 control-label">Email Address</label>
+		<div class="col-sm-6">
+			<input type="email" class="form-control" name="customer.email" rf.validation="required email" id="input_email"/>
+		</div>
+	</div>
+	<div class="field form-group">
+		<label for="input_password" class="col-sm-3 control-label">Password</label>
+		<div class="col-sm-6">
+			<input type="password" class="form-control" name="customer.password" id="input_password" rf.validation="required pattern({regex: '^.{8,}?$', errorMessage:'Invalid Password'}) pattern({regex: '^.*[0-9]+.*$', errorMessage:'Invalid Password'})"/>
+			<div class="hint">Password must be at least 8 characters long and contain at least 1 number</div>
+		</div>
+	</div>
+	<div class="field form-group">
+		<label for="input_password_confirm" class="col-sm-3 control-label">Confirm Password</label>
+		<div class="col-sm-6">
+			<input type="password" class="form-control" name="passwordConfirm" id="input_password_confirm" rf.validationFunction="if (fields.customer_password.value !== field.value && field.value !== '') {error = {name: field.name, message: 'This password must match the one entered above'} } else { this.validate('required')}"/>
+		</div>
+	</div>
+</div>

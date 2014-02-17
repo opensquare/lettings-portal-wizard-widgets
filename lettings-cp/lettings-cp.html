@@ -1,10 +1,20 @@
 <script>
 	var url = window.location.hash;
 	var hash = url.substring(url.indexOf('#')+1);
-	var formSet = hash + "-forms";
+
+	var register_btn = document.getElementById('register-button');
+	register_btn.addEventListener('click', function() {
+
+		var register_email = document.getElementById('register_email').value;
+
+		var formSet = hash + "-forms" + '?email=' + register_email;
+
+		$("#formSet").attr("href", formSet);
+
+	}, false);
 
 	$("#cp-banner").attr("class", hash);
-	$("#formSet").attr("href", formSet);
+	
 	//$("#register-button").attr("class", hash);
 </script>
 
@@ -63,10 +73,15 @@
 				<div class="panel-heading"><h4>Not registered yet?</h4></div>
 				<div class="panel-body">
 					<ul class="messages"/>
-					<p>It's quick and simple to register, click the button below.</p>
-					<a id="formSet" href="landlord-forms">
-						<button id="register-button" class="btn btn-primary">Register</button>
-					</a>
+					<p>Enter your email address here:</p>
+					<p>
+						<input type="text" name="register_email" id="register_email" autofocus required class="form-control" />
+					</p>
+					<p>
+						<a id="formSet" href="landlord-forms">
+							<button id="register-button" class="btn btn-primary">Register</button>
+						</a>
+					</p>
 				</div><!-- /.panel-body -->
 			</div><!-- /.panel -->
 		</div><!-- /.col-md-6 -->
