@@ -5,6 +5,8 @@ function Widget_ll_messages_home(){
 		
 		console.log('messages');
 
+		var message_count;
+
 		$.ajax({
 			url: 'widgets/ll-messages-home/messages.json',
 			dataType: 'json',
@@ -27,10 +29,19 @@ function Widget_ll_messages_home(){
 
 			}
 
+			// TODO: get number of unread messages, flag needed in messages json for read/unread status
+			message_count = data.messages.length;
+
+			var display_message_count = document.getElementById('message_count');
+
+			display_message_count.innerHTML = message_count;
+
 		})
 		.fail(function(object, status, error){
 			console.debug('error: ' + status + ' msg: ' + error);
 		});
+
+
 
 	}
 
