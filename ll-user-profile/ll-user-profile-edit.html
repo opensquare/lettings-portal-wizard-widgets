@@ -1,55 +1,74 @@
-<form rhinoforms="true" class="user-profile-form">
+<form rhinoforms="true" class="user-profile-form form-horizontal">
 	
 	<div class="relatedField">
-		<div class="field">
-			<label for="firstName">First Name: </label>
-			<input name="firstName" id="firstName" type="text" rf.validation="required" />
+		<div class="field form-group">
+			<label for="firstName" class="control-label col-sm-3">First Name: </label>
+			<div class="col-sm-6">
+				<input name="firstName" class="form-control" id="firstName" type="text" rf.validation="required" />
+			</div>
 		</div>
 
-		<div class="field">
-			<label for="lastName">Last Name: </label>
-			<input name="lastName" id="lastName" type="text" rf.validation="required" />
-		</div>
-	</div>
-
-	<div class="relatedField">
-		<div class="field">
-			<label for="homeTel">Home Telephone: </label>
-			<input name="homeTel" id="homeTel" type="text" rf.validation="required" />
-		</div>
-
-		<div class="field">
-			<label for="mobileTel">Mobile Telephone: </label>
-			<input name="mobileTel" id="mobileTel" type="text" rf.validation="required" />
+		<div class="field form-group">
+			<label for="lastName" class="control-label col-sm-3">Last Name: </label>
+			<div class="col-sm-6">
+				<input name="lastName" class="form-control" id="lastName" type="text" rf.validation="required" />
+			</div>
 		</div>
 	</div>
 
 	<div class="relatedField">
-		<div class="field">
-			<label for="homeAddress1">Home Address 1: </label>
-			<input name="homeAddress1" type="text" rf.validation="required" />
+		<div class="field form-group">
+			<label for="homeTel" class="control-label col-sm-3">Home Telephone: </label>
+			<div class="col-sm-6">
+				<input name="homeTel" class="form-control" id="homeTel" type="text" rf.validation="required" />
+			</div>
 		</div>
 
-		<div class="field">
-			<label for="homeAddress2">Home Address 2: </label>
-			<input name="homeAddress2" type="text" rf.validation="required" />
+		<div class="field form-group">
+			<label for="mobileTel" class="control-label col-sm-3">Mobile Telephone: </label>
+			<div class="col-sm-6">
+				<input name="mobileTel" class="form-control" id="mobileTel" type="text" rf.validation="required" />
+			</div>
 		</div>
 	</div>
 
 	<div class="relatedField">
-		<div class="field">
-			<label for="town">Town: </label>
-			<input name="town" type="text" rf.validation="required" />
+		<div class="field form-group">
+			<label for="homeAddress1" class="control-label col-sm-3">Home Address 1: </label>
+			<div class="col-sm-6">
+				<input name="homeAddress1" class="form-control" type="text" rf.validation="required" />
+			</div>
 		</div>
 
-		<div class="field">
-			<label for="postcode">Postcode: </label>
-			<input name="postcode" type="text" rf.validation="required" />
+		<div class="field form-group">
+			<label for="homeAddress2" class="control-label col-sm-3">Home Address 2: </label>
+			<div class="col-sm-6">
+				<input name="homeAddress2" class="form-control" type="text" rf.validation="required" />
+			</div>
 		</div>
 	</div>
 
-	<div class="user-profileActions">
-		<input type="button" rf.action="next" value="Save"/>
+	<div class="relatedField">
+		<div class="field form-group">
+			<label for="town" class="control-label col-sm-3">Town: </label>
+			<div class="col-sm-6">
+				<input name="town" class="form-control" type="text" rf.validation="required" />
+			</div>
+		</div>
+
+		<div class="field form-group">
+			<label for="postcode" class="control-label col-sm-3">Postcode: </label>
+			<div class="col-sm-3">
+				<input name="postcode" class="form-control" type="text" rf.validation="required" />
+			</div>
+		</div>
+	</div>
+
+	<div class="user-profileActions form-group">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6">
+			<input type="button" rf.action="next" class="btn btn-primary" value="Save"/>
+		</div>
 	</div>
 
 </form>

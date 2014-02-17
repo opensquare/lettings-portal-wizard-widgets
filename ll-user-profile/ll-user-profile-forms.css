@@ -1,4 +1,4 @@
-div.widget[name='ll-user-profile'] label {
+/* div.widget[name='ll-user-profile'] label {
   display: inline-block;
   font-size: 1.1em;
   padding-right: 1em;
@@ -32,7 +32,7 @@ div.widget[name='ll-user-profile'] input[type="radio"]:checked {
 }
 div.widget[name='ll-user-profile'] input[type="radio"]:checked:after {
   content: '\2714';
-  color: #FFF; background-color: #0090C0; /*blue*/
+  color: #FFF; background-color: #0090C0; 
     font-size: 1.3em;   
 }
 div.widget[name='ll-user-profile'] input[type="button"] {
@@ -96,4 +96,4 @@ div.widget[name='ll-user-profile'] .user-profileActions {
 }
 div.widget[name='ll-user-profile'] .displayValue {
   float: right;
-}
+} */
