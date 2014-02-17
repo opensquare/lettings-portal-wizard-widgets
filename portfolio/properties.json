@@ -1,4 +1,4 @@
-		{
+{
 	"properties":[{
 		"property": {
 			"id": "12358453",
@@ -19,7 +19,31 @@
 				"parking" : "driveway",
 				"floors" : 2,
 				"heating" : "central heating"
-			}
+			},
+			"actions" : [{
+				"action": "enter details",
+				"totalSteps": "3",
+				"completed" : "3",
+				"portalWidget": "basic"
+			},
+			{
+				"action": "publish",
+				"totalSteps": "4",
+				"completed" : "2",
+				"portalWidget" : "publish"
+			},
+			{
+				"action": "agree tenancy",
+				"totalSteps": "4",
+				"completed" : "0",
+				"portalWidget" : "tenancy"
+			},
+			{
+				"action": "confirm tenancy",
+				"totalSteps": "3",
+				"completed" : "0",
+				"portalWidget" : "confirm"
+			}]
 		}
 	}, {
 		"property": {
@@ -37,11 +61,35 @@
 				"parking" : "street",
 				"floors" : 1,
 				"heating" : "central heating"
-	},
+			},
 			"subtitle": "2 Bedroom apartment",
 			"summary": "An apartment",
 			"status": "entered",
-			"description":  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+			"description":  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+			"actions" : [{
+				"action": "enter details",
+				"totalSteps": "3",
+				"completed" : "3",
+				"portalWidget": "basic"
+			},
+			{
+				"action": "publish",
+				"totalSteps": "4",
+				"completed" : "3",
+				"portalWidget" : "publish"
+			},
+			{
+				"action": "agree tenancy",
+				"totalSteps": "4",
+				"completed" : "0",
+				"portalWidget" : "tenancy"
+			},
+			{
+				"action": "confirm tenancy",
+				"totalSteps": "3",
+				"completed" : "0",
+				"portalWidget" : "confirm"
+			}]
 		}
 	}, {
 		"property": {
@@ -59,11 +107,35 @@
 				"parking" : "street",
 				"floors" : 1,
 				"heating" : "central heating"
-	},
+			},
 			"subtitle": "1 Bedroom Flat",
 			"summary": "Another Brief description",
 			"status": "published",
-			"description":  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+			"description":  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+			"actions" : [{
+				"action": "enter details",
+				"totalSteps": "3",
+				"completed" : "3",
+				"portalWidget": "basic"
+			},
+			{
+				"action": "publish",
+				"totalSteps": "4",
+				"completed" : "4",
+				"portalWidget" : "publish"
+			},
+			{
+				"action": "agree tenancy",
+				"totalSteps": "4",
+				"completed" : "0",
+				"portalWidget" : "tenancy"
+			},
+			{
+				"action": "confirm tenancy",
+				"totalSteps": "3",
+				"completed" : "0",
+				"portalWidget" : "confirm"
+			}]
 		}
 	}, {
 		"property": {
@@ -81,11 +153,35 @@
 				"parking" : "driveway/garage",
 				"floors" : 2,
 				"heating" : "central heating"
-	},
+			},
 			"subtitle": "4 Bedroom House",
 			"summary": "A house",
 			"status": "tenancy agreed",
-			"description":  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+			"description":  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+			"actions" : [{
+				"action": "enter details",
+				"totalSteps": "3",
+				"completed" : "3",
+				"portalWidget": "basic"
+			},
+			{
+				"action": "publish",
+				"totalSteps": "4",
+				"completed" : "4",
+				"portalWidget" : "publish"
+			},
+			{
+				"action": "agree tenancy",
+				"totalSteps": "4",
+				"completed" : "4",
+				"portalWidget" : "tenancy"
+			},
+			{
+				"action": "confirm tenancy",
+				"totalSteps": "3",
+				"completed" : "1",
+				"portalWidget" : "confirm"
+			}]
 		}
 	}
 ]}
