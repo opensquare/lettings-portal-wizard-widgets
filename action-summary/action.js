@@ -124,7 +124,6 @@ function Widget_action_summary(){
 
 	function updateActionButton(action, noOfActions, completed, actionOnComplete, template) {
 		if (!actionOnComplete || noOfActions == 0){
-			console.debug(noOfActions + ' ' + actionOnComplete);
 			$('.action-button', template).remove();
 		} else if (completed != noOfActions){
 			$('.action-button', template).addClass('disabled').addClass('btn-default');

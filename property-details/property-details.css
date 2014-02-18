@@ -1,11 +1,39 @@
-.widget.property-details div.existing div{
-	/*margin:1em;*/
+div.widget[name='property-details'] .image {
+    border: 1px solid;
+    margin: 1em;
 }
-div.widget[name='property-details'] .actions {
-	float: left;
-	margin-left:1em;
+div.widget[name='property-details'] .dls-banner {
+    color:rgba(0,0,0,0.5);
+    border: 1px solid;
+    padding: 6em 1em;
+    margin: 0.5em;
+    text-align: center;
+    word-wrap:break-word;
 }
-div.widget[name='property-details'] div.widget.property-summary{
-	float:left;
-	width:85%;
+div.widget[name='property-details'] section .dls-description{
+    border-top:1px solid;
+    border-color:rgba(0,0,0,0.25);
+}
+div.widget[name='property-details'] section>summary{
+    margin-bottom: 2em;
+}
+div.widget[name='property-details'] section>summary .dls-subtitle,
+div.widget[name='property-details'] section>summary .dls-summary {
+    margin:0.5em 0;
+}
+div.widget[name='property-details'] .pic {
+    height: 100px;
+    margin: 0 auto;
+    padding-top: 3em;
+    border: 1px solid #ccc;
+    
+    word-wrap: break-word;
+    text-align: center;
+    background-color: #eee;
+    font-weight: bold;
+    color: #777;
+}
+div.widget[name='property-details'] .dls-detail {
+    padding: 0.5em;
+    border-top: 1px solid #EEE;
 }

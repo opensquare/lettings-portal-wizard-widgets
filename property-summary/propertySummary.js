@@ -50,6 +50,12 @@ function Widget_property_summary(){
         return $button;
     }
 
+    this.createMessageBadge = function(noOfMessages) {
+        var $mesageHTML = $('<h3><span class="label label-info"><span>x</span> new messages</span></h3>');
+        $('.label span', $mesageHTML).text(noOfMessages);
+        return $mesageHTML;
+    }
+
     this.populateProperty = function(property){
         var $actionContainer = $('.ps-actions', articleTpl);
 
@@ -68,6 +74,10 @@ function Widget_property_summary(){
         var i;
         for (i = 0; i < property.actions.length; i++) {
             $actionContainer.append(this.createActionButton(property.id, property.actions[i]));
+        }
+
+        if (property.messages > 0) {
+            $actionContainer.before(this.createMessageBadge(property.messages));
         }
         this.addHandlers(property);
     }
