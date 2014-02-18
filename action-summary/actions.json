@@ -1,8 +1,41 @@
 [{
-	"property" : "12358453",
+	"entity" : "details",
+	"process" : {
+		"name" : "Personal Information",
+		"subtext" : "Provide some necessary information about you ... more text t in voluptate velit etation ullamco laboris",
+		"toActionOn" : false,
+		"status" : "complete",
+		"actions" : [
+			{
+				"name": "basic details",
+				"portalWidget": "profile",
+				"portalFlow": "someFlow",
+				"params": "loadProfileParams",
+				"complete": true
+			},
+			{
+				"name": "contact and notification details",
+				"portalWidget": "profile",
+				"portalFlow": "someOtherFlow",
+				"params": "loadNotificationParams",
+				"complete": true
+			},
+			{
+				"name": "some other step",
+				"portalWidget": "profile",
+				"portalFlow": "someOtherFlow",
+				"params": "anyOtherContextInfo",
+				"complete": false
+			}
+		]
+	}
+},
+{
+	"entity" : "12358453",
 	"process" : {
 		"name" : "Promote Property",
 		"subtext" : "some text describing action s aute irure dolor in reprehenderit in voluptate velit etation ullamco laboris nisi ut aliquip ex ea commodo con",
+		"toActionOn" : true,
 		"status" : "incomplete",
 		"actions" : [
 			{
@@ -37,10 +70,11 @@
 	}
 },
 {
-	"property" : "65955",
+	"entity" : "65955",
 	"process" : {
 		"name" : "Promote Property",
 		"subtext" : "some text describing action s aute irure dolor in reprehenderit in voluptate velit etation ullamco laboris nisi ut aliquip ex ea commodo con",
+		"toActionOn" : true,
 		"status" : "incomplete",
 		"actions" : [
 			{
@@ -70,24 +104,26 @@
 				"portalFlow": "someOtherFlow2",
 				"params": "anyOtherContextInfo",
 				"complete": true
-}
+			}
 		]
 	}
 },
 {
-	"property" : "5634",
+	"entity" : "5634",
 	"process" : {
 		"name" : "Published",
 		"subtext" : "Awaiting interest shown in property",
+		"toActionOn" : false,
 		"status" : "incomplete",
 		"actions" : []
 	}
 },
 {
-	"property" : "5646546",
+	"entity" : "5646546",
 	"process" : {
 		"name" : "Confirm tenancy",
 		"subtext" : "some text describing action s aute irure dolor in reprehenderit in voluptate velit etation ullamco laboris nisi ut aliquip ex ea commodo con",
+		"toActionOn" : true,
 		"status" : "incomplete",
 		"actions" : [
 			{

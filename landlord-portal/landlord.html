@@ -2,20 +2,23 @@
 	<div class="widget" name="ll-header"></div>
 
 	<section class="sub-header">
-		<nav class="navbar navbar-default">
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">My Properties</a></li>
-			<li><a href="#?new">My Properties (new user)</a></li>
-				<li><a href="#messages/home">Messages <span class="badge">1</span></a></li>
-			</ul>
-			<!-- <aside class="navbar-right">
-				<p class="navbar-text"><span class="badge">1</span> <a href="">Notifications</a></p>
-			</aside> -->
-		</nav>
 	</section>
 	
 	<section id="content">
 		<article pageid="home">
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="panel panel-default">
+						<div class="widget panel-body clearfix" name="action-summary" data-propid="details" data-page-type="user" data-minimise="true"></div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="panel panel-default">
+						<div class="widget panel-body" name="ll-new-property"></div>
+					</div>
+				</div>
+			</div>
+			<div class="pull-right">hide</div>
 			<div class="pagetitle page-header"></div>
 			<div class="widget" delayload="true" name="portfolio" page.title="My Properties" pageid="home"></div>
 		</article>
