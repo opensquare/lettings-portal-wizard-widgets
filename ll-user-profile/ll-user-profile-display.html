@@ -1,56 +1,91 @@
-<form rhinoforms="true" class="user-profile-form">
+<form rhinoforms="true" class="user-profile-form form-horizontal">
 
 	<div class="relatedField">
-		<div class="field">
-			<label for="firstName">First Name: </label>
-			<div class="displayValue">{{firstName}}</div>
-		</div>
-
-		<div class="field">
-			<label>Last Name:</label>
-			<div class="displayValue">{{lastName}}</div>
-		</div>
-	</div>
-
-	<div class="relatedField">
-		<div class="field">
-			<label for="homeTel">Home Telephone: </label>
-			<div class="displayValue">{{homeTel}}</div>
-		</div>
-
-		<div class="field">
-			<label for="mobileTel">Mobile Telephone: </label>
-			<div class="displayValue">{{mobileTel}}</div>
+		<div class="field form-group">
+			<label class="control-label col-sm-3">Name: </label>
+			<div class="col-sm-6">
+				<div class="displayValue" id="input_title">{{title}}</div> <!-- use name attribute -->
+				<div class="displayValue" id="input_firstName">{{firstName}}</div>
+				<div class="displayValue" id="input_surname">{{surname}}</div>
+			</div>
 		</div>
 	</div>
 
 	<div class="relatedField">
-		<div class="field">
-			<label for="homeAddress1">Home Address 1: </label>
-			<div class="displayValue">{{homeAddress1}}</div>
-		</div>
-
-		<div class="field">
-			<label for="homeAddress2">Home Address 2: </label>
-			<div class="displayValue">{{homeAddress2}}</div>
+		<div class="field form-group">
+			<label class="control-label col-sm-3">Date of Birth: </label>
+			<div class="col-sm-6">
+				<div class="displayValue" id="input_dateOfBirthDay">{{dateOfBirthDay}}</div>
+				<div class="displayValue" id="input_dateOfBirthMonth">{{dateOfBirthMonth}}</div>
+				<div class="displayValue" id="input_dateOfBirthYear">{{dateOfBirthYear}}</div>
+			</div>
 		</div>
 	</div>
 
 	<div class="relatedField">
-		<div class="field">
-			<label for="town">Town: </label>
-			<div class="displayValue">{{town}}</div>
-		</div>
-
-		<div class="field">
-			<label for="postcode">Postcode: </label>
-			<div class="displayValue">{{postcode}}</div>
+		<div class="field form-group">
+			<label class="control-label col-sm-3">Gender: </label>
+			<div class="col-sm-6">
+				<div class="displayValue">{{gender}}</div>
+			</div>
 		</div>
 	</div>
 
-	<div class="user-profileActions">
-		<input type="button" rf.action="back" value="Edit"/>
+	<div class="relatedField">
+		<div class="field form-group">
+			<label class="control-label col-sm-3">Occupation: </label>
+			<div class="col-sm-6">
+				<div class="displayValue" id="input_occupation">{{occupation}}</div>
+			</div>
+		</div>
 	</div>
+
+	<div class="relatedField">
+		<div class="field form-group">
+			<label class="control-label col-sm-3">Marital Status: </label>
+			<div class="col-sm-6">
+				<div class="displayValue" id="input_maritalStatusCode">{{maritalStatus}}</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="relatedField">
+		<div class="field form-group">
+			<label class="control-label col-sm-3">UK Residency: </label>
+			<div class="col-sm-6">
+				<div class="displayValue" id="input_ukResidentMoreThan5Years">{{ukResidentMoreThan5Years}}</div>
+				<div class="displayValue" id="input_ukResidentSinceMonthCode">{{ukResidentSinceMonthCode}}</div>
+				<div class="displayValue" id="input_ukResidentSinceYear">{{ukResidentSinceYear}}</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="relatedField">
+		<div class="field form-group">
+			<label class="control-label col-sm-3">Address: </label>
+			<div class="col-sm-6">
+				<div class="displayValue" id="input_address">{{address}}</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="relatedField">
+		<div class="field form-group">
+			<label class="control-label col-sm-3">Homeowner: </label>
+			<div class="col-sm-6">
+				<div class="displayValue">{{ownHome}}</div>
+			</div>
+		</div>
+	</div>
+
+	<hr>
+
+	<div class="user-profileActions form-group">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6">
+			<input type="button" class="btn btn-primary" rf.action="back" value="Edit"/>
+		</div>
+	</div> 
 
 </form>
 

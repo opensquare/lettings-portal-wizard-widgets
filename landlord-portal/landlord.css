@@ -1,3 +1,60 @@
+#input_title,
+#input_firstName,
+#input_surname,
+#input_dateOfBirthDay,
+#input_dateOfBirthMonth,
+#input_dateOfBirthYear,
+#input_ukResidentSinceMonthCode,
+#input_ukResidentSinceYear,
+#input_maritalStatusCode {
+  float: left;
+  margin-right: 1%;
+}
+
+#input_title,
+#input_firstName,
+#input_surname {
+  width: 39%;
+}
+
+#input_dateOfBirthDay,
+#input_dateOfBirthMonth,
+#input_dateOfBirthYear {
+  width: 31%;
+}
+#input_title,
+#input_dateOfBirthDay,
+#input_dateOfBirthMonth,
+#input_dateOfBirthYear {
+  width: 20%;
+}
+
+#input_ukResidentSinceMonthCode,
+#input_ukResidentSinceYear,
+#input_maritalStatusCode {
+  width: 49.5%;
+}
+#input_surname,
+#input_ukResidentSinceYear {
+  margin-right: 0;
+}
+
+#input_ukResidentMoreThan5Years {
+  margin-top: 10px;
+}
+
+/* taken from bootstrap.css and re-used for RhinoForms 'invalid' class */
+.invalid {
+  border-color: #c7254e;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+.invalid-message {
+  color: #c7254e;
+  float: right;
+  display: block;
+  clear: both;
+}
 /* Global layout styles */
 /*body{
 	margin: 0;
