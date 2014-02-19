@@ -19,7 +19,7 @@ function Widget_ll_property_details(){
 			propertyId = this.$widgetDiv.attr(argsAttr);
 			pw.addListenerToChannelReplayLast(this, channelPropertyInfo);
 			if (!this.titleSet){
-			this.loadAddressTitle();
+				this.loadAddressTitle();
 			}
 			this.setContainedWidgetParams();
 		}
@@ -30,17 +30,17 @@ function Widget_ll_property_details(){
 	}
 
 	this.setTitle = function(property){
-			if (propertyId == property.id){	
-				var e = {
-					'pageId' : widgetObject.$widgetDiv.attr(pageIdAttr),
+		if (propertyId == property.id){	
+			var e = {
+				'pageId' : widgetObject.$widgetDiv.attr(pageIdAttr),
 				'title' : property.address.addressLine1,
 				'subtitle' : property.status,
 				'link' : {
-					'text' : '&lt;&lt;&lt; My Properties',
+					'text' : '<span class="glyphicon glyphicon-arrow-left"></span> My Properties',
 					'hash' : '#'
 				}
-				}
-				pw.notifyChannelOfEvent('landlord-portal.setPageTitles', e);
+			}
+			pw.notifyChannelOfEvent('landlord-portal.setPageTitles', e);
 			this.titleSet = true;
 		}
 	}

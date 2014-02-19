@@ -1,8 +1,8 @@
 [{
 	"entity" : "details",
 	"process" : {
-		"name" : "Personal Information",
-		"subtext" : "Provide some necessary information about you ... more text t in voluptate velit etation ullamco laboris",
+		"name" : "Edit My Details",
+		"subtext" : "Provide some necessary information about you ... ",
 		"toActionOn" : false,
 		"status" : "complete",
 		"actions" : [
@@ -33,7 +33,7 @@
 {
 	"entity" : "12358453",
 	"process" : {
-		"name" : "Promote Property",
+		"name" : "Promote Your Property",
 		"subtext" : "some text describing action s aute irure dolor in reprehenderit in voluptate velit etation ullamco laboris nisi ut aliquip ex ea commodo con",
 		"toActionOn" : true,
 		"status" : "incomplete",
@@ -72,7 +72,7 @@
 {
 	"entity" : "65955",
 	"process" : {
-		"name" : "Promote Property",
+		"name" : "Promote Your Property",
 		"subtext" : "some text describing action s aute irure dolor in reprehenderit in voluptate velit etation ullamco laboris nisi ut aliquip ex ea commodo con",
 		"toActionOn" : true,
 		"status" : "incomplete",

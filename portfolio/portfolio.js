@@ -1,6 +1,8 @@
 function Widget_portfolio() {
 
-	var channelSetPageTitles = 'landlord-portal.setPageTitles';
+	var channelSetPageTitles = 'landlord-portal.setPageTitles',
+		channelToggleActions = 'toggleActions'
+	;
 
 	var widget = this,
 	propertyTpl = '<div class="widget panel panel-default" name="property-summary">widget to load</div>',
@@ -18,7 +20,7 @@ function Widget_portfolio() {
 				$(this).removeClass('selected');
 			});
 			window.location.hash = 'property/add';
-			});
+		});
 		this.loadProperties();
 	}
 
@@ -36,15 +38,16 @@ function Widget_portfolio() {
 					'pageId' : pageId, 
 					'title' : ''
 				})
+				pw.notifyChannelOfEvent('toggleActions', {animate: false});
 				$('.properties', widget.$widgetDiv).before(emptyPortfolioTemplate).hide();
 				pw.mount($('div.widget',widget.$widgetDiv));
 			} else {
-			for (var i = 0; i < properties.length; i++) {
+				for (var i = 0; i < properties.length; i++) {
 					var w = $(propertyTpl);
-				w.data("propid", properties[i].property.id);
-				propertyGroup.append(w);
-				pw.mount(w);
-			};
+					w.data("propid", properties[i].property.id);
+					propertyGroup.append(w);
+					pw.mount(w);
+				};
 				
 			}
 			

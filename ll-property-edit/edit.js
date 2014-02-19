@@ -24,7 +24,7 @@ function Widget_ll_property_edit(){
 					params[keyVal[0]] = keyVal[1];
 				} else {
 					params.push(argsArray[i]);
-		}
+				}
 			}
 			this.propertyId = params['p'];
 			pw.addListenerToChannelReplayLast(this, channelPropertyInfo);
@@ -42,7 +42,7 @@ function Widget_ll_property_edit(){
 		if (this.propertyId == property.id){	
 			var e = {
 				'pageId' : this.$widgetDiv.attr(pageIdAttr),
-				'title' : property.address,
+				'title' : property.address.addressLine1,
 				'subtitle' : 'edit',
 				'link' : {
 					'text' : '&lt;&lt;&lt; Property Overview',

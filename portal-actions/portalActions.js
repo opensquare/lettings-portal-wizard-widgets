@@ -1,10 +1,19 @@
 function Widget_portal_actions(){
 
+     var 
+        channelToggleDisplay = 'toggleActions'
+    ;
+
     this.onReadyExtend = function(){
-        var widgetObject = this;
-        $('button.toggle', this.$widgetDiv).click(function(event) {
-            $('.account-actions', widgetObject.$widgetDiv).slideToggle();
-            $(this).text($(this).text() == 'hide' ? 'show' : 'hide');
-        });
+        $('.account-actions', this.$widgetDiv).hide();
+        pw.addListenerToChannel(this, channelToggleDisplay);
+    }
+
+    this.handleEvent = function(channel, event) {
+        if (event.animate === false){
+            $('.account-actions', this.$widgetDiv).toggle();
+        } else {
+            $('.account-actions', this.$widgetDiv).slideToggle();
+        }
     }
 }

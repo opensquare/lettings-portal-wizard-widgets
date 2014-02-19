@@ -188,7 +188,11 @@ function Widget_landlord_portal(){
 	}
 
 	function setTitle(article, data) {
-		if(!data.title){
+        if(article.size() == 0){
+            return false;
+        }
+
+		if(!pw.defined(data.title)){
 			// pull the title fron the widget div
 			var pulledTitle = article.children('div.widget').attr('page.title')
 			data.title = pulledTitle ? pulledTitle : '';

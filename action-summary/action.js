@@ -41,9 +41,9 @@ function Widget_action_summary(){
 
     function createCompletedStepItem(action, linkHref){
         var link = 
-            '<li class="list-group-item list-group-item-success">'
-        +       '<span class="glyphicon glyphicon-ok-circle"></span>'
-        +       '&nbsp;<a class="text-success" href="' + linkHref + '">' + action.name + '</a>'
+            '<li class="list-group-item list-group-item-default">'
+        +       '<a class="text-success" href="' + linkHref + '">'
+        +       '<span class="glyphicon glyphicon-ok-circle"></span> ' + action.name + '</a>'
         +   '</li>';
         return link;
     }
