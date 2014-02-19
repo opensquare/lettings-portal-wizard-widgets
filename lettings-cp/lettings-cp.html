@@ -14,6 +14,8 @@
 	}, false);
 
 	$("#cp-banner").attr("class", hash);
+
+	$("#login-form-enter").attr("nextWidget", hash + "-portal");
 	
 	//$("#register-button").attr("class", hash);
 </script>
@@ -28,7 +30,7 @@
 				<div class="panel-heading"><h4>Registered Customers</h4></div>
 				<div class="panel-body" id="login-form">
 
-					<form id="login-form-enter" action="#" nextWidget="landlord-portal">
+					<form id="login-form-enter" action="#" nextWidget=""><!-- nextWidget set in the JS above -->
 						<ul class="messages"/>
 						<p>
 							<label for="username">Username: </label>

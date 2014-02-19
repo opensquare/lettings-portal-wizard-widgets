@@ -1,0 +1,11 @@
+<widget>
+	<type>layout</type>
+	<parameters>
+		<url>tenant.html</url>
+	</parameters>
+	<attributes>
+		<displayHeader>false</displayHeader>
+		<css>tenant.css</css>
+		<js>tenant.js</js>
+	</attributes>
+</widget>

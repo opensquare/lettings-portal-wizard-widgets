@@ -1,0 +1,10 @@
+<widget>
+	<type>layout</type>
+	<parameters>
+		<url>header.html</url>
+	</parameters>
+	<attributes>
+		<displayheader>false</displayheader>
+		<css>header.css</css>
+	</attributes>
+</widget>

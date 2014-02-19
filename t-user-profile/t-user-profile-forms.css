@@ -1,0 +1,160 @@
+#input_title,
+#input_firstName,
+#input_surname,
+#input_dateOfBirthDay,
+#input_dateOfBirthMonth,
+#input_dateOfBirthYear,
+#input_ukResidentSinceMonthCode,
+#input_ukResidentSinceYear,
+#input_maritalStatusCode {
+  float: left;
+  margin-right: 1%;
+}
+
+#input_title,
+#input_firstName,
+#input_surname {
+  width: 39%;
+}
+
+#input_dateOfBirthDay,
+#input_dateOfBirthMonth,
+#input_dateOfBirthYear {
+  width: 31%;
+}
+#input_title,
+#input_dateOfBirthDay,
+#input_dateOfBirthMonth,
+#input_dateOfBirthYear {
+  width: 20%;
+}
+
+#input_ukResidentSinceMonthCode,
+#input_ukResidentSinceYear,
+#input_maritalStatusCode {
+  width: 49.5%;
+}
+#input_surname,
+#input_ukResidentSinceYear {
+  margin-right: 0;
+}
+
+#input_ukResidentMoreThan5Years {
+  margin-top: 10px;
+}
+
+/* taken from bootstrap.css and re-used for RhinoForms 'invalid' class */
+.invalid {
+  border-color: #c7254e;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+.invalid-message {
+  color: #c7254e;
+  float: right;
+  display: block;
+  clear: both;
+}
+
+.displayValue {
+  padding-top: 7px;
+}
+/* div.widget[name='ll-user-profile'] label {
+  display: inline-block;
+  font-size: 1.1em;
+  padding-right: 1em;
+}
+div.widget[name='ll-user-profile'] input[type="text"] {
+  padding: 0.1em 0.25em 0 0.25em;
+  border: thin solid #0090C0;
+  font-size: 1.3em;
+  width: 35%;
+}
+div.widget[name='ll-user-profile'] input[type='date'] {
+  border: thin solid #0090C0;
+  width: 35%;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1em;
+}
+div.widget[name='ll-user-profile'] input[type="button"]:hover {
+  background-color: #82BE46;
+}
+div.widget[name='ll-user-profile'] input[type="radio"] {
+  margin: -0.25em 0 0 0;
+  padding: 0.45em;
+  background-color: #FFF;
+  border: thin solid #0090C0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+}
+div.widget[name='ll-user-profile'] input[type="radio"]:checked {
+  padding: 0.2em 0.4em 0.2em 0.4em;
+  background-color: #0090C0; 
+}
+div.widget[name='ll-user-profile'] input[type="radio"]:checked:after {
+  content: '\2714';
+  color: #FFF; background-color: #0090C0; 
+    font-size: 1.3em;   
+}
+div.widget[name='ll-user-profile'] input[type="button"] {
+  margin: 1em 1em 1em 0; padding: 0.2em 1em;
+  border: none; border-radius: 0.25em;
+  color: #FFF; background-color: #92CE56;
+  font-size: 1em; 
+  cursor: pointer;
+  float: right;
+}
+div.widget[name='ll-user-profile'] input[type="button"]:hover {
+  background-color: #82BE46;
+}
+div.widget[name='ll-user-profile'] option {
+  color: #333;
+}
+div.widget[name='ll-user-profile'] p {
+  font-size: 1.2em;
+}
+div.widget[name='ll-user-profile'] select {
+  border: thin solid #0090C0;
+  font-size: 1em;
+}
+div.widget[name='ll-user-profile'] .currency:after {
+  content: '£';
+  margin-left: 10px;
+}
+div.widget[name='ll-user-profile'] .currencyInput {
+  margin-left: -15px;
+}
+div.widget[name='ll-user-profile'] .invalid-message {
+  font-size: 0.75em;
+  margin-left: 0.5em;
+  padding: 0.25em;
+  color: #FFF;
+  background: #D44;
+  border-radius: 0.25em;
+}
+div.widget[name='ll-user-profile'] .user-profile-form {
+  background: #eee;
+  width: 80%;
+  margin: 2% auto;
+  border-radius: 5px;
+  padding: 20px;
+}
+div.widget[name='ll-user-profile'] .user-profile-form div.relatedField {
+  margin-left: 10%;
+  margin-bottom: 2%;
+  clear: both;
+}
+div.widget[name='ll-user-profile'] .field {
+  width: 45%;
+  float: left;
+  padding: 5px;
+}
+div.widget[name='ll-user-profile'] .relatedField div:nth-child(odd) {
+  margin-right: 5%;
+}
+div.widget[name='ll-user-profile'] .user-profileActions {
+  height: 40px;
+}
+div.widget[name='ll-user-profile'] .displayValue {
+  float: right;
+} */
