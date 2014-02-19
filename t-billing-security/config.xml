@@ -1,0 +1,12 @@
+<widget>
+	<type>internalPage</type>
+	<parameters>
+		<url>t-billing-security-forms.html</url>
+	</parameters>
+	<attributes>
+		<page.title>Billing and Security Check</page.title>
+		<displayheader>false</displayheader>
+		<css>t-billing-security.css</css>
+		<js>t-billing-security.js</js>
+	</attributes>
+</widget>
