@@ -1,0 +1,18 @@
+{
+	"tenancy" : {
+		"propertyId" : "67890",
+		"landlord" : "Mr Landlord",
+		"tenant" : "Joe Smith",
+		"tenancy_duration" : {
+			"length" : "12",
+			"start_date" : "01-01-2014",
+			"end_date" : "01-01-2015"
+		},
+		"address" : {
+			"houseNumberName" : "11",
+			"addressLine1" : "11 Avenue Road",
+			"town" : "Sometown",
+			"postcode" : "GD379QT"
+		}
+	}
+}

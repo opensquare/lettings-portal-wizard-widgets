@@ -1,1 +1,17 @@
 /* header.css */
+.t-header {
+	margin-left: -15px;
+	margin-right: -15px;
+}
+.t-header .page-header {
+	margin-top: 0;
+	background: #ddd;
+}
+.t-header .page-header h1 {
+	color: #888;
+	margin-top: 0;
+	margin-bottom: 3px;
+	padding-top: 10px;
+	padding-left: 10px;
+	font-size: 24px;
+}

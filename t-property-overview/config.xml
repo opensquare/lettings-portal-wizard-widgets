@@ -1,0 +1,12 @@
+<widget>
+	<type>layout</type>
+	<parameters>
+		<url>t-property-overview.html</url>
+		<secure>false</secure>
+	</parameters>
+	<attributes>
+		<displayHeader>false</displayHeader>
+		<js>t-property-overview.js</js>
+		<css>t-property-overview.css</css>
+	</attributes>
+</widget>
