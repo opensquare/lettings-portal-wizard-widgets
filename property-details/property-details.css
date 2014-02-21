@@ -1,7 +1,10 @@
 div.widget[name='property-details'] .image {
     border: 1px solid;
-    margin: 1em;
+    margin-bottom: 1em;
 }
+div.widget[name='property-details'] .dls-actions{
+    margin-bottom:1em;
+} 
 div.widget[name='property-details'] .dls-banner {
     color:rgba(0,0,0,0.5);
     border: 1px solid;
@@ -32,6 +35,9 @@ div.widget[name='property-details'] .pic {
     background-color: #eee;
     font-weight: bold;
     color: #777;
+}
+div.widget[name='property-details'] .dls-details{
+    margin-bottom: 2em;
 }
 div.widget[name='property-details'] .dls-detail {
     padding: 0.5em;

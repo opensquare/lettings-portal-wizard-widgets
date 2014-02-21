@@ -1,0 +1,105 @@
+[{
+    "type":"user",
+    "actions" : [
+        {
+            "action" : "edit my details",
+            "description" : "Provide some necessary information about you ...",
+            "id" : 1,
+            "steps" : [
+                 {
+                    "name": "basic details",
+                    "widget": "profile"
+                },
+                {
+                    "name": "contact and notification details",
+                    "widget": "profile"
+                },
+                {
+                    "name": "some other step",
+                    "widget": "profile"
+                }
+            ]
+        }
+    ]
+},
+{
+    "type":"property",
+    "actions" : [
+        {
+            "action" : "property details",
+            "description" : "some text describing action s aute irure dolor in reprehenderit in voluptate velit etation ullamco laboris nisi ut aliquip ex ea commodo con",
+            "id" : 1,
+            "steps" : [
+                {
+                    "name" : "enter details",
+                    "widget" : "edit"
+                },
+                {
+                    "name" : "tenancy information",
+                    "widget" : "someOtherWidget"
+                },
+                {
+                    "name" : "documents and photos",
+                    "widget" : "documents"
+                },
+                {
+                    "name" : "advanced property details",
+                    "widget" : "somethingElse"
+                }
+            ]
+        },
+        {
+            "action" : "publish listing",
+            "description" : "some descriptive text describing action",
+            "id" : 2,
+            "steps" : [
+                {
+                    "name" : "complete personal details",
+                    "widget" : "profile"
+                },
+                {
+                    "name" : "purchase product",
+                    "widget" : "product"
+                },
+                {
+                    "name" : "publish property",
+                    "widget" : "publish"
+                }
+            ]
+        },
+        {
+            "action" : "await interest",
+            "description" : "Await interest shown in property from prospective tenants",
+            "id" : 3,
+            "steps" : [
+                {
+                    "name" : "confirm interest",
+                    "widget" : "tenant-confirm"
+                }
+            ]
+        },
+        {
+            "action" : "complete tenancy",
+            "id" : 4,
+            "description" : "some text describing action s aute irure dolor in reprehenderit in voluptate velit etation ullamco laboris nisi ut aliquip ex ea commodo con",
+            "steps" : [
+                {
+                    "name" : "tenant referencing",
+                    "widget" : "referencing"
+                },
+                {
+                    "name" : "deposit",
+                    "widget" : "deposit"
+                },
+                {
+                    "name" : "additional terms",
+                    "widget" : "tenancy-additional"
+                },
+                {
+                    "name" : "eSign",
+                    "widget" : "sign-agreement"
+                }
+            ]
+        }
+    ]
+}]

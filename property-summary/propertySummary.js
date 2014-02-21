@@ -33,15 +33,7 @@ function Widget_property_summary(){
         } else {
             $button
                 .addClass('btn-primary')
-                .css('background-color', 'rgba(50,118,177,' + complete / 100 + ')') //color taken from bootstrap btn-primary
-                .click(function(event) {
-                    var newPage = {
-                        type: 'property',
-                        subType : action.portalWidget,
-                        pageArgs: propertyId
-                    }
-                    pw.notifyChannelOfEvent(channelLoadPage, newPage);
-                });
+                .css('background-color', 'rgba(50,118,177,' + complete / 100 + ')'); //color taken from bootstrap btn-primary
         }
         if (complete <= 50) {
             $button.css('color', '#000');

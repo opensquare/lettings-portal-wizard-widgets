@@ -2,7 +2,8 @@ function Widget_property_details(){
 
     var 
         widgetObject = this,
-        propUrl = 'widgets/portfolio/properties.json'
+        propUrl = 'widgets/portfolio/properties.json',
+        channelLoadPage = 'landlord-portal.loadPage'
     ;
 
     this.propertyId;
@@ -20,7 +21,7 @@ function Widget_property_details(){
     }
 
     this.populateTemplate = function(property){
-        $template = $(this.propTpl).wrap('<div/>').parent();
+        var $template = $(this.propTpl).wrap('<div/>').parent();
 
         // set main details
         property.image = this.docstoreBannerPath.replace('{id}', property.id);
@@ -40,7 +41,8 @@ function Widget_property_details(){
                     value: property.details[detail]
                 }));
         }
-        $('.dls-details', $template).before(this.getPictures(property.id));
+        $('.dls-details', $template).after(this.getPictures(property.id));
+
         this.setContent($template.html());
     }
 
@@ -65,9 +67,11 @@ function Widget_property_details(){
             var pic = picTemplate.replace('{id}', propertyId).replace('{pic}', i);
             pictures += pic;
         }
+        pictures += '<button type="button" class="btn-lg btn btn-default">Add picture</button>';
 
         return '<div class="row">' + pictures + '</div>';
     }
+
 
     this.loadProperty = function(){
         $.ajax({

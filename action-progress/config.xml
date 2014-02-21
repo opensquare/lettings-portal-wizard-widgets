@@ -1,0 +1,9 @@
+<widget>
+    <type>layout</type>
+    <parameters>
+        <url>index.html</url>
+    </parameters>
+    <attributes>
+        <js>action-progress.js</js>
+    </attributes>
+</widget>

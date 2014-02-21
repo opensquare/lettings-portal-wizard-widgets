@@ -1,153 +1,221 @@
 [{
-	"entity" : "details",
-	"process" : {
-		"name" : "Edit My Details",
-		"subtext" : "Provide some necessary information about you ... ",
-		"toActionOn" : false,
-		"status" : "complete",
-		"actions" : [
-			{
-				"name": "basic details",
-				"portalWidget": "profile",
-				"portalFlow": "someFlow",
-				"params": "loadProfileParams",
-				"complete": true
-			},
-			{
-				"name": "contact and notification details",
-				"portalWidget": "profile",
-				"portalFlow": "someOtherFlow",
-				"params": "loadNotificationParams",
-				"complete": true
-			},
-			{
-				"name": "some other step",
-				"portalWidget": "profile",
-				"portalFlow": "someOtherFlow",
-				"params": "anyOtherContextInfo",
-				"complete": false
-			}
-		]
-	}
+    "entity" : "details",
+    "actions" : [
+        {
+            "id" : 1,
+            "steps" : [
+                {
+                    "name": "basic details",
+                    "complete": true
+                },
+                {
+                    "name": "contact and notification details",
+                    "complete": true
+                },
+                {
+                    "name": "some other step",
+                    "complete": false
+                }
+            ]
+        }
+    ]
 },
 {
-	"entity" : "12358453",
-	"process" : {
-		"name" : "Promote Your Property",
-		"subtext" : "some text describing action s aute irure dolor in reprehenderit in voluptate velit etation ullamco laboris nisi ut aliquip ex ea commodo con",
-		"toActionOn" : true,
-		"status" : "incomplete",
-		"actions" : [
-			{
-				"name": "basic details",
-				"portalWidget": "edit",
-				"portalFlow": "someFlow",
-				"params": "anyContextInfo",
-				"complete": true
-			},
-			{
-				"name": "tenancy details",
-				"portalWidget": "someOtherWidget",
-				"portalFlow": "someOtherFlow",
-				"params": "anyOtherContextInfo",
-				"complete": false
-			},
-			{
-				"name": "upload supporting documents",
-				"portalWidget": "documents",
-				"portalFlow": "someOtherFlow",
-				"params": "anyOtherContextInfo",
-				"complete": true
-			},
-			{
-				"name": "advanced details",
-				"portalWidget": "somethingElse",
-				"portalFlow": "someOtherFlow2",
-				"params": "anyOtherContextInfo",
-				"complete": false
-			}
-		]
-	}
+    "entity" : "12358453",
+    "actions" : [
+        {
+            "id" : 1,
+            "steps" : [
+                {
+                    "name": "enter details",
+                    "complete": true
+                },
+                {
+                    "name": "tenancy information",
+                    "complete": false
+                },
+                {
+                    "name": "documents and photos",
+                    "complete": true
+                },
+                {
+                    "name": "advanced property details",
+                    "complete": false
+                }
+            ]
+        },
+        {
+            "id" : 2,
+            "steps" : [
+                {
+                    "name": "complete personal details",
+                    "complete": false
+                }
+            ]
+        }
+    ]
 },
 {
-	"entity" : "65955",
-	"process" : {
-		"name" : "Promote Your Property",
-		"subtext" : "some text describing action s aute irure dolor in reprehenderit in voluptate velit etation ullamco laboris nisi ut aliquip ex ea commodo con",
-		"toActionOn" : true,
-		"status" : "incomplete",
-		"actions" : [
-			{
-				"name": "basic details",
-				"portalWidget": "edit",
-				"portalFlow": "someFlow",
-				"params": "anyContextInfo",
-				"complete": true
-			},
-			{
-				"name": "tenancy details",
-				"portalWidget": "someOtherWidget",
-				"portalFlow": "someOtherFlow",
-				"params": "anyOtherContextInfo",
-				"complete": true
-			},
-			{
-				"name": "upload supporting documents",
-				"portalWidget": "documents",
-				"portalFlow": "someOtherFlow",
-				"params": "anyOtherContextInfo",
-				"complete": false
-			},
-			{
-				"name": "advanced details",
-				"portalWidget": "somethingElse",
-				"portalFlow": "someOtherFlow2",
-				"params": "anyOtherContextInfo",
-				"complete": true
-			}
-		]
-	}
+    "entity" : "65955",
+    "actions" : [
+        {
+            "id" : 1,
+            "steps" : [
+                {
+                    "name": "enter details",
+                    "complete": true
+                },
+                {
+                    "name": "tenancy information",
+                    "complete": true
+                },
+                {
+                    "name": "documents and photos",
+                    "complete": false
+                },
+                {
+                    "name": "advanced property details",
+                    "complete": true
+                }
+            ]
+        },
+        {
+            "id" : 2,
+            "steps" : [
+                {
+                    "name": "complete personal details",
+                    "complete": true
+                },
+                {
+                    "name": "purchase product",
+                    "complete": false
+                },
+                {
+                    "name": "publish property",
+                    "complete": false
+                }
+            ]
+        }
+    ]
 },
 {
-	"entity" : "5634",
-	"process" : {
-		"name" : "Published",
-		"subtext" : "Awaiting interest shown in property",
-		"toActionOn" : false,
-		"status" : "incomplete",
-		"actions" : []
-	}
+    "entity" : "5634",
+    "actions" : [ 
+        {
+            "id" : 1,
+            "steps" : [
+                {
+                    "name": "enter details",
+                    "complete": true
+                },
+                {
+                    "name": "tenancy information",
+                    "complete": true
+                },
+                {
+                    "name": "documents and photos",
+                    "complete": true
+                },
+                {
+                    "name": "advanced property details",
+                    "complete": true
+                }
+            ]
+        },
+        {
+            "id" : 2,
+            "steps" : [
+                {
+                    "name": "complete personal details",
+                    "complete": true
+                },
+                {
+                    "name": "purchase product",
+                    "complete": true
+                },
+                {
+                    "name": "publish property",
+                    "complete": true
+                }
+            ]
+        },
+        {
+            "id" : 3,
+            "steps" : []
+        }
+    ]
 },
 {
-	"entity" : "5646546",
-	"process" : {
-		"name" : "Confirm tenancy",
-		"subtext" : "some text describing action s aute irure dolor in reprehenderit in voluptate velit etation ullamco laboris nisi ut aliquip ex ea commodo con",
-		"toActionOn" : true,
-		"status" : "incomplete",
-		"actions" : [
-			{
-				"name": "tenancy agreement",
-				"portalWidget": "edit",
-				"portalFlow": "someFlow",
-				"params": "anyContextInfo",
-				"complete": true
-			},
-			{
-				"name": "tenant details",
-				"portalWidget": "someOtherWidget",
-				"portalFlow": "someOtherFlow",
-				"params": "anyOtherContextInfo",
-				"complete": true
-			},
-			{
-				"name": "referencing",
-				"portalWidget": "documents",
-				"portalFlow": "someOtherFlow",
-				"params": "anyOtherContextInfo",
-				"complete": true
-			}
-		]
-	}
+    "entity" : "5646546",
+    "actions" : [
+        {
+            "id" : 1,
+            "steps" : [
+                {
+                    "name": "enter details",
+                    "complete": true
+                },
+                {
+                    "name": "tenancy information",
+                    "complete": true
+                },
+                {
+                    "name": "documents and photos",
+                    "complete": true
+                },
+                {
+                    "name": "advanced property details",
+                    "complete": true
+                }
+            ]
+        },
+        {
+            "id" : 2,
+            "steps" : [
+                {
+                    "name": "complete personal details",
+                    "complete": true
+                },
+                {
+                    "name": "purchase product",
+                    "complete": true
+                },
+                {
+                    "name": "publish property",
+                    "complete": true
+                }
+            ]
+        },
+        {
+            "id" : 3,
+            "steps" : [
+                {
+                    "name": "confirm interest",
+                    "complete": true
+                }
+            ]
+        },
+        {
+            "id" : 4,
+            "steps" : [
+                {
+                    "name": "tenant referencing",
+                    "complete": true
+                },
+                {
+                    "name": "deposit",
+                    "complete": false
+                },
+                {
+                    "name": "additional terms",
+                    "complete": true
+                },
+                {
+                    "name" : "eSign",
+                    "complete" : false
+                }
+            ]
+        }
+    ]
 }
 ]
