@@ -1,0 +1,12 @@
+<widget>
+	<type>layout</type>
+	<parameters>
+		<url>tenant-forms.html</url>
+		<secure>false</secure>
+	</parameters>
+	<attributes>
+		<displayheader>false</displayheader>
+		<css>tenant-forms.css</css>
+		<js>tenant-forms.js</js>
+	</attributes>
+</widget>
