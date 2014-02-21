@@ -182,6 +182,7 @@ function Widget_action_summary(){
 
         // set main text
         $('.action-title', template).text(stepList.action);
+        $('.action-title', template).before('<span class="glyphicon glyphicon-' + stepList.icon + '"></span>&nbsp;');
         $('.action-subtext', template).text(stepList.description);
 
         noOfSteps = stepList.steps.length;

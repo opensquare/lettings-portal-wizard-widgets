@@ -4,6 +4,7 @@
         {
             "action" : "edit my details",
             "description" : "Provide some necessary information about you ...",
+            "icon" : "pencil",
             "id" : 1,
             "steps" : [
                  {
@@ -27,6 +28,7 @@
     "actions" : [
         {
             "action" : "property details",
+            "icon":"home",
             "description" : "some text describing action s aute irure dolor in reprehenderit in voluptate velit etation ullamco laboris nisi ut aliquip ex ea commodo con",
             "id" : 1,
             "steps" : [
@@ -51,6 +53,7 @@
         {
             "action" : "publish listing",
             "description" : "some descriptive text describing action",
+            "icon" : "th-list",
             "id" : 2,
             "steps" : [
                 {
@@ -71,6 +74,7 @@
             "action" : "await interest",
             "description" : "Await interest shown in property from prospective tenants",
             "id" : 3,
+            "icon" : "dashboard",
             "steps" : [
                 {
                     "name" : "confirm interest",
@@ -81,6 +85,7 @@
         {
             "action" : "complete tenancy",
             "id" : 4,
+            "icon" : "list-alt",
             "description" : "some text describing action s aute irure dolor in reprehenderit in voluptate velit etation ullamco laboris nisi ut aliquip ex ea commodo con",
             "steps" : [
                 {
