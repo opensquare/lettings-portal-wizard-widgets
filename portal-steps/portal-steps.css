@@ -1,0 +1,20 @@
+/* portal-steps.css */
+.portal-steps {
+	width: 100%;
+}
+.steps {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.steps li {
+	float: left;
+	padding: 10px;
+}
+.steps li.selected {
+	background: #0f5da1;
+}
+.step-content {
+	clear: both;
+	padding: 10px;
+}

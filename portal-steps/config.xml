@@ -1,0 +1,27 @@
+<widget>
+	<type>layout</type>
+	<parameters>
+		<url>portal-steps.html</url>
+	</parameters>
+	<attributes>
+		<displayHeader>false</displayHeader>
+		<css>portal-steps.css</css>
+		<js>portal-steps.js</js>
+	</attributes>
+</widget>
+
+<!-- 
+
+<widget>
+    <type>httpRequest</type>
+    <parameters>
+        <method>GET</method>
+        <xsl>overviewList</xsl>
+        <url>widgets/overview-list/response.xml</url>
+    </parameters>
+    <attributes>
+        
+    </attributes>
+</widget>
+
+-->
