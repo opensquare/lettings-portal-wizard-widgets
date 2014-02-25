@@ -27,7 +27,7 @@ function Widget_portal(){
         }
     ;
 
-    this.widgetPrefix = 'p-';
+    this.widgetPrefix = 'page-';
 	this.errorMessage = "The page requested is not available, there may have been a problem loading or content doesn't exist here yet!";
 	this.contentTemplate = '<div class="widget"></div>';
 
@@ -74,7 +74,7 @@ function Widget_portal(){
                     pageArgs: hashtagParts[1]
                 }
             ;
-			if(newPage.pageId != '' && newPage.pageId !== nav.homeId){
+			if(newPage.pageId != '' && newPage.pageId !== navState.homeId){
 				try{
 					loadContent(newPage);
 				} catch(error) {

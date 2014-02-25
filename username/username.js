@@ -7,7 +7,7 @@ function Widget_username() {
         channelToggleActions = 'toggleActions'
 	;
 
-	this.onReadyExtend = function(){
+	/*this.onReadyExtend = function(){
 		$('.user-name', this.$widgetDiv).click(function(){
 			$('.user-links', widgetObject.$widgetDiv).show();
 		});
@@ -36,6 +36,6 @@ function Widget_username() {
 	this.switchActionText = function(){
 		var $link = $('a.toggle-actions', this.$widgetDiv);
 		$link.html($link.html() == hiddenText ? visibleText : hiddenText);
-	}
+	}*/
 
 }
