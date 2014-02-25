@@ -1,0 +1,11 @@
+<widget>
+	<type>layout</type>
+	<parameters>
+		<url>portal-home.html</url>
+	</parameters>
+	<attributes>
+		<displayHeader>false</displayHeader>
+		<css>portal-home.css</css>
+		<js>portal-home.js</js>
+	</attributes>
+</widget>

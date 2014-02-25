@@ -1,0 +1,17 @@
+.headings {
+	margin-bottom: 40px;
+}
+
+.glyphicon.heading {
+	font-size: 2em;
+}
+
+.main h4 {
+	margin: 0;
+}
+
+@media (max-width:768px) {
+	.headings {
+		display: none;
+	}
+}
