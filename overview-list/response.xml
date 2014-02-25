@@ -1,0 +1,41 @@
+<response>
+    <entity type="property" uid="12358453">
+        <description>10 Hulse Road</description>
+        <status>entered</status>
+        <completed>2</completed>
+        <total>6</total>
+        <widget>property-progress</widget>
+        <entity type="tenancyTemplate" uid="87654321">
+            <description></description>
+            <status>not started</status>
+            <completed>0</completed>
+            <total>8</total>
+            <widget>tenancy-terms-progress</widget>
+        </entity>
+        <action>
+            <description>Purchase Product</description>
+            <widget>product</widget>
+        </action>
+        <message>
+        </message>
+    </entity>
+    <entity type="property" uid="65955">
+        <description>11 Avenue Road</description>
+        <status>entered</status>
+        <completed>5</completed>
+        <total>6</total>
+        <widget>property-progress</widget>
+        <entity type="tenancyTemplate" uid="87654321">
+            <description>12 months - £300 per month</description>
+            <status>incomplete</status>
+            <completed>2</completed>
+            <total>8</total>
+            <widget>tenancy-terms-progress</widget>
+        </entity>
+        <action>
+            <description>Purchase Product</description>
+            <widget>product</widget>
+        </action>
+        <message/>
+    </entity>
+</response>
