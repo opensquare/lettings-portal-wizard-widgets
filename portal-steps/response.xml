@@ -1,0 +1,30 @@
+<response>
+    <entity type="step" active="">
+        <title>Step Title</title>
+        <description>This is the step description, this step is active</description>
+        <step>1</step>
+        <status>complete</status>
+        <widget>path/to/widget1</widget>
+    </entity>
+    <entity type="step" active="">
+        <title>Step Two Title</title>
+        <description>This step is not active, and incomplete</description>
+        <step>2</step>
+        <status>incomplete</status>
+        <widget>path/to/widget2</widget>
+    </entity>
+    <entity type="step" active="active">
+        <title>Step 3</title>
+        <description>This step is inactive, but completed</description>
+        <step>3</step>
+        <status>complete</status>
+        <widget>path/to/widget3</widget>
+    </entity>
+    <entity type="step" active="">
+        <title>Step 4 Title</title>
+        <description>This is the last step in this process and it is completed</description>
+        <step>4</step>
+        <status>complete</status>
+        <widget>path/to/widget4</widget>
+    </entity>
+</response>

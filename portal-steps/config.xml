@@ -1,4 +1,4 @@
-<widget>
+<!-- <widget>
 	<type>layout</type>
 	<parameters>
 		<url>portal-steps.html</url>
@@ -8,20 +8,19 @@
 		<css>portal-steps.css</css>
 		<js>portal-steps.js</js>
 	</attributes>
-</widget>
+</widget> -->
 
-<!-- 
 
 <widget>
     <type>httpRequest</type>
     <parameters>
         <method>GET</method>
-        <xsl>overviewList</xsl>
-        <url>widgets/overview-list/response.xml</url>
+        <xsl>portal-steps</xsl>
+        <url>widgets/portal-steps/response.xml</url>
     </parameters>
     <attributes>
-        
+        <css>portal-steps.css</css>
+        <js>portal-steps.js</js>
     </attributes>
 </widget>
 
--->
