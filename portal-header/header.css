@@ -1,34 +1,19 @@
-div.widget[name="portal-header"] .page-header{
-	margin-top: 0;
-	padding-bottom: 0;
+div.widget[name="portal-header"] .navbar.navbar-default {
+	background: none;
+	border: none;
+	border-bottom: 1px solid #eee;
+	border-radius: 0;
 }
-div.widget[name="portal-header"] h1 small{
-	color:inherit;
-	opacity: 0.8;
+div.widget[name="portal-header"] .navbar.navbar-default a {
+	color: #fff;
 }
-div.widget[name="portal-header"] .page-header>ul,
-div.widget[name="portal-header"] .page-header>div {
-	margin-top:20px;
-	margin-bottom:10px;
+div.widget[name="portal-header"] .navbar-default .navbar-nav>.open>a,
+div.widget[name="portal-header"] .dropdown-menu>li>a:hover {
+	background: #0f5da1;
 }
-/* div[name='ll-header'] {
-	background-color: #fff;
-	padding: 0.5em 0;
+div.widget[name="portal-header"] .dropdown-menu {
+	background: #0072c5;
 }
-
-div[name='ll-header'] div.username.widget{
-	float:right;
-	width:27em;
-	margin-right:10em;
+div.widget[name="portal-header"] .navbar-brand {
+	font-size: 1.6em;
 }
-
-div[name='ll-header'] h2{
-	display: inline-block;
-	margin: 0;
-	padding: 0 0.5em 0 4em;
-	background: rgba(0,0,0,0.65);
-	color: rgba(255,255,255,0.9);
-	font-weight: normal;
-	font-size: 2em;
-	border-radius: 0 0.15em 0.15em 0;
-} */
