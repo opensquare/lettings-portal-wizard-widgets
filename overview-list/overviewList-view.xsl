@@ -13,66 +13,131 @@
             </xsl:choose>
         </div>
     </xsl:template>
+
     <xsl:template match="entity">
-        <div>
-            <xsl:choose>
-                <xsl:when test="entity">
-                    <xsl:attribute name="class">row</xsl:attribute>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:attribute name="class">col-sm-4</xsl:attribute>
-                </xsl:otherwise>
-            </xsl:choose>
-            <xsl:attribute name="data-type"><xsl:value-of select="@type"/></xsl:attribute>
-            <div>
-                <xsl:if test="entity">
-                    <xsl:attribute name="class">col-sm-4</xsl:attribute>
-                </xsl:if>
-                <h3><xsl:value-of select="description"/></h3>
-                <a>
-                    <xsl:attribute name="href">#<xsl:value-of select="widget"/>?<xsl:value-of select="@uid"/></xsl:attribute>
-                    <strong>
-                        <xsl:value-of select="status"/> - <xsl:value-of select="completed"/> of <xsl:value-of select="total"/> steps complete
-                    </strong>
-                </a>
+        <xsl:choose>
+            <xsl:when test="message/widget">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <xsl:call-template name="displayRow">
+                            <xsl:with-param name="entity" select="."/>
+                            <xsl:with-param name="pos" select="position()"/>
+                        </xsl:call-template>
+                    </div>
+                    <div class="panel-footer">
+                        <xsl:apply-templates select="message"/>
+                    </div>
+                </div>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:call-template name="displayRow">
+                    <xsl:with-param name="entity" select="."/>
+                    <xsl:with-param name="pos" select="position()"/>
+                </xsl:call-template>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
+    <xsl:template name="displayRow">
+        <xsl:param name="entity"/>
+        <xsl:param name="pos"/>
+        <xsl:variable name="collapseId" select="concat('collapse-', $pos)"/>
+        <div class="row">
+            <xsl:attribute name="data-type"><xsl:value-of select="$entity/@type"/></xsl:attribute>
+            <div class="col-sm-4 main">
+                <h4>
+                    <a data-toggle="collapse" data-parent="#accordion">
+                        <xsl:attribute name="href"><xsl:value-of select="concat('#',$collapseId)"/></xsl:attribute>
+                        <xsl:value-of select="$entity/description"/>
+                    </a>
+                </h4>
+                <p>
+                    <span><xsl:value-of select="concat($entity/status, ' - ')"/></span>
+                    <xsl:call-template name="entityLink">
+                        <xsl:with-param name="type" select="$entity/@type"/>
+                        <xsl:with-param name="completed" select="$entity/completed"/>
+                        <xsl:with-param name="total" select="$entity/total"/>
+                        <xsl:with-param name="widget" select="$entity/widget"/>
+                        <xsl:with-param name="uid" select="$entity/@uid"/>
+                    </xsl:call-template>
+                </p>
             </div>
-            <xsl:if test="entity">
-                <xsl:apply-templates select="entity"/>
-            </xsl:if>
-            <xsl:if test="action">
-                <div class="col-sm-2">
-                    <xsl:apply-templates select="action"/>
+            <div class="panel-collapse collapse">
+                <xsl:attribute name="id"><xsl:value-of select="$collapseId"/></xsl:attribute>
+                <div class="col-sm-4">
+                    <h5 style="margin:0">
+                        <xsl:value-of select="$entity/entity/description"/>
+                    </h5>
+                    <p>
+                        <span><xsl:value-of select="concat($entity/entity/status, ' - ')"/></span>
+                        <xsl:call-template name="entityLink">
+                            <xsl:with-param name="type" select="$entity/entity/@type"/>
+                            <xsl:with-param name="completed" select="$entity/entity/completed"/>
+                            <xsl:with-param name="total" select="$entity/entity/total"/>
+                            <xsl:with-param name="widget" select="$entity/entity/widget"/>
+                            <xsl:with-param name="uid" select="$entity/entity/@uid"/>
+                        </xsl:call-template>
+                    </p>
                 </div>
-            </xsl:if>
-            <xsl:if test="message">
-                <div class="col-sm-2">
-                    <xsl:apply-templates select="message"/>
+                <div class="col-sm-4">
+                    <xsl:apply-templates select="$entity/action"/>
                 </div>
-            </xsl:if>
+            </div>
         </div>
     </xsl:template>
+
     <xsl:template match="action">
         <xsl:choose>
             <xsl:when test="widget">
-                <button type="button" class="btn btn-primary">
+                <p><a class="btn btn-default">
+                    <xsl:attribute name="href">
+                        <xsl:value-of select="concat('#', widget)"/>
+                    </xsl:attribute>
                     <xsl:attribute name="data-action"><xsl:value-of select="widget"/></xsl:attribute>
                     <xsl:value-of select="description"/>
-                </button>
-            </xsl:when>
-            <xsl:otherwise>generic view action</xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
-    <xsl:template match="message">
-        <xsl:choose>
-            <xsl:when test="widget">
-                <div class="alert alert-info">
-                    <a class="alert-link">
-                        <xsl:attribute name="href">#<xsl:value-of select="widget"/></xsl:attribute>
-                        <xsl:value-of select="description"/>
-                    </a>
-                </div>
+                </a></p>
             </xsl:when>
             <xsl:otherwise></xsl:otherwise>
         </xsl:choose>
+    </xsl:template>
+
+    <xsl:template match="message">
+        <h4>Message: 
+            <a><xsl:attribute name="href">#<xsl:value-of select="widget"/></xsl:attribute>
+                <xsl:value-of select="description"/>
+            </a>
+        </h4>
+    </xsl:template>
+
+    <xsl:template name="entityLink">
+        <xsl:param name="type"/>
+        <xsl:param name="completed"/>
+        <xsl:param name="total"/>
+        <xsl:param name="widget"/>
+        <xsl:param name="uid"/>
+        <a>
+            <xsl:attribute name="href">
+                <xsl:call-template name="widgetHref">
+                    <xsl:with-param name="widget" select="$widget"/>
+                    <xsl:with-param name="type" select="$type"/>
+                    <xsl:with-param name="uid" select="$uid"/>
+                </xsl:call-template>
+            </xsl:attribute>
+            <strong>
+                <xsl:choose>
+                    <xsl:when test="$completed!=$total">
+                        <xsl:value-of select="$completed"/> of <xsl:value-of select="$total"/> steps complete
+                    </xsl:when>
+                    <xsl:otherwise>view</xsl:otherwise>
+                </xsl:choose>
+            </strong>
+        </a>
+    </xsl:template>
+
+    <xsl:template name="widgetHref">
+        <xsl:param name="widget"/>
+        <xsl:param name="type"/>
+        <xsl:param name="uid"/>
+        <xsl:value-of select="concat('#', $widget, '?', $type, '=', $uid)"/>
     </xsl:template>
 </xsl:stylesheet>

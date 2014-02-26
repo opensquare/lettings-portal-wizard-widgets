@@ -4,7 +4,11 @@ function Widget_portal_home(){
 
 		// handles the responsive classes depending on window size. Will need to re-visit as it doesn't behave exactly as it should.
 		handleWindowResize();
+		pw.addListenerToChannel(this, 'resize-panels');
+	}
 
+	this.handleEvent = function(channel,event) {
+		handleWindowResize();
 	}
 
 	handleWindowResize = function() {

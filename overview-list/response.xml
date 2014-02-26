@@ -1,4 +1,23 @@
 <response>
+    <entity type="property" uid="65955">
+        <description>11 Avenue Road</description>
+        <status>entered</status>
+        <completed>5</completed>
+        <total>6</total>
+        <widget>property-progress</widget>
+        <entity type="tenancyTemplate" uid="87654321">
+            <description>12 months - £300 per month</description>
+            <status>incomplete</status>
+            <completed>2</completed>
+            <total>8</total>
+            <widget>tenancy-terms-progress</widget>
+        </entity>
+        <action>
+            <description>Purchase Product</description>
+            <widget>product</widget>
+        </action>
+        <message/>
+    </entity>
     <entity type="property" uid="12358453">
         <description>10 Hulse Road</description>
         <status>entered</status>
@@ -17,25 +36,40 @@
             <widget>product</widget>
         </action>
         <message>
+            <description>text describing some action to be taken</description>
+            <widget>someWidget</widget>
         </message>
     </entity>
     <entity type="property" uid="65955">
-        <description>11 Avenue Road</description>
-        <status>entered</status>
-        <completed>5</completed>
+        <description>Flat 3, 15 Winn Road</description>
+        <status>Currently Advertised</status>
+        <completed>6</completed>
         <total>6</total>
         <widget>property-progress</widget>
         <entity type="tenancyTemplate" uid="87654321">
-            <description>12 months - £300 per month</description>
-            <status>incomplete</status>
-            <completed>2</completed>
+            <description>24 months - £250 per month</description>
+            <status>No active Tenancy</status>
+            <completed>8</completed>
             <total>8</total>
             <widget>tenancy-terms-progress</widget>
         </entity>
-        <action>
-            <description>Purchase Product</description>
-            <widget>product</widget>
-        </action>
+        <action></action>
+        <message/>
+    </entity>
+    <entity type="property" uid="65955">
+        <description>102 Earls Road</description>
+        <status>Tenancy Agreed</status>
+        <completed>6</completed>
+        <total>6</total>
+        <widget>property-progress</widget>
+        <entity type="tenancyTemplate" uid="87654321">
+            <description>12 months - £350 per month</description>
+            <status>Mr Peter Johnson</status>
+            <completed>8</completed>
+            <total>8</total>
+            <widget>tenancy-terms-progress</widget>
+        </entity>
+        <action></action>
         <message/>
     </entity>
 </response>
