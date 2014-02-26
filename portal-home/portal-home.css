@@ -10,8 +10,29 @@
 	margin: 0;
 }
 
+.panel-collapse {
+	display: block;
+}
+.showMore {
+	display: none;
+	font-weight: bold;
+}
+.property {
+	padding: 10px 0;
+}
+.property p {
+	margin: 0;
+}
+
 @media (max-width:768px) {
 	.headings {
 		display: none;
+	}
+	.showMore {
+		display: block;
+	}
+	.panel-collapse {
+		height: 0px;
+		overflow: hidden;
 	}
 }
