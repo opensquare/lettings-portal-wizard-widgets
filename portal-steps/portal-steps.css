@@ -11,7 +11,7 @@
 	float: left;
 	padding: 10px;
 }
-.steps li.selected {
+.steps li.active {
 	background: #0f5da1;
 }
 .step-content {

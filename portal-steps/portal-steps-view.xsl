@@ -6,7 +6,7 @@
     	<div class="portal-steps">
     		<xsl:choose>
                 <xsl:when test="response/entity">
-                	<ul class="steps">
+                	<ul class="steps clearfix">
                     	<xsl:apply-templates select="response/entity"/>
                 	</ul>
                 </xsl:when>
@@ -23,15 +23,12 @@
 
 			</xsl:if>
 
-    		<!-- <xsl:apply-templates match="response/entity[active='true']"/> -->
-
     	</div>
     </xsl:template>
 
     <xsl:template match="entity">
     	<li>
     		<xsl:attribute name="class">
-    			<!-- if 'active' set selected class attribute -->
     			<xsl:value-of select="@active"/><xsl:text> </xsl:text><xsl:value-of select="status"/>
     		</xsl:attribute>
 
@@ -43,8 +40,5 @@
 
     	</li>
     </xsl:template>
-
-    <!-- <xsl:template match="book[featured='yes']"> -->
-    
 
 </xsl:stylesheet>
