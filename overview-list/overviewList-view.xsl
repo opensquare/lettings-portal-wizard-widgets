@@ -17,7 +17,7 @@
     <xsl:template match="entity">
         <xsl:choose>
             <xsl:when test="message/widget">
-                <div class="panel panel-default">
+                <div class="panel panel-default row">
                     <div class="panel-body">
                         <xsl:call-template name="displayRow">
                             <xsl:with-param name="entity" select="."/>

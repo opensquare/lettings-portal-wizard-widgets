@@ -35,10 +35,7 @@
             <description>Purchase Product</description>
             <widget>product</widget>
         </action>
-        <message>
-            <description>text describing some action to be taken</description>
-            <widget>someWidget</widget>
-        </message>
+        <message/>
     </entity>
     <entity type="property" uid="65955">
         <description>Flat 3, 15 Winn Road</description>
@@ -54,7 +51,10 @@
             <widget>tenancy-terms-progress</widget>
         </entity>
         <action></action>
-        <message/>
+        <message>
+            <description>3 People have expressed interest</description>
+            <widget>someWidget</widget>
+        </message>
     </entity>
     <entity type="property" uid="65955">
         <description>102 Earls Road</description>

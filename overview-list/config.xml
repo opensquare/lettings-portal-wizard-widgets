@@ -6,7 +6,7 @@
         <url>widgets/overview-list/response.xml</url>
     </parameters>
     <attributes>
-        <!--js>action-progress.js</js>
-        <css>progress.css</css-->
+        <js>overviewList.js</js>
+        <!--css>progress.css</css-->
     </attributes>
 </widget>
