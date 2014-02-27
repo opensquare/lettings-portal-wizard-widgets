@@ -2,6 +2,7 @@ function Widget_portal_steps(){
 
     this.failedToLoad = false;
     this.defaultUrl   = 'widgets/portal-steps/response.xml';
+    this.channelLoadStep = 'step.load';
 
     // loads file using responsePath parameter
     this.initExtend = function() {
@@ -39,6 +40,27 @@ function Widget_portal_steps(){
         // add cross to incomplete steps
         $('.steps li.incomplete h3').prepend('<span class="glyphicon glyphicon-remove"></span> ');
 
+        // add click handler to steps
+        this.addHandlers();
+
+        // load the active step widget (httpResponse widgets aren't native layout types)
+        pw.mount(
+            $('.step-content div.widget', this.$widgetDiv)
+            .removeAttr('delayLoad')
+        );
+    }
+
+    this.addHandlers = function() {
+        var widgetObject = this;
+        $('a.step-link', this.$widgetDiv).click(function(){
+            $(this).parents('.steps').children().removeClass('active');
+            $(this).parent().addClass('active');
+            pw.notifyChannelOfEvent(widgetObject.channelLoadStep, {
+                uri   : $(this).attr('href'),
+                entity : widgetObject.parameterMap.entity
+            });
+            return false;
+        })
     }
 
     this.onLoadFailure = function() {

@@ -1,0 +1,9 @@
+<widget>
+    <type>layout</type>
+    <parameters>
+        <url>display-step.html</url>
+    </parameters>
+    <attributes>
+        <js>display-step.js</js>
+    </attributes>
+</widget>
