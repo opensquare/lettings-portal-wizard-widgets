@@ -1,11 +1,10 @@
 <widget>
 	<type>layout</type>
 	<parameters>
-		<url>property-details.html</url>
+		<url>property-progress.html</url>
 	</parameters>
 	<attributes>
 		<displayHeader>false</displayHeader>
-		<js>details-layout.js</js>
-		<page.title></page.title>
+		<js>property-progress.js</js>
 	</attributes>
 </widget>

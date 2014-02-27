@@ -4,7 +4,7 @@
 $(document).ajaxError(function(event, xhr, settings, thrownError) {
 	if (xhr.status == 400 && settings.url.substring(0,20) == 'showWidgetAttributes'){
 		var widgetName = settings.url.substr(settings.url.indexOf('name=') + 5);
-		pw.notifyChannelOfEvent('portal.loadFailed', {'name' : widgetName});
+		pw.notifyChannelOfEvent('portal.loadFailed', {'name' : decodeURIComponent(widgetName)});
 	}
 });
 
@@ -31,7 +31,6 @@ function Widget_portal(){
 	this.errorMessage = "The page requested is not available, there may have been a problem loading or content doesn't exist here yet!";
 	this.contentTemplate = '<div class="widget"></div>';
 
-    /* html ready to load, child widgets not imported yet */
 	this.onReadyExtend = function() {
 		/*store home layout*/
 		navState.homeContent = $('#content').html();
@@ -110,6 +109,13 @@ function Widget_portal(){
             paramMap   = mapFromParamString(newPage.pageArgs)
         ;
 
+        // pass channel names
+        newContent.data({
+            'ch-page-args' : channelSetPageArgs,
+            'ch-page-close': channelClosePage,
+            'ch-page-load' : channelLoadPage
+        });
+        // pass page arguments
         newContent.attr('name',widgetName);
         for (var param in paramMap){
             newContent.data(param, paramMap[param]);
@@ -129,6 +135,7 @@ function Widget_portal(){
 
         // load home page
 		$homeContent = $(navState.homeContent);
+        $homeContent.removeAttr('delayload');
 		for (var param in paramMap){
             $homeContent.data(param, paramMap[param]);
         }

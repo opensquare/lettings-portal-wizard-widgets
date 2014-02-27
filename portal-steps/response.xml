@@ -1,4 +1,9 @@
 <response>
+    <entity type="main">
+        <description>Title Description</description>
+        <completed>3</completed>
+        <total>4</total>
+    </entity>
     <entity type="step" active="">
         <title>Step Title</title>
         <description>This is the step description, this step is active</description>

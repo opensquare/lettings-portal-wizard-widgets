@@ -16,7 +16,7 @@
     <parameters>
         <method>GET</method>
         <xsl>portal-steps</xsl>
-        <url>widgets/portal-steps/response.xml</url>
+        <url>{responsePath}</url>
     </parameters>
     <attributes>
         <css>portal-steps.css</css>

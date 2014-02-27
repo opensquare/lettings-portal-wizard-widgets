@@ -37,7 +37,7 @@
         </action>
         <message/>
     </entity>
-    <entity type="property" uid="65955">
+    <entity type="property" uid="877898">
         <description>Flat 3, 15 Winn Road</description>
         <status>Currently Advertised</status>
         <completed>6</completed>
@@ -56,7 +56,7 @@
             <widget>someWidget</widget>
         </message>
     </entity>
-    <entity type="property" uid="65955">
+    <entity type="property" uid="4565855">
         <description>102 Earls Road</description>
         <status>Tenancy Agreed</status>
         <completed>6</completed>

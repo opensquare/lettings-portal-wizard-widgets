@@ -5,9 +5,10 @@
     <xsl:template match="/">
     	<div class="portal-steps">
     		<xsl:choose>
-                <xsl:when test="response/entity">
+                <xsl:when test="response/entity[@type='step']">
+                    <xsl:apply-templates select="response/entity[@type='main']"/>
                 	<ul class="steps clearfix">
-                    	<xsl:apply-templates select="response/entity"/>
+                    	<xsl:apply-templates select="response/entity[@type='step']"/>
                 	</ul>
                 </xsl:when>
                 <xsl:otherwise>
@@ -26,7 +27,7 @@
     	</div>
     </xsl:template>
 
-    <xsl:template match="entity">
+    <xsl:template match="entity[@type='step']">
     	<li>
     		<xsl:attribute name="class">
     			<xsl:value-of select="@active"/><xsl:text> </xsl:text><xsl:value-of select="status"/>
@@ -39,6 +40,16 @@
 			</a>
 
     	</li>
+    </xsl:template>
+
+    <xsl:template match="entity[@type='main']">
+        <h2>
+            <xsl:value-of select="description"/>
+            <xsl:value-of select="' '"/>
+            <small>
+                <xsl:value-of select="completed"/> of <xsl:value-of select="total"/> steps complete
+            </small>
+        </h2>
     </xsl:template>
 
 </xsl:stylesheet>
