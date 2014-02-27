@@ -1,0 +1,87 @@
+<div class="portal-steps">
+	<ul class="steps clearfix">
+		<li class=" complete">
+			<a href="#path/to/widget?">
+				<h3><span class="glyphicon glyphicon-ok"></span> Step Title</h3>
+				<p>This is the step description, this step is active</p>
+				<h4>Step 1</h4>
+			</a>
+		</li>
+		<li class=" incomplete" style="width: 285px;">
+			<a href="#path/to/widget?">
+				<h3><span class="glyphicon glyphicon-remove"></span> Step Two Title</h3>
+				<p>This step is not active, and incomplete</p>
+				<h4>Step 2</h4>
+			</a>
+		</li>
+		<li class="active complete" style="width: 285px;">
+			<a href="#path/to/widget?">
+				<h3><span class="glyphicon glyphicon-ok"></span> Step 3</h3>
+				<p>This step is inactive, but completed</p>
+				<h4>Step 3</h4>
+			</a>
+		</li>
+		<li class=" complete" style="width: 285px;">
+			<a href="#path/to/widget?">
+				<h3><span class="glyphicon glyphicon-ok"></span> Step 4 Title</h3>
+				<p>This is the last step in this process and it is completed</p>
+				<h4>Step 4</h4>
+			</a>
+		</li>
+	</ul>
+</div>
+<form rhinoforms="true" class="user-profile-form form-horizontal">
+
+	<!-- new forms -->
+
+	<div id="accountDetails">
+
+		<div class="field form-group">
+			<label for="input_title" class="col-sm-3 control-label">Email Address</label>
+			<div class="col-sm-6">
+				<input id="input_email" type="email" name="email" placeholder="Email Address" value="user@domain.com" class="form-control" />
+			</div>
+		</div>
+
+		<div class="field form-group">
+			<label for="input_title" class="col-sm-3 control-label">Password</label>
+			<div class="col-sm-6">
+				<input id="input_email" type="password" name="password" placeholder="Password" value="password" class="form-control" />
+			</div>
+		</div>
+
+		<hr>
+
+		<div class="field form-group">
+			<label for="input_title" class="col-sm-3 control-label">New Password</label>
+			<div class="col-sm-6">
+				<input id="input_new_password" type="password" name="input_new_password" placeholder="New Password" value="" class="form-control" />
+			</div>
+		</div>
+
+		<div class="field form-group">
+			<label for="input_title" class="col-sm-3 control-label">Confirm New Password</label>
+			<div class="col-sm-6">
+				<input id="input_confirm_new_password" type="password" name="input_confirm_new_password" placeholder="Confirm New Password" value="" class="form-control" />
+			</div>
+		</div>
+
+	</div>
+
+	<hr>
+
+	<!-- new forms -->
+
+	<rf.include src="../common-forms/common-personal-details.html" ></rf.include>
+	
+	<hr>
+
+	<div class="user-profileActions form-group">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6">
+			<input type="button" rf.action="next" class="btn btn-primary" value="Next"/>
+		</div>
+	</div> 
+
+</form>
+

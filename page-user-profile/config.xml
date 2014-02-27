@@ -1,0 +1,12 @@
+<widget>
+	<type>internalPage</type>
+	<parameters>
+		<url>user-profile-forms.html</url>
+	</parameters>
+	<attributes>
+		<page.title>Account Details</page.title>
+		<displayheader>false</displayheader>
+		<css>user-profile-forms.css</css>
+		<js>user-profile-forms.js</js>
+	</attributes>
+</widget>
