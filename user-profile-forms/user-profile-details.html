@@ -1,0 +1,230 @@
+<form class="user-profile-form form-horizontal">
+
+	<script type='text/javascript' src='widgets/common-forms/js/address-lookup.js'></script>
+	<link rel="stylesheet" type="text/css" href="//services.postcodeanywhere.co.uk/css/captureplus-1.34.min.css?key=ut99-ca31-nt36-bt86" />
+	<script type="text/javascript" src="//services.postcodeanywhere.co.uk/js/captureplus-1.34.min.js?key=ut99-ca31-nt36-bt86&app=6352"></script>
+	<div id="ut99ca31nt36bt866352"></div>
+	<script>
+		function completeGender(title){
+		 titleGenderMap = new Object();
+		 var M = '#input_gender_male';
+		 var F = '#input_gender_female';
+
+		 titleGenderMap['Mr'] = M;
+		 titleGenderMap['Mrs'] = F;
+		 titleGenderMap['Miss'] = F;
+		 titleGenderMap['Ms'] = F;
+		 titleGenderMap['Sir'] = M;
+		 titleGenderMap['Lady'] = F;
+		 titleGenderMap['Lord'] = M;
+		 titleGenderMap['Dr'] = '';
+		 var genderCheckbox = titleGenderMap[title];
+
+		 $(genderCheckbox).attr('checked','checked'); 
+		 $(genderCheckbox).siblings('.invalid-message').remove();
+		}
+
+		 $("#input_title").change(function(){
+		   completeGender($("#input_title option:selected").val());
+		 });
+
+		/* temporary occupation lookup */
+		function populateOccupation(){
+			var $lookup = $("#input_occupation"),
+			$occSelect = $("#occ_lookup"),
+			occList = $("<datalist></datalist>").attr("id", "occDatalist");
+			$occSelect.children("option").each(function(i, option){
+				if (option.value != ''){
+					occList.append("<option value=\"" + option.text + "\" data-code=\"" + option.value + "\">");
+				}
+			});
+			$occSelect.after(occList);
+			$lookup.change(function(){
+				var value = occList.children("option[value=\"" + $(this).val() + "\"]").data("code");
+				$("input[name=occupationCode]").val(value);
+			})
+		}
+
+		populateOccupation();
+
+	</script>
+
+	<div id="customerDetails">
+
+		<div class="field form-group">
+
+			<label for="input_title" class="col-sm-3 control-label">Name</label>
+			
+			<div class="col-sm-6">
+				<select class="form-control" id="input_title" name="title" rf.source="../common-forms/resources/titles.txt" rf.preselectFirstOption="true">
+					<option disabled selected>Title</option>
+				</select>
+				<input id="input_firstName" type="text" name="firstName" placeholder="First Name" class="form-control" />
+				<input id="input_surname" type="text" name="surname" rf.validation="required" placeholder="Surname" class="form-control" />
+			</div>
+		</div>
+
+		<div class="field form-group">
+			<label for="input_dateOfBirth" class="col-sm-3 control-label">Date of birth</label>
+
+			<div class="col-sm-6">
+				<select id="input_dateOfBirthDay" name="dateOfBirthDay" class="dateSel form-control" rf.preselectFirstOption="true">
+					<option disabled selected>Day</option>
+					<option>01</option><option>02</option><option>03</option><option>04</option><option>05</option>
+					<option>06</option><option>07</option><option>08</option><option>09</option><option>10</option>
+					<option>11</option><option>12</option><option>13</option><option>14</option><option>15</option>
+					<option>16</option><option>17</option><option>18</option><option>19</option><option>20</option>
+					<option>21</option><option>22</option><option>23</option><option>24</option><option>25</option>
+					<option>26</option><option>27</option><option>28</option><option>29</option><option>30</option>
+					<option>31</option>
+				</select>
+				<select id="input_dateOfBirthMonth" name="dateOfBirthMonth" class="dateSel form-control" rf.source="../common-forms/resources/months.csv" rf.preselectFirstOption="true">
+					<option disabled selected>Month</option>
+				</select>
+				<select id="input_dateOfBirthYear" name="dateOfBirthYear" class="dateSel form-control" rf.rangeStart="moment().subtract('years', 16).format('YYYY')" rf.rangeEnd="moment().subtract('years', 99).format('YYYY')" rf.preselectFirstOption="true" value="">
+					<option disabled selected>Year</option>
+				</select>
+
+				<input type="hidden" name="age" rf.calculated="{ new Date(new Date() - moment(fields.dateOfBirthDay.value + '/' + fields.dateOfBirthMonth.value + '/' + fields.dateOfBirthYear.value, 'DD/MM/YYYY')).getFullYear() - 1970 }"/>
+				<input type="hidden" name="dob" rf.calculated="{fields.dateOfBirthYear.value + '-' + fields.dateOfBirthMonth.value + '-' + fields.dateOfBirthDay.value}"/>
+			</div>
+		</div>
+
+		<div class="field form-group">
+			<label for="gender" class="col-sm-3 control-label">Gender</label>
+
+			<div class="col-sm-6">
+				<div class="radio">
+					<label for="input_gender_male">
+						<input id="input_gender_male" class="" type="radio" name="gender" value="Male" rf.validation="required"/>
+						Male
+					</label>
+				</div>
+				<div class="radio">
+					<label for="input_gender_female">
+						<input id="input_gender_female" type="radio" name="gender" value="Female"/>
+						Female
+					</label>
+				</div>
+			</div>
+		</div>
+
+		<!-- <div class="field form-group">
+			<input type="hidden" name="occupationCode" />
+
+			<label for="input_occupation" class="col-sm-3 control-label">Primary occupation</label>
+			
+			<div class="col-sm-6">
+				<input id="input_occupation" class="form-control" type="search" autocomplete="off" list="occDatalist" name="occupation" rf.validation="required"  rf.valueFromSource="../common-forms/resources/occupations.csv"/>
+			</div>
+		</div>
+
+	    <div style="display: none">
+	        <select id="occ_lookup" rf.source="../common-forms/resources/occupations.csv"/>
+		</div> -->
+
+		<!-- <div class="field form-group">
+			<label for="input_maritalStatusCode" class="col-sm-3 control-label">Marital status</label>
+
+			<div class="col-sm-6">
+				<select id="input_maritalStatusCode" class="form-control" name="maritalStatus" rf.validation="required" rf.source="../common-forms/resources/maritalStatus.csv" rf.preselectFirstOption="true">
+					<option disabled selected/>
+				</select>
+			</div>
+		</div> -->
+
+		<!-- <div class="field form-group">
+			<div class="col-sm-3"></div>
+			<div class="col-sm-6">
+				<h4>UK residency</h4>
+			</div>
+		</div>
+
+		<div class="field form-group">
+
+			<label class="forRadio col-sm-3 control-label" for="input_ukResidentMoreThan5Years">More than 5 years</label>
+
+			<div class="col-sm-6">
+				<input id="input_ukResidentMoreThan5Years" type="checkbox" name="ukResidentMoreThan5Years"/>
+			</div>
+
+		</div>
+
+		<div rf.includeIf="{ fields.ukResidentMoreThan5Years.value == false }" class="form-group">
+			<input type="hidden" name="ukResidentYears" rf.calculated="{ if (fields.ukResidentMoreThan5Years.value == true) { 10; } else if (fields.ukResidentSinceMonthCode.value && fields.ukResidentSinceYear.value) { new Date(new Date() - moment('01/' + fields.ukResidentSinceMonthCode.value + '/' + fields.ukResidentSinceYear.value, 'DD/MM/YYYY')).getFullYear() - 1970 } }"/>
+
+			<label for="input_ukResidentSinceMonthCode" class="col-sm-3 control-label">Or since</label>
+
+			<div class="col-sm-6">
+				<select id="input_ukResidentSinceMonthCode" class="dateSel form-control" name="ukResidentSinceMonthCode" rf.includeIf="{ fields.ukResidentMoreThan5Years.value == false }" rf.source="../common-forms/resources/months.csv" rf.preselectFirstOption="true">
+					<option disabled selected/>
+				</select>
+				<select id="input_ukResidentSinceYear" class="dateSel form-control" name="ukResidentSinceYear" rf.includeIf="{ fields.ukResidentMoreThan5Years.value == false }" rf.rangeStart="new Date().getFullYear()" rf.rangeEnd="new Date().getFullYear() - 5" rf.preselectFirstOption="true">
+					<option disabled selected/>
+				</select>
+			</div>
+
+		</div> -->
+
+		<div class="field findAddress form-group">
+		<!--input id="findAddressProxy" type="proxy" style="display:none" rf.source="http://integration.osldev.net/itb-quotes/postcodeLookup" /-->
+			
+			<label for="input_address" class="col-sm-3 control-label">Address</label>
+			
+			<div class="col-sm-6">
+				<input class="addressLookup form-control" id="input_address" type="text" placeholder="Start typing your address or postcode"/>
+			</div>
+		</div>
+		<div class="field addressFound form-group" style="display:none">
+			<label class="col-sm-3 control-label">Your address</label>
+
+			<div class="col-sm-6">
+				<span id="addressLabel">
+					<span name="address.line1">{{address.line1}}</span>
+					<span name="address.line2">{{address.line2}}</span>
+					<span name="address.line3">{{address.line3}}</span>
+					<span name="address.line4">{{address.line4}}</span>
+					<span name="address.postcode">{{address.postcode}}</span>
+				</span>
+				<input type="hidden" name="address.line1"/>
+				<input type="hidden" name="address.line2"/>
+				<input type="hidden" name="address.line3"/>
+				<input type="hidden" name="address.line4"/>
+				<input type="hidden" name="address.postcode"/>
+
+				<a href="" onclick="return false" value="Change address" class="changeAddressButton">Change address</a>
+			</div>
+		</div>
+		
+		<!-- <div class="field form-group">
+			<label class="col-sm-3 control-label">Do you own your own home</label>
+
+			<div class="col-sm-6">
+				<div class="radio">
+					<label for="input_ownHome_yes">
+						<input id="input_ownHome_yes" class="" type="radio" name="ownHome" value="yes" rf.validation="required"/>
+						Yes
+					</label>
+				</div>
+				<div class="radio">
+					<label for="input_ownHome_no">
+						<input id="input_ownHome_no" type="radio" name="ownHome" value="no"/>
+						No
+					</label>
+				</div>
+
+			</div>
+		</div> -->
+
+	</div>
+
+	<hr>
+
+	<div class="user-profileActions form-group">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6">
+			<input type="button" rf.action="save" class="btn btn-primary" value="Save"/>
+		</div>
+	</div> 
+
+</form>
