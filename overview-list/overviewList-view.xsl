@@ -52,13 +52,9 @@
                     </a>
                 </h4>
                 <p>
-                    <span><xsl:value-of select="concat($entity/status, ' - ')"/></span>
+                    <span class="e-status"><xsl:value-of select="$entity/status"/><xsl:text> </xsl:text></span>
                     <xsl:call-template name="entityLink">
-                        <xsl:with-param name="type" select="$entity/@type"/>
-                        <xsl:with-param name="completed" select="$entity/completed"/>
-                        <xsl:with-param name="total" select="$entity/total"/>
-                        <xsl:with-param name="widget" select="$entity/widget"/>
-                        <xsl:with-param name="uid" select="$entity/@uid"/>
+                        <xsl:with-param name="entity" select="$entity"/>
                     </xsl:call-template>
                 </p>
             </div>
@@ -66,16 +62,12 @@
                 <xsl:attribute name="id"><xsl:value-of select="$collapseId"/></xsl:attribute>
                 <div class="col-sm-4">
                     <h5 style="margin:0">
-                        <xsl:value-of select="$entity/entity/description"/>
+                        <xsl:value-of select="$entity/entity/description"/><xsl:text> </xsl:text>
                     </h5>
                     <p>
-                        <span><xsl:value-of select="concat($entity/entity/status, ' - ')"/></span>
+                        <span class="e-status"><xsl:value-of select="$entity/entity/status"/><xsl:text> </xsl:text></span>
                         <xsl:call-template name="entityLink">
-                            <xsl:with-param name="type" select="$entity/entity/@type"/>
-                            <xsl:with-param name="completed" select="$entity/entity/completed"/>
-                            <xsl:with-param name="total" select="$entity/entity/total"/>
-                            <xsl:with-param name="widget" select="$entity/entity/widget"/>
-                            <xsl:with-param name="uid" select="$entity/entity/@uid"/>
+                            <xsl:with-param name="entity" select="$entity/entity"/>
                         </xsl:call-template>
                     </p>
                 </div>
@@ -110,24 +102,21 @@
     </xsl:template>
 
     <xsl:template name="entityLink">
-        <xsl:param name="type"/>
-        <xsl:param name="completed"/>
-        <xsl:param name="total"/>
-        <xsl:param name="widget"/>
-        <xsl:param name="uid"/>
+        <xsl:param name="entity"/>
         <a>
             <xsl:attribute name="href">
                 <xsl:call-template name="widgetHref">
-                    <xsl:with-param name="widget" select="$widget"/>
-                    <xsl:with-param name="type" select="$type"/>
-                    <xsl:with-param name="uid" select="$uid"/>
+                    <xsl:with-param name="widget" select="$entity/widget"/>
+                    <xsl:with-param name="type" select="$entity/@type"/>
+                    <xsl:with-param name="uid" select="$entity/@uid"/>
                 </xsl:call-template>
             </xsl:attribute>
             <strong>
                 <xsl:choose>
-                    <xsl:when test="$completed!=$total">
-                        <xsl:value-of select="$completed"/> of <xsl:value-of select="$total"/> steps complete
+                    <xsl:when test="$entity/completed!=$entity/total">
+                        <xsl:value-of select="$entity/completed"/> of <xsl:value-of select="$entity/total"/> steps complete
                     </xsl:when>
+                    <xsl:when test="$entity/readonly='false'">view / update</xsl:when>
                     <xsl:otherwise>view</xsl:otherwise>
                 </xsl:choose>
             </strong>

@@ -11,13 +11,20 @@ function Widget_property_details(){
     this.detailTpl;
     this.propTpl;
 
+    this.initExtend = function() {
+        if (pw.defined(this.parameterMap.entity)){
+            this.propertyId = this.parameterMap.entity
+        } else {
+            this.propertyId = this.$widgetDiv.data('propid');
+        }
+    }
+
     this.onReadyExtend = function(){
-        this.propertyId = this.$widgetDiv.data('propid');
         this.propTpl    = this.getHTML();
         this.detailTpl  = $('.dls-detail', $(this.propTpl));
 
-        this.setContent('');
-        this.loadProperty();
+        //this.setContent('');
+        //this.loadProperty();
     }
 
     this.populateTemplate = function(property){

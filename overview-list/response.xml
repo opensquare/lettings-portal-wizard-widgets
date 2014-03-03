@@ -43,12 +43,14 @@
         <completed>6</completed>
         <total>6</total>
         <widget>property-progress</widget>
+        <readonly>false</readonly>
         <entity type="tenancyTemplate" uid="87654321">
             <description>24 months - £250 per month</description>
             <status>No active Tenancy</status>
             <completed>8</completed>
             <total>8</total>
             <widget>tenancy-terms-progress</widget>
+            <readonly>false</readonly>
         </entity>
         <action></action>
         <message>
@@ -61,10 +63,62 @@
         <status>Tenancy Agreed</status>
         <completed>6</completed>
         <total>6</total>
+        <widget>property-overview</widget>
+        <entity type="tenancyTemplate" uid="876321">
+            <description>Mr Peter Johnson</description>
+            <status>end 04/11/2014</status>
+            <completed>8</completed>
+            <total>8</total>
+            <widget>tenancy-terms-progress</widget>
+        </entity>
+        <action></action>
+        <message/>
+    </entity>
+    <entity type="property" uid="867286">
+        <description>11 Chapel Road</description>
+        <status>Currently Advertised</status>
+        <completed>6</completed>
+        <total>6</total>
         <widget>property-progress</widget>
-        <entity type="tenancyTemplate" uid="87654321">
-            <description>12 months - £350 per month</description>
-            <status>Mr Peter Johnson</status>
+        <readonly>false</readonly>
+        <entity type="tenancyTemplate" uid="983241">
+            <description>12 months - £375 per month</description>
+            <status>No Active Tenancy</status>
+            <completed>8</completed>
+            <total>8</total>
+            <widget>tenancy-terms-progress</widget>
+            <readonly>false</readonly>
+        </entity>
+        <action></action>
+        <message/>
+    </entity>
+    <entity type="property" uid="793455">
+        <description>21 Aldershot Close</description>
+        <status>Currently Advertised</status>
+        <completed>6</completed>
+        <total>6</total>
+        <widget>property-progress</widget>
+        <readonly>false</readonly>
+        <entity type="tenancyTemplate" uid="753951">
+            <description>24 Months - £450 per month</description>
+            <status>No Active Tenancy</status>
+            <completed>8</completed>
+            <total>8</total>
+            <widget>tenancy-terms-progress</widget>
+            <readonly>false</readonly>
+        </entity>
+        <action></action>
+        <message/>
+    </entity>
+    <entity type="property" uid="1288647">
+        <description>10 Acacia Avenue</description>
+        <status>Tenancy Agreed</status>
+        <completed>6</completed>
+        <total>6</total>
+        <widget>property-progress</widget>
+        <entity type="tenancyTemplate" uid="147258">
+            <description>Mr John Smith</description>
+            <status>end 15/01/15</status>
             <completed>8</completed>
             <total>8</total>
             <widget>tenancy-terms-progress</widget>

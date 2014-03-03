@@ -2,6 +2,7 @@
 	<type>layout</type>
 	<parameters>
 		<url>header.html</url>
+        <secure>false</secure>
 	</parameters>
 	<attributes>
 		<displayheader>false</displayheader>

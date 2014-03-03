@@ -1,0 +1,11 @@
+<widget>
+    <type>httpRequest</type>
+    <parameters>
+        <method>GET</method>
+        <xsl>display-entity</xsl>
+        <url>widgets/display-entity/entity-{entity}.xml</url>
+    </parameters>
+    <attributes>
+        <js>displayEntity.js</js>
+    </attributes>
+</widget>

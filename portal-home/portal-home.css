@@ -23,6 +23,10 @@
 .property p {
 	margin: 0;
 }
+.overview-list span.e-status {
+	display: inline-block;
+	width: 45%;
+}
 
 @media (max-width:768px) {
 	.headings {

@@ -1,0 +1,10 @@
+<widget>
+	<type>layout</type>
+	<parameters>
+		<url>overview.html</url>
+	</parameters>
+	<attributes>
+		<displayHeader>false</displayHeader>
+		<js>overview.js</js>
+	</attributes>
+</widget>
