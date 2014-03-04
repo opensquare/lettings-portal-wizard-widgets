@@ -13,9 +13,7 @@ function Widget_display_step(){
     }
 
     this.onReadyExtend = function() {
-       // need to mount widget manually - layout content is processed before {params} are substituted
-       pw.mount($('.step-container div.widget', this.$widgetDiv).removeAttr('delayload'));
-
+        this.mountStep();
     }
 
     this.handleEvent = function(channel, event) {
@@ -40,6 +38,9 @@ function Widget_display_step(){
         this.loadHTML();
     }
 
-   
+    this.mountStep = function(){
+       // need to mount widget manually - layout content is processed before {params} are substituted
+       pw.mount($('.step-container div.widget', this.$widgetDiv).removeAttr('delayload'));
+    }
 
 }

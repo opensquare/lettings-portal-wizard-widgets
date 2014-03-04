@@ -31,14 +31,26 @@ function Widget_portal_steps(){
         // use widget container width
         var windowWidth = $('.widget-content' ,this.$widgetDiv).width();
 
-        // make each li width window width divided by number of steps
-        $('.steps li').css('width', windowWidth/countChildElem + 'px');
+        // get width of back step
+        var backWidth = windowWidth/countChildElem/2;
+
+        // get step width
+        var stepWidth = (windowWidth - backWidth) / (countChildElem - 1);
+
+        // make each li width window width divided by number of steps (excluding back step)
+        $('.steps li').css('width', stepWidth + 'px');
+
+        // make back step half width
+        $('.steps li.step-back').css('width', backWidth + 'px');
 
         // add tick to completed steps
         $('.steps li.complete h3').prepend('<span class="glyphicon glyphicon-ok"></span> ');
 
         // add cross to incomplete steps
         $('.steps li.incomplete h3').prepend('<span class="glyphicon glyphicon-remove"></span> ');
+
+        // add back to back step
+        $('.steps li.step-back h3').prepend('<span class="glyphicon glyphicon-chevron-left"></span> ');
 
         // add click handler to steps
         this.addHandlers();

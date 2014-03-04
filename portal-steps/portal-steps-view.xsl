@@ -8,11 +8,15 @@
                 <xsl:when test="response/entity[@type='step']">
                     <xsl:apply-templates select="response/entity[@type='main']"/>
                 	<ul class="steps clearfix">
+                        <xsl:call-template name="backstep"/>
                     	<xsl:apply-templates select="response/entity[@type='step']"/>
-                	</ul>
+                    </ul>
                 </xsl:when>
                 <xsl:otherwise>
-                    No actions available
+                    <ul class="steps clearfix">
+                        <xsl:call-template name="backstep"/>
+                        <li>No actions available</li>
+                	</ul>
                 </xsl:otherwise>
             </xsl:choose>
     	</div>
@@ -67,6 +71,16 @@
                 <xsl:value-of select="completed"/> of <xsl:value-of select="total"/> steps complete
             </small>
         </h2>
+    </xsl:template>
+
+    <xsl:template name="backstep">
+        <li class="step-back">
+            <a href="#">
+                <h3><xsl:text> </xsl:text></h3>
+                <p>Back to properties</p>
+                <h4></h4>
+            </a>
+        </li>
     </xsl:template>
 
 </xsl:stylesheet>
