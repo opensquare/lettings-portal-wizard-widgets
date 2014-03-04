@@ -21,6 +21,7 @@ body {
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
 }
+/* loading spinner */
 .spin-loading .load-text {
     position: relative;
     margin: 0 auto;
@@ -36,7 +37,6 @@ body {
     border-radius:75px;
     border-bottom:5px solid #fff;
 }
-
 @keyframes sweep { 
     to { 
         transform: rotate(360deg); 
@@ -47,7 +47,13 @@ body {
         -webkit-transform: rotate(360deg); 
     } 
 }
-
+/* display entity styling */
+.entity-property-value{
+    background-color: #3b96d8;
+}
+.entity-description{
+    background-color: #0f5da1;
+}
 /* bootstrap overrides - classes that directly change bootstrap.css here */
 body, 
 .panel {
@@ -65,7 +71,8 @@ a, a:hover {
 	color: #fff;
 	text-decoration: none;
 }
-h2 small{
+h2 small,
+h3 small{
     color: inherit;
     opacity: 0.8;
 }

@@ -1,3 +1,36 @@
+/* display entity styling */
+.property-details .entity-property{
+    margin-bottom: 3px;
+}
+.property-details .entity-property-value{
+    padding-left:0.5em;
+    display:inline-block;
+    width:80%;
+}
+.property-details .entity-description {
+    margin-top:1em;
+    padding:10px 15px;
+    border-bottom: 1px solid;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 2px;
+}
+.property-details .entity>.entity {
+    margin-left:2em;
+}
+div.widget[name='property-details'] .dls-images{
+    margin: 2em auto;
+}
+div.widget[name='property-details'] .pic {
+    height: 100px;
+    margin: 0 auto;
+    padding-top: 3em;
+    border: 1px solid #ccc;
+    word-wrap: break-word;
+    text-align: center;
+    background-color: #eee;
+    font-weight: bold;
+    color: #777;
+}
 /*div.widget[name='property-details'] .image {
     border: 1px solid;
     margin-bottom: 1em;
@@ -23,18 +56,6 @@ div.widget[name='property-details'] section>summary{
 div.widget[name='property-details'] section>summary .dls-subtitle,
 div.widget[name='property-details'] section>summary .dls-summary {
     margin:0.5em 0;
-}
-div.widget[name='property-details'] .pic {
-    height: 100px;
-    margin: 0 auto;
-    padding-top: 3em;
-    border: 1px solid #ccc;
-    
-    word-wrap: break-word;
-    text-align: center;
-    background-color: #eee;
-    font-weight: bold;
-    color: #777;
 }
 div.widget[name='property-details'] .dls-details{
     margin-bottom: 2em;

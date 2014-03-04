@@ -20,8 +20,10 @@ function Widget_property_details(){
     }
 
     this.onReadyExtend = function(){
-        this.propTpl    = this.getHTML();
-        this.detailTpl  = $('.dls-detail', $(this.propTpl));
+        // load a random number of thumbnail placeholders
+        $('.dls-images', this.$widgetDiv).append(this.getPictures(this.propertyId));
+        //this.propTpl    = this.getHTML();
+        //this.detailTpl  = $('.dls-detail', $(this.propTpl));
 
         //this.setContent('');
         //this.loadProperty();
@@ -74,7 +76,7 @@ function Widget_property_details(){
             var pic = picTemplate.replace('{id}', propertyId).replace('{pic}', i);
             pictures += pic;
         }
-        pictures += '<button type="button" class="btn-lg btn btn-default">Add picture</button>';
+        //pictures += '<button type="button" class="btn-lg btn btn-default">Add picture</button>';
 
         return '<div class="row">' + pictures + '</div>';
     }

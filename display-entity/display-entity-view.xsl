@@ -8,17 +8,24 @@
     </xsl:template>
 
     <xsl:template match="entity">
+        <xsl:param name="depth" select="1" />
         <div class="entity">
-            <xsl:apply-templates select="description"/>
+            <div class="row entity-section entity-heading">
+                <div class="col-sm-8">
+                    <h3 class="entity-description">
+                        <xsl:value-of select="description"/><xsl:text> </xsl:text><small><xsl:value-of select="status"/></small>
+                    </h3>
+                </div>
+            </div>
             <xsl:if test="properties">
                 <xsl:apply-templates select="properties"/>
             </xsl:if>
-            <xsl:apply-templates select="entity"/>
+            <xsl:if test="{depth} &gt; $depth">
+                <xsl:apply-templates select="entity">
+                    <xsl:with-param name="depth" select="$depth + 1"/>
+                </xsl:apply-templates>
+            </xsl:if>
         </div>
-    </xsl:template>
-
-    <xsl:template match="description">
-        <h3 class="entity-description entity-section entity-heading"><xsl:value-of select="."/></h3>
     </xsl:template>
 
     <xsl:template match="properties">
@@ -32,13 +39,22 @@
     </xsl:template>
 
     <xsl:template match="property">
-        <div class="col-sm-6">
-            <span style="display:inline-block;width:50%">
-                <xsl:attribute name="class">entity-property <xsl:value-of select="translate(@name, ' ', '-')"/></xsl:attribute>
-                <strong><xsl:value-of select="@name"/></strong>
-            </span>
-            <span><xsl:value-of select="."/></span>
-        </div>
+        <xsl:choose>
+            <xsl:when test="@name!='Description Text'">
+                <div class="col-sm-4 entity-property">
+                    <span style="display:inline-block;width:20%">
+                        <xsl:attribute name="class">entity-property-name <xsl:value-of select="translate(@name, ' ', '-')"/></xsl:attribute>
+                        <strong><xsl:value-of select="@name"/></strong>
+                    </span>
+                    <span class="entity-property-value"><xsl:value-of select="."/></span>
+                </div>
+            </xsl:when>
+            <xsl:otherwise>
+                <div class="col-sm-8 entity-property">
+                    <span class="entity-property-value" style="width:100%"><xsl:value-of select="."/></span>
+                </div>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 
     

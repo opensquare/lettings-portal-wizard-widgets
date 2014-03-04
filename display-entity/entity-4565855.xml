@@ -1,10 +1,11 @@
 <response>
     <entity type="property" uid="4565855">
-        <description>11 Avenue Road</description>
+        <description>102 Earls Road</description>
+        <status>Tenancy Agreed</status>
         <entity type="address" uid="45651">
-            <description>Address: 11 Avenue Road AD57 8JE</description>
+            <description>Address: 102 Earls Road AD57 8JE</description>
             <properties>
-                <property name="Address Line 1">11 Avenue Road</property>
+                <property name="Address Line 1">102 Earls Road</property>
                 <property name="Address Line 2">Fall Park</property>
                 <property name="Town">Sometown</property>
                 <property name="Postcode">AD57 8JE</property>
@@ -23,31 +24,48 @@
                 <property name="Item 7">Item Value 7</property>
                 <property name="Item 8">Item Value 8</property>
                 <property name="Item 9">Item Value 9</property>
-                <property name="Description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </property>
             </properties>
+            <entity type="description" uid="456521">
+                <description>Property Description</description>
+                <properties>
+                    <property name="Description Text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</property>
+                </properties>
+            </entity>
         </entity>
         <entity type="parties" uid="45653">
             <description>Additional Parties</description>
             <entity>
-                <description>Party Person 1</description>
+                <description>Owner: Mrs Catherine Smith</description>
                 <properties>
-                    <property name="Item 6">Item Value 6</property>
-                    <property name="Item 7">Item Value 7</property>
-                    <property name="Item 8">Item Value 8</property>
+                    <property name="Type">Owner</property>
+                    <property name="Title">Mrs</property>
+                    <property name="Forename">Catherine</property>
+                    <property name="Surname">Smith</property>
                     <property name="Item 9">Item Value 9</property>
                     <property name="Item 10">Item Value 10</property>
                 </properties>
             </entity>
-            <entity>
-                <description>Party Person 2</description>
+            <!--entity>
+                <description>Occupant: Miss Chloe Johnson</description>
                 <properties>
-                    <property name="Item 6">Item Value 6</property>
-                    <property name="Item 7">Item Value 7</property>
-                    <property name="Item 8">Item Value 8</property>
+                    <property name="Type">Occupant</property>
+                    <property name="Title">Miss</property>
+                    <property name="Forename">Chloe</property>
+                    <property name="Surname">Johnson</property>
                     <property name="Item 9">Item Value 9</property>
                     <property name="Item 10">Item Value 10</property>
                 </properties>
-            </entity>
+            </entity-->
         </entity>
     </entity>
 </response>
