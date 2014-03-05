@@ -1,7 +1,0 @@
-div .widget[name="action-progress"] div.widget[name="action-summary"] h4{
-    text-align:center;
-}
-div .widget[name="action-progress"] div.widget[name="action-summary"] h4 .glyphicon{
-    display: block;
-    font-size: 3em;
-}

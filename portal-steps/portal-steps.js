@@ -21,27 +21,7 @@ function Widget_portal_steps(){
 
 	this.onReadyExtend = function() {
 
-        // count number of steps 
-            /*var countChildElem = document.getElementsByClassName('steps')[0].childElementCount;*/
-        // use jquery to avoid dom errors on widget load fail
-        var countChildElem = $('.steps', this.$widgetDiv).eq(0).children().size();
-
-        // divide window width with number of steps
-            /* var windowWidth = window.innerWidth; */
-        // use widget container width
-        var windowWidth = $('.widget-content' ,this.$widgetDiv).width();
-
-        // get width of back step
-        var backWidth = windowWidth/countChildElem/2;
-
-        // get step width
-        var stepWidth = (windowWidth - backWidth) / (countChildElem - 1);
-
-        // make each li width window width divided by number of steps (excluding back step)
-        $('.steps li').css('width', stepWidth + 'px');
-
-        // make back step half width
-        $('.steps li.step-back').css('width', backWidth + 'px');
+        this.resizeSteps();
 
         // add tick to completed steps
         $('.steps li.complete h3').prepend('<span class="glyphicon glyphicon-ok"></span> ');
@@ -92,6 +72,31 @@ function Widget_portal_steps(){
     this.loadGenericResponse = function() {
         this.parameterMap.responsePath = this.defaultUrl;
         this.loadHTML();
+    }
+
+    this.resizeSteps = function(){
+        // count number of steps 
+            /*var countChildElem = document.getElementsByClassName('steps')[0].childElementCount;*/
+        // use jquery to avoid dom errors on widget load fail
+        var countChildElem = $('.steps', this.$widgetDiv).eq(0).children().size();
+
+        // divide window width with number of steps
+            /* var windowWidth = window.innerWidth; */
+        // use widget container width
+        var windowWidth = $('.widget-content' ,this.$widgetDiv).width() - 35; // make allowance for scroll bar
+
+        // get width of back step
+        var backWidth = windowWidth/countChildElem/2;
+
+        // get step width
+        var stepWidth = (windowWidth - backWidth) / (countChildElem - 1);
+
+        // make each li width window width divided by number of steps (excluding back step)
+        $('.steps li').css('width', stepWidth + 'px');
+
+        // make back step half width
+        $('.steps li.step-back').css('width', backWidth + 'px');
+
     }
 
 }

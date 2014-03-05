@@ -45,6 +45,6 @@
         <description>Review everything about the property so far ... description text</description>
         <step>6</step>
         <status>optional</status>
-        <widget>property-overview</widget>
+        <widget>property-details</widget>
     </entity>
 </response>

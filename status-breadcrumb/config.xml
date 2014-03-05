@@ -1,0 +1,12 @@
+<widget>
+    <type>httpRequest</type>
+    <parameters>
+        <method>GET</method>
+        <xsl>breadcrumb</xsl>
+        <url>{responsePath}</url>
+    </parameters>
+    <attributes>
+        <js>status-breadcrumb.js</js>
+        <css>status-breadcrumb.css</css>
+    </attributes>
+</widget>

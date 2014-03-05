@@ -1,0 +1,34 @@
+<response>
+    <status>
+        <description>Enter Details</description>
+        <progress>complete</progress>
+    </status>
+    <status>
+        <description>Purchase Product</description>
+        <progress>complete</progress>
+    </status>
+    <status>
+        <description>Advertise Property</description>
+        <progress>complete</progress>
+    </status>
+    <status>
+        <description>Awaiting Interest</description>
+        <progress>complete</progress>
+    </status>
+    <status>
+        <description>Sign up Tenant</description>
+        <progress>complete</progress>
+    </status>
+    <status>
+        <description>Finalise Tenancy Agreement</description>
+        <progress>complete</progress>
+    </status>
+    <status>
+        <description>Agree Tenancy</description>
+        <progress>complete</progress>
+    </status>
+    <status>
+        <description>Tenancy Agreed</description>
+        <progress>current</progress>
+    </status>
+</response>

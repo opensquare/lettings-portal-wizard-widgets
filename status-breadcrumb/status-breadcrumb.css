@@ -1,0 +1,28 @@
+/*div .widget[name="action-progress"] div.widget[name="action-summary"] h4{
+    text-align:center;
+}
+div .widget[name="action-progress"] div.widget[name="action-summary"] h4 .glyphicon{
+    display: block;
+    font-size: 3em;
+}*/
+.widget.status-breadcrumb .widget-content {
+    width: 100%;
+}
+.widget.status-breadcrumb ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.widget.status-breadcrumb li {
+    float: left;
+    padding: 10px;
+}
+.widget.status-breadcrumb div {
+    display: inline-block;
+}
+.widget.status-breadcrumb div.inactive {
+    opacity: 0.5;
+}
+.widget.status-breadcrumb .spacer{
+    text-align: center;
+}

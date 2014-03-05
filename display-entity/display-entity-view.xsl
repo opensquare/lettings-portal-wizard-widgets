@@ -11,7 +11,7 @@
         <xsl:param name="depth" select="1" />
         <div class="entity">
             <div class="row entity-section entity-heading">
-                <div class="col-sm-8">
+                <div class="col-sm-9">
                     <h3 class="entity-description">
                         <xsl:value-of select="description"/><xsl:text> </xsl:text><small><xsl:value-of select="status"/></small>
                     </h3>
