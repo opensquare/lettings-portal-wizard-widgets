@@ -17,8 +17,6 @@ function Widget_page_user_profile(){
 			this.parameterMap.entity = contentId;
 		}
 
-		console.log('test', this.parameterMap.entity);
-		console.log('test2', this.parameterMap.flow);
 	}
 
 	this.onReadyBeforeChildImport = function(){
