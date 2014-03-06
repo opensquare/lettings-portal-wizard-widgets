@@ -17,12 +17,16 @@ function Widget_portal(){
         channelClosePage = 'portal.closePage',
         channelLoadPage = 'portal.loadPage',
         channelLoadFailed = 'portal.loadFailed',
+        channelPreventPageLoad = 'portal.preventPageLoad'
         // navigation state 
         navState = {
             homeContent   : '',
             homeId        : 'home',
             pageArgs      : '',
             currentLayout : '',
+            preventLoadRequest : {},
+            disableHashLoad : false,
+            unloadMessage : '',
             mountCache    : {}
         }
     ;
@@ -38,7 +42,8 @@ function Widget_portal(){
 		pw.addListenerToChannel(this, channelSetPageArgs);
 		pw.addListenerToChannel(this, channelClosePage);
 		pw.addListenerToChannel(this, channelLoadFailed);
-		pw.addListenerToChannel(this, channelLoadPage);
+        pw.addListenerToChannel(this, channelLoadPage);
+		pw.addListenerToChannel(this, channelPreventPageLoad);
 		/*hook up page load handler*/
 		$(window).on('hashchange', urlParse);
 		/*load page*/
@@ -55,11 +60,46 @@ function Widget_portal(){
 		} else if (channel == channelLoadFailed && navState.mountCache[event.name]) {
 			navState.mountCache[event.name] = false;
 			this.loadFailed(event.name);
-		}
+		} else if (channel == channelPreventPageLoad) {
+            navState.preventLoadRequest.preventLoad = event.preventLoad;
+            navState.preventLoadRequest.unloadMessage   = pw.defined(event.message) ? event.message : '';
+            navState.preventLoadRequest.responseChannel = event.responseChannel;
+        }
 	}
 
-	function urlParse() {
+	function urlParse(e) {
 		var hashtag = window.location.hash;
+
+        if (navState.disableHashLoad){
+            // re enable hash load
+            navState.disableHashLoad = false;
+            // do nothing
+            return false;
+        }
+
+        if (navState.preventLoadRequest.preventLoad) {
+            var confirmation = confirm(navState.preventLoadRequest.unloadMessage);
+            var oldUrl = e.originalEvent.oldURL;
+            var oldHash = oldUrl.substring(oldUrl.indexOf('#') + 1);
+
+            if (!confirmation){
+                // stay on current page and reset hash
+                // disable hash load
+                navState.disableHashLoad = true;
+
+                // notify prevent load requester of result
+                pw.notifyChannelOfEvent(navState.preventLoadRequest.responseChannel, confirmation);
+                // revert url
+                window.location.hash = oldHash;
+
+                // do not continue
+                return false;
+            } else {
+                // notify of response
+                pw.notifyChannelOfEvent(navState.preventLoadRequest.responseChannel, confirmation);
+            }
+        }
+
 		console.debug('hashtag "' + hashtag + '"');
 		if (hashtag.length > 1) {
 			// Remove first #
