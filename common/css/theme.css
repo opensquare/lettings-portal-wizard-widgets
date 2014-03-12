@@ -16,10 +16,10 @@
 	font-style: normal;
 }
 body {
-    font-family: "Segoe_UI", Arial, Helvetica, Geneva, sans-serif;
+    /*font-family: "Segoe_UI", Arial, Helvetica, Geneva, sans-serif;
     font-weight: normal;
     -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
+    font-smoothing: antialiased;*/
 }
 /* loading spinner */
 .spin-loading .load-text {
@@ -35,7 +35,8 @@ body {
     animation: sweep 1s infinite linear;
     -webkit-animation: sweep 2s infinite linear;
     border-radius:75px;
-    border-bottom:5px solid #fff;
+    /*border-bottom:5px solid #fff;*/
+    border-bottom:5px solid;
 }
 @keyframes sweep { 
     to { 
@@ -48,15 +49,15 @@ body {
     } 
 }
 /* display entity styling */
-.entity-property-value{
+/*.entity-property-value{
     background-color: #3b96d8;
 }
 .entity-description{
     background-color: #0f5da1;
-}
+}*/
 /* bootstrap overrides - classes that directly change bootstrap.css here */
 body, 
-.panel {
+/*.panel {
 	background-color: #0072c5;
 	color: #fff;
 }
@@ -76,3 +77,4 @@ h3 small{
     color: inherit;
     opacity: 0.8;
 }
+*/

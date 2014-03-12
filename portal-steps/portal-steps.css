@@ -14,7 +14,7 @@
 .steps li.active,
 .steps li:hover
  {
-	background: #0f5da1;
+	/*background: #0f5da1;*/
 }
 .steps li.step-back{
     text-align: center;

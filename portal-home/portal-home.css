@@ -17,16 +17,80 @@
 	display: none;
 	font-weight: bold;
 }
-.property {
-	padding: 10px 0;
+.widget.portal-home .widget.portal-panel{
+	margin: 1em 0;
 }
-.property p {
-	margin: 0;
+.widget.portal-home .widget.portal-panel .ic-image{
+	border:1px solid;
+	padding: 1.5em;
+	width: 180px;
+	overflow-wrap: break-word; 
 }
-.overview-list span.e-status {
+.widget.portal-home .widget.portal-panel .ic-heading,
+.widget.portal-home .widget.portal-panel .ic-progress-set,
+.widget.portal-home .widget.portal-panel .ic-progress,
+.widget.portal-home .widget.portal-panel .ic-contents,
+.widget.portal-home .widget.portal-panel .ic-item,
+.widget.portal-home .widget.portal-panel .ic-mtext-item{
+	float: left;
+}
+.widget.portal-home .widget.portal-panel .ic-heading{
+	width: 18em;
+}
+.widget.portal-home .widget.portal-panel .ic-heading a{
+	font-size: 1.5em;
+	font-weight: bold;
+}
+.widget.portal-home .widget.portal-panel .ic-progress{
+	text-align: center;
+	margin-right: 1em;
+}
+.widget.portal-home .widget.portal-panel .ic-progress-status{
+	border:1px solid;
+	width:2.5em;
+	padding: 0.5em 0;
+	border-radius: 70px;
+	font-size: 3em;
+}
+.widget.portal-home .widget.portal-panel .ic-type-multiple-text{
+	min-width:30em;
+}
+.widget.portal-home .widget.portal-panel .ic-type-multiple-text .ic-item-text{
+	font-size: 2em;
+}
+.widget.portal-home .widget.portal-panel .ic-type-multiple-text .ic-mtext-item{
+	margin: 0.5em 10em 0 0;
+}
+.widget.portal-home .widget.portal-panel .ic-type-multiple-text .ic-mtext-main{
+	font-size: 1.4em;
+}
+/*.overview-list .row{
+	padding-bottom: 1em;
+	margin-bottom: 1em;
+	border-bottom: 1px solid;
+}
+.overview-list p{
+	margin:0;
+}
+.overview-list .entity h4{
 	display: inline-block;
-	width: 45%;
 }
+.overview-list .entity h4.entity-heading{
+	max-width:45%;
+}
+.overview-list div.subentity{
+	margin-top:0.5em;
+	margin-left:2em;
+}
+.overview-list .subentity .glyphicon.glyphicon-tenancyInfo:before{
+	content: "\e032";
+}
+.overview-list h4+h4{
+	float: right;
+}
+.overview-list .product {
+	text-align: center;
+}*/
 
 @media (max-width:768px) {
 	.headings {

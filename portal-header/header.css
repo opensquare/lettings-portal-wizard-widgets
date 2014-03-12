@@ -5,14 +5,14 @@ div.widget[name="portal-header"] .navbar.navbar-default {
 	border-radius: 0;
 }
 div.widget[name="portal-header"] .navbar.navbar-default a {
-	color: #fff;
+	/*color: #fff;*/
 }
 div.widget[name="portal-header"] .navbar-default .navbar-nav>.open>a,
 div.widget[name="portal-header"] .dropdown-menu>li>a:hover {
-	background: #0f5da1;
+	/*background: #0f5da1;*/
 }
 div.widget[name="portal-header"] .dropdown-menu {
-	background: #0072c5;
+	/*background: #0072c5;*/
 }
 div.widget[name="portal-header"] .navbar-brand {
 	font-size: 1.6em;
