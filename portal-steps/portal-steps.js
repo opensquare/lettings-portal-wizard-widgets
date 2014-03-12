@@ -35,11 +35,6 @@ function Widget_portal_steps(){
         // add click handler to steps
         this.addHandlers();
 
-        // load the active step widget (httpResponse widgets aren't native layout types)
-        pw.mount(
-            $('.step-content div.widget', this.$widgetDiv)
-            .removeAttr('delayLoad')
-        );
     }
 
     this.addHandlers = function() {
@@ -52,7 +47,8 @@ function Widget_portal_steps(){
                 entity : widgetObject.parameterMap.entity
             });
             return false;
-        })
+        });
+        
     }
 
     this.onLoadFailure = function() {

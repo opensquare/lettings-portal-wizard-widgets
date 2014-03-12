@@ -21,32 +21,45 @@
             </xsl:choose>
     	</div>
     	<div class="step-content">
-
-    		<xsl:if test="response/entity[@active='active']">
-		     
-                <div class="widget" name="display-step" delayload="true">
-                    <xsl:attribute name="params">
-                        <xsl:text>activeStep=</xsl:text>
-                        <xsl:value-of select="response/entity[@active='active']/widget"/>
-                        <xsl:text>&amp;entity=</xsl:text>
-                        <xsl:value-of select="{entity}"/>
-                        <xsl:text>&amp;stepParams=</xsl:text>
-                        <xsl:if test="response/entity[@active='active']/widgetParams">
-                            <!-- need to encode parameter string so it acts as a single parameter -->
-                            <xsl:value-of select="replace(response/entity[@active='active']/widgetParams, '&amp;', '%26')"/>
-                        </xsl:if>
-                    </xsl:attribute>
-                </div>
-
-			</xsl:if>
-
+            <xsl:variable name="step" select="concat('{', 'step', '}')"/>
+            <xsl:choose>
+                <xsl:when test="'{step}' != $step and not(empty(//entity[step='{step}']))">
+                    <xsl:call-template name="stepContent">
+                        <xsl:with-param name="step" select="//entity[step='{step}']"/>
+                    </xsl:call-template>
+                </xsl:when>
+                <xsl:when test="response/entity[@active='active']">
+                    <xsl:call-template name="stepContent"/>
+                </xsl:when>
+            </xsl:choose>
     	</div>
+    </xsl:template>
+
+    <xsl:template name="stepContent">
+        <xsl:param name="step" select="/response/entity[@active='active']"/>
+        <div class="widget" name="display-step">
+            <xsl:attribute name="params">
+                <xsl:text>activeStep=</xsl:text>
+                <xsl:value-of select="$step/widget"/>
+                <xsl:text>&amp;entity=</xsl:text>
+                <xsl:value-of select="'{entity}'"/>
+                <xsl:text>&amp;stepParams=</xsl:text>
+                <xsl:if test="$step/widgetParams">
+                    <!-- need to encode parameter string so it acts as a single parameter -->
+                    <xsl:value-of select="replace($step/widgetParams, '&amp;', '%26')"/>
+                </xsl:if>
+            </xsl:attribute>
+        </div>
     </xsl:template>
 
     <xsl:template match="entity[@type='step']">
     	<li>
     		<xsl:attribute name="class">
-    			<xsl:value-of select="@active"/><xsl:text> </xsl:text><xsl:value-of select="status"/>
+    			<xsl:value-of select="status"/>
+                <xsl:text> step-</xsl:text>
+                <xsl:value-of select="step"/>
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="@active"/>
     		</xsl:attribute>
 
     		<a class="step-link">

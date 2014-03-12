@@ -12,7 +12,7 @@
 
 
 <widget>
-    <type>httpRequest</type>
+    <type>httpRequestLayout</type>
     <parameters>
         <method>GET</method>
         <xsl>portal-steps</xsl>
