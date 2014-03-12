@@ -1,6 +1,7 @@
 <response>
     <entity type="main">
         <description>10 Hulse Road</description>
+        <target>manage-property?property=12358453</target>
         <completed>2</completed>
         <total>6</total>
     </entity>

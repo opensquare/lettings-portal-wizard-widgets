@@ -1,6 +1,7 @@
 <response>
     <entity type="main">
         <description>11 Avenue Road</description>
+        <target>manage-property?property=65955</target>
         <completed>5</completed>
         <total>6</total>
     </entity>

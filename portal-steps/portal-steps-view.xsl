@@ -3,18 +3,16 @@
     <xsl:output method="html"/>
     
     <xsl:template match="/">
-    	<div class="portal-steps">
-    		<xsl:choose>
+        <xsl:apply-templates select="response/entity[@type='main']"/>
+        <div class="portal-steps">
+            <xsl:choose>
                 <xsl:when test="response/entity[@type='step']">
-                    <xsl:apply-templates select="response/entity[@type='main']"/>
                 	<ul class="steps clearfix">
-                        <xsl:call-template name="backstep"/>
                     	<xsl:apply-templates select="response/entity[@type='step']"/>
                     </ul>
                 </xsl:when>
                 <xsl:otherwise>
                     <ul class="steps clearfix">
-                        <xsl:call-template name="backstep"/>
                         <li>No actions available</li>
                 	</ul>
                 </xsl:otherwise>
@@ -77,23 +75,16 @@
     </xsl:template>
 
     <xsl:template match="entity[@type='main']">
-        <h2>
-            <xsl:value-of select="description"/>
-            <xsl:value-of select="' '"/>
-            <small>
-                <xsl:value-of select="completed"/> of <xsl:value-of select="total"/> steps complete
-            </small>
-        </h2>
-    </xsl:template>
-
-    <xsl:template name="backstep">
-        <li class="step-back">
-            <a href="#">
-                <h3><xsl:text> </xsl:text></h3>
-                <p>Back to properties</p>
-                <h4></h4>
-            </a>
-        </li>
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li>
+                <a>
+                    <xsl:attribute name="href">#<xsl:value-of select="target"/></xsl:attribute>
+                    <xsl:value-of select="description"/>
+                </a>
+            </li>
+            <li class="active">{pageDescription} (<xsl:value-of select="completed"/> of <xsl:value-of select="total"/> steps complete)</li>
+        </ol>
     </xsl:template>
 
 </xsl:stylesheet>

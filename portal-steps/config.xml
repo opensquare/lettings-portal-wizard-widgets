@@ -1,22 +1,9 @@
-<!-- <widget>
-	<type>layout</type>
-	<parameters>
-		<url>portal-steps.html</url>
-	</parameters>
-	<attributes>
-		<displayHeader>false</displayHeader>
-		<css>portal-steps.css</css>
-		<js>portal-steps.js</js>
-	</attributes>
-</widget> -->
-
-
 <widget>
     <type>httpRequestLayout</type>
     <parameters>
         <method>GET</method>
         <xsl>portal-steps</xsl>
-        <url>{responsePath}</url>
+        <url>widgets/xmldata/{responsePath}.xml</url>
     </parameters>
     <attributes>
         <css>portal-steps.css</css>

@@ -1,22 +1,33 @@
 function Widget_portal_steps(){
 
+    /**
+    *   -   Description in breadcrumb is assigned by adding data-description attribute to widget div before load
+    *       or set to 'progress' by default
+    */
+
     this.failedToLoad = false;
-    this.defaultUrl   = 'widgets/portal-steps/response.xml';
+    this.defaultUrl   = 'portal-steps-response';
     this.channelLoadStep = 'step.load';
+    this.stepDescription = '';
+    this.breadcrumbPlaceholder = '{pageDescription}';
 
     // loads file using responsePath parameter
     this.initExtend = function() {
         var 
             responsePath = this.parameterMap.responsePath,
             entity = this.parameterMap.entity,
-            path = this.parameterMap.path
+            path = this.parameterMap.path,
+            stepDescription
         ;
         // if responsePath isn't set but entity and path is, form responsePath and add to parameter map
         if (!pw.defined(responsePath) && pw.defined(entity) && pw.defined(path)){
-            this.parameterMap.responsePath = 'widgets/' + path + '/entity-' + entity + '.xml';
+            this.parameterMap.responsePath = path + '-' + entity;
         } else if (!pw.defined(responsePath)){
             this.parameterMap.responsePath = this.defaultUrl;
         }
+        // get breadcrumb description text
+        stepDescription      = this.$widgetDiv.data('description');
+        this.stepDescription = pw.defined(stepDescription) ? stepDescription : 'progress';
     }
 
 	this.onReadyExtend = function() {
@@ -34,6 +45,10 @@ function Widget_portal_steps(){
 
         // add click handler to steps
         this.addHandlers();
+
+        // replace breadcrumb placeholder
+        var crumbText = $('.breadcrumb li.active', this.$widgetDiv).text();
+        $('.breadcrumb li.active', this.$widgetDiv).text(crumbText.replace(this.breadcrumbPlaceholder, this.stepDescription));
 
     }
 
@@ -81,17 +96,11 @@ function Widget_portal_steps(){
         // use widget container width
         var windowWidth = $('.widget-content' ,this.$widgetDiv).width() - 35; // make allowance for scroll bar
 
-        // get width of back step
-        var backWidth = windowWidth/countChildElem/2;
-
         // get step width
-        var stepWidth = (windowWidth - backWidth) / (countChildElem - 1);
+        var stepWidth = windowWidth / countChildElem;
 
-        // make each li width window width divided by number of steps (excluding back step)
+        // make each li width window width divided by number of steps 
         $('.steps li').css('width', stepWidth + 'px');
-
-        // make back step half width
-        $('.steps li.step-back').css('width', backWidth + 'px');
 
     }
 

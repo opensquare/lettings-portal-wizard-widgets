@@ -1,0 +1,63 @@
+<response>
+    <address>11 Avenue Road</address>
+    <resultSet type="property">
+        <header>Property Details</header>
+        <subtext></subtext>
+        <items>
+            <item uid="12358453">
+                <text></text>
+                <links>
+                    <link>
+                        <displayText>2 of 7 steps complete</displayText>
+                        <portalTarget>#property-progress?property=12358453</portalTarget>
+                    </link>
+                </links>
+            </item>
+        </items>
+    </resultSet>
+    <resultSet type="tenancy">
+        <header>Tenancy</header>
+        <subtext></subtext>
+        <items>
+            <item uid="12358453">
+                <text></text>
+                <links>
+                    <link>
+                        <displayText>0 of 8 steps complete</displayText>
+                        <portalTarget>#tenancy-progress?uid=12358453</portalTarget>
+                    </link>
+                </links>
+            </item>
+        </items>
+    </resultSet>
+    <resultSet type="product">
+        <header>Product</header>
+        <subtext></subtext>
+        <items>
+            <item uid="12358453">
+                <text></text>
+                <links>
+                    <link>
+                        <displayText>Purchase Product</displayText>
+                        <portalTarget>#product?uid=12358453</portalTarget>
+                    </link>
+                </links>
+            </item>
+        </items>
+    </resultSet>
+    <resultSet type="status">
+        <header>Upload to Rightmove</header>
+        <subtext></subtext>
+        <items>
+            <item uid="12358453">
+                <text></text>
+                <links>
+                    <link>
+                        <displayText>Fast Track</displayText>
+                        <portalTarget>#property-progress?property=12358453&amp;mode=fasttrack&amp;step=3</portalTarget>
+                    </link>
+                </links>
+            </item>
+        </items>
+    </resultSet>
+</response>
