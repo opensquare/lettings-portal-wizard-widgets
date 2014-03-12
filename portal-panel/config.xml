@@ -1,0 +1,14 @@
+<widget>
+    <type>httpRequest</type>
+    <parameters>
+        <url>widgets/xmldata/{esb.action}.xml</url>
+        <displayType>{displayType}</displayType>
+        <uids>{uids}</uids>
+        <method>GET</method>
+        <xsl>panel</xsl>
+    </parameters>
+    <attributes>
+        <displayHeader>false</displayHeader>
+        <js>portal-panel.js</js>
+    </attributes>
+</widget>

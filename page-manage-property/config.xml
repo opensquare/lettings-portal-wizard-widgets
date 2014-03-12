@@ -1,13 +1,13 @@
 <widget>
-	<type>layout</type>
+	<type>httpRequestLayout</type>
 	<parameters>
-		<url>manage.html</url>
-		<secure>false</secure>
+		<url>widgets/xmldata/manage-{uid}.xml</url>
+		<method>GET</method>
+		<xsl>manage</xsl>
 	</parameters>
 	<attributes>
 		<displayHeader>false</displayHeader>
 		<css>manage.css</css>
 		<js>manage.js</js>
-		<data-channel>property_info</data-channel>
 	</attributes>
 </widget>

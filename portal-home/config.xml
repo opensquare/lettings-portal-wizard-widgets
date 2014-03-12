@@ -1,7 +1,9 @@
 <widget>
-	<type>layout</type>
+	<type>httpRequestLayout</type>
 	<parameters>
-		<url>portal-home.html</url>
+		<url>widgets/xmldata/tile-data.xml</url>
+        <method>GET</method>
+        <xsl>home</xsl>
 	</parameters>
 	<attributes>
 		<displayHeader>false</displayHeader>
