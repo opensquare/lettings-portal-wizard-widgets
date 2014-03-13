@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
     <xsl:output method="html"/>
+    <xsl:variable name="step" select="concat('{', 'step', '}')"/>
     
     <xsl:template match="/">
         <xsl:apply-templates select="response/entity[@type='main']"/>
         <div class="portal-steps">
             <xsl:choose>
                 <xsl:when test="response/entity[@type='step']">
-                	<ul class="steps clearfix">
-                    	<xsl:apply-templates select="response/entity[@type='step']"/>
+                    <ul class="steps clearfix">
+                        <xsl:apply-templates select="response/entity[@type='step']"/>
                     </ul>
                 </xsl:when>
                 <xsl:otherwise>
                     <ul class="steps clearfix">
                         <li>No actions available</li>
-                	</ul>
+                    </ul>
                 </xsl:otherwise>
             </xsl:choose>
-    	</div>
-    	<div class="step-content">
-            <xsl:variable name="step" select="concat('{', 'step', '}')"/>
+        </div>
+        <div class="step-content">
             <xsl:choose>
                 <xsl:when test="'{step}' != $step and not(empty(//entity[step='{step}']))">
                     <xsl:call-template name="stepContent">
@@ -57,7 +57,10 @@
                 <xsl:text> step-</xsl:text>
                 <xsl:value-of select="step"/>
                 <xsl:text> </xsl:text>
-                <xsl:value-of select="@active"/>
+                <xsl:choose>
+                    <xsl:when test="step = '{step}'">active</xsl:when>
+                    <xsl:when test="@active!='' and $step = '{step}'">active</xsl:when>
+                </xsl:choose>
     		</xsl:attribute>
 
     		<a class="step-link">
@@ -66,7 +69,7 @@
                     <xsl:text>?</xsl:text>
                     <xsl:value-of select="replace(widgetParams, '&amp;', '%26')"/>
                 </xsl:attribute>
-				<h3><xsl:value-of select="title"/></h3>
+				<h3 class="step-desc"><xsl:value-of select="title"/></h3>
 				<p><xsl:value-of select="description"/></p>
 				<h4>Step <xsl:value-of select="step"/></h4>
 			</a>
@@ -81,9 +84,11 @@
                 <a>
                     <xsl:attribute name="href">#<xsl:value-of select="target"/></xsl:attribute>
                     <xsl:value-of select="description"/>
+                    <xsl:text> (</xsl:text>
+                    <xsl:value-of select="completed"/> of <xsl:value-of select="total"/> steps complete)
                 </a>
             </li>
-            <li class="active">{pageDescription} (<xsl:value-of select="completed"/> of <xsl:value-of select="total"/> steps complete)</li>
+            <li class="active">{pageDescription}</li>
         </ol>
     </xsl:template>
 
