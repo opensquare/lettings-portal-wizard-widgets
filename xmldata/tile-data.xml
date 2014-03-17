@@ -1,169 +1,184 @@
 <response>
-    <resultSet type="about">
+    <uids>
+        <!-- dummy list of property uids to look up -->
+        <uid>12358453</uid>
+        <uid>65955</uid>
+        <uid>877898</uid>
+        <uid>4565855</uid>
+        <uid>1288647</uid>
+    </uids>
+    <resultSet entity="about">
         <header>My Details</header>
-        <items>
-            <item uid="9876578">
-                <text>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</text>
+        <itemSet uid="about">
+            <item type="links">
+                <itemText>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</itemText>
                 <links>
                     <link>
                         <displayText>Edit Details</displayText>
-                        <portalTarget>#user-profile?content=user-profile</portalTarget>
+                        <portalTarget>#/user-profile?content=user-profile</portalTarget>
                     </link>
                 </links>
             </item>
-        </items>
+        </itemSet>
     </resultSet>
-    <resultSet type="12358453">
+    <resultSet entity="12358453">
         <header>10 Hulse Road</header>
-        <headerTarget>#manage-property?property=12358453</headerTarget>
+        <headerTarget>#/manage-property?property=12358453</headerTarget>
         <subtext>Entered</subtext>
         <imagePath>img/path/thumb/12358453</imagePath>
-        <items>
-            <item uid="12358453">
-                <text>Quick Links:</text>
+        <itemSet uid="12358453">
+            <item type="progress"></item>
+            <item type="links">
+                <itemText>Quick Links:</itemText>
                 <links>
                     <link>
                         <displayText>Fast Track to Rightmove</displayText>
-                        <portalTarget>#property-progress?property=12358453&amp;mode=fasttrack&amp;step=3</portalTarget>
+                        <portalTarget>#/property-progress?property=12358453&amp;mode=fasttrack&amp;step=3</portalTarget>
                     </link>
                     <link>
                         <displayText>Add Tenancy Information</displayText>
-                        <portalTarget>#tenancy-progress?property=12358453</portalTarget>
+                        <portalTarget>#/tenancy-progress?property=12358453</portalTarget>
                     </link>
                     <link>
                         <displayText>Manage Property</displayText>
-                        <portalTarget>#manage-property?property=12358453</portalTarget>
+                        <portalTarget>#/manage-property?property=12358453</portalTarget>
                     </link>
                 </links>
             </item>
-        </items>
+        </itemSet>
     </resultSet>
-    <resultSet type="65955">
+    <resultSet entity="65955">
         <header>11 Avenue Road</header>
-        <headerTarget>#manage-property?property=65955</headerTarget>
+        <headerTarget>#/manage-property?property=65955</headerTarget>
         <subtext>Entered</subtext>
         <imagePath>img/path/thumb/65955</imagePath>
-        <partyprogress>
-            <progress>
-                <status>35</status>
-                <partytype></partytype>
-            </progress>
-        </partyprogress>
-        <items>
-            <item uid="65955">
-                <text>Quick Links:</text>
+        <itemSet uid="65955">
+            <item type="progress">
+                <progress>
+                    <status>35</status>
+                    <partytype></partytype>
+                </progress>
+            </item>
+            <item type="links">
+                <itemText>Quick Links:</itemText>
                 <links>
                     <link>
                         <displayText>Fast Track to Rightmove</displayText>
-                        <portalTarget>#property-progress?property=65955&amp;mode=fasttrack&amp;step=4</portalTarget>
+                        <portalTarget>#/property-progress?property=65955&amp;mode=fasttrack&amp;step=4</portalTarget>
                     </link>
                     <link>
                         <displayText>Add Tenancy Information</displayText>
-                        <portalTarget>#tenancy-progress?property=65955</portalTarget>
+                        <portalTarget>#/tenancy-progress?property=65955</portalTarget>
                     </link>
                     <link>
                         <displayText>Manage Property</displayText>
-                        <portalTarget>#manage-property?property=65955</portalTarget>
+                        <portalTarget>#/manage-property?property=65955</portalTarget>
                     </link>
                 </links>
             </item>
-        </items>
+        </itemSet>
     </resultSet>
-    <resultSet type="877898">
+    <resultSet entity="877898">
         <header>Flat 3, 15 Winn Road</header>
-        <headerTarget>#manage-property?property=877898</headerTarget>
+        <headerTarget>#/manage-property?property=877898</headerTarget>
         <subtext>Advertised On Rightmove</subtext>
         <imagePath>img/path/thumb/877898</imagePath>
-        <items>
-            <item uid="877898">
-                <text>Quick Links:</text>
+        <itemSet uid="877898">
+            <item type="progress"/>
+            <item type="links">
+                <itemText>Quick Links:</itemText>
                 <links>
                     <link>
                         <displayText>Complete Tenancy Information</displayText>
-                        <portalTarget>#tenancy-progress?property=877898</portalTarget>
+                        <portalTarget>#/tenancy-progress?property=877898</portalTarget>
                     </link>
                     <link>
                         <displayText>View Interested Parties</displayText>
-                        <portalTarget>#property-interest?property=877898</portalTarget>
+                        <portalTarget>#/property-interest?property=877898</portalTarget>
                     </link>
                     <link>
                         <displayText>Manage Property</displayText>
-                        <portalTarget>#manage-property?property=877898</portalTarget>
+                        <portalTarget>#/manage-property?property=877898</portalTarget>
                     </link>
                 </links>
             </item>
-        </items>
+        </itemSet>
     </resultSet>
-    <resultSet type="4565855">
+    <resultSet entity="4565855">
         <header>102 Earls Road</header>
-        <headerTarget>#manage-property?property=4565855</headerTarget>
+        <headerTarget>#/manage-property?property=4565855</headerTarget>
         <subtext>Finalising Agreement</subtext>
         <imagePath>img/path/thumb/4565855</imagePath>
-        <partyprogress>
-            <progress>
-                <status>100</status>
-                <partytype>Landlord</partytype>
-            </progress>
-            <progress>
-                <status>20</status>
-                <partytype>Tenant</partytype>
-            </progress>
-        </partyprogress>
-        <items>
-            <item uid="4565855">
-                <text>Quick Links:</text>
+        <itemSet uid="4565855">
+            <item type="progress">
+                <progress>
+                    <status>100</status>
+                    <partytype>Landlord</partytype>
+                </progress>
+                <progress>
+                    <status>20</status>
+                    <partytype>Tenant</partytype>
+                </progress>
+            </item>
+            <item type="links">
+                <itemText>Quick Links:</itemText>
                 <links>
                     <link>
                         <displayText>Manage Property</displayText>
-                        <portalTarget>#manage-property?property=4565855</portalTarget>
+                        <portalTarget>#/manage-property?property=4565855</portalTarget>
                     </link>
                     <link>
                         <displayText>Tenant Chat</displayText>
-                        <portalTarget>#someLink?property=4565855&amp;tenant=456345</portalTarget>
+                        <portalTarget>#/someLink?property=4565855&amp;tenant=456345</portalTarget>
                     </link>
                 </links>
             </item>
-        </items>
+        </itemSet>
     </resultSet>
-    <resultSet type="1288647">
+    <resultSet entity="1288647">
         <header>10 Acacia Avenue</header>
         <headerTarget>#manage-property?property=1288647</headerTarget>
         <subtext>Tenancy Agreed</subtext>
         <imagePath>img/path/thumb/1288647</imagePath>
-        <items>
-            <item uid="1288647" display="multiple-text">
-                <text>Tenancy Agreed</text>
-                <links>
-                    <link>
-                        <displayText>Mr Smith</displayText>
+        <itemSet uid="1288647">
+            <item type="multiple-text">
+                <itemText>Tenancy Agreed</itemText>
+                <textItems>
+                    <textItem>
+                        <text>Mr Smith</text>
                         <subText>Landlord</subText>
-                    </link>
-                    <link>
-                        <displayText>Mr Jones</displayText>
+                    </textItem>
+                    <textItem>
+                        <text>Mr Jones</text>
                         <subText>Tenant</subText>
-                    </link>
-                </links>
+                    </textItem>
+                </textItems>
             </item>
-            <item uid="1288647">
-                <text>Quick Links:</text>
+            <item type="progress"/>
+            <item type="links">
+                <itemText>Quick Links:</itemText>
                 <links>
                     <link>
                         <displayText>Manage Property</displayText>
-                        <portalTarget>#manage-property?property=1288647</portalTarget>
-                    </link>
-                    <link>
-                        <displayText>Tenant Chat</displayText>
-                        <portalTarget>#someLink?property=1288647&amp;tenant=5665</portalTarget>
+                        <portalTarget>#/manage-property?property=1288647</portalTarget>
                     </link>
                 </links>
             </item>
-        </items>
+            <item type="links">
+                <links>
+                    <link>
+                        <displayText>Tenant Chat</displayText>
+                        <portalTarget>#/someLink?property=1288647&amp;tenant=5665</portalTarget>
+                    </link>
+                </links>
+            </item>
+        </itemSet>
     </resultSet>
-    <resultSet type="new">
+    <resultSet entity="new" display="summary">
         <header>Add new property</header>
         <headerTarget>#property-progress?property=new</headerTarget>
         <subtext>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</subtext>
-        <items>
-        </items>
+        <itemSet>
+        </itemSet>
     </resultSet>
 </response>

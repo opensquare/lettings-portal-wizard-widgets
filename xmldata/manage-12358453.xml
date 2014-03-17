@@ -1,56 +1,62 @@
 <response>
-    <address>11 Avenue Road</address>
-    <resultSet type="property">
+    <address>10 Hulse Road</address>
+    <uids>
+        <property>12358453</property>
+        <tenancy>tenancyuid</tenancy>
+        <product>productuid</product>
+        <status>status</status>
+    </uids>
+    <resultSet entity="12358453">
         <header>Property Details</header>
         <subtext></subtext>
-        <items>
-            <item uid="12358453">
-                <text></text>
+        <itemSet uid="12358453">
+            <item type="links">
+                <itemText></itemText>
                 <links>
                     <link>
                         <displayText>2 of 7 steps complete</displayText>
-                        <portalTarget>#property-progress?property=12358453</portalTarget>
+                        <portalTarget>#/property-progress?property=12358453</portalTarget>
                     </link>
                 </links>
             </item>
-        </items>
+        </itemSet>
     </resultSet>
-    <resultSet type="tenancy">
+    <resultSet entity="tenancyuid">
         <header>Tenancy</header>
         <subtext></subtext>
-        <items>
-            <item uid="12358453">
-                <text></text>
+        <itemSet uid="tenancyuid">
+            <item type="links">
+                <itemText></itemText>
                 <links>
                     <link>
                         <displayText>0 of 8 steps complete</displayText>
-                        <portalTarget>#tenancy-progress?uid=12358453</portalTarget>
+                        <portalTarget>#/tenancy-progress?uid=12358453</portalTarget>
                     </link>
                 </links>
             </item>
-        </items>
+        </itemSet>
     </resultSet>
-    <resultSet type="product">
+    <resultSet entity="productuid">
         <header>Product</header>
         <subtext></subtext>
-        <items>
-            <item uid="12358453">
-                <text></text>
+        <itemSet uid="productuid">
+            <item type="links">
+                <itemText></itemText>
                 <links>
                     <link>
                         <displayText>Purchase Product</displayText>
-                        <portalTarget>#product?uid=12358453</portalTarget>
+                        <portalTarget>#/product?uid=12358453</portalTarget>
                     </link>
                 </links>
             </item>
-        </items>
+        </itemSet>
     </resultSet>
-    <resultSet type="status">
+    <resultSet entity="status">
         <header>Upload to Rightmove</header>
         <subtext></subtext>
-        <items>
-            <item uid="12358453">
-                <text></text>
+        <itemSet uid="status">
+            <item type="links">
+                <itemText></itemText>
                 <links>
                     <link>
                         <displayText>Fast Track</displayText>
@@ -58,6 +64,6 @@
                     </link>
                 </links>
             </item>
-        </items>
+        </itemSet>
     </resultSet>
 </response>

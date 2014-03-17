@@ -1,11 +1,17 @@
 <response>
     <address>11 Avenue Road</address>
-    <resultSet type="property">
+    <uids>
+        <property>65955</property>
+        <tenancy>tenancyuid</tenancy>
+        <product>productuid</product>
+        <status>status</status>
+    </uids>
+    <resultSet entity="65955">
         <header>Property Details</header>
         <subtext></subtext>
-        <items>
-            <item uid="65955">
-                <text></text>
+        <itemSet uid="65955">
+            <item type="links">
+                <itemText></itemText>
                 <links>
                     <link>
                         <displayText>4 of 7 steps complete</displayText>
@@ -13,14 +19,14 @@
                     </link>
                 </links>
             </item>
-        </items>
+        </itemSet>
     </resultSet>
-    <resultSet type="tenancy">
+    <resultSet entity="tenancyuid">
         <header>Tenancy</header>
         <subtext></subtext>
-        <items>
-            <item uid="65955">
-                <text></text>
+        <itemSet uid="tenancyuid">
+            <item type="links">
+                <itemText></itemText>
                 <links>
                     <link>
                         <displayText>2 of 8 steps complete</displayText>
@@ -28,14 +34,14 @@
                     </link>
                 </links>
             </item>
-        </items>
+        </itemSet>
     </resultSet>
-    <resultSet type="product">
+    <resultSet entity="productuid">
         <header>Product</header>
         <subtext></subtext>
-        <items>
-            <item uid="65955">
-                <text></text>
+        <itemSet uid="productuid">
+            <item type="links">
+                <itemText></itemText>
                 <links>
                     <link>
                         <displayText>Gold</displayText>
@@ -43,14 +49,14 @@
                     </link>
                 </links>
             </item>
-        </items>
+        </itemSet>
     </resultSet>
-    <resultSet type="status">
+    <resultSet entity="status">
         <header>Upload to Rightmove</header>
         <subtext></subtext>
-        <items>
-            <item uid="65955">
-                <text></text>
+        <itemSet uid="status">
+            <item type="links">
+                <itemText></itemText>
                 <links>
                     <link>
                         <displayText>Fast Track</displayText>
@@ -58,6 +64,6 @@
                     </link>
                 </links>
             </item>
-        </items>
+        </itemSet>
     </resultSet>
 </response>

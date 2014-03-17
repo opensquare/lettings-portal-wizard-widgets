@@ -27,11 +27,10 @@
 	overflow-wrap: break-word; 
 }
 .widget.portal-home .widget.portal-panel .ic-heading,
-.widget.portal-home .widget.portal-panel .ic-progress-set,
-.widget.portal-home .widget.portal-panel .ic-progress,
-.widget.portal-home .widget.portal-panel .ic-contents,
-.widget.portal-home .widget.portal-panel .ic-item,
-.widget.portal-home .widget.portal-panel .ic-mtext-item{
+.widget.portal-home .widget.portal-panel .ic-item-set,
+.widget.portal-home .widget.portal-panel .is-item,
+.widget.portal-home .widget.portal-panel .item-progress,
+.widget.portal-home .widget.portal-panel .item-mtext-item{
 	float: left;
 }
 .widget.portal-home .widget.portal-panel .ic-heading{
@@ -41,27 +40,30 @@
 	font-size: 1.5em;
 	font-weight: bold;
 }
-.widget.portal-home .widget.portal-panel .ic-progress{
+.widget.portal-home .widget.portal-panel .item-progress{
 	text-align: center;
 	margin-right: 1em;
 }
-.widget.portal-home .widget.portal-panel .ic-progress-status{
+.widget.portal-home .widget.portal-panel .item-progress-status{
 	border:1px solid;
 	width:2.5em;
 	padding: 0.5em 0;
 	border-radius: 70px;
 	font-size: 3em;
 }
-.widget.portal-home .widget.portal-panel .ic-type-multiple-text{
+.widget.portal-home .widget.portal-panel .is-type-links{
+	margin-right:2em;
+}
+.widget.portal-home .widget.portal-panel .is-type-multiple-text{
 	min-width:30em;
 }
-.widget.portal-home .widget.portal-panel .ic-type-multiple-text .ic-item-text{
+.widget.portal-home .widget.portal-panel .is-type-multiple-text .is-item-text{
 	font-size: 2em;
 }
-.widget.portal-home .widget.portal-panel .ic-type-multiple-text .ic-mtext-item{
+.widget.portal-home .widget.portal-panel .item-mtext-item{
 	margin: 0.5em 10em 0 0;
 }
-.widget.portal-home .widget.portal-panel .ic-type-multiple-text .ic-mtext-main{
+.widget.portal-home .widget.portal-panel .item-mtext-main{
 	font-size: 1.4em;
 }
 /*.overview-list .row{

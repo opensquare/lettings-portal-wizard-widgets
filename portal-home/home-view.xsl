@@ -5,14 +5,14 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-sm-2">
-					<div class="widget" name="portal-panel" params="set=about&amp;displayType=links&amp;esb.action=tile-data"></div>
+					<div class="widget about" name="portal-panel" params="set=about&amp;display=links&amp;esb.action=tile-data"></div>
 				</div>
 				<div class="col-sm-10">
 					<h2>My Properties</h2>
-					<xsl:for-each select="/response/resultSet[@type!='about']">
-						<div class="widget clearfix" name="portal-panel" params="set=65955&amp;displayType=links&amp;esb.action=tile-data">
+					<xsl:for-each select="/response/uids/uid">
+						<div class="widget clearfix" name="portal-panel">
 							<xsl:attribute name="params">
-								<xsl:text>set=</xsl:text><xsl:value-of select="@type"/><xsl:text>&amp;displayType=links&amp;esb.action=tile-data</xsl:text>
+								<xsl:text>uids=</xsl:text><xsl:value-of select="."/><xsl:text>&amp;show=summary&amp;esb.action=tile-data</xsl:text>
 							</xsl:attribute>
 						</div>
 					</xsl:for-each>
