@@ -1,7 +1,7 @@
 <widget>
 	<type>httpRequestLayout</type>
 	<parameters>
-		<url>widgets/xmldata/tile-data.xml</url>
+		<url>widgets/xmldata/property-sets.xml</url>
         <method>GET</method>
         <xsl>home</xsl>
 	</parameters>

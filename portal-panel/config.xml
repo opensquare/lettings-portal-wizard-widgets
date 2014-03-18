@@ -1,7 +1,7 @@
 <widget>
     <type>httpRequest</type>
     <parameters>
-        <url>widgets/xmldata/{esb.action}.xml</url>
+        <url>widgets/xmldata/property-sets.xml</url>
         <displayType>{displayType}</displayType>
         <uids>{uids}</uids>
         <method>GET</method>

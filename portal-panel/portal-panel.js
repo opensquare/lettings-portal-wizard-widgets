@@ -16,11 +16,11 @@ function Widget_portal_panel(){
         var uids = '';
         // gather uids and publish them on layout defined channel
         if(pw.defined(this.publishOn)) {
-            $('.ic-item', this.$widgetDiv).each(function(){
+            $('.ic-item-set', this.$widgetDiv).each(function(){
                 var uid = $(this).data('uid');
                 uids += (uids === '') ? uid : ',' + uid;
             });
-            pw.notifyChannelOfEvent(this.publishOn, {uids : uids});
+            pw.notifyChannelOfEvent(this.publishOn, {uids : uids, id:this.id});
         }
         // depending on type, apply any event handlers to content
     }
