@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Portal Wizard Style Guide</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- jQuery -->
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+
+		<!-- theme -->
+		<link rel="stylesheet" href="common/css/theme.css">
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+		<!-- local file for style guide layout -->
+		<link rel="stylesheet" href="style-guide.css">
+		
+	</head>
+	<body>
+
+		<div class="container">
+
+			<div class="page-header">
+		        <h1>Equilet Style and Component Guide</h1>
+		    </div>
+
+		    <div class="row">
+		    	<div class="col-md-12">
+		    		<h3>External References</h3>
+		    		<a href="http://getbootstrap.com/css/#grid">Bootstrap Grid Guide</a>
+		    	</div>
+		    </div>
+
+			<div class="row">
+				<div class="col-md-12">
+
+					<h3 class="alert alert-info">Navbar</h3>
+					<nav class="navbar navbar-default" role="navigation">
+						<div class="container-fluid">
+							<!-- Brand and toggle get grouped for better mobile display -->
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+									<span class="sr-only">Toggle navigation</span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+								<a class="navbar-brand" href="#">Equilet</a>
+							</div>
+							<div class="navbar-collapse navbar-right collapse" id="navbar-collapse">
+								<ul class="nav navbar-nav">
+									<li><a href="#">Home</a></li>
+									<li><a href="#contact">Contact us</a></li>
+									<li><a href="logout">Logout</a></li>
+								</ul>
+								<ul class="nav navbar-nav pull-left">
+									<li class="dropdown">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown">Joe Smith <b class="caret"></b></a>
+										<ul class="dropdown-menu" role="menu">
+											<li><a class="user-link" href="#somePage">Some Action</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div><!-- /.navbar-collapse -->
+						</div><!-- /.container-fluid -->
+					</nav>
+<xmp><nav class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">Equilet</a>
+		</div>
+		<div class="navbar-collapse navbar-right collapse" id="navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="#">Home</a></li>
+				<li><a href="#contact">Contact us</a></li>
+				<li><a href="logout">Logout</a></li>
+			</ul>
+			<ul class="nav navbar-nav pull-left">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Joe Smith <b class="caret"></b></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a class="user-link" href="#somePage">Some Action</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav></xmp>
+
+					<hr>
+					<h3 class="alert alert-info">Breadcrumb</h3>
+					<ol class="breadcrumb">
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Step 1</a></li>
+						<li class="active">Step 2 (active)</li>
+					</ol>
+<xmp><ol class="breadcrumb">
+	<li><a href="#">Home</a></li>
+	<li><a href="#">Step 1</a></li>
+	<li class="active">Step 2 (active)</li>
+</ol></xmp>
+
+					<hr>
+					<h3 class="alert alert-info">Page Title</h3>
+					<div class="page-header">
+						<h1>Page Title</h1>
+					</div>
+<xmp><div class="page-header">
+	<h1>Page Title</h1>
+</div></xmp>
+					
+					<hr>
+					<h3 class="alert alert-info">Panel</h3>
+					<div class="panel panel-default">
+						<div class="panel-heading"><h4>Panel Header</h4></div>
+						<div class="panel-body">
+							<p>Panel content</p>
+						</div>
+					</div>
+<xmp><div class="panel panel-default">
+	<div class="panel-heading"><h4>Panel Header</h4></div>
+	<div class="panel-body">
+		<p>Panel content</p>
+	</div>
+</div></xmp>
+
+					<hr>
+					<h3 class="alert alert-info">Form Items: Select</h3>
+					<div class="field form-group clearfix">
+						<label for="input1" class="col-sm-3 control-label">Select: </label>
+						<div class="col-sm-6">
+							<select id="inpu1" class="form-control" name="input1">
+								<option selected="selected">Option 1</option>
+								<option>Option 2</option>
+								<option>Option 3</option>
+								<option>Option 4</option>
+							</select>
+						</div>
+					</div>
+<xmp><div class="field form-group">
+	<label for="input1" class="col-sm-3 control-label">Select: </label>
+	<div class="col-sm-6">
+		<select id="inpu1" class="form-control" name="input1">
+			<option selected="selected">Option 1</option>
+			<option>Option 2</option>
+			<option>Option 3</option>
+			<option>Option 4</option>
+		</select>
+	</div>
+</div></xmp>
+
+					<hr>
+					<h3 class="alert alert-info">Form Items: Input</h3>
+					<div class="field form-group clearfix">
+						<label for="input2" class="col-sm-3 control-label">Input:</label>
+						<div class="col-sm-6">
+							<input name="input2" class="form-control" type="text">
+						</div>
+					</div>
+<xmp><div class="field form-group clearfix">
+	<label for="input2" class="col-sm-3 control-label">Input:</label>
+	<div class="col-sm-6">
+		<input name="input2" class="form-control" type="text">
+	</div>
+</div></xmp>
+
+					<hr>
+					<h3 class="alert alert-info">Form Items: Radio</h3>
+					<div class="field form-group clearfix">   
+						<label for="yes_no" class="col-sm-3 control-label">Radio Buttons: </label>
+						<div class="col-sm-6">
+							<div class="radio">
+								<label for="input_yes"><input id="input_yes" type="radio" name="yes_no" value="Yes">Yes</label>
+							</div>
+							<div class="radio">
+								<label for="input_no"><input id="input_no" type="radio" name="yes_no" value="No">No</label>
+							</div>
+						</div>
+					</div>
+<xmp><div class="field form-group clearfix">   
+	<label for="yes_no" class="col-sm-3 control-label">Radio Buttons: </label>
+	<div class="col-sm-6">
+		<div class="radio">
+			<label for="input_yes"><input id="input_yes" type="radio" name="yes_no" value="Yes">Yes</label>
+		</div>
+		<div class="radio">
+			<label for="input_no"><input id="input_no" type="radio" name="yes_no" value="No">No</label>
+		</div>
+	</div>
+</div></xmp>
+
+					<hr>
+					<h3 class="alert alert-info">Form Items: Textarea</h3>
+					<div class="field form-group clearfix">
+						<label for="description" class="col-sm-3 control-label">Description: </label>
+						<div class="col-sm-6">
+							<textarea name="description" class="form-control"></textarea>
+						</div>
+					</div>
+<xmp><div class="field form-group">
+	<label for="description" class="col-sm-3 control-label">Description: </label>
+	<div class="col-sm-6">
+		<textarea name="description" class="form-control"></textarea>
+	</div>
+</div></xmp>
+
+					<hr>
+					<h3 class="alert alert-info">Form Items: Date Picker</h3>
+					<div class="field form-group clearfix">
+						<label for="input_date" class="col-sm-3 control-label">Pick Date: </label>
+						<div class="col-sm-2">
+							<input id="input_date" class="form-control" type="date" name="input_date">
+						</div>
+					</div>
+<xmp><div class="field form-group">
+	<label for="input_date" class="col-sm-3 control-label">Pick Date: <span class="pull-right">To be styled</span></label>
+	<div class="col-sm-2">
+		<input id="input_date" class="form-control" type="date" name="input_date">
+	</div>
+</div></xmp>
+
+					<hr>
+					<h3 class="alert alert-info">Steps</h3>
+					<ol class="steps clearfix">
+	      				<li class="complete step-1">
+	      					<a class="step-link" href="#"><span class="glyphicon glyphicon-ok"></span> Step Complete</a>
+	            		</li>
+	      				<li class="complete step-2">
+	      					<a class="step-link" href="#"><span class="glyphicon glyphicon-remove"></span> Step Incomplete</a>
+	            		</li>
+	      				<li class="incomplete step-4 active">
+	      					<a class="step-link" href="#"><span class="glyphicon glyphicon-remove"></span> Step Active</a>
+	            		</li>
+	      				<li class="optional step-6">
+	      					<a class="step-link" href="#">Step 4</a>
+	            		</li>
+	   				</ol>
+<xmp><ol class="steps">
+	<li class="complete step-1">
+		<a class="step-link" href="#"><span class="glyphicon glyphicon-ok"></span> Step Complete</a>
+	</li>
+	<li class="complete step-2">
+		<a class="step-link" href="#"><span class="glyphicon glyphicon-remove"></span> Step Incomplete</a>
+	</li>
+	<li class="incomplete step-4 active">
+		<a class="step-link" href="#"><span class="glyphicon glyphicon-remove"></span> Step Active</a>
+	</li>
+	<li class="optional step-6">
+		<a class="step-link" href="#">Step 4</a>
+	</li>
+</ol></xmp>
+
+	   				<hr>
+	   				<h3 class="alert alert-info">Button</h3>
+	   				<a class="btn btn-primary" href="#" role="button">Button</a>
+
+<xmp><a class="btn btn-primary" href="#" role="button">Button</a></xmp>
+
+					<hr>
+					<h3 class="alert alert-info">Image</h3>
+					<p>
+						Images must have a width of 100% and be constrained by a bootstrap element. This ensures correct responsive behaviour.
+					</p>
+					<div class="col-sm-3 clearfix">
+						<p><img src="http://placehold.it/400x300"></p>
+					</div>
+				
+<xmp><img src="http://placehold.it/400x300"></xmp>
+
+					<hr>
+					<h3 class="alert alert-info">Property</h3>
+					<div class="property clearfix">
+						<img src="http://placehold.it/600x400"/>
+						<h4>110 High Street</h4>
+						<div class="property-actions">
+							<ul>
+								<li><a href="#">Fast track to Rightmove</a></li>
+								<li><a href="#">Add tenancy details</a></li>
+								<li><a href="#">Manage properties</a></li>
+							</ul>
+						</div>
+						<div class="property-progress">
+							<div class="landlord">
+								<span>35%</span>
+								<h5>Landlord</h5>
+							</div>
+							<div class="tenant">
+								<span>35%</span>
+								<h5>Tenant</h5>
+							</div>
+							<div class="guarantor">
+								<span>35%</span>
+								<h5>Guarantor</h5>
+							</div>
+						</div>
+					</div>
+<xmp><div class="property">
+	<img src="http://placehold.it/600x400"/>
+	<h4>110 High Street</h4>
+	<div class="property-actions">
+		<ul>
+			<li><a href="#">Fast track to Rightmove</a></li>
+			<li><a href="#">Add tenancy details</a></li>
+			<li><a href="#">Manage properties</a></li>
+		</ul>
+	</div>
+	<div class="property-progress">
+		<div class="landlord">
+			<span>35%</span>
+			<h5>Landlord</h5>
+		</div>
+		<div class="tenant">
+			<span>35%</span>
+			<h5>Tenant</h5>
+		</div>
+		<div class="guarantor">
+			<span>35%</span>
+			<h5>Guarantor</h5>
+		</div>
+	</div>
+</div></xmp>
+
+						<hr>
+						<h3>title</h3>
+
+
+				<!-- END OF GUIDE -->
+				</div><!-- /.col-md-6 -->
+			</div><!-- /.row --> 
+		</div>
+
+	</body>
+</html>

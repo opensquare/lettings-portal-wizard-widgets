@@ -1,8 +1,8 @@
 /* ----------- MAIN CSS for e-let portal ----------- */
 /* theme.css */
 
+/* -------------------------------------------- Fonts */
 @font-face {
-	/* need to license the font and generate other type formats */
 	font-family: 'Segoe_UI';
 
 	src: url('segoe_ui_light.ttf') format('truetype');
@@ -15,12 +15,19 @@
 	font-weight: normal;
 	font-style: normal;
 }
+
+/* -------------------------------------------- HTML Elements */
 body {
     /*font-family: "Segoe_UI", Arial, Helvetica, Geneva, sans-serif;
     font-weight: normal;
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;*/
 }
+img {
+    width: 100%;
+}
+
+
 /* loading spinner */
 .spin-loading .load-text {
     position: relative;
@@ -55,26 +62,43 @@ body {
 .entity-description{
     background-color: #0f5da1;
 }*/
-/* bootstrap overrides - classes that directly change bootstrap.css here */
-body, 
-/*.panel {
-	background-color: #0072c5;
-	color: #fff;
+
+
+/* Property */
+.property {
+
 }
-.panel-footer {
-    background-color: rgba(255,255,255,0.2);
+.property img {
+    width: 18%;
+    margin-right: 2%;
+    float: left;
 }
-.panel-default>.panel-heading {
-	background-color: #0f5da1;
-	color: #fff;
+.property .property-actions {
+    width: 30%;
+    float: left;
 }
-a, a:hover {
-	color: #fff;
-	text-decoration: none;
+.property .property-actions ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
-h2 small,
-h3 small{
-    color: inherit;
-    opacity: 0.8;
+.property .property-progress {
+    width: 50%;
+    float: left;
 }
-*/
+.property .property-progress .landlord,
+.property .property-progress .tenant,
+.property .property-progress .guarantor {
+    width: 33%;
+    float: left;
+}
+
+/* Steps */
+.steps {
+
+}
+.steps li {
+    float: left;
+    margin-right: 50px;
+}
+
