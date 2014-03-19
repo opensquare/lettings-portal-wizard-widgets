@@ -69,6 +69,7 @@
                     <xsl:text>?</xsl:text>
                     <xsl:value-of select="replace(widgetParams, '&amp;', '%26')"/>
                 </xsl:attribute>
+                <xsl:attribute name="data-step"><xsl:value-of select="step"/></xsl:attribute>
 				<h3 class="step-desc"><xsl:value-of select="title"/></h3>
 				<p><xsl:value-of select="description"/></p>
 				<h4>Step <xsl:value-of select="step"/></h4>

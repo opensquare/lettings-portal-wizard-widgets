@@ -44,7 +44,7 @@ function Widget_portal(){
 	this.handleEvent = function(channel, event) {
         switch (channel) {
             case channels.setPageArgs:
-                pageLoader.changePageArgs(event.args);
+                pageLoader.changePageArgs(event);
                 break;
             case channels.closePage:
                 window.location.hash = '';
@@ -81,6 +81,19 @@ function Widget_portal(){
         return paramMap;
     }
 
+    function paramStringFromMap(map){
+        var paramString = '';
+        for (var param in map){
+            var nameVal = param + '=' + map[param];
+            if (paramString == ''){
+                paramString += nameVal;
+            } else {
+                paramString += '&' + nameVal;
+            }
+        }
+        return paramString;
+    }
+
     function PageLoader() {
         var 
             navigation = {
@@ -96,7 +109,8 @@ function Widget_portal(){
                 pagePrefix  : 'page-',
                 content     : '<div class="widget"></div>',
                 contentContainer : $('#content'),
-                errorMessage: "The page requested is not available, there may have been a problem loading or content doesn't exist here yet!"
+                errorMessage: "The page requested is not available, there may have been a problem loading or content doesn't exist here yet!",
+                homeId      : 'portal-home'
             },
             preventLoad = {}
         ;
@@ -145,6 +159,14 @@ function Widget_portal(){
             return $('div.widget', defaults.contentContainer).eq(0);
         }
 
+        function getLayoutPath(pageId){
+            if (pageId == defaults.homeId){
+                return defaults.basePath;
+            } else {
+                return defaults.basePath + pageId;
+            }
+        }
+
         function loadPage($content) {
             var 
                 name,
@@ -155,7 +177,7 @@ function Widget_portal(){
             mountable = getPageWidgetDiv();
             name = mountable.attr('name');
 
-            navigation.currentLayout = name;
+            navigation.currentLayout = name.replace(defaults.pagePrefix, '');
             console.log('mounting widget: ' + name);
 
             if (!navigation.mountCache[name]){
@@ -185,7 +207,7 @@ function Widget_portal(){
             ;
             console.debug('hash: "' + hashtag + '"');
 
-            // if navigation is disabled, re enable and exit.
+            // if navigation is disabled, re enable and do not reload layout.
             if (navigation.disabled){
                 enableHashNavigation();
                 return;
@@ -204,9 +226,9 @@ function Widget_portal(){
                 // stay on current page and reset hash
                 if (!confirmation){
                     // disable hash load
-                    navigation.disabled = true;
+                    disableHashNavigation();
                     // revert url
-                    window.location.hash = oldHash;
+                    window.location.replace(oldHash);
 
                     // do not continue
                     return;
@@ -217,7 +239,7 @@ function Widget_portal(){
             if (hashtag.substring(0,defaults.basePath.length) !== defaults.basePath){
                 // disable navigation so content isn't loaded twice
                 disableHashNavigation();
-                window.location.hash = defaults.basePath + hashtag.replace('#','');
+                window.location.replace(defaults.basePath + hashtag.replace('#',''));
                 hashtag = defaults.basePath + hashtag.replace('#','');
             }
 
@@ -225,41 +247,66 @@ function Widget_portal(){
                 // load page
                 newPage = parseHashString(hashtag);
                 // update nav state;
-                navigation.pageArgs = newPage.pageArgs;
+                navigation.pageArgs = newPage.args;
                 if (pw.defined(newPage.id) && newPage.id.length > 0) {
                     // create widget div
                     widgetToLoad = preparePage(newPage);
                     // load page
                     loadPage(widgetToLoad);
                 } else {
-                    console.debug('home with params');
                     loadHome(newPage.args);
                 }
             } else {
                 // load home
-                console.debug('home without params');
                 loadHome();
             }
         }
 
-        function changePageArgs(args){
-            var $widgetToUpdate = getPageWidgetDiv();
-            console.debug($widgetToUpdate);
-            for (var param in args){
-                $widgetToUpdate.data(param, args[param]);
+        function changePageArgs(event){
+            var 
+                args = event.args,
+                $widgetToUpdate = getPageWidgetDiv(),
+                newPage = {
+                    pageArgs : paramStringFromMap(args)
+                },
+                currentArgs = navigation.pageArgs
+            ;
+
+            // retain existing parameters and add/overwrite others
+            if (event.updateExisting){
+                for (var param in args) {
+                    currentArgs[param] = args[param];
+                }
+                newPage.pageArgs = paramStringFromMap(currentArgs);
+                args = currentArgs;
             }
+
+            if (!event.reloadPage){
+                disableHashNavigation();
+                for (var param in args){
+                    $widgetToUpdate.data(param, args[param]);
+                }
+                navigation.pageArgs = args;
+            }
+
+            changePage(newPage);
         }
 
         function changePage(newPage) {
+            var 
+                path,
+                argString
+            ;
             if (!pw.defined(newPage.pageId)){
                 newPage.pageId = navigation.currentLayout;
             }
             if(!pw.defined(newPage.pageArgs)){
                 newPage.pageArgs = '';
             }
-            newPage.pageArgs = (newPage.pageArgs === '') ? '' : '?' + newPage.pageArgs;
+            path = getLayoutPath(newPage.pageId);
+            argString = (newPage.pageArgs === '') ? '' : '?' + newPage.pageArgs;
 
-            window.location.hash = defaults.basePath + newPage.pageId + newPage.pageArgs;
+            window.location.hash = path + argString;
         }
 
         function loadFailed(name) {

@@ -38,7 +38,8 @@ function Widget_portal_steps(){
         pw.addListenerToChannel(this, unloadChannel);
 
         // initialise step change handler
-        stepSwitcher = new StepSwitcher(unloadChannel);
+        stepSwitcher = new StepSwitcher;
+        stepSwitcher.init(unloadChannel, this.$widgetDiv.data('ch-page-args'));
     }
 
 	this.onReadyExtend = function() {
@@ -66,6 +67,7 @@ function Widget_portal_steps(){
             // send request to change step, which prompts first if neceesary
             var 
                 changing = stepSwitcher.changeStep(
+                    $(this).data('step'),
                     $(this).attr('href'),
                     _this.parameterMap.entity,
                     onBeforeStepChange
@@ -144,7 +146,6 @@ function Widget_portal_steps(){
         }
     }
 
-
     // keep step handling functionality separate
     function StepSwitcher(hashResponseChannel) {
         var 
@@ -152,7 +153,8 @@ function Widget_portal_steps(){
                 load : 'step.load',
                 preventHashChange : 'portal.preventPageLoad',
                 stepUnload : '',
-                hashResponseChannel : hashResponseChannel
+                hashResponseChannel : '',
+                changeArgs : ''
             },
             promptOnChange = false,
             confirmText = 'You are about to navigate away from the current step. Any changes you have made may be lost.'
@@ -183,6 +185,20 @@ function Widget_portal_steps(){
             });
         }
 
+        function updateStepPageArg(number){
+            if (pw.defined(channels.changeArgs)){
+                pw.notifyChannelOfEvent(channels.changeArgs, {
+                    args : {
+                        step : number,
+                    },
+                    updateExisting : true,
+                    reloadPage : false
+                })
+            } else {
+                console.error('Unable to update step parameter, change argument channel has not been supplied');
+            }
+        }
+
         function setPromptOnChange(prompt) {
             // update whether prompt is required
             if(promptOnChange !== prompt){
@@ -201,7 +217,7 @@ function Widget_portal_steps(){
             return channels.stepUnload;
         }
 
-        function changeStep(uri, uid, beforeStepChange) {
+        function changeStep(stepNo, uri, uid, beforeStepChange) {
             // confirm when required to change step, and if so, send request to change step
             var newStep;
             if (!(promptOnChange && !window.confirm(confirmText))) {
@@ -215,6 +231,8 @@ function Widget_portal_steps(){
                     uri    : uri,
                     entity : uid
                 });
+                updateStepPageArg(stepNo);
+
                 return true;
             }
             return false;
@@ -232,8 +250,14 @@ function Widget_portal_steps(){
             }
         }
 
+        function init(hashResponseChannel, changeArgsChannel){
+            channels.hashResponseChannel = hashResponseChannel;
+            channels.changeArgs = changeArgsChannel;
+        }
+
         // expose public functions
         return {
+            init : init,
             setFirstStep : setFirstStep,
             setPromptOnChange : setPromptOnChange,
             changeStep : changeStep,
