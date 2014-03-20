@@ -132,7 +132,7 @@ function Widget_portal_steps(){
         var stepWidth = windowWidth / countChildElem;
 
         // make each li width window width divided by number of steps 
-        $('.steps li').css('width', stepWidth + 'px');
+        $('.steps li').css('width', Math.floor(stepWidth) + 'px');
 
     }
 

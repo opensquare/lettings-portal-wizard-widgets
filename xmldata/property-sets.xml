@@ -27,9 +27,8 @@
         <subtext>Entered</subtext>
         <imagePath>img/path/thumb/12358453</imagePath>
         <itemSet name="summary">
-            <item type="progress"></item>
             <item type="links">
-                <itemText>Quick Links:</itemText>
+                <itemText>10 Hulse Road</itemText>
                 <links>
                     <link>
                         <displayText>Fast Track to Rightmove</displayText>
@@ -45,6 +44,7 @@
                     </link>
                 </links>
             </item>
+            <item type="progress"></item>
         </itemSet>
         <itemSet name="prop-comp">
             <item type="links">
@@ -108,14 +108,8 @@
         <subtext>Entered</subtext>
         <imagePath>img/path/thumb/65955</imagePath>
         <itemSet name="summary">
-            <item type="progress">
-                <progress>
-                    <status>35</status>
-                    <partytype></partytype>
-                </progress>
-            </item>
             <item type="links">
-                <itemText>Quick Links:</itemText>
+                <itemText>11 Avenue Road</itemText>
                 <links>
                     <link>
                         <displayText>Fast Track to Rightmove</displayText>
@@ -130,6 +124,12 @@
                         <portalTarget>#/manage-property?property=65955</portalTarget>
                     </link>
                 </links>
+            </item>
+            <item type="progress">
+                <progress>
+                    <status>35</status>
+                    <partytype>Landlord</partytype>
+                </progress>
             </item>
         </itemSet>
         <itemSet name="prop-comp">
@@ -198,9 +198,8 @@
         <subtext>Advertised On Rightmove</subtext>
         <imagePath>img/path/thumb/877898</imagePath>
         <itemSet name="summary">
-            <item type="progress"/>
             <item type="links">
-                <itemText>Quick Links:</itemText>
+                <itemText>Flat 3, 15 Winn Road</itemText>
                 <links>
                     <link>
                         <displayText>Complete Tenancy Information</displayText>
@@ -216,6 +215,7 @@
                     </link>
                 </links>
             </item>
+            <item type="progress"/>
         </itemSet>
         <itemSet name="prop-comp">
             <item type="links">
@@ -273,18 +273,8 @@
         <subtext>Finalising Agreement</subtext>
         <imagePath>img/path/thumb/4565855</imagePath>
         <itemSet name="summary">
-            <item type="progress">
-                <progress>
-                    <status>100</status>
-                    <partytype>Landlord</partytype>
-                </progress>
-                <progress>
-                    <status>20</status>
-                    <partytype>Tenant</partytype>
-                </progress>
-            </item>
             <item type="links">
-                <itemText>Quick Links:</itemText>
+                <itemText>102 Earls Road</itemText>
                 <links>
                     <link>
                         <displayText>Manage Property</displayText>
@@ -295,6 +285,16 @@
                         <portalTarget>#/someLink?property=4565855&amp;tenant=456345</portalTarget>
                     </link>
                 </links>
+            </item>
+            <item type="progress">
+                <progress>
+                    <status>100</status>
+                    <partytype>Landlord</partytype>
+                </progress>
+                <progress>
+                    <status>20</status>
+                    <partytype>Tenant</partytype>
+                </progress>
             </item>
         </itemSet>
         <itemSet name="prop-comp">
@@ -357,6 +357,19 @@
         <subtext>Tenancy Agreed</subtext>
         <imagePath>img/path/thumb/1288647</imagePath>
         <itemSet name="summary">
+            <item type="links">
+                <itemText>10 Acacia Avenue</itemText>
+                <links>
+                    <link>
+                        <displayText>Manage Property</displayText>
+                        <portalTarget>#/manage-property?property=1288647</portalTarget>
+                    </link>
+                    <link>
+                        <displayText>Tenant Chat</displayText>
+                        <portalTarget>#/someLink?property=1288647&amp;tenant=5665</portalTarget>
+                    </link>
+                </links>
+            </item>
             <item type="multiple-text">
                 <itemText>Tenancy Agreed</itemText>
                 <textItems>
@@ -371,23 +384,6 @@
                 </textItems>
             </item>
             <item type="progress"/>
-            <item type="links">
-                <itemText>Quick Links:</itemText>
-                <links>
-                    <link>
-                        <displayText>Manage Property</displayText>
-                        <portalTarget>#/manage-property?property=1288647</portalTarget>
-                    </link>
-                </links>
-            </item>
-            <item type="links">
-                <links>
-                    <link>
-                        <displayText>Tenant Chat</displayText>
-                        <portalTarget>#/someLink?property=1288647&amp;tenant=5665</portalTarget>
-                    </link>
-                </links>
-            </item>
         </itemSet>
         <itemSet name="prop-comp">
             <item type="links">

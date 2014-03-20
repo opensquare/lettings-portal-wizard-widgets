@@ -5,6 +5,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-sm-2">
+					<h2>My Details</h2>
 					<div class="widget about" name="portal-panel"> 
 						<xsl:attribute name="params">uids=about&amp;show=summary&amp;esb.action=tile-data
 						</xsl:attribute>
@@ -13,10 +14,11 @@
 				<div class="col-sm-10">
 					<h2>My Properties</h2>
 					<xsl:for-each select="/response/uids/uid">
-						<div class="widget clearfix" name="portal-panel">
+						<div class="widget clearfix" name="portal-panel" data-channel-publish="panel-rows">
 							<xsl:attribute name="params">
 								<xsl:text>uids=</xsl:text><xsl:value-of select="."/><xsl:text>&amp;show=summary&amp;header=true</xsl:text>
 							</xsl:attribute>
+
 						</div>
 					</xsl:for-each>
 				</div>

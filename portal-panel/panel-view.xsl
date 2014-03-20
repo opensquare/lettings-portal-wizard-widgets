@@ -101,7 +101,8 @@
    </xsl:template>
 
     <xsl:template match="progress">
-        <div class="item-progress">
+        <div>
+            <xsl:attribute name="class"><xsl:text>item-progress </xsl:text><xsl:value-of select="lower-case(replace(partytype, ' ', '-'))"/></xsl:attribute>
             <div class="item-progress-status">
                 <xsl:value-of select="status"/>
             </div>
@@ -112,12 +113,14 @@
     </xsl:template>
 
     <xsl:template match="links">
-        <xsl:apply-templates select="link"/>
+        <ul>
+            <xsl:apply-templates select="link"/>
+        </ul>
     </xsl:template>
 
     <xsl:template match="link">
         <xsl:variable name="setName" select="../../../@name"/>
-        <div class="item-link">
+        <li class="item-link">
             <xsl:choose>
                 <xsl:when test="'{linkType}' = 'buttons' or $asButtons/link[@for=$setName] = 'true'">
                     <div class="item-button">
@@ -137,7 +140,7 @@
                     <xsl:value-of select="displayText"/>
                 </xsl:otherwise>
             </xsl:choose>
-        </div>
+        </li>
     </xsl:template>
 
     <xsl:template match="textItems">

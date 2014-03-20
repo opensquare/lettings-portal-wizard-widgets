@@ -51,16 +51,20 @@
     </xsl:template>
 
     <xsl:template match="entity[@type='step']">
+        <xsl:variable name="stepclass" select="concat('step-', step)"/>
+        <xsl:variable name="active">
+            <xsl:choose>
+                <xsl:when test="step = '{step}'">active</xsl:when>
+                <xsl:when test="@active!='' and $step = '{step}'">active</xsl:when>
+            </xsl:choose>
+        </xsl:variable>
     	<li>
     		<xsl:attribute name="class">
     			<xsl:value-of select="status"/>
-                <xsl:text> step-</xsl:text>
-                <xsl:value-of select="step"/>
                 <xsl:text> </xsl:text>
-                <xsl:choose>
-                    <xsl:when test="step = '{step}'">active</xsl:when>
-                    <xsl:when test="@active!='' and $step = '{step}'">active</xsl:when>
-                </xsl:choose>
+                <xsl:value-of select="$stepclass"/>
+                <xsl:text> </xsl:text>
+                <xsl:if test="$active = 'active'">active</xsl:if>
     		</xsl:attribute>
 
     		<a class="step-link">
@@ -71,7 +75,9 @@
                 </xsl:attribute>
                 <xsl:attribute name="data-step"><xsl:value-of select="step"/></xsl:attribute>
 				<h3 class="step-desc"><xsl:value-of select="title"/></h3>
-				<p><xsl:value-of select="description"/></p>
+				<p>
+                    <xsl:value-of select="description"/>
+                </p>
 				<h4>Step <xsl:value-of select="step"/></h4>
 			</a>
 
