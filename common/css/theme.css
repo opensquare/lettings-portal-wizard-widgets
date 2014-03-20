@@ -92,14 +92,34 @@ img {
     width: 33%;
     float: left;
 }
+/* manage property */
+.manage-property {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+}
+.manage-property .property-item {
+    display: table-cell;
+    padding: 5px;
+}
+.manage-property .property-item h3 {
+    font-size: 1em;
+    margin: 0 0 10px 0;
+}
+.manage-property .property-item p {
+
+}
 
 /* Steps */
 .steps {
-
+    display:table;
+    width:100%;
+    table-layout:fixed;
+    margin: 0;
+    padding: 0;
 }
 .steps li {
-    float: left;
-    margin-right: 50px;
+    display: table-cell;
 }
 
 
@@ -120,7 +140,13 @@ img {
 @media (max-width: 767px) {
     /* N.B: bootstrap menu collapses at this width */
 
-
+    .manage-property .property-item {
+        display: block;
+        border-bottom: 1px solid #eee;
+        width: 100%;
+        clear: left;
+        padding: 10px 0;
+    }
 
 }
 
