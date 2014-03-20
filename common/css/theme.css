@@ -102,3 +102,86 @@ img {
     margin-right: 50px;
 }
 
+
+/* -------------------------------------------- Responsive media queries */
+
+@media (max-width: 1200px) {
+
+
+
+}
+
+@media (max-width: 979px) {
+
+
+
+}
+
+@media (max-width: 767px) {
+    /* N.B: bootstrap menu collapses at this width */
+
+
+
+}
+
+@media (max-width: 320px) {
+
+
+
+}
+
+/* -------------------------------------------- Retina images */
+/* more info:    http://stackoverflow.com/questions/16154494/retina-displays-high-res-background-images */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),    
+    only screen and (min-device-pixel-ratio: 1.5)
+    and (min-device-width: 768px) and (max-device-width: 1024px) { 
+    
+    /* x2 retina image here */
+    
+    
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 320px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 320px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 320px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 320px),
+only screen and (                min-resolution: 192dpi) and (min-width: 320px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 320px) { 
+
+  /* Small screen, retina */
+    
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 767px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 767px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 767px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 767px),
+only screen and (                min-resolution: 192dpi) and (min-width: 767px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 767px) { 
+
+  /* Medium screen, retina */
+    
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 1200px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 1200px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 1200px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 1200px),
+only screen and (                min-resolution: 192dpi) and (min-width: 1200px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 1200px) { 
+
+  /* Large screen, retina */
+
+}
+
+
+
+
+
+
+
+
