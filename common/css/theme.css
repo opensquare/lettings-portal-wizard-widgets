@@ -73,6 +73,9 @@ img {
     margin-right: 2%;
     float: left;
 }
+.property .view-actions {
+    display: none;
+}
 .property .property-actions {
     width: 30%;
     float: left;
@@ -83,14 +86,14 @@ img {
     padding: 0;
 }
 .property .property-progress {
+    display: table;
     width: 50%;
     float: left;
 }
 .property .property-progress .landlord,
 .property .property-progress .tenant,
 .property .property-progress .guarantor {
-    width: 33%;
-    float: left;
+    display: table-cell;
 }
 /* manage property */
 .manage-property {
@@ -148,12 +151,36 @@ img {
         padding: 10px 0;
     }
 
+    .property-details {
+        float: left;
+        margin-bottom: 10px;
+    }
+
+    .property .property-progress {
+        width: 80%;
+    }
+
+    .property .property-actions {
+        width: 100%;
+        clear: left;
+    }
+
+    .property .view-actions {
+        clear: both;
+        display: block;
+        margin-top: 10px;
+        width: 100%;
+    }
+
 }
 
 @media (max-width: 320px) {
 
-
-
+    .property img,
+    .property .property-progress {
+        width: 100%;
+    }
+     
 }
 
 /* -------------------------------------------- Retina images */

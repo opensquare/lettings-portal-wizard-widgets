@@ -44,7 +44,7 @@ function Widget_portal_steps(){
 
 	this.onReadyExtend = function() {
         // add icons and resize step panels
-        this.formatSteps();
+        //this.formatSteps();
 
         // add click handler to steps
         this.addHandlers();

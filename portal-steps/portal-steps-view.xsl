@@ -8,7 +8,7 @@
         <div class="portal-steps">
             <xsl:choose>
                 <xsl:when test="response/entity[@type='step']">
-                    <ul class="steps clearfix">
+                    <ul class="steps">
                         <xsl:apply-templates select="response/entity[@type='step']"/>
                     </ul>
                 </xsl:when>
