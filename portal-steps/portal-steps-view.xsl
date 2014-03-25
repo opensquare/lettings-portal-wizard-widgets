@@ -8,14 +8,14 @@
         <div class="portal-steps">
             <xsl:choose>
                 <xsl:when test="response/entity[@type='step']">
-                    <ul class="steps">
+                    <ol class="steps">
                         <xsl:apply-templates select="response/entity[@type='step']"/>
-                    </ul>
+                    </ol>
                 </xsl:when>
                 <xsl:otherwise>
-                    <ul class="steps clearfix">
+                    <ol class="steps clearfix">
                         <li>No actions available</li>
-                    </ul>
+                    </ol>
                 </xsl:otherwise>
             </xsl:choose>
         </div>
@@ -74,11 +74,23 @@
                     <xsl:value-of select="replace(widgetParams, '&amp;', '%26')"/>
                 </xsl:attribute>
                 <xsl:attribute name="data-step"><xsl:value-of select="step"/></xsl:attribute>
-				<h3 class="step-desc"><xsl:value-of select="title"/></h3>
-				<p>
+
+                <xsl:variable name="status" select="status" />
+
+                <xsl:choose>
+                    <xsl:when test="$status = 'complete'">
+                        <span class="glyphicon glyphicon-ok"></span>&#160;
+                    </xsl:when>
+                    <xsl:when test="$status = 'incomplete'">
+                        <span class="glyphicon glyphicon-remove"></span>&#160;
+                    </xsl:when>
+                </xsl:choose>
+
+				<xsl:value-of select="title"/>
+				<!-- <p>
                     <xsl:value-of select="description"/>
                 </p>
-				<h4>Step <xsl:value-of select="step"/></h4>
+				<h4>Step <xsl:value-of select="step"/></h4> -->
 			</a>
 
     	</li>

@@ -6,7 +6,7 @@
     </entity>
     <entity type="step" active="active">
         <title>Login Details</title>
-        <description>Your email address, password and change password fields</description>
+        <!-- <description>Your email address, password and change password fields</description> -->
         <step>1</step>
         <status>complete</status>
         <widget>user-profile-forms</widget>
@@ -14,7 +14,7 @@
     </entity>
     <entity type="step" active="">
         <title>Your Details</title>
-        <description>Name and current address details</description>
+        <!-- <description>Name and current address details</description> -->
         <step>2</step>
         <status>complete</status>
         <widget>user-profile-forms</widget>
@@ -22,18 +22,18 @@
     </entity>
     <entity type="step" active="">
         <title>Contact Details</title>
-        <description>Contact details and preferred contact methods</description>
+        <!-- <description>Contact details and preferred contact methods</description> -->
         <step>3</step>
-        <status>complete</status>
+        <status>incomplete</status>
         <widget>user-profile-forms</widget>
         <widgetParams>flow=user-profile-contact-flow</widgetParams>
     </entity>
-    <entity type="step" active="">
+    <!-- <entity type="step" active="">
         <title>Another step</title>
         <description>Another step here ... description text</description>
         <step>4</step>
         <status>incomplete</status>
         <widget></widget>
         <widgetParams>some=other&amp;parameter=information</widgetParams>
-    </entity>
+    </entity> -->
 </response>
