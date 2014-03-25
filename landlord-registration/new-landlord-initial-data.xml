@@ -1,3 +1,6 @@
 <root>
    <clientTemplate>CIO Client Relationship template</clientTemplate>
+   <esb>
+        <emailInUse>false</emailInUse>
+   </esb>
 </root>

@@ -1,25 +1,27 @@
 <script>
+rf.onFormLoad(function(){
+    function queryURL() {
+        var result = {}, queryString = location.search.slice(1),
+            re = /([^&=]+)=([^&]*)/g, m;
 
-function queryURL() {
-    var result = {}, queryString = location.search.slice(1),
-        re = /([^&=]+)=([^&]*)/g, m;
+        while (m = re.exec(queryString)) {
+            result[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+        }
 
-    while (m = re.exec(queryString)) {
-        result[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+        return result;
     }
 
-    return result;
-}
+    var email_address = queryURL()["email"];
 
-var email_address = queryURL()["email"];
+    var input_email = document.getElementById('input_email');
 
-var input_email = document.getElementById('input_email');
+    if (email_address != '') {
 
-if (email_address != '') {
+        input_email.value = email_address;
 
-	input_email.value = email_address;
+    }
+})
 
-}
 
 </script>
 
@@ -28,6 +30,7 @@ if (email_address != '') {
 		<label for="input_email" class="col-sm-3 control-label">Email Address</label>
 		<div class="col-sm-6">
 			<input type="email" class="form-control" name="customer.email" rf.validation="required email" id="input_email"/>
+            <div class="hint text-warning" rf.includeIf="'{{/root/esb/emailInUse}}' == 'true'">Email address is already in use, please use another</div>
 		</div>
 	</div>
 	<div class="field form-group">

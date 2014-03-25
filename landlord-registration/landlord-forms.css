@@ -56,6 +56,10 @@
   clear: both;
 }
 
+.rf-included-false{
+  display: none;
+  visibility: hidden;
+}
 
 /* body{
   min-width: 275px;

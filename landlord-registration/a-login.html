@@ -1,0 +1,14 @@
+<script>
+rf.onFormLoad(function(){
+    var username = '{{/root/esb/username}}';
+    if(username != ''){
+        window.location = 'signin?u=' + encodeURIComponent(username);
+    }
+})
+</script>
+
+<form rhinoforms="true">
+    <div rf.includeIf="'{{/root/esb/username}}' == ''">
+        Username not found
+    </div>
+</form>

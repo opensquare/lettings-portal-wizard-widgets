@@ -4,7 +4,7 @@
 // This file should be minified for production use.
 //
 
-function Widget_lettings_cp() {
+function Widget_signin() {
 	
 	this.onReadyExtend = function() {
 		var widget = this;
@@ -16,6 +16,7 @@ function Widget_lettings_cp() {
 		var widget = this;
 		var $form = $('#login-form-enter');
 		var $messages = $($form, '.messages');
+		var username = queryURL()['u'];
 		$form.submit(function() {
 			pw.disableForm($form);
 			var jqxhr = $.ajax({
@@ -37,6 +38,10 @@ function Widget_lettings_cp() {
 			});
 			return false;
 		});
+
+		if(username != ''){
+			$(':input[name=username]', $form).val(decodeURIComponent(username));
+		}
 	}
 	
 	this.setupResetForm = function() {
@@ -67,4 +72,18 @@ function Widget_lettings_cp() {
 		});
 	}
 	
+
+	function queryURL() {
+		var 
+			result = {}, queryString = location.search.slice(1),
+			re = /([^&=]+)=([^&]*)/g, 
+			m
+		;
+
+		while (m = re.exec(queryString)) {
+			result[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+		}
+
+		return result;
+	}
 }

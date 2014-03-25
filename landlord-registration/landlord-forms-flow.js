@@ -3,10 +3,38 @@
   defaultInitalData: "new-landlord-initial-data.xml",
   formLists: {
     main: [
+    /*
+     // call to esb to check availability of email
+     {
+        id: "emailcheck",
+        url: "c-email.html",
+        actions: [
+          {
+            name: "next",
+            submission: {
+              url: "{{$email-check}}",
+              data: "[dataDocument]"
+            },
+            method: "post",
+            resultInsertPoint: "/root/esb"
+          }
+        ]
+     },
+    */
       {
         id: "landlord",
         url: "1-landlord.html",
-        actions: [ "next" ]
+        actions: [ 
+          {
+            name: "next"/*,
+            submission: {
+              url: "{{$email-check}}",
+              data: "[dataDocument]"
+            },
+            method: "post",
+            resultInsertPoint: "/root/esb"*/
+          }
+        ]
       },
       {
         id: "register",

@@ -1,4 +1,5 @@
 <script>
+	// should be moved to widget js
 	var url = window.location.hash;
 	var hash = url.substring(url.indexOf('#')+1);
 
@@ -7,7 +8,7 @@
 
 		var register_email = document.getElementById('register_email').value;
 
-		var formSet = hash + "-forms" + '?email=' + register_email;
+		var formSet = hash + "-registration" + '?email=' + register_email;
 
 		$("#formSet").attr("href", formSet);
 
