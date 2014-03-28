@@ -49,10 +49,13 @@ function Widget_portal_steps(){
         // add click handler to steps
         this.addHandlers();
 
+        // format disabled steps
+        $('a.step-link[data-disabled=true]', this.$widgetDiv).addClass('disabled');
+
         // get step to be loaded and add prompt listener
         var currentStep = $('li.active a').attr('href');
         currentStep = currentStep.substring(0, currentStep.indexOf('?'));
-        updatePromptChannel = stepSwitcher.setFirstStep(currentStep);
+        updatePromptChannel = stepSwitcher.setFirstStep(currentStep, $('li.active a').data('step'));
 
         pw.addListenerToChannel(this, updatePromptChannel);
 
@@ -64,15 +67,21 @@ function Widget_portal_steps(){
 
     this.addHandlers = function() {
         $('a.step-link', this.$widgetDiv).click(function(){
-            // send request to change step, which prompts first if neceesary
             var 
+                changing
+            ;
+            
+            if ($(this).data('disabled')) {
+                return false;
+            } else {
+                // send request to change step, which prompts first if neceesary
                 changing = stepSwitcher.changeStep(
                     $(this).data('step'),
                     $(this).attr('href'),
                     _this.parameterMap.entity,
                     onBeforeStepChange
                 )
-            ;
+            }
 
             if (changing){
                 $(this).parents('.steps').children().removeClass('active');
@@ -209,10 +218,11 @@ function Widget_portal_steps(){
             }
         }
 
-        function setFirstStep(name) {
+        function setFirstStep(name, stepNo) {
             // initialise step channel without requesting load
             setStepPromptChannel(name);
             setOnUnloadHandler();
+            updateStepPageArg(stepNo);
             publishPreventHashChange();
             return channels.stepUnload;
         }

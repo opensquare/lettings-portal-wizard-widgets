@@ -2,34 +2,27 @@
     <entity type="main">
         <description>11 Avenue Road</description>
         <target>manage-property?property=65955</target>
-        <completed>5</completed>
-        <total>6</total>
-    </entity>
-    <entity type="step" active="">
-        <title>Enter Address</title>
-        <description>Simply enter your postcode .. description text</description>
-        <step>1</step>
-        <status>complete</status>
-        <widget>ll-property-add</widget>
+        <completed>1</completed>
+        <total>5</total>
     </entity>
     <entity type="step" active="">
         <title>Property Details</title>
-        <description>Add some information about your property ... description text</description>
-        <step>2</step>
+        <description>Simply enter your postcode .. description text</description>
+        <step>1</step>
         <status>complete</status>
-        <widget>ll-property-edit</widget>
+        <widget>property-details</widget>
     </entity>
     <entity type="step" active="">
         <title>Upload Pictures</title>
         <description>Add some pictures of your property ... description text</description>
-        <step>3</step>
-        <status>complete</status>
+        <step>2</step>
+        <status>incomplete</status>
         <widget>portfolio</widget>
     </entity>
-    <entity type="step" active="active">
+    <entity type="step" active="">
         <title>Upload Documents</title>
         <description>Provide some necessary documentation ... description text</description>
-        <step>4</step>
+        <step>3</step>
         <status>incomplete</status>
         <widget>documents</widget>
         <widgetParams>some=other&amp;parameter=information</widgetParams>
@@ -37,15 +30,22 @@
     <entity type="step" active="">
         <title>Additional Parties</title>
         <description>Tell us about other people involved with the property, such as owners etc ... description text</description>
-        <step>5</step>
-        <status>complete</status>
+        <step>4</step>
+        <status>incomplete</status>
         <widget>ll-user-profile</widget>
+    </entity>
+    <entity type="step" active="">
+        <title>Validation</title>
+        <description>Add some information about your property ... description text</description>
+        <step>5</step>
+        <status>incomplete</status>
+        <widget>ll-property-edit</widget>
     </entity>
     <entity type="step" active="">
         <title>Review Property</title>
         <description>Review everything about the property so far ... description text</description>
         <step>6</step>
         <status>optional</status>
-        <widget>property-details</widget>
+        <widget>property-overview</widget>
     </entity>
 </response>

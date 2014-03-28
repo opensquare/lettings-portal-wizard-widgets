@@ -26,14 +26,14 @@
             submission: {
               url: "{ {$esb-url}}/property/details/update/{{/root/id}}",
               method: "post",
-              resultInsertPoint: "/root/save"
+              resultInsertPoint: "/root/esb"
             }*/
           }
         ]
       },
       {
         id: "nextStep", docBase:"/root/property",
-        url: "../property-forms/property-display.html",
+        url: "../common-forms/save-complete.html",
         actions: ["back"]
       }
     ]

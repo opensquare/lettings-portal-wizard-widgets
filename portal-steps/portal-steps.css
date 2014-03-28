@@ -7,3 +7,7 @@
 	clear: both;
 	padding: 10px;
 }
+.steps a.step-link.disabled{
+    opacity: 0.8;
+    color: #aaa;
+}

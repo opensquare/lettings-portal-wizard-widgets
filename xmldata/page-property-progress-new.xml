@@ -2,43 +2,47 @@
     <entity type="main">
         <description>New property</description>
         <completed>0</completed>
-        <total>6</total>
+        <total>5</total>
     </entity>
     <entity type="step" active="active">
-        <title>Enter Address</title>
+        <title>Property Details</title>
         <description>Simply enter your postcode .. description text</description>
         <step>1</step>
         <status>incomplete</status>
         <widget>property-details</widget>
     </entity>
     <entity type="step" active="">
-        <title>Property Details</title>
-        <description>Add some information about your property ... description text</description>
-        <step>2</step>
-        <status>incomplete</status>
-        <widget>ll-property-edit</widget>
-    </entity>
-    <entity type="step" active="">
         <title>Upload Pictures</title>
         <description>Add some pictures of your property ... description text</description>
-        <step>3</step>
+        <step>2</step>
         <status>incomplete</status>
         <widget>portfolio</widget>
+        <disabled>true</disabled>
     </entity>
     <entity type="step" active="">
         <title>Upload Documents</title>
         <description>Provide some necessary documentation ... description text</description>
-        <step>4</step>
+        <step>3</step>
         <status>incomplete</status>
         <widget>documents</widget>
         <widgetParams>some=other&amp;parameter=information</widgetParams>
+        <disabled>true</disabled>
     </entity>
     <entity type="step" active="">
         <title>Additional Parties</title>
         <description>Tell us about other people involved with the property, such as owners etc ... description text</description>
-        <step>5</step>
+        <step>4</step>
         <status>incomplete</status>
         <widget>ll-user-profile</widget>
+        <disabled>true</disabled>
+    </entity>
+    <entity type="step" active="">
+        <title>Validation</title>
+        <description>Add some information about your property ... description text</description>
+        <step>5</step>
+        <status>incomplete</status>
+        <widget>ll-property-edit</widget>
+        <disabled>true</disabled>
     </entity>
     <entity type="step" active="">
         <title>Review Property</title>
@@ -46,5 +50,6 @@
         <step>6</step>
         <status>optional</status>
         <widget>property-overview</widget>
+        <disabled>true</disabled>
     </entity>
 </response>

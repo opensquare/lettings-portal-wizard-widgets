@@ -1,0 +1,10 @@
+<script>
+    rf.onFormLoad(function() {
+        if ('{{/root/complete}}' !== ''){
+            pw.notifyChannelOfEvent('{{/root/complete}}', {id: '{{/root/esb//id}}'});
+        } else {
+            $('div.rf-complete').show();
+        }
+    });
+</script>
+<div class="rf-complete">Details Updated</div>

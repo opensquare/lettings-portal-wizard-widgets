@@ -84,11 +84,13 @@ function Widget_portal(){
     function paramStringFromMap(map){
         var paramString = '';
         for (var param in map){
-            var nameVal = param + '=' + map[param];
-            if (paramString == ''){
-                paramString += nameVal;
-            } else {
-                paramString += '&' + nameVal;
+            if(map[param] !== null){
+                var nameVal = param + '=' + map[param];
+                if (paramString == ''){
+                    paramString += nameVal;
+                } else {
+                    paramString += '&' + nameVal;
+                }
             }
         }
         return paramString;
@@ -295,8 +297,10 @@ function Widget_portal(){
         function changePage(newPage) {
             var 
                 path,
-                argString
+                argString,
+                currentHash = window.location.hash;
             ;
+
             if (!pw.defined(newPage.pageId)){
                 newPage.pageId = navigation.currentLayout;
             }
@@ -305,6 +309,12 @@ function Widget_portal(){
             }
             path = getLayoutPath(newPage.pageId);
             argString = (newPage.pageArgs === '') ? '' : '?' + newPage.pageArgs;
+
+            if (currentHash == path + argString){
+                // hash won't change so just re enable navigation if disabled
+                enableHashNavigation();
+                return;
+            }
 
             window.location.hash = path + argString;
         }
