@@ -1,0 +1,217 @@
+<form rhinoforms="true" class="lettings-form group form-horizontal">
+
+
+	<div class="relatedFields">
+		
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-6">
+				<h3>Property Address</h3>
+			</div>
+		</div>
+
+		<div class="field form-group">
+			<!--label for="address" class="col-sm-3 control-label">Address:</label-->
+			<div class="col-sm-offset-3 col-sm-6">
+				<input name="address.postcode" class="form-control" type="text" rf.validation="required" placeholder="Enter your postcode"/>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-sm-offset-3 col-sm-6">
+				<button type="button" class="btn btn-primary">Search Address</button>
+			</div>
+		</div>
+
+		<div class="field form-group">
+			<div class="col-sm-offset-3 col-sm-6">
+				<div class="checkbox">
+					<label>
+						<input name="owner" type="checkbox" checked> I am the owner of this property
+					</label>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+	<div class="relatedFields">
+
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-6">
+				<h3>About the property</h3>
+			</div>
+		</div>
+
+		<div class="field form-group">
+			<label for="input_propertyType" class="col-sm-3 control-label">Property Type: </label>
+			<div class="col-sm-6">
+				<select id="input_propertyType" class="form-control" name="details.buildingType" rf.validation="required" rf.preselectFirstOption="true" rf.source="resources/property-type.txt">
+					<option disabled selected/>
+				</select>
+			</div>
+		</div>
+
+		<div class="field form-group">
+			<label for="input_bedrooms" class="col-sm-3 control-label">Bedrooms: </label>
+			<div class="col-sm-2">
+				<select id="input_bedrooms" class="form-control" name="details.bedrooms" rf.validation="required" rf.preselectFirstOption="true" rf.source="resources/bedroom.txt">
+					<option disabled selected/>
+				</select>
+			</div>	
+
+			<label for="input_bathroom" class="col-sm-2 control-label">Bathrooms: </label>
+			<div class="col-sm-2">
+				<select id="input_bathroom" class="form-control" name="details.bathrooms" rf.validation="required" rf.preselectFirstOption="true" rf.rangeStart="1" rf.rangeEnd="9">
+					<option disabled selected/>
+				</select>
+			</div>
+		</div>
+
+		<div class="field form-group">
+			<label for="input_bedrooms" class="col-sm-3 control-label">Receptions: </label>
+			<div class="col-sm-2">
+				<select id="input_bedrooms" class="form-control" name="details.receptions" rf.validation="required" rf.preselectFirstOption="true" rf.rangeStart="1" rf.rangeEnd="9">
+					<option disabled selected/>
+				</select>
+			</div>
+			
+			<label for="garden" class="col-sm-2 control-label">Garden: </label>
+			<div class="col-sm-2">
+				<div class="radio">
+					<label for="input_yes">
+						<input id="input_yes" class="" type="radio" name="details.garden" value="Yes" rf.validation="required"/>
+						Yes
+					</label>
+				</div>
+				<div class="radio">
+					<label for="input_yes">
+						<input id="input_yes" type="radio" name="details.garden" value="No"/>
+						No
+					</label>
+				</div>
+			</div>
+		</div>
+		
+		<div class="field form-group">
+			<label for="furnished" class="col-sm-3 control-label">Furnished: </label>
+			<div class="col-sm-2">
+				<div class="radio">
+					<label for="input_yes">
+						<input id="input_yes" class="" type="radio" name="details.furnished" value="Yes" rf.validation="required"/>
+						Yes
+					</label>
+				</div>
+				<div class="radio">
+					<label for="input_yes">
+						<input id="input_yes" type="radio" name="details.furnished" value="No"/>
+						No
+					</label>
+				</div>
+			</div>
+
+			<label for="whiteGoodsProvided" class="col-sm-2 control-label">White Goods: </label>
+			<div class="col-sm-2">
+				<div class="radio">
+					<label for="input_yes">
+						<input id="input_yes" class="" type="radio" name="details.whiteGoodsProvided" value="Yes" rf.validation="required"/>
+						Yes
+					</label>
+				</div>
+				<div class="radio">
+					<label for="input_yes">
+						<input id="input_yes" type="radio" name="details.whiteGoodsProvided" value="No"/>
+						No
+					</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="field form-group">
+			<label for="input_heating" class="col-sm-3 control-label">Heating: </label>
+			<div class="col-sm-6">
+				<select id="input_heating" class="form-control" name="details.heating" rf.validation="required" rf.preselectFirstOption="true" rf.source="resources/heating.txt">
+					<option disabled selected/>
+				</select>
+			</div>
+		</div>
+
+		<div class="field form-group">
+			<label for="input_area" class="col-sm-3 control-label">Area (m<sup>2</sup>):</label>
+			<div class="col-sm-6">
+				<div class="input-group">
+					<span class="input-group-addon">m<sup>2</sup></span>
+					<input name="details.area" id="input_area" class="form-control" type="number" rf.validation="required pattern({ regex: '^[0-9]+$', errorMessage: 'Invalid number' })" />
+				</div>
+			</div>
+		</div>
+
+		<div class="field form-group">
+			<label for="input_parking" class="col-sm-3 control-label">Parking: </label>
+			<div class="col-sm-6">
+				<select id="input_parking" class="form-control" name="details.parking" rf.validation="required" rf.preselectFirstOption="true" rf.source="resources/parking.txt">
+					<option disabled selected/>
+				</select>
+			</div>
+		</div>
+
+		<div class="field description form-group">
+			<label for="description" class="col-sm-3 control-label">Description: </label>
+			<div class="col-sm-6">
+				<textarea name="details.description" class="form-control" rf.validation="required"></textarea>
+			</div>
+		</div>
+
+	</div>
+
+	<!--div class="relatedField">
+		<div class="field summary form-group">
+			<label for="description" class="col-sm-3 control-label">Summary Description:</label>
+			<div class="col-sm-6">
+				<input name="description" class="summaryDescription form-control" type="text" rf.validation="required" />
+			</div>
+		</div>
+		<div class="field form-group">
+			<label class="currency col-sm-3 control-label">Rental (pcm): </label>
+			<div class="col-sm-6">
+				<input class="currencyInput form-control" name="rentalPerMonth" type="text" rf.validation="required" />
+			</div>
+		</div>
+
+		<div class="field form-group">
+			<label class="currency col-sm-3 control-label">Deposit: </label>
+			<div class="col-sm-6">
+				<input class="currencyInput form-control" name="deposit" type="text" rf.validation="required" />
+			</div>
+		</div>
+	</div>
+
+	<div class="relatedField">
+		<div class="field form-group">
+			<label for="input_availableFrom" class="col-sm-3 control-label">Available from: </label>
+			<div class="col-sm-2">
+				<input id="input_availableFrom" class="form-control" type="date" name="availableFrom" rf.validation="required date({ format: 'YYYY-MM-DD' })" />
+			</div>
+		</div>
+
+		<div class="field form-group">
+			<label for="input_tenancyPeriod" class="col-sm-3 control-label">Tennacy Period: </label>
+			<div class="col-sm-6">
+				<select id="input_tenancyPeriod" class="form-control" name="tenancyPeriod" rf.validation="required" rf.preselectFirstOption="true">
+					<option disabled selected/>
+					<option>6 Months</option>
+					<option>12 Months</option>
+					<option>18 Months</option>
+				</select>
+			</div>
+		</div>
+	</div-->
+
+	<div class="propertyActions form-group">
+		<div class="col-sm-8"></div>
+		<div class="col-sm-1">
+			<input type="button" class="btn btn-primary" rf.action="next" value="Next Step"/>
+		</div>
+	</div>
+</form>
+

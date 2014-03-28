@@ -1,12 +1,9 @@
 <widget>
-	<type>layout</type>
+	<type>internalPage</type>
 	<parameters>
-		<url>property-details.html</url>
-		<secure>false</secure>
+		<url>index.html</url>
 	</parameters>
 	<attributes>
-		<displayHeader>false</displayHeader>
 		<js>property-details.js</js>
-		<css>property-details.css</css>
 	</attributes>
 </widget>

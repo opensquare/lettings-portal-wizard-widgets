@@ -131,7 +131,7 @@ function Widget_portal(){
         function parseHashString(string) {
             var 
                 parts  = string.split('?'),
-                pageId = parts[0].substring(defaults.basePath.length)
+                pageId = parts[0].substring(defaults.basePath.length).replace("/", "-")
             ;
             return {
                 id  : pageId,

@@ -47,7 +47,7 @@ function Widget_display_step(){
 
     this.mountStep = function(){
        // need to mount widget manually - layout content is processed before {params} are substituted
-       pw.mount($('.step-container div.widget', this.$widgetDiv).removeAttr('delayload'));
+       pw.mount($('.step-container div.widgettoload', this.$widgetDiv).removeClass('widgettoload').addClass('widget'));
     }
 
 }

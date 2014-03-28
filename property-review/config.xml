@@ -1,0 +1,12 @@
+<widget>
+	<type>layout</type>
+	<parameters>
+		<url>property-details.html</url>
+		<secure>false</secure>
+	</parameters>
+	<attributes>
+		<displayHeader>false</displayHeader>
+		<js>property-details.js</js>
+		<css>property-details.css</css>
+	</attributes>
+</widget>

@@ -39,7 +39,7 @@ function Widget_signin() {
 			return false;
 		});
 
-		if(username != ''){
+		if(username != '' && pw.defined(username)){
 			$(':input[name=username]', $form).val(decodeURIComponent(username));
 		}
 	}

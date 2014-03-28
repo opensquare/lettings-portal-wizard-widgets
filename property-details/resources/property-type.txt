@@ -1,0 +1,4 @@
+Flat or Appartment
+House
+Bungalow
+Other

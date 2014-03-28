@@ -9,7 +9,7 @@
         <description>Simply enter your postcode .. description text</description>
         <step>1</step>
         <status>incomplete</status>
-        <widget>ll-property-add</widget>
+        <widget>property-details</widget>
     </entity>
     <entity type="step" active="">
         <title>Property Details</title>

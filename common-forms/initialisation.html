@@ -1,0 +1,16 @@
+<script>
+    rf.onFormLoad(function() {
+        if("{{/retrieve/id}}" == "" || "{{/retrieve/id}}" == "new") {
+            $("[rf\\.action=next]").click();
+        } else {
+            $("[rf\\.action=retrieve]").click();
+        }
+    });
+</script>
+<form rhinoforms="true">
+    <div class="spin-loading"><div class="load-spin"></div><div class="load-text">loading</div></div>
+    <div class="navigation" style="display:none">
+        <input type="submit" rf.action="next" value="Next">
+        <input type="submit" rf.action="retrieve" value="Retrieve">
+    </div>
+</form>

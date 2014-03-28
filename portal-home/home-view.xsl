@@ -7,8 +7,7 @@
 				<div class="col-sm-2">
 					<h2>My Details</h2>
 					<div class="widget about" name="portal-panel"> 
-						<xsl:attribute name="params">uids=about&amp;show=summary&amp;esb.action=tile-data
-						</xsl:attribute>
+						<xsl:attribute name="params">uids=about&amp;show=summary&amp;esb.action=tile-data</xsl:attribute>
 					</div>
 				</div>
 				<div class="col-sm-10">

@@ -57,7 +57,7 @@ function Widget_portal_steps(){
         pw.addListenerToChannel(this, updatePromptChannel);
 
         // replace breadcrumb placeholder
-        this.updatebreadCrumb($('li.active a .step-desc').text());
+        this.updatebreadCrumb($('li.active a', this.$widgetDiv).text().trim());
 
 
     }
@@ -77,7 +77,7 @@ function Widget_portal_steps(){
             if (changing){
                 $(this).parents('.steps').children().removeClass('active');
                 $(this).parent().addClass('active');
-                _this.updatebreadCrumb($('.step-desc', $(this)).text());
+                _this.updatebreadCrumb($(this).text().trim());
             }
 
             return false;
