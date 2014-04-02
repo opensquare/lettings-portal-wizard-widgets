@@ -6,7 +6,7 @@
         <xsl:choose>
             <xsl:when test="$step != '{step}' and not(empty(//entity[step='{step}']))">
                 <!-- specific step -->
-                <xsl:value-of select="{step}"/>
+                <xsl:value-of select="'{step}'"/>
             </xsl:when>
             <xsl:when test="count(//entity[status='incomplete']) &gt; 0">
                 <!-- first incomplete step -->
