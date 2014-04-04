@@ -14,8 +14,7 @@ rf.onFormLoad(function(){
     var email_address = queryURL()["email"];
 
     var input_email = document.getElementById('input_email');
-
-    if (email_address != '') {
+    if (typeof email_address != "undefined") {
 
         input_email.value = email_address;
 

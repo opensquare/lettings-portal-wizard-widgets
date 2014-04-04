@@ -1,26 +1,3 @@
-<script>
-	// should be moved to widget js
-	var url = window.location.hash;
-	var hash = url.substring(url.indexOf('#')+1);
-
-	var register_btn = document.getElementById('register-button');
-	register_btn.addEventListener('click', function() {
-
-		var register_email = document.getElementById('register_email').value;
-
-		var formSet = hash + "-registration" + '?email=' + register_email;
-
-		$("#formSet").attr("href", formSet);
-
-	}, false);
-
-	$("#cp-banner").attr("class", hash);
-
-	$("#login-form-enter").attr("nextWidget", "portal");
-	
-	//$("#register-button").attr("class", hash);
-</script>
-
 <div class="container-fluid">
 	<div class="page-header">
         <h1>Property Management <small>for landlords and tenants</small></h1>
@@ -31,7 +8,7 @@
 				<div class="panel-heading"><h4>Registered Customers</h4></div>
 				<div class="panel-body" id="login-form">
 
-					<form id="login-form-enter" action="#" nextWidget=""><!-- nextWidget set in the JS above -->
+					<form id="login-form-enter" action="#" nextWidget="portal">
 						<ul class="messages"/>
 						<p>
 							<label for="username">Username: </label>

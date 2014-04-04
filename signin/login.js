@@ -10,6 +10,23 @@ function Widget_signin() {
 		var widget = this;
 		this.setupLoginForm();
 		this.setupResetForm();
+		this.setUpRegisterForm();
+	}
+
+	this.setUpRegisterForm = function() {
+		var 
+			url = window.location.hash,
+			hash = url.substring(url.indexOf('#')+1).length > 0 ? url.substring(url.indexOf('#')+1) : 'landlord',
+			register_btn = $("#register-button")
+		;
+		register_btn.click(function(event) {
+			var 
+				register_email = document.getElementById('register_email').value,
+				formSet = hash + "-registration" + '?email=' + register_email
+			;
+			$("#formSet").attr("href", formSet);
+		});
+		
 	}
 		
 	this.setupLoginForm = function() {
