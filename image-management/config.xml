@@ -1,0 +1,7 @@
+<widget>
+    <type>layout</type>
+    <parameters>
+        <url>index.html</url>
+    </parameters>
+    <attributes></attributes>
+</widget>

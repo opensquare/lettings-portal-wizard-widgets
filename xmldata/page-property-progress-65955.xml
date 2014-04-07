@@ -17,7 +17,7 @@
         <description>Add some pictures of your property ... description text</description>
         <step>2</step>
         <status>incomplete</status>
-        <widget>portfolio</widget>
+        <widget>image-management</widget>
     </entity>
     <entity type="step" active="">
         <title>Upload Documents</title>

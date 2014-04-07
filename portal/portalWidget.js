@@ -15,7 +15,6 @@ function Widget_portal(){
         channels = {
             setPageArgs     : 'portal.setPageArgs',
             closePage       : 'portal.closePage',
-            loadPage        : 'portal.loadPage',
             loadFailed      : 'portal.loadFailed',
             preventPageLoad : 'portal.preventPageLoad'
         },
@@ -48,9 +47,6 @@ function Widget_portal(){
                 break;
             case channels.closePage:
                 window.location.hash = '';
-                break;
-            case channels.loadPage:
-                pageLoader.changePage(event);
                 break;
             case channels.loadFailed:
                 pageLoader.loadFailed(event.name);
@@ -329,9 +325,15 @@ function Widget_portal(){
         }
 
         function setPreventLoad(preventRequest) {
+            var defaultMessage = 'You are about to leave the current page, any data you have entered may not be saved. Do you wish to continue?'
             preventLoad.stopLoad = preventRequest.preventLoad;
-            preventLoad.unloadMessage   = pw.defined(preventRequest.message) ? preventRequest.message : '';
-            preventLoad.responseChannel = preventRequest.responseChannel;
+            if (preventRequest.preventLoad){
+                preventLoad.unloadMessage   = pw.defined(preventRequest.message) ? preventRequest.message : defaultMessage;
+                preventLoad.responseChannel = preventRequest.responseChannel;
+            } else {
+                preventLoad.unloadMessage = defaultMessage;
+                preventLoad.responseChannel = null;
+            }
         }
 
         return {

@@ -1,0 +1,9 @@
+<widget>
+    <type>internalPage</type>
+    <parameters>
+        <url>image-browser.html</url>
+    </parameters>
+    <attributes>
+        <js>image-browser.js</js>
+    </attributes>
+</widget>

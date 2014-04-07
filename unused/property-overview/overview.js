@@ -4,7 +4,8 @@ function Widget_property_overview(){
 	var widget = this;
 
 	this.onReadyBeforeChildImport = function() {
-		propertyId = this.$widgetDiv.data('propertyId');
+		propertyId = this.parameterMap.entity;
+		//propertyId = this.$widgetDiv.data('propertyId');
 		pageId = this.$widgetDiv.attr('pageid');
 		this.setContainedWidgetParams();
 	}

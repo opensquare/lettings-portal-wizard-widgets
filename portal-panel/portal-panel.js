@@ -20,7 +20,7 @@ function Widget_portal_panel(){
                 var uid = $(this).data('uid');
                 uids += (uids === '') ? uid : ',' + uid;
             });
-            pw.notifyChannelOfEvent(this.publishOn, {uids : uids, id:this.id});
+            //pw.notifyChannelOfEvent(this.publishOn, {uids : uids, id:this.id});
         }
         // depending on type, apply any event handlers to content
     }
