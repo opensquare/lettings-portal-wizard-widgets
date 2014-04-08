@@ -1,13 +1,20 @@
 <widget>
 	<type>httpRequestLayout</type>
 	<parameters>
-		<url>widgets/xmldata/property-sets.xml</url>
+		<url>widgets/xmldata/manage-{uid}.xml</url>
 		<method>GET</method>
 		<xsl>manage</xsl>
 	</parameters>
 	<attributes>
 		<displayHeader>false</displayHeader>
-		<css>manage.css</css>
 		<js>manage.js</js>
 	</attributes>
+	<filters>
+		<filter>
+			<attributes>
+				<name>valueInjector</name>
+				<htmlTemplate>manage.html</htmlTemplate>
+			</attributes>
+		</filter>
+	</filters>
 </widget>

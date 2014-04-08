@@ -1,110 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
-    <xsl:output method="html"/>
+    <xsl:output method="xml"/>
     <xsl:template match="/">
-        <xsl:variable name="crumbtext">
-            <xsl:choose>
-                <xsl:when test="'{uid}' != concat('{','uid','}')">
-                    <xsl:value-of select="/response/resultSet[@entity='{uid}']/header"/>
-                </xsl:when>
-                <xsl:otherwise>Property Progress</xsl:otherwise>
-            </xsl:choose>
-        </xsl:variable>
-        <ol class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li class="active"><xsl:value-of select="$crumbtext"/></li>
-        </ol>
-        <div class="row">
-            <div class="col-sm-3">Property Details</div>
-            <div class="col-sm-3">Tenancy</div>
-            <div class="col-sm-2">Product</div>
-            <div class="col-sm-2">Upload To Rightmove</div>
-            <div class="col-sm-2">Review</div>
-        </div>
-        <xsl:choose>
-            <!-- display single property -->
-            <xsl:when test="'{uid}' != concat('{','uid','}')">
-                <xsl:variable name="uid" select="'{uid}'"/>
-                <div class="row single">
-                    <div class="widget col-sm-3" name="portal-panel">
-                        <xsl:attribute name="params">uids=<xsl:value-of select="$uid"/>&amp;show=prop-comp</xsl:attribute>
-                    </div>
-                    <div class="widget col-sm-3" name="portal-panel">
-                        <xsl:attribute name="params">uids=<xsl:value-of select="$uid"/>&amp;show=ten-comp</xsl:attribute>
-                    </div>
-                    <div class="widget col-sm-2" name="portal-panel">
-                        <xsl:attribute name="params">uids=<xsl:value-of select="$uid"/>&amp;show=product&amp;linkType=buttons</xsl:attribute>
-                    </div>
-                    <div class="widget col-sm-2" name="portal-panel">
-                        <xsl:attribute name="params">uids=<xsl:value-of select="$uid"/>&amp;show=action</xsl:attribute>
-                    </div>
-                    <div class="widget col-sm-2" name="portal-panel">
-                        <xsl:attribute name="params">uids=<xsl:value-of select="$uid"/>&amp;show=review</xsl:attribute>
-                    </div>
-                </div>
-            </xsl:when>
-
-            <!-- display all properties -->
-
-            <!-- as widget per column -->
-            <xsl:when test="'{show}' = 'columns'">
-                <xsl:variable name="uids" select="string-join(/response/uids/uid, ',')"/>
-                <div class="row cols">
-                    <div class="widget col-sm-3" name="portal-panel" data-channel-publish="manage-property-list">
-                        <xsl:attribute name="params">uids=<xsl:value-of select="$uids"/>&amp;show=prop-comp</xsl:attribute>
-                    </div>
-                    <div class="widget col-sm-3" name="portal-panel" params="show=ten-comp" data-channel-listen="manage-property-list" delayload="true"></div>
-                    <div class="widget col-sm-2" name="portal-panel" params="show=product&amp;linkType=buttons" data-channel-listen="manage-property-list" delayload="true"></div>
-                    <div class="widget col-sm-2" name="portal-panel" params="show=action" data-channel-listen="manage-property-list" delayload="true"></div>
-                    <div class="widget col-sm-2" name="portal-panel" params="show=review" data-channel-listen="manage-property-list" delayload="true"></div>
-                </div>
-            </xsl:when>
-
-            <!-- as widget per row -->
-            <xsl:when test="'{show}' = 'rows'">
-                <div class="rows">
-                    <xsl:for-each select="/response/uids/uid">
-                        <div class="widget" name="portal-panel" data-channel-publish="panel-rows">
-                            <xsl:attribute name="params">
-                                <xsl:text>uids=</xsl:text>
-                                <xsl:value-of select="."/>
-                                <xsl:text>&amp;show=prop-comp,ten-comp,product,action,review&amp;asButtons=product</xsl:text>
-                            </xsl:attribute>
-                        </div>
-                    </xsl:for-each>
-                </div>
-            </xsl:when>
-
-            <!-- as widget per 'cell' -->
-            <xsl:when test="'{show}' = 'single'">
-                <xsl:for-each select="/response/uids/uid">
-                    <xsl:variable name="channel" select="concat('manage-property-list-', position())"/>
-                    <div class="row singles">
-                        <div class="widget col-sm-3" name="portal-panel" data-channel-publish="manage-property-list">
-                            <xsl:attribute name="params">uids=<xsl:value-of select="."/>&amp;show=prop-comp</xsl:attribute>
-                            <xsl:attribute name="data-channel-publish"><xsl:value-of select="$channel"/></xsl:attribute>
-                        </div>
-                        <div class="widget col-sm-3" name="portal-panel" params="show=ten-comp" delayload="true">
-                            <xsl:attribute name="data-channel-listen"><xsl:value-of select="$channel"/></xsl:attribute>
-                        </div>
-                        <div class="widget col-sm-2" name="portal-panel" params="show=product&amp;linkType=buttons" delayload="true">
-                            <xsl:attribute name="data-channel-listen"><xsl:value-of select="$channel"/></xsl:attribute>
-                        </div>
-                        <div class="widget col-sm-2" name="portal-panel" params="show=action" delayload="true">
-                            <xsl:attribute name="data-channel-listen"><xsl:value-of select="$channel"/></xsl:attribute>
-                        </div>
-                        <div class="widget col-sm-2" name="portal-panel" params="show=review" delayload="true">
-                            <xsl:attribute name="data-channel-listen"><xsl:value-of select="$channel"/></xsl:attribute>
-                        </div>
-                    </div>
-                </xsl:for-each>
-            </xsl:when>
-
-            <xsl:otherwise>Unrecognised display action</xsl:otherwise>
-        </xsl:choose>
+        <manage>
+            <propertyId><xsl:value-of select="//PropertyId"/></propertyId>
+            <breadCrumb><xsl:value-of select="ManagePropertyResponse/Description"/></breadCrumb>
+            <xsl:apply-templates select="ManagePropertyResponse//Progress"/>
+            <xsl:apply-templates select="ManagePropertyResponse//Product"/>
+            <xsl:apply-templates select="ManagePropertyResponse//Advertisement"/>
+        </manage>
     </xsl:template>
 
-   
+    <!-- Property and Tenancy columns -->
+    <xsl:template match="Progress">
+        <progressStatus>
+            <heading><xsl:value-of select="Description"/></heading>
+            <completed><xsl:value-of select="StepsComplete"/></completed>
+            <total><xsl:value-of select="StepsTotal"/></total>
+            <next>
+                <xsl:if test="NextIncompleteStep !=''">
+                    <xsl:text>&amp;step=</xsl:text><xsl:value-of select="NextIncompleteStep"/>
+                </xsl:if>
+            </next>
+            <widget><xsl:value-of select="translate(lower-case(Type), ' ','-')"/>-progress</widget>
+        </progressStatus>
+    </xsl:template>
 
-    
+    <!-- Product Column -->
+    <xsl:template match="Product">
+        <product>
+            <xsl:choose>
+                <xsl:when test="Name != ''">
+                    <name><xsl:value-of select="Name"/></name>
+                    <link>
+                        <text>View Details</text>
+                        <widget>product-summary</widget>
+                    </link>
+                <xsl:if test="UpgradeTo != ''">
+                    <link>
+                        <text>Upgrade to <xsl:value-of select="UpgradeTo"/></text>
+                        <widget>product-upgrade</widget>
+                    </link>
+                </xsl:if>
+                </xsl:when>
+                <xsl:otherwise>
+                    <link>
+                        <text>Select Product</text>
+                        <widget>product-select</widget>
+                    </link>
+                </xsl:otherwise>
+            </xsl:choose>
+        </product>
+    </xsl:template>
+
+    <!-- Advertise Column -->
+    <xsl:template match="Advertisement">
+        <advertisement>
+            <link>
+                <!-- advertised? -->
+                <xsl:choose>
+                    <xsl:when test="Advertised = 'false'">
+                        
+                        <!-- Eligible to advertise? -->
+                        <xsl:choose>
+                            <xsl:when test="Eligible='true'">
+                                <text>Upload Now</text>
+                                <widget>advertise-property</widget> 
+                            </xsl:when>
+
+                            <!-- option to fasttrack -->
+                            <xsl:otherwise>
+                                <xsl:variable name="link">
+                                    <!-- property or tenancy? -->
+                                    <xsl:choose>
+                                        <xsl:when test="//Progress[type='Property']/StepsComplete = //Progress[type='Property']/StepsTotal">
+                                            <widget>tenancy-progress</widget>
+                                            <next>&amp;step=<xsl:value-of select="//Progress[type='Tenancy']/NextIncompleteStep"/></next>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <widget>property-progress</widget>
+                                            <next>&amp;step=<xsl:value-of select="//Progress[type='Property']/NextIncompleteStep"/></next>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                </xsl:variable>
+                                
+                                <text>Fast track to Rightmove</text>
+                                <widget><xsl:value-of select="$link/widget"/></widget>
+                                <next><xsl:value-of select="$link/next"/></next>
+                            </xsl:otherwise>
+                        </xsl:choose>
+
+                    </xsl:when>
+
+                    <!-- advertised -->
+                    <xsl:otherwise>
+                        <!-- Any Tenant activity? -->
+                        <xsl:choose>
+                            <xsl:when test="TenantStatus='interest'">
+                                <text>New interest has been shown</text>
+                            </xsl:when>
+                            <xsl:when test="TenantStatus='proceeding'">
+                                <text>Proceeding with Tenant</text>
+                            </xsl:when>
+                            <xsl:when test="TenantStatus='agreed'">
+                                <text>Tenancy is underway</text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <text>Property is advertised</text>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                        <widget></widget>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </link>
+        </advertisement>
+    </xsl:template>
 </xsl:stylesheet>

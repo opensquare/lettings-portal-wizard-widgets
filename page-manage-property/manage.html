@@ -1,4 +1,33 @@
-<div class="container-fluid">
-	<ol class="breadcrumb">
-	</ol>
+<ol class="breadcrumb">
+    <li><a href="#">Home</a></li>
+    <li class="active">{{//breadCrumb}}</li>
+</ol>
+
+<div class="manage-property">
+    
+<rf.forEach select="//progressStatus" as="p">
+    <div class="property-item">
+        <h3>{{p.heading}}</h3>
+        <a href="#/{{p.widget}}?property={{//propertyId}}{{p.next}}">{{p.completed}} of {{p.total}} Steps Complete</a>
+    </div>
+</rf.forEach>
+
+    <div class="property-item">
+        <h3>Product</h3>
+        <p>{{//product/name}}</p>
+    <rf.forEach select="//product/link" as="l">
+        <a href="#/{{l.widget}}?property={{//propertyId}}" class="btn btn-primary">{{l.text}}</a>
+    </rf.forEach>
+    </div>
+
+    <div class="property-item">
+        <h3>Upload to Rightmove</h3>
+        <a href="#/{{//advertisement/link/widget}}?property={{//propertyId}}{{//advertisement/link/next}}">{{//advertisement/link/text}}</a>
+    </div>
+
+    <div class="property-item">
+        <h3>Review</h3>
+        <a href="#/review-property?property={{//propertyId}}" class="btn btn-primary">Review</a>
+    </div>
+
 </div>

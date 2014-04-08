@@ -1,27 +1,27 @@
 <ManagePropertyResponse>
-    <Description>11 Avenue Road</Description>
-    <PropertyId>65955</PropertyId>
+    <Description>Flat 3, 15 Winn Road</Description>
+    <PropertyId>877898</PropertyId>
     <DisplaySets>
         <Progress>
             <Type>Property</Type>
             <Description>Property Details</Description>
-            <StepsComplete>4</StepsComplete>
+            <StepsComplete>6</StepsComplete>
             <StepsTotal>7</StepsTotal>
-            <NextIncompleteStep>5</NextIncompleteStep>
+            <NextIncompleteStep>7</NextIncompleteStep>
         </Progress>
         <Progress>
             <Type>Tenancy</Type>
             <Description>Tenancy</Description>
-            <StepsComplete>2</StepsComplete>
+            <StepsComplete>3</StepsComplete>
             <StepsTotal>8</StepsTotal>
-            <NextIncompleteStep>3</NextIncompleteStep>
+            <NextIncompleteStep>4</NextIncompleteStep>
         </Progress>
         <Product>
-            <Name>Gold</Name>
-            <UpgradeTo>Gold+</UpgradeTo>
+            <Name>Gold+</Name>
+            <UpgradeTo></UpgradeTo>
         </Product>
         <Advertisement>
-            <Advertised>false</Advertised>
+            <Advertised>true</Advertised>
             <Eligible>false</Eligible>
         </Advertisement>
     </DisplaySets>

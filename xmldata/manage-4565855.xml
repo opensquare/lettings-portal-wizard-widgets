@@ -1,27 +1,28 @@
 <ManagePropertyResponse>
-    <Description>11 Avenue Road</Description>
-    <PropertyId>65955</PropertyId>
+    <Description>102 Earls Road</Description>
+    <PropertyId>4565855</PropertyId>
     <DisplaySets>
         <Progress>
             <Type>Property</Type>
             <Description>Property Details</Description>
-            <StepsComplete>4</StepsComplete>
+            <StepsComplete>7</StepsComplete>
             <StepsTotal>7</StepsTotal>
-            <NextIncompleteStep>5</NextIncompleteStep>
+            <NextIncompleteStep></NextIncompleteStep>
         </Progress>
         <Progress>
             <Type>Tenancy</Type>
             <Description>Tenancy</Description>
-            <StepsComplete>2</StepsComplete>
+            <StepsComplete>7</StepsComplete>
             <StepsTotal>8</StepsTotal>
-            <NextIncompleteStep>3</NextIncompleteStep>
+            <NextIncompleteStep>8</NextIncompleteStep>
         </Progress>
         <Product>
             <Name>Gold</Name>
             <UpgradeTo>Gold+</UpgradeTo>
         </Product>
         <Advertisement>
-            <Advertised>false</Advertised>
+            <Advertised>true</Advertised>
+            <TenantStatus>proceeding</TenantStatus>
             <Eligible>false</Eligible>
         </Advertisement>
     </DisplaySets>
