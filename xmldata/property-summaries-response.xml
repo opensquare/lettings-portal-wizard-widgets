@@ -1,0 +1,62 @@
+<PropertySummariesResponse>
+    <PropertySummaries>
+
+        <PropertySummary>
+            <PropertyId>12345</PropertyId>
+            <Description>110 High Street</Description>
+            <StatusDescription>2 Bed Flat</StatusDescription>
+            <Progress>
+                <PropertyStatus>entered</PropertyStatus>
+                <NextPropertyStep>int</NextPropertyStep>
+                <NextTenancyStep>int</NextTenancyStep>
+                <Advertised>true</Advertised>
+                <LandlordCompletion>40</LandlordCompletion>
+                <TenantCompletion>25</TenantCompletion>
+                <GuarantorCompletion></GuarantorCompletion>
+            </Progress>
+            <LandlordDescription>string</LandlordDescription>
+            <TenantDescription>string</TenantDescription>
+            <Notifications>3</Notifications>
+            <PropertyThumb>http://placehold.it/400x300</PropertyThumb>
+        </PropertySummary>
+
+        <PropertySummary>
+            <PropertyId>34556</PropertyId>
+            <Description>30 Main Road</Description>
+            <StatusDescription>2 Bed Flat</StatusDescription>
+            <Progress>
+                <PropertyStatus>entered</PropertyStatus>
+                <NextPropertyStep>Complete Tenancy Agreement</NextPropertyStep>
+                <NextTenancyStep>Enter Personal Details</NextTenancyStep>
+                <Advertised>true</Advertised>
+                <LandlordCompletion>75</LandlordCompletion>
+                <TenantCompletion>50</TenantCompletion>
+                <GuarantorCompletion>25</GuarantorCompletion>
+            </Progress>
+            <LandlordDescription>Mr Smith</LandlordDescription>
+            <TenantDescription>Mr Jones</TenantDescription>
+            <Notifications>3</Notifications>
+            <PropertyThumb>http://placehold.it/400x300</PropertyThumb>
+        </PropertySummary>
+
+        <PropertySummary>
+            <PropertyId>uid</PropertyId>
+            <Description>string</Description>
+            <StatusDescription>string</StatusDescription>
+            <Progress>
+                <PropertyStatus>string</PropertyStatus>
+                <NextPropertyStep>int</NextPropertyStep>
+                <NextTenancyStep>int</NextTenancyStep>
+                <Advertised>boolean</Advertised>
+                <LandlordCompletion>int</LandlordCompletion>
+                <TenantCompletion>int</TenantCompletion>
+                <GuarantorCompletion>int</GuarantorCompletion>
+            </Progress>
+            <LandlordDescription>string</LandlordDescription>
+            <TenantDescription>string</TenantDescription>
+            <Notifications>int</Notifications>
+            <PropertyThumb></PropertyThumb>
+        </PropertySummary>
+
+    </PropertySummaries>
+</PropertySummariesResponse>

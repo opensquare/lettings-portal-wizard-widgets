@@ -1,11 +1,11 @@
 <widget>
     <type>httpRequest</type>
     <parameters>
-        <url>widgets/xmldata/property-sets.xml</url>
+        <url>widgets/xmldata/property-summaries-response.xml</url>
         <displayType>{displayType}</displayType>
         <uids>{uids}</uids>
         <method>GET</method>
-        <xsl>panel</xsl>
+        <xsl>panels</xsl>
     </parameters>
     <attributes>
         <displayHeader>false</displayHeader>
