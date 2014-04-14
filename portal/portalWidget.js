@@ -1,348 +1,315 @@
 /**
-	Set pw notification on widget load fail
+    Set pw notification on widget load fail
 */
-$(document).ajaxError(function(event, xhr, settings, thrownError) {
-	if (xhr.status == 400 && settings.url.substring(0,20) == 'showWidgetAttributes'){
-		var widgetName = settings.url.substr(settings.url.indexOf('name=') + 5);
-		pw.notifyChannelOfEvent('portal.loadFailed', {'name' : decodeURIComponent(widgetName)});
-	}
+$(document).ajaxError(function(event, xhr, settings) {
+    if (xhr.status == 400 && settings.url.substring(0,20) == 'showWidgetAttributes'){
+        var widgetName = settings.url.substr(settings.url.indexOf('name=') + 5);
+        pw.notifyChannelOfEvent('portal.loadFailed', {'name' : decodeURIComponent(widgetName)});
+    }
 });
 
 function Widget_portal(){
 
-    var 
-        // channels
-        channels = {
-            setPageArgs     : 'portal.setPageArgs',
-            closePage       : 'portal.closePage',
-            loadFailed      : 'portal.loadFailed',
-            preventPageLoad : 'portal.preventPageLoad'
-        },
-        pageLoader
-    ;
+    this.channels = {
+        setPageArgs : 'portal.setPageArguments',
+        gotoHomePage     : 'portal.gotoHomePage',
+        pageLoadFailed   : 'portal.loadFailed',
+        promptOnPageChange : 'portal.preventPageLoad'
+    };
+    this.pageLoader = new PageLoader();
+    
+    /*
+        Widget overrides
+    */
+    this.onReadyBeforeChildImport = function() {
+        this.pageLoader.init($('#content'), this.channels);
+        this.addListeners();
+    }
 
     this.onReadyExtend = function() {
-        pageLoader = new PageLoader();
-        pageLoader.init({
-            'ch-page-args' : channels.setPageArgs,
-            'ch-page-close': channels.closePage,
-            'ch-page-load' : channels.loadPage
-        });
-        /*add listeners*/
-        pw.addListenerToChannel(this, channels.setPageArgs);
-        pw.addListenerToChannel(this, channels.closePage);
-        pw.addListenerToChannel(this, channels.loadFailed);
-        pw.addListenerToChannel(this, channels.loadPage);
-        pw.addListenerToChannel(this, channels.preventPageLoad);
-        /*hook up page load handler*/
-        $(window).on('hashchange', pageLoader.parseUrl);
-        /*load page*/
-        pageLoader.parseUrl();
-	}
+        this.pageLoader.mountAfterImport();
+    }
 
-	this.handleEvent = function(channel, event) {
-        switch (channel) {
-            case channels.setPageArgs:
-                pageLoader.changePageArgs(event);
-                break;
-            case channels.closePage:
-                window.location.hash = '';
-                break;
-            case channels.loadFailed:
-                pageLoader.loadFailed(event.name);
-                break;
-            case channels.preventPageLoad:
-                pageLoader.setPreventLoad(event);
-                break;
-        }
-	}
+    this.handleEvent = function(channel, event) {
+        this.pageLoader.handleEvent(channel, event);
+    }
 
-    function mapFromParamString(string){
-        if(!pw.defined(string)){
-            return {};
-        }
-        var
-            paramMap = {},
-            pairs    = string.split('&'),
-            pair,
-            name,
-            value
-        ;
+    /*
+        util functions
+    */
+
+    this.addListeners = function() {
+        pw.addListenerToChannel(this, this.channels.setPageArgs);
+        pw.addListenerToChannel(this, this.channels.gotoHomePage);
+        pw.addListenerToChannel(this, this.channels.pageLoadFailed);
+        pw.addListenerToChannel(this, this.channels.promptOnPageChange);
+    }
+
+    function mapFromString(string){
+        var pairs = string.split('&'), map = {};
         for (var i = 0; i < pairs.length; i++) {
-            pair  = pairs[i];
-            name  = pair.substring(0, pair.indexOf("="));
-            value = pair.substring(pair.indexOf("=") + 1);
-            paramMap[name] = value;
+            var pair  = pairs[i];
+            var name  = pair.substring(0, pair.indexOf("="));
+            var value = pair.substring(pair.indexOf("=") + 1);
+            map[name] = value
         }
-        return paramMap;
+        return map;
     }
 
     function paramStringFromMap(map){
         var paramString = '';
         for (var param in map){
-            if(map[param] !== null){
-                var nameVal = param + '=' + map[param];
-                if (paramString == ''){
-                    paramString += nameVal;
-                } else {
-                    paramString += '&' + nameVal;
-                }
-            }
+            var nameVal = param + '=' + map[param];
+            paramString += paramString == '' ? nameVal : '&' + nameVal;
         }
         return paramString;
     }
 
+    /*
+        Page loader for handling loading of layouts by monitoring hash url
+    */
     function PageLoader() {
-        var 
-            navigation = {
-                pageArgs      : null,
-                currentLayout : null,
-                disabled      : false,
-                mountCache    : {},
-                channels      : {}
+        var
+            statics = {
+                basePath : '#/',
+                widgetPrefix : 'page-',
+                errorMessage : "The page requested was not found",
             },
-            defaults = {
-                homeContent : null,
-                basePath    : '#/',
-                pagePrefix  : 'page-',
-                content     : '<div class="widget"></div>',
-                contentContainer : $('#content'),
-                errorMessage: "The page requested is not available, there may have been a problem loading or content doesn't exist here yet!",
-                homeId      : 'portal-home'
+            layoutState = {
+                promptOnChangeRequest : null,
+                mountCache : []
             },
-            preventLoad = {}
+            content = {},
+            channels = {}
         ;
 
-        function init(pageChannels){
-            defaults.homeContent = defaults.contentContainer.html();
-            navigation.channels  = pageChannels; 
+        function enableHashParsing() {
+            layoutState.parsingEnabled = true;
         }
 
-        function disableHashNavigation(){
-            navigation.disabled = true;
+        function disableHashParsing() {
+            layoutState.parsingEnabled = false;
         }
 
-        function enableHashNavigation(){
-            navigation.disabled = false;
+        function confirmChange() {
+            return confirm(layoutState.promptOnChangeRequest.message);
         }
 
-        function parseHashString(string) {
+        function parseHash(hashUrl) {
             var 
-                parts  = string.split('?'),
-                pageId = parts[0].substring(defaults.basePath.length).replace("/", "-")
+                parts  = hashUrl.split('?'),
+                pageId = parts[0].substring(statics.basePath.length).replace("/", "-")
+                newPage = {};
             ;
-            return {
-                id  : pageId,
-                args: mapFromParamString(parts[1])
-            };
-        }
-
-        function preparePage(newPage) {
-            var widgetName = defaults.pagePrefix + newPage.id,
-                newWidget = $(defaults.content)
-            ;
-
-            // pass channel names
-            newWidget.data(navigation.channels);
-
-            // pass page arguments
-            newWidget.attr('name', widgetName);
-            for (var param in newPage.args){
-                newWidget.data(param, newPage.args[param]);
-            }
-            return newWidget;
-        }
-
-        function getPageWidgetDiv(){
-            return $('div.widget', defaults.contentContainer).eq(0);
-        }
-
-        function getLayoutPath(pageId){
-            if (pageId == defaults.homeId){
-                return defaults.basePath;
+            newPage.path = parts[0];
+            newPage.id = pageId == '' ? pageId : statics.widgetPrefix + pageId;
+            if (pw.defined(parts[1])) {
+                newPage.arguments = mapFromString(parts[1]);
             } else {
-                return defaults.basePath + pageId;
+                newPage.arguments = {};
             }
+
+            return newPage;
         }
 
-        function loadPage($content) {
-            var 
-                name,
-                mountable
-            ;
-            defaults.contentContainer.html($content);
-            
-            mountable = getPageWidgetDiv();
-            name = mountable.attr('name');
+        function getPageWidget() {
+            return $('div.widget', content.container).eq(0);
+        }
 
-            navigation.currentLayout = name.replace(defaults.pagePrefix, '');
+        function mountPage($content, arguments) {
+            var 
+                widgetSelector = 'div.widget',
+                widgetMount,
+                name;
+
+            // get / set necessary data
+            $(widgetSelector, $content).addBack().data('arguments', arguments);
+            name = $(widgetSelector, $content).addBack().eq(0).attr('name');
+
+            // add to DOM
+            content.container.html($content);
+
+            if(layoutState.mountCache.indexOf(name) < 0) {
+                layoutState.mountCache.push(name);
+            }
+
             console.log('mounting widget: ' + name);
-
-            if (!navigation.mountCache[name]){
-                navigation.mountCache[name] = true; 
-            }
-
-            pw.mount(mountable);
-        }
-
-        function loadHome(argMap) {
-            // load initial content
-            var homeContent = $(defaults.homeContent);
-            homeContent.removeAttr('delayload');
-
-            for (var arg in argMap){
-                homeContent.data(arg, argMap[arg]);
-            }
-            loadPage(homeContent);
-        }
-
-        function parseUrl(e) {
             
-            var 
-                hashtag = window.location.hash, // get hash from url
-                newPage,
-                widgetToLoad
-            ;
-            console.debug('hash: "' + hashtag + '"');
+            if(layoutState.initialLoad){
+                pw.mount($(widgetSelector, content.container));
+            } else { 
+                // widget attributes may not be correct so loading will be delegated to mountAfterImport during onReadyExtend
+                $(widgetSelector, content.container).attr('delayload', 'true');
+            }
 
-            // if navigation is disabled, re enable and do not reload layout.
-            if (navigation.disabled){
-                enableHashNavigation();
+        }
+
+        function mountAfterImport(){
+            pw.mount($('div.widget', content.container).removeAttr("delayload"));
+        }
+
+        function loadHome(arguments) {
+            var toLoad = $(content.initial);
+            $('[delayload]', toLoad).addBack().removeAttr('delayload');
+            mountPage(toLoad, arguments);
+        }
+
+        function loadNewPage(pageToLoad) {
+            var newWidget = $('<div class="widget"></div>');
+
+            newWidget.data('portal-channels', channels);
+            newWidget.attr('name', pageToLoad.id);
+
+            mountPage(newWidget, pageToLoad.arguments);
+        }
+
+        function parseUrl(changeEvent) {
+            // if parsing is disabled, re enable and do not continue.
+            if (!layoutState.parsingEnabled) {
+                enableHashParsing();
                 return;
             }
+            if (layoutState.promptOnChangeRequest !== null) {
+                var leavingPage = confirmChange();
 
-            if (preventLoad.stopLoad) {
-                var 
-                    confirmation = confirm(preventLoad.unloadMessage),
-                    oldUrl = e.originalEvent.oldURL,
-                    oldHash = oldUrl.substring(oldUrl.indexOf('#') + 1)
-                ;
-                
-                // notify of response
-                pw.notifyChannelOfEvent(preventLoad.responseChannel, confirmation);
+                pw.notifyChannelOfEvent(layoutState.promptOnChangeRequest.responseChannel, leavingPage);
 
-                // stay on current page and reset hash
-                if (!confirmation){
-                    // disable hash load
-                    disableHashNavigation();
-                    // revert url
-                    window.location.replace(oldHash);
-
-                    // do not continue
+                if (!leavingPage){
+                    var oldURL = changeEvent.originalEvent.oldURL;
+                    // not changing. Revert Url and do not continue
+                    disableHashParsing();
+                    window.location.replace(oldURL.substring(oldURL.indexOf('#')));
                     return;
                 }
+                // changing, remove prompt
+                layoutState.promptOnChangeRequest = null;
             }
 
-            // enforce leading /
-            if (hashtag.substring(0,defaults.basePath.length) !== defaults.basePath){
-                // disable navigation so content isn't loaded twice
-                disableHashNavigation();
-                window.location.replace(defaults.basePath + hashtag.replace('#',''));
-                hashtag = defaults.basePath + hashtag.replace('#','');
+            var hash = window.location.hash;
+            console.log('hash: "' + hash + '"');
+            var pageToLoad;
+
+            // enforce leading base path
+            if (hash.substring(0, statics.basePath.length) !== statics.basePath) {
+                var newHash = statics.basePath + hash.replace('#', '');
+                disableHashParsing(); // so content doesn't get loaded twice
+
+                window.location.replace(newHash);
+                hash = newHash;
             }
 
-            if (hashtag !== defaults.basePath) {
-                // load page
-                newPage = parseHashString(hashtag);
-                // update nav state;
-                navigation.pageArgs = newPage.args;
-                if (pw.defined(newPage.id) && newPage.id.length > 0) {
-                    // create widget div
-                    widgetToLoad = preparePage(newPage);
-                    // load page
-                    loadPage(widgetToLoad);
-                } else {
-                    loadHome(newPage.args);
-                }
+            pageToLoad = parseHash(hash);
+            layoutState.page = pageToLoad;
+
+            if (pageToLoad.id == '' && !layoutState.initialLoad) {
+                // landing page on initial page load
+                var homeWidgets = $('div.widget', content.container);
+                homeWidgets.data('arguments', pageToLoad.arguments);
+                homeWidgets.data('portal-channels', channels);
+                $('[delayload]', content.container).removeAttr('delayload');
+            } else if (pageToLoad.id == '') {
+                loadHome(pageToLoad.arguments);
             } else {
-                // load home
-                loadHome();
+                loadNewPage(pageToLoad);
             }
+
         }
 
-        function changePageArgs(event){
-            var 
-                args = event.args,
-                $widgetToUpdate = getPageWidgetDiv(),
-                newPage = {
-                    pageArgs : paramStringFromMap(args)
-                },
-                currentArgs = navigation.pageArgs
-            ;
+        /* 
+            event handlers
+        */
 
-            // retain existing parameters and add/overwrite others
-            if (event.updateExisting){
-                for (var param in args) {
-                    currentArgs[param] = args[param];
-                }
-                newPage.pageArgs = paramStringFromMap(currentArgs);
-                args = currentArgs;
-            }
-
-            if (!event.reloadPage){
-                disableHashNavigation();
-                for (var param in args){
-                    $widgetToUpdate.data(param, args[param]);
-                }
-                navigation.pageArgs = args;
-            }
-
-            changePage(newPage);
-        }
-
-        function changePage(newPage) {
-            var 
-                path,
+        function setPageArgs(event) {
+            var args = event.args,
+                pageWidget,
                 argString,
-                currentHash = window.location.hash;
+                newPage = layoutState.page,
+                currentHash = window.location.hash
             ;
+            if (pw.defined(args)) {
+                pageWidget = getPageWidget();
 
-            if (!pw.defined(newPage.pageId)){
-                newPage.pageId = navigation.currentLayout;
-            }
-            if(!pw.defined(newPage.pageArgs)){
-                newPage.pageArgs = '';
-            }
-            path = getLayoutPath(newPage.pageId);
-            argString = (newPage.pageArgs === '') ? '' : '?' + newPage.pageArgs;
+                // retain existing parameters and add/overwrite others
+                if (event.updateExisting) {
+                    for (var param in args) {
+                        newPage.arguments[param] = args[param];
+                    }
+                    args = newPage.arguments;
+                }
 
-            if (currentHash == path + argString){
-                // hash won't change so just re enable navigation if disabled
-                enableHashNavigation();
-                return;
-            }
+                if (event.reloadPage === false) {
+                    disableHashParsing();
+                    pageWidget.data('arguments', args);
+                    layoutState.page.arguments = args;
+                }
+                argString = paramStringFromMap(args);
+                argString = '' ? '' : '?' + argString;
 
-            window.location.hash = path + argString;
+                if (currentHash == newPage.path + argString) {
+                    // hash won't change so just re enable navigation if disabled
+                    enableHashParsing();
+                    return
+                }
+                window.location.hash = newPage.path + argString;
+            }
         }
 
         function loadFailed(name) {
-            var failedWidget;
-            if (navigation.mountCache[name]){
-                navigation.mountCache = false;
-                failedWidget = getPageWidgetDiv().filter('[name="' + name + '"]');
-                failedWidget.hide().after('<div class="alert alert-info">' + defaults.errorMessage + '</div>');
+            var failedWidget, 
+                cacheIndex = layoutState.mountCache.indexOf(name);
+            if (cacheIndex >= 0){
+                layoutState.mountCache.splice(cacheIndex,1);
+                failedWidget = getPageWidget().filter('[name="' + name + '"]');
+                failedWidget.hide().after('<div class="alert alert-info">' + statics.errorMessage + '</div>');
             }
         }
 
-        function setPreventLoad(preventRequest) {
-            var defaultMessage = 'You are about to leave the current page, any data you have entered may not be saved. Do you wish to continue?'
-            preventLoad.stopLoad = preventRequest.preventLoad;
-            if (preventRequest.preventLoad){
-                preventLoad.unloadMessage   = pw.defined(preventRequest.message) ? preventRequest.message : defaultMessage;
-                preventLoad.responseChannel = preventRequest.responseChannel;
+        function setPreventLoadRequest(request) {
+            if (request.preventLoad === true) {
+                if (!pw.defined(request.message)){
+                    request.message = 'You are about to leave the current page, any data you have entered may not be saved. Do you wish to continue?'
+                }
+                layoutState.promptOnChangeRequest = request;
             } else {
-                preventLoad.unloadMessage = defaultMessage;
-                preventLoad.responseChannel = null;
+                layoutState.promptOnChangeRequest = null;
             }
+        }
+
+        function handleEvent(channel, event){
+            switch (channel) {
+                case channels.setPageArgs:
+                    setPageArgs(event);
+                    break;
+                case channels.gotoHomePage:
+                    window.location.hash = '';
+                    break;
+                case channels.pageLoadFailed:
+                    loadFailed(event.name);
+                    break;
+                case channels.promptOnPageChange:
+                    setPreventLoadRequest(event);
+                    break;
+            }
+            
+        }
+
+        function init(container, portalChannels) {
+            // initialise variables
+            content.container = container;
+            content.initial   = container.html();
+            channels          = portalChannels;
+            enableHashParsing();
+
+            // hook up page load handler and load page
+            $(window).on('hashchange', parseUrl);
+            parseUrl();
+            layoutState.initialLoad = true;
         }
 
         return {
             init : init,
-            parseUrl : parseUrl,
-            changePageArgs : changePageArgs,
-            changePage : changePage,
-            loadFailed : loadFailed,
-            setPreventLoad : setPreventLoad
+            mountAfterImport: mountAfterImport,
+            handleEvent: handleEvent
         }
     }
 }

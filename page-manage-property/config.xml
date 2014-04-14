@@ -6,7 +6,6 @@
 		<xsl>manage</xsl>
 	</parameters>
 	<attributes>
-		<displayHeader>false</displayHeader>
 		<js>manage.js</js>
 	</attributes>
 	<filters>

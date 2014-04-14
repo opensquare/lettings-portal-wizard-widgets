@@ -7,10 +7,6 @@ function Widget_portal_steps(){
     *   Remember to disable again when appropriate
     */
 
-    this.failedToLoad          = false;
-    this.defaultUrl            = 'portal-steps-response';
-    this.stepDescription;
-
     var
         updatePromptChannel,
         stepSwitcher,
@@ -18,33 +14,44 @@ function Widget_portal_steps(){
         _this = this
     ;
 
-    // currently loads file from widgets/xmldata/{responsePath}.xml 
-    this.initExtend = function() {
-        var 
-            responsePath = this.parameterMap.responsePath,
-            entity       = this.parameterMap.entity,
-            path         = this.parameterMap.path
-        ;
+    this.prepareParams = function(display, pageData) {
+        // forms name of xml file to display. Needs updating when connecting to back end
+        
+        var contentMap = {
+            user:     'page-user-profile',
+            property: 'page-property-progress',
+            tenancy:  'page-tenancy-progress'
+        },
+        id = pw.defined(pageData.identifier) ? '-' + pageData.identifier : '';
 
-        // if responsePath isn't set but entity and path is, form responsePath and add to parameter map
-        if (!pw.defined(responsePath) && pw.defined(entity) && pw.defined(path)){
-            this.parameterMap.responsePath = path + '-' + entity;
-        } else if (!pw.defined(responsePath)){
-            this.parameterMap.responsePath = this.defaultUrl;
+        this.parameterMap.path = contentMap[display] + id;
+
+        if(pw.defined(pageData.arguments.step)) {
+            this.parameterMap.step = pageData.step;
         }
+    }
 
-        // add listener for impending widget unload via hash change
+    this.initExtend = function() {
+        // get page data from widget
+        var 
+            displayType = this.$widgetDiv.data('display'),
+            pageData    = this.$widgetDiv.data('page-data');
+        
+        // prepare request parameters
+        this.prepareParams(displayType, pageData);
+
+        // prepare listeners
         unloadChannel = this.name + '.unloadResult'
         pw.addListenerToChannel(this, unloadChannel);
 
-        // initialise step change handler
-        stepSwitcher = new StepSwitcher;
-        stepSwitcher.init(unloadChannel, this.$widgetDiv.data('ch-page-args'));
+        // initialise step change controller
+        if (typeof pageData.portalChannels == 'object'){
+            stepSwitcher = new StepSwitcher();
+            stepSwitcher.init(unloadChannel, pageData.portalChannels);
+        }
     }
 
 	this.onReadyExtend = function() {
-        // add icons and resize step panels
-        //this.formatSteps();
 
         // add click handler to steps
         this.addHandlers();
@@ -67,9 +74,7 @@ function Widget_portal_steps(){
 
     this.addHandlers = function() {
         $('a.step-link', this.$widgetDiv).click(function(){
-            var 
-                changing
-            ;
+            var changing;
             
             if ($(this).data('disabled')) {
                 return false;
@@ -104,47 +109,6 @@ function Widget_portal_steps(){
         pw.addListenerToChannel(_this, updatePromptChannel);
     }
 
-    this.onLoadFailure = function() {
-        // when plugged into ESB should display an error message, not load generic page
-        var failedUrl = this.parameterMap.responsePath;
-        console.debug('failed to load ' + failedUrl);
-        // guard against recursion
-        if (!this.failedToLoad){
-            this.failedToLoad = true;
-            this.loadGenericResponse();
-            this.addMessage('data file ' + failedUrl + ' not available. Displaying generic step page');
-        } else {
-            this.clearMessages();
-            this.setContent('Unable to load entity response data, ');
-        }
-    }
-
-    this.loadGenericResponse = function() {
-        this.parameterMap.responsePath = this.defaultUrl;
-        this.loadHTML();
-    }
-
-    this.formatSteps = function(){
-        // add tick to completed steps
-        $('.steps li.complete h3').prepend('<span class="glyphicon glyphicon-ok"></span> ');
-
-        // add cross to incomplete steps
-        $('.steps li.incomplete h3').prepend('<span class="glyphicon glyphicon-remove"></span> ');
-
-        // count number of steps 
-        var countChildElem = $('.steps', this.$widgetDiv).eq(0).children().size();
-
-        // divide widget width with number of steps
-        var windowWidth = $('.widget-content' ,this.$widgetDiv).width() - 35; // make allowance for scroll bar
-
-        // get step width
-        var stepWidth = windowWidth / countChildElem;
-
-        // make each li width window width divided by number of steps 
-        $('.steps li').css('width', Math.floor(stepWidth) + 'px');
-
-    }
-
     this.handleEvent = function(channel, event){
         if (channel == updatePromptChannel && pw.defined(event.enabled)) {
             // update to enable/disable prompt
@@ -156,14 +120,14 @@ function Widget_portal_steps(){
     }
 
     // keep step handling functionality separate
-    function StepSwitcher(hashResponseChannel) {
+    function StepSwitcher() {
         var 
             channels = {
                 load : 'step.load',
                 preventHashChange : 'portal.preventPageLoad',
                 stepUnload : '',
                 hashResponseChannel : '',
-                changeArgs : ''
+                portalChannels : {}
             },
             promptOnChange = false,
             confirmText = 'You are about to navigate away from the current step. Any changes you have made may be lost.'
@@ -195,8 +159,8 @@ function Widget_portal_steps(){
         }
 
         function updateStepPageArg(number){
-            if (pw.defined(channels.changeArgs)){
-                pw.notifyChannelOfEvent(channels.changeArgs, {
+            if (pw.defined(channels.portalChannels.setPageArgs)){
+                pw.notifyChannelOfEvent(channels.portalChannels.setPageArgs, {
                     args : {
                         step : number,
                     },
@@ -260,9 +224,9 @@ function Widget_portal_steps(){
             }
         }
 
-        function init(hashResponseChannel, changeArgsChannel){
+        function init(hashResponseChannel, portalChannels){
             channels.hashResponseChannel = hashResponseChannel;
-            channels.changeArgs = changeArgsChannel;
+            channels.portalChannels = portalChannels;
         }
 
         // expose public functions
