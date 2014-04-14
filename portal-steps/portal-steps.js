@@ -22,12 +22,17 @@ function Widget_portal_steps(){
             property: 'page-property-progress',
             tenancy:  'page-tenancy-progress'
         },
-        id = pw.defined(pageData.identifier) ? '-' + pageData.identifier : '';
+        id = '';
+
+        if (pw.defined(pageData.identifier)) {
+            id = '-' + pageData.identifier;
+            this.parameterMap.entity = pageData.identifier;
+        }
 
         this.parameterMap.path = contentMap[display] + id;
 
         if(pw.defined(pageData.arguments.step)) {
-            this.parameterMap.step = pageData.step;
+            this.parameterMap.step = pageData.arguments.step;
         }
     }
 
