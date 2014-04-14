@@ -29,7 +29,7 @@
 		 });
 
 		/* temporary occupation lookup */
-		function populateOccupation(){
+		/* function populateOccupation(){
 			var $lookup = $("#input_occupation"),
 			$occSelect = $("#occ_lookup"),
 			occList = $("<datalist></datalist>").attr("id", "occDatalist");
@@ -45,22 +45,39 @@
 			})
 		}
 
-		populateOccupation();
+		populateOccupation(); */
 
 	</script>
 
 	<div id="customerDetails">
 
 		<div class="field form-group">
-
-			<label for="input_title" class="col-sm-3 control-label">Name</label>
-			
+			<label for="input_title" class="col-sm-3 control-label">Title</label>
 			<div class="col-sm-6">
 				<select class="form-control" id="input_title" name="title" rf.source="../common-forms/resources/titles.txt" rf.preselectFirstOption="true">
 					<option disabled selected>Title</option>
 				</select>
+			</div>
+		</div>
+
+		<div class="field form-group">
+			<label for="input_firstName" class="col-sm-3 control-label">First Name</label>
+			<div class="col-sm-6">
 				<input id="input_firstName" type="text" name="firstName" placeholder="First Name" class="form-control" />
-				<input id="input_surname" type="text" name="surname" rf.validation="required" placeholder="Surname" class="form-control" />
+			</div>
+		</div>
+
+		<div class="field form-group">
+			<label for="input_middleName" class="col-sm-3 control-label">Middle Name</label>
+			<div class="col-sm-6">
+				<input id="input_middleName" type="text" name="middleName" rf.validation="required" placeholder="Middle Name" class="form-control" />
+			</div>
+		</div>
+
+		<div class="field form-group">
+			<label for="input_surName" class="col-sm-3 control-label">Surname</label>
+			<div class="col-sm-6">
+				<input id="input_surName" type="text" name="surname" rf.validation="required" placeholder="Surname" class="form-control" />
 			</div>
 		</div>
 
@@ -109,63 +126,6 @@
 			</div>
 		</div>
 
-		<!-- <div class="field form-group">
-			<input type="hidden" name="occupationCode" />
-
-			<label for="input_occupation" class="col-sm-3 control-label">Primary occupation</label>
-			
-			<div class="col-sm-6">
-				<input id="input_occupation" class="form-control" type="search" autocomplete="off" list="occDatalist" name="occupation" rf.validation="required"  rf.valueFromSource="../common-forms/resources/occupations.csv"/>
-			</div>
-		</div>
-
-	    <div style="display: none">
-	        <select id="occ_lookup" rf.source="../common-forms/resources/occupations.csv"/>
-		</div> -->
-
-		<!-- <div class="field form-group">
-			<label for="input_maritalStatusCode" class="col-sm-3 control-label">Marital status</label>
-
-			<div class="col-sm-6">
-				<select id="input_maritalStatusCode" class="form-control" name="maritalStatus" rf.validation="required" rf.source="../common-forms/resources/maritalStatus.csv" rf.preselectFirstOption="true">
-					<option disabled selected/>
-				</select>
-			</div>
-		</div> -->
-
-		<!-- <div class="field form-group">
-			<div class="col-sm-3"></div>
-			<div class="col-sm-6">
-				<h4>UK residency</h4>
-			</div>
-		</div>
-
-		<div class="field form-group">
-
-			<label class="forRadio col-sm-3 control-label" for="input_ukResidentMoreThan5Years">More than 5 years</label>
-
-			<div class="col-sm-6">
-				<input id="input_ukResidentMoreThan5Years" type="checkbox" name="ukResidentMoreThan5Years"/>
-			</div>
-
-		</div>
-
-		<div rf.includeIf="{ fields.ukResidentMoreThan5Years.value == false }" class="form-group">
-			<input type="hidden" name="ukResidentYears" rf.calculated="{ if (fields.ukResidentMoreThan5Years.value == true) { 10; } else if (fields.ukResidentSinceMonthCode.value && fields.ukResidentSinceYear.value) { new Date(new Date() - moment('01/' + fields.ukResidentSinceMonthCode.value + '/' + fields.ukResidentSinceYear.value, 'DD/MM/YYYY')).getFullYear() - 1970 } }"/>
-
-			<label for="input_ukResidentSinceMonthCode" class="col-sm-3 control-label">Or since</label>
-
-			<div class="col-sm-6">
-				<select id="input_ukResidentSinceMonthCode" class="dateSel form-control" name="ukResidentSinceMonthCode" rf.includeIf="{ fields.ukResidentMoreThan5Years.value == false }" rf.source="../common-forms/resources/months.csv" rf.preselectFirstOption="true">
-					<option disabled selected/>
-				</select>
-				<select id="input_ukResidentSinceYear" class="dateSel form-control" name="ukResidentSinceYear" rf.includeIf="{ fields.ukResidentMoreThan5Years.value == false }" rf.rangeStart="new Date().getFullYear()" rf.rangeEnd="new Date().getFullYear() - 5" rf.preselectFirstOption="true">
-					<option disabled selected/>
-				</select>
-			</div>
-
-		</div> -->
-
 		<div class="field findAddress form-group">
 		<!--input id="findAddressProxy" type="proxy" style="display:none" rf.source="http://integration.osldev.net/itb-quotes/postcodeLookup" /-->
 			
@@ -196,25 +156,54 @@
 			</div>
 		</div>
 		
-		<!-- <div class="field form-group">
-			<label class="col-sm-3 control-label">Do you own your own home</label>
-
-			<div class="col-sm-6">
-				<div class="radio">
-					<label for="input_ownHome_yes">
-						<input id="input_ownHome_yes" class="" type="radio" name="ownHome" value="yes" rf.validation="required"/>
-						Yes
-					</label>
-				</div>
-				<div class="radio">
-					<label for="input_ownHome_no">
-						<input id="input_ownHome_no" type="radio" name="ownHome" value="no"/>
-						No
-					</label>
-				</div>
-
+		<div class="field form-group">
+			<label for="input_homePhone" class="col-sm-3 control-label">Home Telephone</label>
+			<div class="col-sm-3">
+				<input id="input_homePhone" type="tel" name="homePhone" rf.validation="required" placeholder="Home Telephone" class="form-control" />
 			</div>
-		</div> -->
+		</div>
+
+		<div class="field form-group">
+			<label for="input_workPhone" class="col-sm-3 control-label">Work Telephone</label>
+			<div class="col-sm-3">
+				<input id="input_workPhone" type="tel" name="workPhone" rf.validation="required" placeholder="Work Telephone" class="form-control" />
+			</div>
+		</div>
+
+		<div class="field form-group">
+			<label for="input_mobilePhone" class="col-sm-3 control-label">Mobile</label>
+			<div class="col-sm-3">
+				<input id="input_mobilePhone" type="tel" name="mobilePhone" rf.validation="required" placeholder="Mobile" class="form-control" />
+			</div>
+		</div>
+
+		<div class="field form-group">
+			<label for="input_faxNumber" class="col-sm-3 control-label">Fax Number</label>
+			<div class="col-sm-3">
+				<input id="input_faxNumber" type="tel" name="faxNumber" rf.validation="required" placeholder="Fax Number" class="form-control" />
+			</div>
+		</div>
+
+		<div class="field form-group">
+			<label for="input_emailAddress" class="col-sm-3 control-label">Email Address</label>
+			<div class="col-sm-6">
+				<input id="input_emailAddress" type="email" name="emailAddress" rf.validation="required" placeholder="Mobile" class="form-control" />
+			</div>
+		</div>
+
+		<div class="field form-group">
+			<label for="input_NRLNumber" class="col-sm-3 control-label">NRL Number</label>
+			<div class="col-sm-6">
+				<input id="input_NRLNumber" type="number" name="NRLNumber" rf.validation="required" placeholder="NRL Number" class="form-control" />
+			</div>
+		</div>
+
+		<div class="field form-group">
+			<label for="input_depositSchemeDetails" class="col-sm-3 control-label">Deposit Scheme Details</label>
+			<div class="col-sm-6">
+				<input id="input_depositSchemeDetails" type="email" name="depositSchemeDetails" rf.validation="required" placeholder="Deposit Scheme Details" class="form-control" />
+			</div>
+		</div>
 
 	</div>
 

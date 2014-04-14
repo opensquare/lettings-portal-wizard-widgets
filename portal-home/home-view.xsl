@@ -10,7 +10,7 @@
 						Some text here.
 					</p>
 					<p>
-						<a href="#">Edit Details</a>
+						<a href="portal#/user-profile?content=user-profile">Edit Details</a>
 					</p>
 					<!-- <div class="widget about" name="portal-panel"> 
 						<xsl:attribute name="params">uids=about&amp;show=summary&amp;esb.action=tile-data</xsl:attribute>

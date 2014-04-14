@@ -32,6 +32,7 @@
                     </li>
                     <li>
                         <a href="#">
+                            <!-- construct URL using property step and property id -->
                             <xsl:value-of select="Progress/NextTenancyStep"/>
                         </a>
                     </li>

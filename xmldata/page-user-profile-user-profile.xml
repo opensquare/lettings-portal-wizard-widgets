@@ -1,8 +1,8 @@
 <response>
     <entity type="main">
-        <description>About Me</description>
+        <description>User Details</description>
         <completed>2</completed>
-        <total>4</total>
+        <total>3</total>
     </entity>
     <entity type="step" active="active">
         <title>Login Details</title>
@@ -21,7 +21,7 @@
         <widgetParams>flow=user-profile-details-flow</widgetParams>
     </entity>
     <entity type="step" active="">
-        <title>Contact Details</title>
+        <title>Notification Methods</title>
         <!-- <description>Contact details and preferred contact methods</description> -->
         <step>3</step>
         <status>incomplete</status>

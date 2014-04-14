@@ -11,11 +11,11 @@
   margin-right: 1%;
 }
 
-#input_title,
+/* #input_title,
 #input_firstName,
 #input_surname {
   width: 39%;
-}
+} */
 
 #input_dateOfBirthDay,
 #input_dateOfBirthMonth,

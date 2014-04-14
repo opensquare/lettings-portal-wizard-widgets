@@ -26,8 +26,8 @@
             <StatusDescription>2 Bed Flat</StatusDescription>
             <Progress>
                 <PropertyStatus>entered</PropertyStatus>
-                <NextPropertyStep>Complete Tenancy Agreement</NextPropertyStep>
-                <NextTenancyStep>Enter Personal Details</NextTenancyStep>
+                <NextPropertyStep>3</NextPropertyStep><!-- numeric to be used on the URL -->
+                <NextTenancyStep>2</NextTenancyStep>
                 <Advertised>true</Advertised>
                 <LandlordCompletion>75</LandlordCompletion>
                 <TenantCompletion>50</TenantCompletion>
