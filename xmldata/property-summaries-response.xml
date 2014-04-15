@@ -2,12 +2,12 @@
     <PropertySummaries>
 
         <PropertySummary>
-            <PropertyId>12345</PropertyId>
+            <PropertyId>12358453</PropertyId>
             <Description>110 High Street</Description>
             <StatusDescription>2 Bed Flat</StatusDescription>
             <Progress>
                 <PropertyStatus>entered</PropertyStatus>
-                <NextPropertyStep>int</NextPropertyStep>
+                <NextPropertyStep>1</NextPropertyStep>
                 <NextTenancyStep>int</NextTenancyStep>
                 <Advertised>true</Advertised>
                 <LandlordCompletion>40</LandlordCompletion>
@@ -21,12 +21,12 @@
         </PropertySummary>
 
         <PropertySummary>
-            <PropertyId>34556</PropertyId>
+            <PropertyId>12358453</PropertyId>
             <Description>30 Main Road</Description>
             <StatusDescription>2 Bed Flat</StatusDescription>
             <Progress>
                 <PropertyStatus>entered</PropertyStatus>
-                <NextPropertyStep>3</NextPropertyStep><!-- numeric to be used on the URL -->
+                <NextPropertyStep>4</NextPropertyStep><!-- numeric to be used on the URL -->
                 <NextTenancyStep>2</NextTenancyStep>
                 <Advertised>true</Advertised>
                 <LandlordCompletion>75</LandlordCompletion>
