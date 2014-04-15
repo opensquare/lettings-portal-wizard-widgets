@@ -5,6 +5,7 @@
     <xsl:template match="PropertySummary">
         
         <div class="property clearfix">
+            <xsl:variable name="propertyId" select="PropertyId"/>
             <xsl:variable name="propertyImage" select="PropertyThumb"/>
             <xsl:variable name="landlordProgress" select="Progress/LandlordCompletion"/>
             <xsl:variable name="tenantProgress" select="Progress/TenantCompletion"/>
@@ -26,8 +27,9 @@
             <div class="property-actions">
                 <ul>
                     <li>
-                        <a href="#">
-                            <xsl:value-of select="Progress/NextPropertyStep"/>
+                        <a>
+                            <xsl:attribute name="href">portal#/property-progress?property=<xsl:value-of select="$propertyId"/>&amp;step=<xsl:value-of select="Progress/NextPropertyStep"/></xsl:attribute>
+                            TEST
                         </a>
                     </li>
                     <li>
