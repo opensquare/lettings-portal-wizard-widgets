@@ -1,17 +1,16 @@
 {
-  docBase: "/root",
+  docBase: "/user",
   formLists: {
     main: [
       {
         id: "edit",
         url: "user-profile-forms.html",
         actions: [ "next" ]
-      } /*,
+      },
       {
-        id: "view",
-        url: "filename.html",
-        actions: [ "back"]
-      } */
+        id: "welcome",
+        url: "../common-forms/common-welcome-page.html"
+      }
     ]
   }
 }

@@ -1,0 +1,6 @@
+<user>
+	<email>user@domain.com</email>
+	<password>password</password>
+	<input_new_password>newpassword</input_new_password>
+	<input_confirm_new_password>newpassword</input_confirm_new_password>
+</user>

@@ -1,0 +1,26 @@
+<user>
+	<firstName>First Name</firstName>
+	<middleName>Middle Name</middleName>
+	<surname>Surname</surname>
+	<age>21</age>
+	<dob>1994-05-04</dob>
+	<gender>Male</gender>
+	<address>
+		<line1>1 Line Address</line1>
+		<line2>2nd Line</line2>
+		<line3>Town</line3>
+		<line4>County</line4>
+		<postcode>GU15 2ND</postcode>
+	</address>
+	<homePhone>222</homePhone>
+	<workPhone>333</workPhone>
+	<mobilePhone>444</mobilePhone>
+	<faxNumber>555</faxNumber>
+	<emailAddress>66</emailAddress>
+	<NRLNumber>770</NRLNumber>
+	<depositSchemeDetails>888</depositSchemeDetails>
+	<title>Mr</title>
+	<dateOfBirthDay>03</dateOfBirthDay>
+	<dateOfBirthMonth>04</dateOfBirthMonth>
+	<dateOfBirthYear>1993</dateOfBirthYear>
+</user>
