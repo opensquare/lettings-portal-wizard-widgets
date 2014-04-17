@@ -1,7 +1,7 @@
 <widget>
 	<type>internalPage</type>
 	<parameters>
-		<url>user-profile-forms.html</url>
+		<url>user-profile-forms.jsp</url>
 	</parameters>
 	<attributes>
 		<page.title>Account Details</page.title>
