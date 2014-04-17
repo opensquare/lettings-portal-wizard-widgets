@@ -46,6 +46,12 @@
 		}
 
 		populateOccupation(); */
+		rf.onFormLoad(function(){
+			if ('{{//address/line1}}' != '') {
+				$(".addressFound").show();
+				$(".findAddress").hide();
+			}
+		})
 
 	</script>
 

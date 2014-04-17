@@ -20,7 +20,7 @@ function Widget_user_profile_forms() {
 		}
 
 		this.activeFlow = 'widgets/user-profile-forms/' + flowName + '.js';
-		var initData = '<user><userId>' + userAT + '</userId><userType>' + userTp + '</userType><type>' + context + '</type></user>';
+		var initData = '<user><userId>' + userAT + '</userId><userTypeId>' + userTp + '</userTypeId><type>' + context + '</type></user>';
 		
 		rf.loadFlow(this.activeFlow, $('.rhinoforms-user-profile-forms-formContainer', this.$widgetDiv), initData);
 
