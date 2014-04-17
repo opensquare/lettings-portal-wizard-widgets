@@ -1,21 +1,23 @@
 <form class="user-profile-form form-horizontal" rhinoforms="true">
 
+	<input type="hidden" name="userTypeId" value="Landlord"/>
+	<input type="hidden" name="userId" value="value"/>
+
 	<div id="accountDetails">
 
 		<div class="field form-group">
-			<div class="checkbox">
-				<label>
-					<input type="checkbox"> Email
-				</label>
-			</div>
-			<div class="checkbox">
-				<label>
-					<input type="checkbox"> Text Message
-				</label>
+			<div class="col-sm-3" class="col-sm-3 control-label">Email</div>
+			<div class="col-sm-6">
+				<input type="checkbox" name="email">
 			</div>
 		</div>
 
-		
+		<div class="field form-group">
+			<div class="col-sm-3" class="col-sm-3 control-label">SMS</div>
+			<div class="col-sm-6">
+				<input type="checkbox" name="sms">
+			</div>
+		</div>		
 
 	</div>
 

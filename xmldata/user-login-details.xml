@@ -1,4 +1,6 @@
 <user>
+	<userTypeId>Landlord</userTypeId>
+	<userId>value</userId>
 	<email>user@domain.com</email>
 	<password>password</password>
 	<input_new_password>newpassword</input_new_password>

@@ -1,4 +1,6 @@
 <user>
+	<userTypeId>Landlord</userTypeId>
+	<userId>value</userId>
 	<firstName>First Name</firstName>
 	<middleName>Middle Name</middleName>
 	<surname>Surname</surname>
