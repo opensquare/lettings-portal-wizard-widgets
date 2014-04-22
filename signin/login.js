@@ -26,6 +26,13 @@ function Widget_signin() {
 			;
 			$("#formSet").attr("href", formSet);
 		});
+		$("#formSet").click(function(event) {
+			var 
+				register_email = document.getElementById('register_email').value,
+				formSet = hash + "-registration" + '?email=' + register_email
+			;
+			$(this).attr("href", formSet);
+		});
 		
 	}
 		
