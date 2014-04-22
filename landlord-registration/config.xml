@@ -6,7 +6,7 @@
 	</parameters>
 	<attributes>
 		<displayheader>false</displayheader>
-		<css>landlord-forms.css</css>
+		<css>css/landlord-forms.css</css>
 		<js>landlord-forms.js</js>
 	</attributes>
 </widget>

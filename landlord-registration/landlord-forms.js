@@ -7,7 +7,7 @@ function Widget_landlord_registration() {
     // remove when plugged in to esb
     var tempInitData = '<root><esb><username>activated@account.com</username></esb></root>';
 
-    if(queryURL()['a'] == 'true' && queryURL['uid'] != ''){
+    if(queryURL()['a'] == 'true' && queryURL['u'] != ''){
         rf.loadFlow('widgets/' + this.name + '/landlord-activate-flow.js', formContainer, tempInitData);
     } else {
         rf.loadFlow('widgets/' + this.name + '/landlord-forms-flow.js', formContainer);

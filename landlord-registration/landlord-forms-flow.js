@@ -1,58 +1,32 @@
 {
-  docBase: "/root",
+  docBase: "/register",
   defaultInitalData: "new-landlord-initial-data.xml",
   formLists: {
     main: [
-    /*
-     // call to esb to check availability of email
-     {
-        id: "emailcheck",
-        url: "c-email.html",
-        actions: [
-          {
-            name: "next",
-            submission: {
-              url: "{{$email-check}}",
-              data: "[dataDocument]"
-            },
-            method: "post",
-            resultInsertPoint: "/root/esb"
-          }
-        ]
-     },
-    */
       {
         id: "landlord",
         url: "1-landlord.html",
         actions: [ 
           {
-            name: "next"/*,
+            name: "next",
             submission: {
-              url: "{{$email-check}}",
-              data: "[dataDocument]"
+              url: "{{$register-url}}",
+              data: {
+                postParam: "[dataDocument]",
+                paramToEcho: "postParam",
+                contentType: "text/xml"
+              },
+              method: "post",
+              resultInsertPoint: "/register/create"
             },
-            method: "post",
-            resultInsertPoint: "/root/esb"*/
           }
         ]
       },
       {
-        id: "register",
-        url: "../common-forms/common-welcome-page.html",
-        actions: [ "back",
-          {
-            name: "next",
-            submission: {
-              url: "{{$script-runner-url}}",
-              data: {
-                script: "Lettings/script/createLandlordFromFormData.py",
-                data: "[dataDocument]"
-              },
-              method: "post",
-              resultInsertPoint: "/root/pact"
-            }
-          }
-        ]},
+        id: "register-check",
+        url: "../common-forms/register-check.html",
+        actions: ["next", "back"]
+      },
       {
         id: "welcome",
         url: "../common-forms/common-welcome-page.html"

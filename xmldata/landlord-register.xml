@@ -1,0 +1,9 @@
+<response>
+    <createUser>
+        <success>true</success>
+        <!-- 
+        <success>false</success>
+        <emailInUse>true</emailInUse>
+         -->
+    </createUser>
+</response>

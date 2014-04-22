@@ -1,0 +1,16 @@
+<script>
+    rf.onFormLoad(function() {
+        if ("{{//createUser/success}}" === "true") {
+            $("[rf\\.action=next]").click();
+        } else {
+            $("[rf\\.action=back]").click();
+        }
+    })
+</script>
+<form rhinoforms="true">
+    <div class="spin-loading"><div class="load-spin"></div><div class="load-text">loading</div></div>
+    <div class="navigation" style="">
+        <input type="submit" rf.action="next" value="Next">
+        <input type="submit" rf.action="back" value="Back">
+    </div>
+</form>
