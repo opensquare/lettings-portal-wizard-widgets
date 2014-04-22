@@ -4,6 +4,7 @@
         <target>manage-property?property=65955</target>
         <completed>1</completed>
         <total>5</total>
+        <stepType>property</stepType>
     </entity>
     <entity type="step" active="">
         <title>Property Details</title>

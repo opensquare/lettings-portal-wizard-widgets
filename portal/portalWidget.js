@@ -28,6 +28,7 @@ function Widget_portal(){
 
     this.onReadyExtend = function() {
         this.pageLoader.mountAfterImport();
+        pw.portalChannels = this.channels;
     }
 
     this.handleEvent = function(channel, event) {

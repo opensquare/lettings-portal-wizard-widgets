@@ -1,0 +1,11 @@
+<widget>
+    <type>httpRequestLayout</type>
+    <parameters>
+        <method>GET</method>
+        <xsl>summary</xsl>
+        <url>widgets/xmldata/{path}.xml</url>
+    </parameters>
+    <attributes>
+        <js>step-summary.js</js>
+    </attributes>
+</widget>

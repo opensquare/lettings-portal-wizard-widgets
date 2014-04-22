@@ -56,6 +56,16 @@
                 </xsl:attribute>
             </div>
         </div>
+        <div class="widget" name="portal-step-summary" delayload="true">
+            <xsl:attribute name="params">
+                <xsl:text>stepType=</xsl:text>
+                <xsl:value-of select="//entity[@type='main']/stepType"/>
+                <xsl:if test="'{entity}' != concat('{entity', '}')">
+                    <xsl:text>&amp;entity=</xsl:text>
+                    <xsl:value-of select="'{entity}'"/>
+                </xsl:if>
+            </xsl:attribute>
+        </div>
     </xsl:template>
 
     <xsl:template match="entity[@type='step']">

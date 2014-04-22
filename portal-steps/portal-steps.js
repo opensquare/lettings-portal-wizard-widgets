@@ -2,23 +2,24 @@ function Widget_portal_steps(){
 
     /**
     *   Widget can prompt users before unloading widget, by default this is turned off. To enable/disable at any point from the loaded widget, 
-    *   send a channel notification in the following format, replacing loadedWidgetName with the name of the loaded widget:
-    *   pw.notifyChannelOfEvent('loadedWidgetName.promptOnUnload', {enabled: true}) // pass false to disable
+    *   send a channel notification in the following format:
+    *   pw.notifyChannelOfEvent('step.promptOnUnload', {enabled: true}) // pass false to disable
     *   Remember to disable again when appropriate
     */
 
     this.displayType    = ''; // determines what set of steps to load
-    this.activeStep     = null; // jQuery object of current active step
     this.portalChannels = {}; // channels used to send notifications to container
     this.promptEnabled = false; // whether to prompt user before changing step
 
     var _this = this,
         confirmText = 'You are about to navigate away from the current step. Any changes you have made may be lost.',
         publish = {
-            changeStep: 'step.load'
+            changeStep: 'step.load',
+            summary: 'step.summary'
         },
         listen = {
-            unload: '' // channel listening for result of user prompt
+            unload: '', // channel listening for result of user prompt
+            changePrompt: 'step.promptOnUnload'
         }
     ;
 
@@ -28,7 +29,7 @@ function Widget_portal_steps(){
 
     this.initExtend = function() {
         // get page data from widget
-        var pageData    = this.$widgetDiv.data('page-data');
+        var pageData     = this.$widgetDiv.data('page-data');
         this.displayType = this.$widgetDiv.data('display');
         
         // prepare request parameters
@@ -37,6 +38,7 @@ function Widget_portal_steps(){
         // prepare listeners
         listen.unload = this.name + '.unloadResult'
         pw.addListenerToChannel(this, listen.unload);
+        pw.addListenerToChannel(this, listen.changePrompt);
 
         this.portalChannels = pageData.portalChannels;
 
@@ -75,24 +77,23 @@ function Widget_portal_steps(){
     */
 
     this.onReadyExtend = function() {
-        this.activeStep = $('.steps li.active a', this.$widgetDiv);
+        var $link = $('.steps li.active a', this.$widgetDiv);
 
         // format disabled steps
         $('a.step-link[data-disabled=true]', this.$widgetDiv).addClass('disabled');
         
         if (!pw.defined(this.parameterMap.step)){
-            this.updateUrl(); // update query parameters if step not set to reflect step displayed
+            this.updateUrl($link); // update query parameters if step not set to reflect step displayed
         }
 
-        this.updatePromptListener();
-        updateUnloadHandler(this.promptEnabled);
+        this.updateUnloadHandler();
 
         // add link handlers
         this.addHandlers();
     }
     
-    this.updateUrl = function(){
-        var number = this.activeStep.data('step');
+    this.updateUrl = function($link){
+        var number = $link.data('step');
         if (pw.defined(this.portalChannels.setPageArgs)){
             pw.notifyChannelOfEvent(this.portalChannels.setPageArgs, {
                 args : {step : number},
@@ -104,18 +105,6 @@ function Widget_portal_steps(){
         }
     }
 
-    this.updatePromptListener = function() {
-        var activeStepTarget = this.activeStep.attr('href'),
-            name = activeStepTarget.substring(0, activeStepTarget.indexOf('?'));
-
-        if (pw.defined(listen.changePrompt)){
-            pw.removeListenersFromChannel(listen.changePrompt);
-        }
-
-        listen.changePrompt = name + '.promptOnUnload';
-        pw.addListenerToChannel(this, listen.changePrompt);
-    }
-
     this.addHandlers = function() {
         $('a.step-link', this.$widgetDiv).click(function(){
             
@@ -123,6 +112,7 @@ function Widget_portal_steps(){
                 return false;
             }
             if(_this.requestChangeStep($(this))){
+                // step changing, update display
                 $(this).parents('.steps').children().removeClass('active');
                 $(this).parent().addClass('active');
                 _this.setNewStep($(this));
@@ -148,7 +138,6 @@ function Widget_portal_steps(){
 
     this.requestChangeStep = function($link) {
         if (!this.promptEnabled || window.confirm(confirmText)) {
-            var stepToLoad = $link.attr('href').substring(0, $link.attr('href').indexOf('?'));
 
             this.updatePromptHandler(false);
 
@@ -156,16 +145,17 @@ function Widget_portal_steps(){
                 uri : $link.attr('href'),
                 entity : this.parameterMap.entity
             });
+            pw.notifyChannelOfEvent(publish.summary, {
+                hide: true
+            });
             return true;
         }
         return false;
     }
 
     this.setNewStep = function($link){
-        this.activeStep = $link;
         $('.breadcrumb li.active', this.$widgetDiv).text($link.text().trim());
-        this.updateUrl();
-        this.updatePromptListener();
+        this.updateUrl($link);
     }
 
     this.widgetUnloading = function() {
@@ -173,7 +163,6 @@ function Widget_portal_steps(){
         pw.removeListenersFromChannel(listen.changePrompt);
         pw.removeListenersFromChannel(listen.unload);
     }
-
 
     /*
         Prompt handlers
@@ -190,12 +179,12 @@ function Widget_portal_steps(){
         if (this.promptEnabled !== enabled) {
             this.promptEnabled = enabled ? true : false;
             this.publishPromptStatus();
-            updateUnloadHandler(this.promptEnabled);
+            this.updateUnloadHandler();
         }
     }
 
-    function updateUnloadHandler(enable) {
-        if (enable) {
+    this.updateUnloadHandler = function() {
+        if (this.promptEnabled) {
             window.onbeforeunload = function(){
                 return confirmText;
             };
@@ -203,5 +192,4 @@ function Widget_portal_steps(){
             window.onbeforeunload = null;
         }
     }
-
 }

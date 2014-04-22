@@ -3,10 +3,11 @@
         <description>User Details</description>
         <completed>2</completed>
         <total>3</total>
+        <stepType>user</stepType>
     </entity>
     <entity type="step" active="active">
         <title>Login Details</title>
-        <!-- <description>Your email address, password and change password fields</description> -->
+        <description>Your email address, password and change password fields</description>
         <step>1</step>
         <status>complete</status>
         <widget>user-profile-forms</widget>
@@ -14,7 +15,7 @@
     </entity>
     <entity type="step" active="">
         <title>Your Details</title>
-        <!-- <description>Name and current address details</description> -->
+        <description>Name and current address details</description>
         <step>2</step>
         <status>complete</status>
         <widget>user-profile-forms</widget>
@@ -22,7 +23,7 @@
     </entity>
     <entity type="step" active="">
         <title>Notification Methods</title>
-        <!-- <description>Contact details and preferred contact methods</description> -->
+        <description>Contact details and preferred contact methods</description>
         <step>3</step>
         <status>incomplete</status>
         <widget>user-profile-forms</widget>

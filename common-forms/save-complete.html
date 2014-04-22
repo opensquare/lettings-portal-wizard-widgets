@@ -4,7 +4,8 @@
             pw.notifyChannelOfEvent('{{/root/complete}}', {id: '{{/root/esb//id}}'});
         } else {*/
             $('div.rf-complete').show();
+            pw.notifyChannelOfEvent('step.summary', {});
         //}
     });
 </script>
-<div class="rf-complete">Details Updated</div>
+<div class="rf-complete alert alert-success">Details Updated</div>
